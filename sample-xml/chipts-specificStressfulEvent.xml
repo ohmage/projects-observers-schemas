@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignName>CHIPTS</campaignName>
+  <campaignVersion>0.1</campaignVersion>
+  
+  <surveys>
+    <survey>
+      <id>specificStressfulEvent</id>
+      <title>Specific Stressful Event</title>
+      <description />
+      <introText />
+      <submitText />
+      <showSummary>true</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText  />
+      <anytime>true</anytime>
+     
+      <contentList>
+        <prompt>
+          <id>specificStressfulEventHoursAgo</id>
+          <displayType></displayType>
+          <displayLabel></displayLabel>
+          <promptText>How many hours ago did the event occur?</promptText>
+          <abbreviatedText></abbreviatedText>
+          <explanationText></explanationText>
+          <promptType>hours_before_now</promptType>
+          <properties>
+            <p>
+              <k>min</k>
+              <v>0</v>
+            </p>
+            <p>
+              <k>max</k>
+              <v>24</v>
+            </p>
+          </properties>
+          <default />
+          <condition />
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>specificStressfulEventWhatHappened</id>
+          <displayType></displayType>
+          <displayLabel></displayLabel>
+          <promptText>What happened?</promptText>
+          <abbreviatedText></abbreviatedText>
+          <explanationText></explanationText>
+          <promptType>text</promptType>
+          <properties>
+            <p>
+              <k>min</k>
+              <v>1</v>
+            </p>
+            <p>
+              <k>max</k>
+              <v>500</v> <!-- ??? -->
+            </p>
+          </properties>
+          <default />
+          <condition />
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>specificStressfulEventPhoto</id>
+          <displayType></displayType>
+          <displayLabel></displayLabel>
+          <promptText>Take a picture?</promptText>
+          <abbreviatedText></abbreviatedText>
+          <explanationText></explanationText>
+          <promptType>text</promptType>
+          <properties>
+            <p>
+              <k>res</k>
+              <v>720</v>
+            </p>
+          </properties>
+          <default />
+          <condition />
+          <skippable>true</skippable>
+        </prompt>
+        
+      </contentList>
+    
+    </survey>
+  </surveys>
+</campaign>

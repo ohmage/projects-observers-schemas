@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignName>CHIPTS</campaignName>
+  <campaignVersion>0.1</campaignVersion>
+
+  <surveys>
+    <survey>
+      <id>drugs</id>
+      <title>Drugs</title>
+      <description />
+      <introText />
+      <submitText />
+      <showSummary>true</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText  />
+      <anytime>true</anytime>
+      
+      <contentList>
+        
+        <!-- need a message node here? -->
+        
+        <repeatableSet>
+          <id>drugsRepeatableSet</id>
+          <terminationQuestion></terminationQuestion>
+          <terminationTrueLabel></terminationTrueLabel>
+          <terminationFalseLabel></terminationFalseLabel>
+          <terminationRefuseLabel></terminationRefuseLabel>
+          <condition />
+          <prompts>
+          
+            <prompt>
+              <id>drugsWhatDrug</id>
+              <displayType>category</displayType>
+              <displayLabel>Drugs - What Drug</displayLabel>
+              <promptText>What drug did you take?</promptText>
+              <abbreviatedText></abbreviatedText>
+              <explanationText></explanationText>
+              <promptType>single_choice_custom</promptType>
+              <properties>
+                <p>
+                  <k>0</k>
+                  <v>crystal/meth</v>
+                </p>
+                <p>
+                  <k>1</k>
+                  <v>cocaine</v>
+                </p>
+                <p>
+                  <k>2</k>
+                  <v>crack</v>
+                </p>
+                <p>
+                  <k>3</k>
+                  <v>marijuana</v>
+                </p>
+                <p>
+                  <k>4</k>
+                  <v>opiates</v>
+                </p>
+              </properties>
+              <default />
+              <condition />
+              <skippable>false</skippable>
+            </prompt> 
+            
+            <prompt>
+              <id>drugsHowManyTimes</id>
+              <displayType>category</displayType>
+              <displayLabel>Drugs - How Many Times</displayLabel>
+              <promptText>How many times?</promptText>
+              <abbreviatedText></abbreviatedText>
+              <explanationText></explanationText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <p>
+                  <k>0</k>
+                  <v>1-3</v>
+                </p>
+                <p>
+                  <k>1</k>
+                  <v>4-6</v>
+                </p>
+                <p>
+                  <k>3</k>
+                  <v>7-9</v>
+                </p>
+                <p>
+                  <k>4</k>
+                  <v>10+</v>
+                </p>
+              </properties>
+              <default />
+              <condition />
+              <skippable>false</skippable>
+            </prompt> 
+          
+            <prompt>
+              <id>drugsHowMuchEachTime</id>
+              <displayType>metadata</displayType>
+              <displayLabel>Drugs - How Much Each Time</displayLabel>
+              <promptText>How much each time?</promptText>
+              <abbreviatedText></abbreviatedText>
+              <explanationText></explanationText>
+              <promptType>text</promptType>
+              <properties>
+                <p>
+                  <k>min</k>
+                  <v>1</v>
+                </p>
+                <p>
+                  <k>max</k>
+                  <v>50</v>
+                </p>
+              </properties>
+              <default />
+              <condition />
+              <skippable>false</skippable>
+            </prompt> 
+          </prompts>
+          
+           <prompt>
+            <id>drugsHowManyHoursFirst</id>
+            <displayType>event</displayType>
+            <displayLabel>Drugs - How Many Hours Ago Was the First Use</displayLabel>
+            <promptText>How many hours ago was the first use?</promptText>
+            <abbreviatedText></abbreviatedText>
+            <explanationText></explanationText>
+            <promptType>hours_before_now</promptType>
+            <properties>
+              <p>
+                <k>min</k>
+                <v>0</v>
+              </p>
+              <p>
+                <k>max</k>
+                <v>24</v>
+              </p>
+            </properties>
+            <default />
+            <condition />
+            <skippable>false</skippable>
+          </prompt>
+          
+          <prompt>
+            <id>drugsHowManyHoursLast</id>
+            <displayType>event</displayType>
+            <displayLabel>Drugs - How Many Hours Ago Was the Last Use</displayLabel>
+            <promptText>How many hours ago was the last use?</promptText>
+            <abbreviatedText></abbreviatedText>
+            <explanationText></explanationText>
+            <promptType>hours_before_now</promptType>
+            <properties>
+              <p>
+                <k>min</k>
+                <v>0</v>
+              </p>
+              <p>
+                <k>max</k>
+                <v>24</v>
+              </p>
+            </properties>
+            <default />
+            <condition />
+            <skippable>false</skippable>
+          </prompt>
+        </repeatableSet>
+         
+      </contentList>
+    </survey>
+  </surveys>
+</campaign>

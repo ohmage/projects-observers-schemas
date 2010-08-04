@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="campaign">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="campaignName" />
+        <xs:element ref="campaignVersion" />
+        <xs:element ref="surveys"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="campaignName" type="xs:string"/>
+  <xs:element name="campaignVersion" type="xs:string"/>
+  <xs:element name="surveys">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="survey"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="survey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="title"/>
+        <xs:element ref="description"/>
+        <xs:element ref="introText"/>
+        <xs:element ref="submitText"/>
+        <xs:element ref="showSummary"/>
+        <xs:element ref="editSummary"/>
+        <xs:element ref="summaryText"/>
+        <xs:element ref="anytime"/>
+        <xs:element ref="contentList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="introText" type="xs:string"/>
+  <xs:element name="submitText" type="xs:string"/>
+  <xs:element name="showSummary" type="xs:boolean"/>
+  <xs:element name="editSummary" type="xs:boolean"/>
+  <xs:element name="summaryText" type="xs:string"/>
+  <xs:element name="anytime" type="xs:boolean"/>
+  <xs:element name="contentList">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="prompt"/>
+        <xs:element ref="repeatableSet"/>
+        <xs:element ref="message"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="repeatableSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="terminationQuestion"/>
+        <xs:element ref="terminationTrueLabel"/>
+        <xs:element ref="terminationFalseLabel"/>
+        <xs:element ref="terminationSkipEnabled"/>
+        <xs:element ref="terminationSkipLabel"/>
+        <xs:element ref="condition"/>
+        <xs:element ref="prompts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="terminationSkipEnabled" type="xs:boolean"/>
+  <xs:element name="terminationSkipLabel" type="xs:string"/>
+  <xs:element name="terminationQuestion" type="xs:string"/>
+  <xs:element name="terminationTrueLabel" type="xs:string"/>
+  <xs:element name="terminationFalseLabel" type="xs:string"/>
+  <xs:element name="prompts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="prompt"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="id">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9a-zA-Z_]{1,}" />
+    </xs:restriction>
+  </xs:element>
+  <xs:element name="message">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="condition"/>
+        <xs:element ref="messageText"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="messageText" type="xs:string"/>
+  <xs:element name="prompt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="displayType"/>
+        <xs:element ref="displayLabel"/>
+        <xs:element ref="id"/>
+        <xs:element ref="promptText"/>
+        <xs:element ref="abbreviatedText"/>
+        <xs:element ref="explanationText"/>
+        <xs:element ref="promptType"/>
+        <xs:element ref="properties"/>
+        <xs:element ref="default"/>
+        <xs:element ref="condition"/>
+        <xs:element ref="skippable"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="displayType" type="xs:string"/>
+  <xs:element name="displayLabel" type="xs:string"/>
+  <xs:element name="promptText" type="xs:string"/>
+  <xs:element name="abbreviatedText" type="xs:string" />
+  <xs:element name="explanationText" type="xs:string" />
+  <xs:element name="promptType" type="xs:string"/>
+  <xs:element name="properties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="p"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="p">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="k"/>
+        <xs:element ref="v"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="k" type="xs:string"/>
+  <xs:element name="v" type="xs:string"/>
+  <xs:element name="default" type="xs:string"/>
+  <xs:element name="skippable" type="xs:boolean"/>
+  <xs:element name="condition" type="xs:string"/>
+</xs:schema>

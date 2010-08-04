@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignName>CHIPTS</campaignName>
+  <campaignVersion>0.1</campaignVersion>
+
+  <surveys>
+    <survey>
+      <id>tobacco</id>
+      <title>Tobacco</title>
+      <description />
+      <introText />
+      <submitText />
+      <showSummary>true</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText  />
+      <anytime>true</anytime>
+    
+      <contentList>
+      
+        <prompt>
+          <id>tobaccoNumberOfCigarettes</id>
+          <displayType>category</displayType>
+          <displayLabel>Tobacco - Number of Cigarettes</displayLabel>
+          <promptText>How many cigarettes did you smoke today?</promptText>
+          <abbreviatedText></abbreviatedText>
+          <explanationText></explanationText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <p>
+              <k>0</k>
+              <v>0</v>
+            </p>
+            <p>
+              <k>1</k>
+              <v>1-5</v>
+            </p>
+            <p>
+              <k>2</k>
+              <v>6-10</v>
+            </p>
+            <p>
+              <k>3</k>
+              <v>11-15</v>
+            </p>
+            <p>
+              <k>4</k>
+              <v>16-20</v>
+            </p>
+            <p>
+              <k>5</k>
+              <v>20+</v>
+            </p>
+          </properties>
+          <default />
+          <condition />
+          <skippable>false</skippable>
+        </prompt>
+        
+      </contentList>
+    
+    </survey>
+  </surveys>
+</campaign>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignName>CHIPTS</campaignName>
+  <campaignVersion>0.1</campaignVersion>
+
+  <surveys>
+    <survey>
+      <id>photoDiary</id>
+      <title>Photo Diary</title>
+      <description />
+      <introText />
+      <submitText />
+      <showSummary>true</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText  />
+      <anytime>true</anytime>
+     
+      <contentList>
+      
+        <prompt>
+          <id>photoDiaryPhoto</id>
+          <displayType></displayType>
+          <displayLabel></displayLabel>
+          <promptText>Take a picture?</promptText>
+          <abbreviatedText></abbreviatedText>
+          <explanationText></explanationText>
+          <promptType>text</promptType>
+          <properties>
+            <p>
+              <k>res</k>
+              <v>720</v>
+            </p>
+          </properties>
+          <default />
+          <condition />
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>photoDiaryText</id>
+          <displayType></displayType>
+          <displayLabel></displayLabel>
+          <promptText>Add text?</promptText>
+          <abbreviatedText></abbreviatedText>
+          <explanationText></explanationText>
+          <promptType>text</promptType>
+          <properties>
+            <p>
+              <k>min</k>
+              <v>1</v>
+            </p>
+            <p>
+              <k>max</k>
+              <v>500</v> <!-- ??? -->
+            </p>
+          </properties>
+          <default />
+          <condition />
+          <skippable>false</skippable>
+        </prompt>
+        
+      </contentList>
+    
+    </survey>
+  </surveys>
+</campaign>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignName>CHIPTS</campaignName>
+  <campaignVersion>0.1</campaignVersion>
+
+  <surveys>
+    <survey>
+      <id>medication</id>
+      <title>Medication</title>
+      <description />
+      <introText />
+      <submitText />
+      <showSummary>true</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText  />
+      <anytime>true</anytime>
+     
+      <contentList>
+      
+        <prompt>
+          <id>medicationWhich</id>
+          <displayType>category</displayType>
+          <displayLabel>Which medication</displayLabel>
+          <promptText>Which medication?</promptText>
+          <abbreviatedText></abbreviatedText>
+          <explanationText></explanationText>
+          <promptType>multi_choice_custom</promptType>
+          <properties />
+          <default />
+          <condition />
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>medicationTookOrMissed</id>
+          <displayType>metadata</displayType>
+          <displayLabel>Took or missed</displayLabel>
+          <promptText>Are you reporting that you took or missed medication?</promptText>
+          <abbreviatedText></abbreviatedText>
+          <explanationText></explanationText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <p>
+              <k>0</k>
+              <v>took</v>
+            </p>
+            <p>
+              <k>1</k>
+              <v>missed</v>
+            </p>
+          </properties>
+          <default />
+          <condition />
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>medicationHowManyHoursAgo</id>
+          <displayType>metadata</displayType>
+          <displayLabel>Medication - How Many Hours Ago</displayLabel>
+          <promptText>How many hours ago?</promptText>
+          <abbreviatedText></abbreviatedText>
+          <explanationText></explanationText>
+          <promptType>hours_before_now</promptType>
+          <properties>
+            <p>
+              <k>min</k>
+              <v>0</v>
+            </p>
+            <p>
+              <k>max</k>
+              <v>24</v>
+            </p>
+          </properties>
+          <default />
+          <condition>medicationTookOrMissed == took</condition> 
+          <skippable>false</skippable>
+        </prompt>
+        
+        
+        <prompt>
+          <id>medicationOnTime</id>
+          <displayType>measurement</displayType>
+          <displayLabel>Medication - On Time</displayLabel>
+          <promptText>On time?</promptText>
+          <abbreviatedText></abbreviatedText>
+          <explanationText></explanationText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <p>
+              <k>0</k>
+              <v>yes</v>
+            </p>
+            <p>
+              <k>1</k>
+              <v>no</v>
+            </p>
+          </properties>
+          <default />
+          <condition>medicationTookOrMissed == took</condition>
+          <skippable>false</skippable>
+        </prompt>
+        
+        
+        <prompt>
+          <id>medicationWhyMissed</id>
+          <displayType>metadata</displayType>
+          <displayLabel>Medication - Why Missed?</displayLabel> <!-- metadata probably does not need a display label -->
+          <promptText>Why?</promptText>
+          <abbreviatedText></abbreviatedText>
+          <explanationText></explanationText>
+          <promptType>text</promptType>
+          <properties>
+            <p>
+              <k>min</k>
+              <v>1</v>
+            </p>
+            <p>
+              <k>max</k>
+              <v>500</v> <!-- ???? -->
+            </p>
+          </properties>
+          <default />
+          <condition>medicationTookOrMissed == missed</condition>
+          <skippable>true</skippable>
+        </prompt>
+        
+      </contentList>
+    
+    </survey>
+  </surveys>
+</campaign>
