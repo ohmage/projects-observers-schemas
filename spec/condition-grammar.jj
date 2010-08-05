@@ -15,9 +15,9 @@ public class ConditionParser {
 }
 PARSER_END( ConditionParser )
 
-void sentence() : {} {"(" sentence() ")" sentence_prime() | expr() sentence_prime() | <EOF> }
+void sentence() : {} { expr() sentence_prime() }
 
-void sentence_prime() : {} { conjunction() sentence() sentence_prime() | {} }  
+void sentence_prime() : {} { conjunction() expr() | < EOF >}  
 
 void expr() : {} { id() condition() value() }
 
@@ -31,5 +31,3 @@ void conjunction() : {} { "and" | "or" }
 
 SKIP    : { " " | "\t" | "\n" | "\r" }
 TOKEN   : { < TEXT : ( ["a" - "z", "A" - "Z", "0" - "9", "_"] )+ > }
-
-
