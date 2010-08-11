@@ -1,17 +1,7 @@
 PARSER_BEGIN( ConditionParser )
-package test;
+package org.andwellness.grammar.parser;
 public class ConditionParser {
 
-    public static void main(String[] args) {
-        
-        try {
-            new ConditionParser(new java.io.StringReader(args[0])).sentence();
-            System.out.println("Syntax is okay");
-        } catch (Throwable e) {
-            // Catching Throwable is ugly but JavaCC throws Error objects!
-            e.printStackTrace();
-        }
-    }
 }
 PARSER_END( ConditionParser )
 
