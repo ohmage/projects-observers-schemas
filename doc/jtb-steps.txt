@@ -1,0 +1,15 @@
+1. Annotate the condition grammar with JTB. 
+
+java -jar jtb132.jar -p org.andwellness.grammar -o condition-grammar.jtb /Users/selsky/projects/cens/git/AndWellnessConfigValidator/spec/condition-grammar.jj
+
+2. Compile the annotated grammar with JavaCC. (use --DEBUG_PARSER to annotate generated classes with debug messages)
+
+../javacc-5.0/bin/javacc condition-grammar.jtb 
+
+3. Compile the generated Java classes.
+
+javac *java syntaxtree/*java visitor/*java
+
+4. Move the compiled classes to the correct packages. (JavaCC won't do this for you unfortunately.)
+
+5. Now you are ready to extend the created classes. All of the additions for AndWellness are in the org.andwellness.grammar.custom package.
