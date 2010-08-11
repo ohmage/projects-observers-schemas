@@ -27,7 +27,7 @@ public final class ConditionValidator {
 	
 	/**
 	 * For command line use for testing. Provide the condition to be validated as the first argument. The condition must be a
-	 * quoted string.
+	 * double-quoted string.
 	 */
 	public static void main(String args[]) throws IOException, ConditionParseException {
 		Map<String, List<String>> map = validate(args[0]);
@@ -39,14 +39,15 @@ public final class ConditionValidator {
 	 * 
 	 * @param conditionSentence
 	 * @return Map of id-value list pairs for each id-operation-value in the provided sentence
-	 * @throws ConditionParseException if the sentence does not match 
+	 * @throws ConditionParseException if the sentence does not conform to our grammar (see spec/condition-grammar.jj) 
 	 */
 	public static Map<String, List<String>> validate(String conditionSentence) {
 		sentence s = null;
 		
 		try {
 			
-			s = new ConditionParser(new StringReader(conditionSentence)).sentence();
+			s = new ConditionParser(new StringReader(conditionSentence)).sentence(); // the JavaCC classes use some strange
+			                                                                         // programming conventions 
 			ConditionDepthFirst<Map<String, List<String>>> visitor = new ConditionDepthFirst<Map<String, List<String>>>();
 			Map<String, List<String>>map = new HashMap<String, List<String>>(); 
 			visitor.visit(s, map);
