@@ -2,6 +2,7 @@
 <campaign>
   <campaignName>CHIPTS</campaignName>
   <campaignVersion>0.1</campaignVersion>
+  <serverUrl>http://i.am.an.url</serverUrl>
   
   <surveys>
     <survey>
