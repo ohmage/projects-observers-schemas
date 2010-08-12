@@ -47,7 +47,8 @@ public final class ConditionValidator {
 		try {
 			
 			s = new ConditionParser(new StringReader(conditionSentence)).sentence(); // the JavaCC classes use some strange
-			                                                                         // programming conventions 
+			                                                                         // programming conventions -- you create a
+			                                                                         // parser only to invoke static methods on it
 			ConditionDepthFirst<Map<String, List<String>>> visitor = new ConditionDepthFirst<Map<String, List<String>>>();
 			Map<String, List<String>>map = new HashMap<String, List<String>>(); 
 			visitor.visit(s, map);
