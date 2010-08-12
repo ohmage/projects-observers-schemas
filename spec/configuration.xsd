@@ -5,12 +5,14 @@
       <xs:sequence>
         <xs:element ref="campaignName" />
         <xs:element ref="campaignVersion" />
+        <xs:element ref="serverUrl" />
         <xs:element ref="surveys"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="campaignName" type="xs:string"/>
   <xs:element name="campaignVersion" type="xs:string"/>
+  <xs:element name="serverUrl" type="xs:string"/>
   <xs:element name="surveys">
     <xs:complexType>
       <xs:sequence>
@@ -20,7 +22,7 @@
   </xs:element>
   <xs:element name="survey">
     <xs:complexType>
-      <xs:sequence>
+      <xs:all>
         <xs:element ref="id"/>
         <xs:element ref="title"/>
         <xs:element ref="description"/>
@@ -31,7 +33,7 @@
         <xs:element ref="summaryText" minOccurs="0" />
         <xs:element ref="anytime"/>
         <xs:element ref="contentList"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:element name="title" type="xs:string"/>
@@ -53,7 +55,7 @@
   </xs:element>
   <xs:element name="repeatableSet">
     <xs:complexType>
-      <xs:sequence>
+      <xs:all>
         <xs:element ref="id"/>
         <xs:element ref="terminationQuestion"/>
         <xs:element ref="terminationTrueLabel"/>
@@ -62,7 +64,7 @@
         <xs:element ref="terminationSkipLabel" minOccurs="0" />
         <xs:element ref="condition" minOccurs="0"/>
         <xs:element ref="prompts"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:element name="terminationSkipEnabled" type="xs:boolean"/>
@@ -78,9 +80,11 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="id">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="[0-9a-zA-Z_]{1,}" />
-    </xs:restriction>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9a-zA-Z_]{1,}" />
+      </xs:restriction>
+    </xs:simpleType>
   </xs:element>
   <xs:element name="message">
     <xs:complexType>
@@ -93,7 +97,7 @@
   <xs:element name="messageText" type="xs:string"/>
   <xs:element name="prompt">
     <xs:complexType>
-      <xs:sequence>
+      <xs:all>
         <xs:element ref="displayType"/>
         <xs:element ref="displayLabel"/>
         <xs:element ref="id"/>
@@ -105,7 +109,7 @@
         <xs:element ref="default" minOccurs="0"/>
         <xs:element ref="condition" minOccurs="0"/>
         <xs:element ref="skippable"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:element name="displayType" type="xs:string"/>
