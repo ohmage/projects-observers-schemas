@@ -2,6 +2,7 @@
 <campaign>
   <campaignName>CHIPTS</campaignName>
   <campaignVersion>0.1</campaignVersion>
+  <serverUrl>https://www.andwellness.org/app/sensor/upload</serverUrl>
 
   <surveys>
     <survey>
@@ -155,7 +156,8 @@
           <terminationQuestion></terminationQuestion>
           <terminationTrueLabel></terminationTrueLabel>
           <terminationFalseLabel></terminationFalseLabel>
-          <terminationRefuseLabel></terminationRefuseLabel>
+          <terminationSkipLabel></terminationSkipLabel>
+          <terminationSkipEnabled>false</terminationSkipEnabled>
           <condition />
           <prompts>
           
