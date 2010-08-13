@@ -10,9 +10,9 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="campaignName" type="xs:string"/>
-  <xs:element name="campaignVersion" type="xs:string"/>
-  <xs:element name="serverUrl" type="xs:string"/>
+  <xs:element name="campaignName" type="NonEmptyString"/>
+  <xs:element name="campaignVersion" type="NonEmptyString"/>
+  <xs:element name="serverUrl" type="NonEmptyString"/>
   <xs:element name="surveys">
     <xs:complexType>
       <xs:sequence>
@@ -36,13 +36,13 @@
       </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="title" type="xs:string"/>
-  <xs:element name="description" type="xs:string"/>
-  <xs:element name="introText" type="xs:string"/>
-  <xs:element name="submitText" type="xs:string"/>
-  <xs:element name="showSummary" type="xs:boolean"/>
+  <xs:element name="title" type="NonEmptyString" />
+  <xs:element name="description" type="NonEmptyString"/>
+  <xs:element name="introText" type="NonEmptyString"/>
+  <xs:element name="submitText" type="NonEmptyString"/>
+  <xs:element name="showSummary" type="NonEmptyString"/>
   <xs:element name="editSummary" type="xs:boolean"/>
-  <xs:element name="summaryText" type="xs:string"/>
+  <xs:element name="summaryText" type="NonEmptyString"/>
   <xs:element name="anytime" type="xs:boolean"/>
   <xs:element name="contentList">
     <xs:complexType>
@@ -68,10 +68,10 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="terminationSkipEnabled" type="xs:boolean"/>
-  <xs:element name="terminationSkipLabel" type="xs:string"/>
-  <xs:element name="terminationQuestion" type="xs:string"/>
-  <xs:element name="terminationTrueLabel" type="xs:string"/>
-  <xs:element name="terminationFalseLabel" type="xs:string"/>
+  <xs:element name="terminationSkipLabel" type="NonEmptyString"/>
+  <xs:element name="terminationQuestion" type="NonEmptyString"/>
+  <xs:element name="terminationTrueLabel" type="NonEmptyString"/>
+  <xs:element name="terminationFalseLabel" type="NonEmptyString"/>
   <xs:element name="prompts">
     <xs:complexType>
       <xs:sequence>
@@ -88,10 +88,10 @@
   </xs:element>
   <xs:element name="message">
     <xs:complexType>
-      <xs:sequence>
+      <xs:all>
         <xs:element ref="condition"/>
         <xs:element ref="messageText"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:element name="messageText" type="xs:string"/>
@@ -112,12 +112,12 @@
       </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="displayType" type="xs:string"/>
-  <xs:element name="displayLabel" type="xs:string"/>
-  <xs:element name="promptText" type="xs:string"/>
-  <xs:element name="abbreviatedText" type="xs:string" />
-  <xs:element name="explanationText" type="xs:string" />
-  <xs:element name="promptType" type="xs:string"/>
+  <xs:element name="displayType" type="NonEmptyString"/>
+  <xs:element name="displayLabel" type="NonEmptyString"/>
+  <xs:element name="promptText" type="NonEmptyString"/>
+  <xs:element name="abbreviatedText" type="NonEmptyString" />
+  <xs:element name="explanationText" type="NonEmptyString" />
+  <xs:element name="promptType" type="NonEmptyString"/>
   <xs:element name="properties">
     <xs:complexType>
       <xs:sequence>
@@ -133,9 +133,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="k" type="xs:string"/>
-  <xs:element name="v" type="xs:string"/>
-  <xs:element name="default" type="xs:string"/>
+  <xs:element name="k" type="NonEmptyString"/>
+  <xs:element name="v" type="NonEmptyString"/>
+  <xs:element name="default" type="NonEmptyString"/>
   <xs:element name="skippable" type="xs:boolean"/>
-  <xs:element name="condition" type="xs:string"/>
+  <xs:element name="condition" type="NonEmptyString"/>
+  <xs:simpleType name="NonEmptyString">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:pattern value=".*[^\s].*" />
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>
