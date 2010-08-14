@@ -75,7 +75,7 @@
   <xs:element name="prompts">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="prompt"/>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="prompt"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
