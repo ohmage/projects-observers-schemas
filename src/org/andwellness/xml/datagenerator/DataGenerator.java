@@ -8,7 +8,9 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import nu.xom.Builder;
 import nu.xom.Document;
@@ -84,7 +86,8 @@ public class DataGenerator {
         // Create a new generator
         DataGenerator generator = new DataGenerator();
         // Generate the JSON
-        JSONArray surveyArray = generator.generateMultipleResponses(root, numberDays, numberSurveysPerDay);
+        //JSONArray surveyArray = generator.generateMultipleResponses(root, numberDays, numberSurveysPerDay);
+        JSONArray surveyArray = generator.generateSingleResponse(root, new Date());
         // Output to a file
         DataGenerator.JSONArrayWriter(outputFileName, surveyArray);
     }
@@ -131,6 +134,21 @@ public class DataGenerator {
     }
     
     /**
+     * Utility function to append one JSON array onto the end of another, NOT optimized, can be very slow depending
+     * on how big the array is to append
+     * 
+     * @param JSONArrayApendee The JSON array to append on to the end of.
+     * @param JSONArrayAppender The JSON array to append on to the appendee.
+     * @throws JSONException Should never happen.
+     */
+    public static void appendJSONArray(JSONArray JSONArrayApendee, JSONArray JSONArrayAppender) throws JSONException {
+        // Just loop and append one by one, can be slow
+        for (int j = 0; j < JSONArrayAppender.length(); ++j) {
+            JSONArrayApendee.put(JSONArrayAppender.get(j));
+        }
+    }
+    
+    /**
      * Generate one or more surveys starting day and working numberDays backwards.
      * 
      * @param root The XML root that defines the survey data types to generate.
@@ -166,6 +184,9 @@ public class DataGenerator {
             
             int numberOfItemsInContentList = contentList.size();
             
+            // Store a list of all prompt IDs in the survey that have been generated
+            Map<String, String> currentPromptResponses = new HashMap<String, String>();
+            
             for(int y = 0; y < numberOfItemsInContentList; y++) {
                 // Content lists can contain conditions in prompts, repeatable sets, and prompts in repeatable sets 
                 
@@ -176,21 +197,28 @@ public class DataGenerator {
                 for(int outerIndex = 0; outerIndex < numberOfOuterElements; outerIndex++) {
                     
                     Node currentNode = promptsAndRepeatableSets.get(outerIndex);
-                    String currentId = currentNode.query("id").get(0).getValue(); 
-                    idList.add(currentId);
-                    int currentIdIndex = idList.indexOf(currentId);
-                    
+                    String currentNodeId = currentNode.query("id").get(0).getValue(); 
                     String currentNodeType = ((Element) currentNode).getLocalName();
+                    String currentNodeCondition = currentNode.query("condition").get(0).getValue();
+                    
                     
                     if("prompt".equals(currentNodeType)) {
-                        
-                        validateCondition(currentNode, outerIndex, currentId, currentIdIndex, idList);
+                        _logger.info("found a prompt with id " + currentNodeId);
+                        // Turn the prompt into JSON and append onto our array
+                        if (checkCondition(currentNodeCondition, currentPromptResponses)) {
+                            JSONArray singlePromptArray = generatePrompt(currentNode, creationDate);
+                            // Add to the current list of prompts generated
+                            //String responseValue = singlePromptArray.
+                            //currentPromptResponses.put(currentNodeId, responseValue);
+                            // Append the generated data on to the JSONArray
+                            //DataGenerator.appendJSONArray(singleResponseArray, singlePromptDataPoint.)
+                        }
                         
                     } else { 
                         
                          _logger.info("found a repeatableSet");
                          
-                         validateCondition(currentNode, outerIndex, currentId, currentIdIndex, idList);
+                         //validateCondition(currentNode, outerIndex, currentId, currentIdIndex, idList);
                          
                          // Now check out each prompt in the repeatable set
                          Nodes repeatableSetPromptNodes = currentNode.query("prompt");
@@ -207,7 +235,7 @@ public class DataGenerator {
                              cumulativeIdList.add(currentInnerId);
                              int cumulativeIdIndex = cumulativeIdList.indexOf(currentInnerId);
                              
-                             validateCondition(currentInnerNode, cumulativeIdIndex, currentInnerId, cumulativeIdIndex, cumulativeIdList);
+                             //validateCondition(currentInnerNode, cumulativeIdIndex, currentInnerId, cumulativeIdIndex, cumulativeIdList);
                          }
                     }
                 }
@@ -215,5 +243,16 @@ public class DataGenerator {
         }
         
         return singleResponseArray;
+    }
+
+    private boolean checkCondition(String currentNodeCondition,
+            Map<String, String> currentPromptResponses) {
+        // TODO Implement condition checking, for now assume always true
+        return true;
+    }
+
+    private JSONArray generatePrompt(Node currentNode, Date creationDate) {
+        // TODO Auto-generated method stub
+        return null;
     }
 }
