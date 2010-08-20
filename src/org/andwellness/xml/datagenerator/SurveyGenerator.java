@@ -12,6 +12,22 @@ import nu.xom.Element;
 import nu.xom.Node;
 import nu.xom.Nodes;
 
+/**
+ * SurveyGenerator implements most of the grunt work of translating a single survey described
+ * in XML format into a list of data points with randomly generated responses.  The two more
+ * complex parts are getting scoping correct with metadata and checking conditions to see
+ * if a prompt or repeatableSet should be generated or not.  
+ * 
+ * For metadata, and datetime in particular, there are three levels of scope.  A data point 
+ * should first get its time from its repeatableSet (if it is in a repeatableSet), then from
+ * the survey, then finally from the creationTime of the survey.  Since the XML schema dictates
+ * that prompt conditions cannot condition on prompts within repeatableSets, we can mimic this scoping
+ * fairly easily.  First, generate data points for all the prompts directly under a survey, then go and
+ * update all metadata for those prompts, then generate data points for repeatable sets.
+ * 
+ * @author jhicks
+ *
+ */
 public class SurveyGenerator {
     List<DataPoint> dataPointList = new ArrayList<DataPoint>();  // The DataPoints generated so far
     Map<String, Object> surveyMetadata = new HashMap<String, Object>();  // Holds standard survey metadata
@@ -68,8 +84,9 @@ public class SurveyGenerator {
                     _logger.info("found a prompt with id " + currentNodeId);
                     
                     // Check the condition to see if this prompt should generate a data point
-                    if (checkCondition(currentNodeCondition)) {
-                        DataPoint promptDataPoint = generatePrompt(currentNode, surveyMetadata);
+                    if (checkCondition(currentNodeCondition, dataPointList)) {
+                        DataPoint promptDataPoint = generatePrompt(currentNode);
+                        updateMetadata(promptDataPoint, surveyMetadata);
                         dataPointList.add(promptDataPoint);
                     }              
                 }
@@ -98,7 +115,7 @@ public class SurveyGenerator {
                     _logger.info("found a repeatableSet with id " + currentNodeId);
                     
                     // Check the condition to see if this repeatableSet should be run
-                    if (checkCondition(currentNodeCondition)) {
+                    if (checkCondition(currentNodeCondition, dataPointList)) {
                         List<DataPoint> repeatableSetDataPointList = generateRepeatableSet(currentNode);
                         dataPointList.addAll(repeatableSetDataPointList);
                     }
@@ -112,6 +129,13 @@ public class SurveyGenerator {
     }
 
 
+    /**
+     * Pass in a Node of type repeatableSet.  The function will create a List of DataPoints with
+     * randomly generated responses.  RepatableSets use their own metadata scope.
+     * 
+     * @param currentNode The repeatableSet to generate.
+     * @return A List of DataPoints generated.
+     */
     private List<DataPoint> generateRepeatableSet(Node currentNode) {
         String currentNodeId = currentNode.query("id").get(0).getValue();
         String currentNodeType = ((Element) currentNode).getLocalName();
@@ -141,9 +165,10 @@ public class SurveyGenerator {
                 _logger.info("found a prompt with id " + currentInnerId);
                 
                 // Make sure the condition is valid
-                if (checkCondition(currentInnerCondition)) {
+                if (checkCondition(currentInnerCondition, promptDataPointList)) {
                     // Generate the prompt
-                    DataPoint promptDataPoint = generatePrompt(currentInnerNode, repeatableSetMetadata);
+                    DataPoint promptDataPoint = generatePrompt(currentInnerNode);
+                    updateMetadata(promptDataPoint, repeatableSetMetadata);
                     promptDataPointList.add(promptDataPoint);
                 }
             }
@@ -159,17 +184,47 @@ public class SurveyGenerator {
         
     }
 
-    private DataPoint generatePrompt(Node currentNode, Map<String, Object> currentMetadata) {
+    /**
+     * Generate a single DataPoint from a single prompt.
+     * 
+     * @param currentNode The prompt node to generate.
+     * @return A DataPoint with the prompt response randomly generated based on the prompt properties and prompt type.
+     */
+    private DataPoint generatePrompt(Node currentNode) {
         // TODO Auto-generated method stub
         return null;
     }
 
-    private boolean checkCondition(String currentNodeCondition) {
+    /**
+     * If the dataPoint is of displayType metadata, update the metadata with its value.
+     * 
+     * @param dataPoint The datapoint to check.
+     * @param metadata Update the metadata if the data point is labeled as metadata.
+     */
+    private void updateMetadata(DataPoint dataPoint, Map<String, Object> metadata) {
+        
+    }
+    
+    /**
+     * Check if the condition is true based on previous node responses.  If the id does
+     * not exist in the previous responses, assume the response is NULL.
+     * 
+     * @param currentNodeCondition The condition to check, needs to be parsed.
+     * @param previousResponses The List of previous responses.
+     * @return Whether or not the condition is true.
+     */
+    private boolean checkCondition(String currentNodeCondition, List<DataPoint> previousResponses) {
         return true;
     }
 
-    private void insertMetadata(List<DataPoint> dataPointList2,
-            Map<String, Object> surveyMetadata2) {
+    /**
+     * Go through every data point in the list and update its metadata with the passed metadata.
+     * 
+     * @param dataPoints The data points to update.
+     * @param surveyMetadata2 
+     */
+    private void insertMetadata(List<DataPoint> dataPoints,
+            Map<String, Object> metadata) {
         // TODO Auto-generated method stub
         
     }    
