@@ -1,7 +1,6 @@
 package org.andwellness.xml.datagenerator;
 
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -98,7 +97,7 @@ public class DataGenerator {
     
     
     // DataGenerator fields go here
-    private static Logger _logger = Logger.getLogger(ConfigurationValidator.class);
+    private static Logger _logger = Logger.getLogger(DataGenerator.class);
     
     
     // DataGenerator methods go here
@@ -140,7 +139,8 @@ public class DataGenerator {
     
     
     /**
-     * Generate one or more surveys starting day and working numberDays backwards.
+     * Generate random responses using multiple passes over the XML file.
+     * Creates numberDays x numberSurveysPerDay responses, equally spaced over each day.
      * 
      * @param root The XML root that defines the survey data types to generate.
      * @param numberDays The number of days of surveys to generate.
@@ -157,7 +157,7 @@ public class DataGenerator {
     }
     
     /**
-     * Generate a single survey given the XML configuration and survey creation date.
+     * Generate a random responses as a single pass over the XML file.
      * 
      * @param root The XML root that defines the survey data types to generate.
      * @param creationDate The date and time to use to create this survey.
@@ -169,10 +169,14 @@ public class DataGenerator {
         Nodes surveys = root.query("//survey"); // get all surveys
         int numberOfSurveys = surveys.size();
         
-        // Now check the conditions within each survey
-        for(int x = 0; x < numberOfSurveys; x++) {
-            
+        // Loop over each prompt within the survey
+        for (int x = 0; x < numberOfSurveys; x++) {            
             Node survey = surveys.get(x);
+            
+            
+            
+            
+            
             Nodes contentList = survey.query("contentList");
             
             int numberOfItemsInContentList = contentList.size();
@@ -183,7 +187,7 @@ public class DataGenerator {
             for(int y = 0; y < numberOfItemsInContentList; y++) {
                 // Content lists can contain conditions in prompts, repeatable sets, and prompts in repeatable sets 
                 
-                Nodes promptsAndRepeatableSets = contentList.get(x).query("prompt | repeatableSet");
+                Nodes promptsAndRepeatableSets = contentList.get(y).query("prompt | repeatableSet");
                 int numberOfOuterElements = promptsAndRepeatableSets.size();
                 List<String> idList = new ArrayList<String>();
                 

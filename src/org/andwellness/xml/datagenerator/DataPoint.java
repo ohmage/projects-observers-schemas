@@ -1,5 +1,7 @@
 package org.andwellness.xml.datagenerator;
 
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -10,12 +12,8 @@ public class DataPoint {
     private DataPoint.DisplayType displayType;
     private DataPoint.PromptType promptType;
     
-    // Metadata
-    private String unit;
-    private String datetime;
-    private String tz;
-    private double lat;
-    private double lon;
+    // Map to store all possible metadata
+    Map<String, Object> metadata = new HashMap<String, Object>();
     
     // Translator to translate the value to turn into JSON
     ValueTranslator valueTranslator = null;
@@ -32,14 +30,19 @@ public class DataPoint {
     
     // Public interface that all JSON translators must implement!
     public interface ValueTranslator {
-        public List<Map<String,Object>> translateTimestamp(String timestampValue);
-        public List<Map<String,Object>> translateNumber(String numberValue);
-        public List<Map<String,Object>> translateHoursBeforeNow(String hoursBeforeNowValue);
-        public List<Map<String,Object>> translateText(String textValue);
-        public List<Map<String,Object>> translateMultiChoice(List<Map<String,String>> multiChoiceValue);
-        public List<Map<String,Object>> translateSingleChoice(Map<String,String> singleChoiceValue);
-        public List<Map<String,Object>> translateSingleChoiceCustom(Map<String,String> singleChoiceValue);
-        public List<Map<String,Object>> translateMultiChoiceCustom(List<Map<String,String>> multiChoiceValue);
+        public List<Map<String, Object>> translateTimestamp(String timestampValue);
+        public List<Map<String, Object>> translateNumber(String numberValue);
+        public List<Map<String, Object>> translateHoursBeforeNow(String hoursBeforeNowValue);
+        public List<Map<String, Object>> translateText(String textValue);
+        public List<Map<String, Object>> translateMultiChoice(List<Map<String,String>> multiChoiceValue);
+        public List<Map<String, Object>> translateSingleChoice(Map<String,String> singleChoiceValue);
+        public List<Map<String, Object>> translateSingleChoiceCustom(Map<String,String> singleChoiceValue);
+        public List<Map<String, Object>> translateMultiChoiceCustom(List<Map<String,String>> multiChoiceValue);
+    }
+    
+    // Public interface that all metadata containers must implement!
+    public interface Metadata {
+        public Map<String, Object> getMetadata();
     }
     
     // Nothing to do here!
@@ -63,43 +66,57 @@ public class DataPoint {
     }
     
     public void setUnit(String _unit) {
-        unit = _unit;
+        metadata.put("unit", _unit);
     }
     
     public String getUnit() {
-        return unit;
+       return (String) metadata.get("unit");
     }
     
     public void setDatetime(String _datetime) {
-        datetime = _datetime;
+        metadata.put("datetime", _datetime);
     }
     
     public String getDatetime() {
-        return datetime;
+        return (String) metadata.get("datetime");
     }
     
     public void setTz(String _tz) {
-        tz = _tz;
+        metadata.put("tz", _tz);
     }
     
     public String getTz() {
-        return tz;
+        return (String) metadata.get("tz");
     }
     
     public void setLat(double _lat) {
-        lat = _lat;
+        metadata.put("lat", new Double(_lat));
     }
     
     public double getLat() {
-        return lat;
+        Double lat = (Double) metadata.get("lat");
+        
+        if (lat == null) {
+            return Double.NaN;
+        }
+        else {
+            return lat.doubleValue();
+        }
     }
     
     public void setLon(double _lon) {
-        lon = _lon;
+        metadata.put("lon", new Double(_lon));
     }
     
     public double getLon() {
-        return lon;
+        Double lon = (Double) metadata.get("lon");
+        
+        if (lon == null) {
+            return Double.NaN;
+        }
+        else {
+            return lon.doubleValue();
+        }
     }
     
     public void setDisplayType(DisplayType _displayType) {
@@ -120,6 +137,24 @@ public class DataPoint {
     
     public void setTranslator(ValueTranslator _valueTranslator) {
         valueTranslator = _valueTranslator;
+    }
+    
+    /**
+     *  Grab a new metadata Map and copy all key/values into our current metadata.
+     * 
+     * @param _metadata Must implement the Metadata interface
+     */
+    public void updateMetadata(Metadata _metadata) {
+        Map<String, Object> newMetadata = _metadata.getMetadata();
+        Iterator<String> newMetadataKeyIterator = newMetadata.keySet().iterator();
+        
+        // Loop over every key, add to our current metadata
+        // Overwrite any keys we already have
+        while (newMetadataKeyIterator.hasNext()) {
+            String currentKey = newMetadataKeyIterator.next();
+            
+            metadata.put(currentKey, newMetadata.get(currentKey));
+        }
     }
 
     /**
