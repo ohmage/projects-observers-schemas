@@ -166,6 +166,5 @@ public class DataPoint {
         default:
             return null;
         }
-        
     }
 }
