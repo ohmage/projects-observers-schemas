@@ -1,18 +1,15 @@
 package org.andwellness.xml.datagenerator;
 
-import java.util.Date;
-
-import nu.xom.Node;
+import java.util.List;
 
 import org.json.JSONArray;
 
 public class InJSONGeneratorType implements JSONGeneratorType {
 
-    @Override
-    public JSONArray translatePromptToJSONArray(Node promptNode,
-            Date creationDate) {
-        // TODO Auto-generated method stub
-        return null;
+    public JSONArray translateDataPointsToJsonArray(List<DataPoint> dataPointList) {
+        JSONArray translatedJSON = new JSONArray();
+        
+        return translatedJSON;
     }
 
 }

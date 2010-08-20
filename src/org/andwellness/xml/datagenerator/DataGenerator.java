@@ -75,6 +75,7 @@ public class DataGenerator {
             throw new IllegalArgumentException("The third argument must be an integer.");
         }
         
+        // Init the json generator based on
         
         // Now use XOM to retrieve a Document and a root node for further processing. XOM is used because it has a 
         // very simple XPath API
@@ -83,18 +84,22 @@ public class DataGenerator {
         Document document = builder.build(configFileName);
         Element root = document.getRootElement();
         
-        // Create a new generator
+        // Create a new generator and generate a list of DataPoints
         DataGenerator generator = new DataGenerator();
-        // Generate the JSON
-        //JSONArray surveyArray = generator.generateMultipleResponses(root, numberDays, numberSurveysPerDay);
-        JSONArray surveyArray = generator.generateSingleResponse(root, new Date());
+        List<DataPoint> surveyArray = generator.generateMultipleResponses(root, numberDays, numberSurveysPerDay);
+        
+        // Translate the list of data points to JSON based on the passed in argument jsonType
+        JSONGeneratorType jsonGenerator = JSONGeneratorTypeFactory.getGenerator(jsonType);
+        JSONArray finalJSONArray = jsonGenerator.translateDataPointsToJsonArray(surveyArray);
+        
         // Output to a file
-        DataGenerator.JSONArrayWriter(outputFileName, surveyArray);
+        DataGenerator.JSONArrayWriter(outputFileName, finalJSONArray);
     }
     
     
     // DataGenerator fields go here
     private static Logger _logger = Logger.getLogger(ConfigurationValidator.class);
+    
     
     // DataGenerator methods go here
     private DataGenerator() {};
@@ -104,8 +109,8 @@ public class DataGenerator {
      *
      * @param fileName Filename to which to write.
      * @param jsonArray The JSONArray to interpret to file.
-     * @throws JSONException 
-     * @throws IOException 
+     * @throws JSONException If there is a problem in the formatting of the JSONArray
+     * @throws IOException If the output file cannot be accessed (permissions, disk full)
      */
     public static void JSONArrayWriter(String fileName, JSONArray jsonArray) throws JSONException, IOException {
         Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName)));
@@ -133,20 +138,6 @@ public class DataGenerator {
         out.close();
     }
     
-    /**
-     * Utility function to append one JSON array onto the end of another, NOT optimized, can be very slow depending
-     * on how big the array is to append
-     * 
-     * @param JSONArrayApendee The JSON array to append on to the end of.
-     * @param JSONArrayAppender The JSON array to append on to the appendee.
-     * @throws JSONException Should never happen.
-     */
-    public static void appendJSONArray(JSONArray JSONArrayApendee, JSONArray JSONArrayAppender) throws JSONException {
-        // Just loop and append one by one, can be slow
-        for (int j = 0; j < JSONArrayAppender.length(); ++j) {
-            JSONArrayApendee.put(JSONArrayAppender.get(j));
-        }
-    }
     
     /**
      * Generate one or more surveys starting day and working numberDays backwards.
@@ -154,13 +145,15 @@ public class DataGenerator {
      * @param root The XML root that defines the survey data types to generate.
      * @param numberDays The number of days of surveys to generate.
      * @param numberSurveysPerDay THe number of surveys to generate per day.
-     * @return A JSONArray containing all the generated surveys.
+     * @return A list of DataPoints containing the values and metadata.
      */
-    public JSONArray generateMultipleResponses(Element root, int numberDays, int numberSurveysPerDay) {
-        JSONArray totalResponseArray = new JSONArray();
+    public List<DataPoint> generateMultipleResponses(Element root, int numberDays, int numberSurveysPerDay) {
+        List<DataPoint> responseList = new ArrayList<DataPoint>();
         
+        // Hack this in here to get one response working for now
+        responseList.addAll(generateSingleResponse(root, new Date()));
         
-        return totalResponseArray;
+        return responseList;
     }
     
     /**
@@ -170,8 +163,8 @@ public class DataGenerator {
      * @param creationDate The date and time to use to create this survey.
      * @return A JSONArray containing the single created survey.
      */
-    public JSONArray generateSingleResponse(Element root, Date creationDate) {
-        JSONArray singleResponseArray = new JSONArray();
+    public List<DataPoint> generateSingleResponse(Element root, Date creationDate) {
+        List<DataPoint> responseList = new ArrayList<DataPoint>();
         
         Nodes surveys = root.query("//survey"); // get all surveys
         int numberOfSurveys = surveys.size();
@@ -242,7 +235,7 @@ public class DataGenerator {
             }
         }
         
-        return singleResponseArray;
+        return responseList;
     }
 
     private boolean checkCondition(String currentNodeCondition,

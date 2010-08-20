@@ -5,7 +5,7 @@ public class JSONGeneratorTypeFactory {
     private JSONGeneratorTypeFactory() {};
     
     // Grab the correct generator type
-    public JSONGeneratorType getGenerator(String generatorType) {
+    public static JSONGeneratorType getGenerator(String generatorType) {
         if (generatorType == null) {
             throw new IllegalArgumentException("cannot create a JSONGeneratorType for a missing generator type.");
         }
