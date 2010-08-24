@@ -52,17 +52,24 @@ public class GJVoidDepthFirst<A> implements GJVoidVisitor<A> {
    //
 
    /**
-    * f0 -> expr()
-    * f1 -> sentence_prime()
+    * f0 -> sentence()
+    * f1 -> <EOF>
     */
-   public void visit(sentence n, A argu) {
+   public void visit(start n, A argu) {
       n.f0.accept(this, argu);
       n.f1.accept(this, argu);
    }
 
    /**
-    * f0 -> conjunction() expr()
-    *       | <EOF>
+    * f0 -> expr() sentence_prime()
+    *       | "(" sentence() ")" sentence_prime()
+    */
+   public void visit(sentence n, A argu) {
+      n.f0.accept(this, argu);
+   }
+
+   /**
+    * f0 -> ( conjunction() sentence() sentence_prime() )?
     */
    public void visit(sentence_prime n, A argu) {
       n.f0.accept(this, argu);

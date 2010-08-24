@@ -42,17 +42,24 @@ public class DepthFirstVisitor implements Visitor {
    //
 
    /**
-    * f0 -> expr()
-    * f1 -> sentence_prime()
+    * f0 -> sentence()
+    * f1 -> <EOF>
     */
-   public void visit(sentence n) {
+   public void visit(start n) {
       n.f0.accept(this);
       n.f1.accept(this);
    }
 
    /**
-    * f0 -> conjunction() expr()
-    *       | <EOF>
+    * f0 -> expr() sentence_prime()
+    *       | "(" sentence() ")" sentence_prime()
+    */
+   public void visit(sentence n) {
+      n.f0.accept(this);
+   }
+
+   /**
+    * f0 -> ( conjunction() sentence() sentence_prime() )?
     */
    public void visit(sentence_prime n) {
       n.f0.accept(this);

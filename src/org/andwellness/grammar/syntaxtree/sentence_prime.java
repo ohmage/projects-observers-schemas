@@ -6,13 +6,12 @@ package org.andwellness.grammar.syntaxtree;
 
 /**
  * Grammar production:
- * f0 -> conjunction() expr()
- *       | <EOF>
+ * f0 -> ( conjunction() sentence() sentence_prime() )?
  */
 public class sentence_prime implements Node {
-   public NodeChoice f0;
+   public NodeOptional f0;
 
-   public sentence_prime(NodeChoice n0) {
+   public sentence_prime(NodeOptional n0) {
       f0 = n0;
    }
 

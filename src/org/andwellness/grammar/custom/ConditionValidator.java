@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.andwellness.grammar.parser.ConditionParser;
 import org.andwellness.grammar.parser.ParseException;
-import org.andwellness.grammar.syntaxtree.sentence;
+import org.andwellness.grammar.syntaxtree.start;
 
 /**
  * A validator for conditions that relies on classes generated from JavaCC and JTB to parse and retrieve data from condition
@@ -42,13 +42,13 @@ public final class ConditionValidator {
 	 * @throws ConditionParseException if the sentence does not conform to our grammar (see spec/condition-grammar.jj) 
 	 */
 	public static Map<String, List<String>> validate(String conditionSentence) {
-		sentence s = null;
+		start s = null;
 		
 		try {
 			
-			s = new ConditionParser(new StringReader(conditionSentence)).sentence(); // the JavaCC classes use some strange
-			                                                                         // programming conventions -- you create a
-			                                                                         // parser only to invoke static methods on it
+			s = new ConditionParser(new StringReader(conditionSentence)).start(); // the JavaCC classes use some strange
+			                                                                      // programming conventions -- you create a
+			                                                                      // parser only to invoke static methods on it
 			ConditionDepthFirst<Map<String, List<String>>> visitor = new ConditionDepthFirst<Map<String, List<String>>>();
 			Map<String, List<String>>map = new HashMap<String, List<String>>(); 
 			visitor.visit(s, map);

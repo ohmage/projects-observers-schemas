@@ -11,7 +11,7 @@ public interface ConditionParserConstants {
   /** End of File. */
   int EOF = 0;
   /** RegularExpression Id. */
-  int TEXT = 13;
+  int TEXT = 15;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -19,6 +19,8 @@ public interface ConditionParserConstants {
   /** Literal token values. */
   String[] tokenImage = {
     "<EOF>",
+    "\"(\"",
+    "\")\"",
     "\"==\"",
     "\"!=\"",
     "\"<\"",

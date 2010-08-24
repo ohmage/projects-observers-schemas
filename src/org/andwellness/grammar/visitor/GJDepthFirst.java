@@ -62,10 +62,10 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    //
 
    /**
-    * f0 -> expr()
-    * f1 -> sentence_prime()
+    * f0 -> sentence()
+    * f1 -> <EOF>
     */
-   public R visit(sentence n, A argu) {
+   public R visit(start n, A argu) {
       R _ret=null;
       n.f0.accept(this, argu);
       n.f1.accept(this, argu);
@@ -73,8 +73,17 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    }
 
    /**
-    * f0 -> conjunction() expr()
-    *       | <EOF>
+    * f0 -> expr() sentence_prime()
+    *       | "(" sentence() ")" sentence_prime()
+    */
+   public R visit(sentence n, A argu) {
+      R _ret=null;
+      n.f0.accept(this, argu);
+      return _ret;
+   }
+
+   /**
+    * f0 -> ( conjunction() sentence() sentence_prime() )?
     */
    public R visit(sentence_prime n, A argu) {
       R _ret=null;

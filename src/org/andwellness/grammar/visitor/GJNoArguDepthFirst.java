@@ -62,10 +62,10 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
    //
 
    /**
-    * f0 -> expr()
-    * f1 -> sentence_prime()
+    * f0 -> sentence()
+    * f1 -> <EOF>
     */
-   public R visit(sentence n) {
+   public R visit(start n) {
       R _ret=null;
       n.f0.accept(this);
       n.f1.accept(this);
@@ -73,8 +73,17 @@ public class GJNoArguDepthFirst<R> implements GJNoArguVisitor<R> {
    }
 
    /**
-    * f0 -> conjunction() expr()
-    *       | <EOF>
+    * f0 -> expr() sentence_prime()
+    *       | "(" sentence() ")" sentence_prime()
+    */
+   public R visit(sentence n) {
+      R _ret=null;
+      n.f0.accept(this);
+      return _ret;
+   }
+
+   /**
+    * f0 -> ( conjunction() sentence() sentence_prime() )?
     */
    public R visit(sentence_prime n) {
       R _ret=null;

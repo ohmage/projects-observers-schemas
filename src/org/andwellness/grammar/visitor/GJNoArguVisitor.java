@@ -27,14 +27,19 @@ public interface GJNoArguVisitor<R> {
    //
 
    /**
-    * f0 -> expr()
-    * f1 -> sentence_prime()
+    * f0 -> sentence()
+    * f1 -> <EOF>
+    */
+   public R visit(start n);
+
+   /**
+    * f0 -> expr() sentence_prime()
+    *       | "(" sentence() ")" sentence_prime()
     */
    public R visit(sentence n);
 
    /**
-    * f0 -> conjunction() expr()
-    *       | <EOF>
+    * f0 -> ( conjunction() sentence() sentence_prime() )?
     */
    public R visit(sentence_prime n);
 

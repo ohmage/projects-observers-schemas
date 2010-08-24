@@ -6,16 +6,14 @@ package org.andwellness.grammar.syntaxtree;
 
 /**
  * Grammar production:
- * f0 -> expr()
- * f1 -> sentence_prime()
+ * f0 -> expr() sentence_prime()
+ *       | "(" sentence() ")" sentence_prime()
  */
 public class sentence implements Node {
-   public expr f0;
-   public sentence_prime f1;
+   public NodeChoice f0;
 
-   public sentence(expr n0, sentence_prime n1) {
+   public sentence(NodeChoice n0) {
       f0 = n0;
-      f1 = n1;
    }
 
    public void accept(org.andwellness.grammar.visitor.Visitor v) {

@@ -27,14 +27,19 @@ public interface Visitor {
    //
 
    /**
-    * f0 -> expr()
-    * f1 -> sentence_prime()
+    * f0 -> sentence()
+    * f1 -> <EOF>
+    */
+   public void visit(start n);
+
+   /**
+    * f0 -> expr() sentence_prime()
+    *       | "(" sentence() ")" sentence_prime()
     */
    public void visit(sentence n);
 
    /**
-    * f0 -> conjunction() expr()
-    *       | <EOF>
+    * f0 -> ( conjunction() sentence() sentence_prime() )?
     */
    public void visit(sentence_prime n);
 

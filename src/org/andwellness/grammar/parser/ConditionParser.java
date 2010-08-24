@@ -6,43 +6,88 @@ import java.util.Vector;
 
 
 public class ConditionParser implements ConditionParserConstants {
+   public static void main(String[] args)
+   {
+      try
+      {
+         new ConditionParser(new java.io.StringReader(args[0])).start();
+         System.out.println("Syntax is okay");
+      }
+      catch (Throwable e)
+      {
+         e.printStackTrace();
+      }
+   }
+
+  static final public start start() throws ParseException {
+   sentence n0;
+   NodeToken n1;
+   Token n2;
+    n0 = sentence();
+    n2 = jj_consume_token(0);
+      n2.beginColumn++; n2.endColumn++;
+      n1 = JTBToolkit.makeNodeToken(n2);
+     {if (true) return new start(n0,n1);}
+    throw new Error("Missing return statement in function");
+  }
 
   static final public sentence sentence() throws ParseException {
-   expr n0;
-   sentence_prime n1;
-    n0 = expr();
-    n1 = sentence_prime();
-     {if (true) return new sentence(n0,n1);}
+   NodeChoice n0;
+   NodeSequence n1;
+   expr n2;
+   sentence_prime n3;
+   NodeSequence n4;
+   NodeToken n5;
+   Token n6;
+   sentence n7;
+   NodeToken n8;
+   Token n9;
+   sentence_prime n10;
+    if (jj_2_1(2)) {
+        n1 = new NodeSequence(2);
+      n2 = expr();
+        n1.addNode(n2);
+      n3 = sentence_prime();
+        n1.addNode(n3);
+        n0 = new NodeChoice(n1, 0);
+    } else if (jj_2_2(2)) {
+        n4 = new NodeSequence(4);
+      n6 = jj_consume_token(1);
+               n5 = JTBToolkit.makeNodeToken(n6);
+        n4.addNode(n5);
+      n7 = sentence();
+        n4.addNode(n7);
+      n9 = jj_consume_token(2);
+               n8 = JTBToolkit.makeNodeToken(n9);
+        n4.addNode(n8);
+      n10 = sentence_prime();
+        n4.addNode(n10);
+        n0 = new NodeChoice(n4, 1);
+    } else {
+      jj_consume_token(-1);
+      throw new ParseException();
+    }
+     {if (true) return new sentence(n0);}
     throw new Error("Missing return statement in function");
   }
 
   static final public sentence_prime sentence_prime() throws ParseException {
-   NodeChoice n0;
+   NodeOptional n0 = new NodeOptional();
    NodeSequence n1;
    conjunction n2;
-   expr n3;
-   NodeToken n4;
-   Token n5;
-    switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-    case 7:
-    case 8:
-        n1 = new NodeSequence(2);
+   sentence n3;
+   sentence_prime n4;
+    if (jj_2_3(2)) {
+        n1 = new NodeSequence(3);
       n2 = conjunction();
         n1.addNode(n2);
-      n3 = expr();
+      n3 = sentence();
         n1.addNode(n3);
-        n0 = new NodeChoice(n1, 0);
-      break;
-    case 0:
-      n5 = jj_consume_token(0);
-         n5.beginColumn++; n5.endColumn++;
-         n4 = JTBToolkit.makeNodeToken(n5);
-        n0 = new NodeChoice(n4, 1);
-      break;
-    default:
-      jj_la1[0] = jj_gen;
-      jj_consume_token(-1);
-      throw new ParseException();
+      n4 = sentence_prime();
+        n1.addNode(n4);
+        n0.addNode(n1);
+    } else {
+      ;
     }
      {if (true) return new sentence_prime(n0);}
     throw new Error("Missing return statement in function");
@@ -82,39 +127,31 @@ public class ConditionParser implements ConditionParserConstants {
    Token n10;
    NodeToken n11;
    Token n12;
-    switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-    case 1:
-      n2 = jj_consume_token(1);
+    if (jj_2_4(2)) {
+      n2 = jj_consume_token(3);
                 n1 = JTBToolkit.makeNodeToken(n2);
         n0 = new NodeChoice(n1, 0);
-      break;
-    case 2:
-      n4 = jj_consume_token(2);
+    } else if (jj_2_5(2)) {
+      n4 = jj_consume_token(4);
                 n3 = JTBToolkit.makeNodeToken(n4);
         n0 = new NodeChoice(n3, 1);
-      break;
-    case 3:
-      n6 = jj_consume_token(3);
+    } else if (jj_2_6(2)) {
+      n6 = jj_consume_token(5);
                n5 = JTBToolkit.makeNodeToken(n6);
         n0 = new NodeChoice(n5, 2);
-      break;
-    case 4:
-      n8 = jj_consume_token(4);
+    } else if (jj_2_7(2)) {
+      n8 = jj_consume_token(6);
                n7 = JTBToolkit.makeNodeToken(n8);
         n0 = new NodeChoice(n7, 3);
-      break;
-    case 5:
-      n10 = jj_consume_token(5);
+    } else if (jj_2_8(2)) {
+      n10 = jj_consume_token(7);
                  n9 = JTBToolkit.makeNodeToken(n10);
         n0 = new NodeChoice(n9, 4);
-      break;
-    case 6:
-      n12 = jj_consume_token(6);
+    } else if (jj_2_9(2)) {
+      n12 = jj_consume_token(8);
                  n11 = JTBToolkit.makeNodeToken(n12);
         n0 = new NodeChoice(n11, 5);
-      break;
-    default:
-      jj_la1[1] = jj_gen;
+    } else {
       jj_consume_token(-1);
       throw new ParseException();
     }
@@ -137,24 +174,207 @@ public class ConditionParser implements ConditionParserConstants {
    Token n2;
    NodeToken n3;
    Token n4;
-    switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-    case 7:
-      n2 = jj_consume_token(7);
+    if (jj_2_10(2)) {
+      n2 = jj_consume_token(9);
                  n1 = JTBToolkit.makeNodeToken(n2);
         n0 = new NodeChoice(n1, 0);
-      break;
-    case 8:
-      n4 = jj_consume_token(8);
+    } else if (jj_2_11(2)) {
+      n4 = jj_consume_token(10);
                 n3 = JTBToolkit.makeNodeToken(n4);
         n0 = new NodeChoice(n3, 1);
-      break;
-    default:
-      jj_la1[2] = jj_gen;
+    } else {
       jj_consume_token(-1);
       throw new ParseException();
     }
      {if (true) return new conjunction(n0);}
     throw new Error("Missing return statement in function");
+  }
+
+  static private boolean jj_2_1(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_1(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(0, xla); }
+  }
+
+  static private boolean jj_2_2(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_2(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(1, xla); }
+  }
+
+  static private boolean jj_2_3(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_3(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(2, xla); }
+  }
+
+  static private boolean jj_2_4(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_4(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(3, xla); }
+  }
+
+  static private boolean jj_2_5(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_5(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(4, xla); }
+  }
+
+  static private boolean jj_2_6(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_6(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(5, xla); }
+  }
+
+  static private boolean jj_2_7(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_7(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(6, xla); }
+  }
+
+  static private boolean jj_2_8(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_8(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(7, xla); }
+  }
+
+  static private boolean jj_2_9(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_9(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(8, xla); }
+  }
+
+  static private boolean jj_2_10(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_10(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(9, xla); }
+  }
+
+  static private boolean jj_2_11(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_11(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(10, xla); }
+  }
+
+  static private boolean jj_3_11() {
+    if (jj_scan_token(10)) return true;
+    return false;
+  }
+
+  static private boolean jj_3R_1() {
+    if (jj_3R_4()) return true;
+    if (jj_3R_5()) return true;
+    return false;
+  }
+
+  static private boolean jj_3_2() {
+    if (jj_scan_token(1)) return true;
+    if (jj_3R_2()) return true;
+    return false;
+  }
+
+  static private boolean jj_3_5() {
+    if (jj_scan_token(4)) return true;
+    return false;
+  }
+
+  static private boolean jj_3_10() {
+    if (jj_scan_token(9)) return true;
+    return false;
+  }
+
+  static private boolean jj_3_4() {
+    if (jj_scan_token(3)) return true;
+    return false;
+  }
+
+  static private boolean jj_3R_3() {
+    Token xsp;
+    xsp = jj_scanpos;
+    if (jj_3_10()) {
+    jj_scanpos = xsp;
+    if (jj_3_11()) return true;
+    }
+    return false;
+  }
+
+  static private boolean jj_3R_5() {
+    Token xsp;
+    xsp = jj_scanpos;
+    if (jj_3_4()) {
+    jj_scanpos = xsp;
+    if (jj_3_5()) {
+    jj_scanpos = xsp;
+    if (jj_3_6()) {
+    jj_scanpos = xsp;
+    if (jj_3_7()) {
+    jj_scanpos = xsp;
+    if (jj_3_8()) {
+    jj_scanpos = xsp;
+    if (jj_3_9()) return true;
+    }
+    }
+    }
+    }
+    }
+    return false;
+  }
+
+  static private boolean jj_3_1() {
+    if (jj_3R_1()) return true;
+    return false;
+  }
+
+  static private boolean jj_3R_4() {
+    if (jj_scan_token(TEXT)) return true;
+    return false;
+  }
+
+  static private boolean jj_3R_2() {
+    Token xsp;
+    xsp = jj_scanpos;
+    if (jj_3_1()) {
+    jj_scanpos = xsp;
+    if (jj_3_2()) return true;
+    }
+    return false;
+  }
+
+  static private boolean jj_3_9() {
+    if (jj_scan_token(8)) return true;
+    return false;
+  }
+
+  static private boolean jj_3_8() {
+    if (jj_scan_token(7)) return true;
+    return false;
+  }
+
+  static private boolean jj_3_7() {
+    if (jj_scan_token(6)) return true;
+    return false;
+  }
+
+  static private boolean jj_3_3() {
+    if (jj_3R_3()) return true;
+    if (jj_3R_2()) return true;
+    return false;
+  }
+
+  static private boolean jj_3_6() {
+    if (jj_scan_token(5)) return true;
+    return false;
   }
 
   static private boolean jj_initialized_once = false;
@@ -166,15 +386,20 @@ public class ConditionParser implements ConditionParserConstants {
   /** Next token. */
   static public Token jj_nt;
   static private int jj_ntk;
+  static private Token jj_scanpos, jj_lastpos;
+  static private int jj_la;
   static private int jj_gen;
-  static final private int[] jj_la1 = new int[3];
+  static final private int[] jj_la1 = new int[0];
   static private int[] jj_la1_0;
   static {
       jj_la1_init_0();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x181,0x7e,0x180,};
+      jj_la1_0 = new int[] {};
    }
+  static final private JJCalls[] jj_2_rtns = new JJCalls[11];
+  static private boolean jj_rescan = false;
+  static private int jj_gc = 0;
 
   /** Constructor with InputStream. */
   public ConditionParser(java.io.InputStream stream) {
@@ -194,7 +419,8 @@ public class ConditionParser implements ConditionParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 3; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 0; i++) jj_la1[i] = -1;
+    for (int i = 0; i < jj_2_rtns.length; i++) jj_2_rtns[i] = new JJCalls();
   }
 
   /** Reinitialise. */
@@ -208,7 +434,8 @@ public class ConditionParser implements ConditionParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 3; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 0; i++) jj_la1[i] = -1;
+    for (int i = 0; i < jj_2_rtns.length; i++) jj_2_rtns[i] = new JJCalls();
   }
 
   /** Constructor. */
@@ -225,7 +452,8 @@ public class ConditionParser implements ConditionParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 3; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 0; i++) jj_la1[i] = -1;
+    for (int i = 0; i < jj_2_rtns.length; i++) jj_2_rtns[i] = new JJCalls();
   }
 
   /** Reinitialise. */
@@ -235,7 +463,8 @@ public class ConditionParser implements ConditionParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 3; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 0; i++) jj_la1[i] = -1;
+    for (int i = 0; i < jj_2_rtns.length; i++) jj_2_rtns[i] = new JJCalls();
   }
 
   /** Constructor with generated Token Manager. */
@@ -251,7 +480,8 @@ public class ConditionParser implements ConditionParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 3; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 0; i++) jj_la1[i] = -1;
+    for (int i = 0; i < jj_2_rtns.length; i++) jj_2_rtns[i] = new JJCalls();
   }
 
   /** Reinitialise. */
@@ -260,7 +490,8 @@ public class ConditionParser implements ConditionParserConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 3; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 0; i++) jj_la1[i] = -1;
+    for (int i = 0; i < jj_2_rtns.length; i++) jj_2_rtns[i] = new JJCalls();
   }
 
   static private Token jj_consume_token(int kind) throws ParseException {
@@ -270,11 +501,44 @@ public class ConditionParser implements ConditionParserConstants {
     jj_ntk = -1;
     if (token.kind == kind) {
       jj_gen++;
+      if (++jj_gc > 100) {
+        jj_gc = 0;
+        for (int i = 0; i < jj_2_rtns.length; i++) {
+          JJCalls c = jj_2_rtns[i];
+          while (c != null) {
+            if (c.gen < jj_gen) c.first = null;
+            c = c.next;
+          }
+        }
+      }
       return token;
     }
     token = oldToken;
     jj_kind = kind;
     throw generateParseException();
+  }
+
+  static private final class LookaheadSuccess extends java.lang.Error { }
+  static final private LookaheadSuccess jj_ls = new LookaheadSuccess();
+  static private boolean jj_scan_token(int kind) {
+    if (jj_scanpos == jj_lastpos) {
+      jj_la--;
+      if (jj_scanpos.next == null) {
+        jj_lastpos = jj_scanpos = jj_scanpos.next = token_source.getNextToken();
+      } else {
+        jj_lastpos = jj_scanpos = jj_scanpos.next;
+      }
+    } else {
+      jj_scanpos = jj_scanpos.next;
+    }
+    if (jj_rescan) {
+      int i = 0; Token tok = token;
+      while (tok != null && tok != jj_scanpos) { i++; tok = tok.next; }
+      if (tok != null) jj_add_error_token(kind, i);
+    }
+    if (jj_scanpos.kind != kind) return true;
+    if (jj_la == 0 && jj_scanpos == jj_lastpos) throw jj_ls;
+    return false;
   }
 
 
@@ -307,16 +571,43 @@ public class ConditionParser implements ConditionParserConstants {
   static private java.util.List<int[]> jj_expentries = new java.util.ArrayList<int[]>();
   static private int[] jj_expentry;
   static private int jj_kind = -1;
+  static private int[] jj_lasttokens = new int[100];
+  static private int jj_endpos;
+
+  static private void jj_add_error_token(int kind, int pos) {
+    if (pos >= 100) return;
+    if (pos == jj_endpos + 1) {
+      jj_lasttokens[jj_endpos++] = kind;
+    } else if (jj_endpos != 0) {
+      jj_expentry = new int[jj_endpos];
+      for (int i = 0; i < jj_endpos; i++) {
+        jj_expentry[i] = jj_lasttokens[i];
+      }
+      jj_entries_loop: for (java.util.Iterator<?> it = jj_expentries.iterator(); it.hasNext();) {
+        int[] oldentry = (int[])(it.next());
+        if (oldentry.length == jj_expentry.length) {
+          for (int i = 0; i < jj_expentry.length; i++) {
+            if (oldentry[i] != jj_expentry[i]) {
+              continue jj_entries_loop;
+            }
+          }
+          jj_expentries.add(jj_expentry);
+          break jj_entries_loop;
+        }
+      }
+      if (pos != 0) jj_lasttokens[(jj_endpos = pos) - 1] = kind;
+    }
+  }
 
   /** Generate ParseException. */
   static public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[14];
+    boolean[] la1tokens = new boolean[16];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
     }
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 0; i++) {
       if (jj_la1[i] == jj_gen) {
         for (int j = 0; j < 32; j++) {
           if ((jj_la1_0[i] & (1<<j)) != 0) {
@@ -325,13 +616,16 @@ public class ConditionParser implements ConditionParserConstants {
         }
       }
     }
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 16; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;
         jj_expentries.add(jj_expentry);
       }
     }
+    jj_endpos = 0;
+    jj_rescan_token();
+    jj_add_error_token(0, 0);
     int[][] exptokseq = new int[jj_expentries.size()][];
     for (int i = 0; i < jj_expentries.size(); i++) {
       exptokseq[i] = jj_expentries.get(i);
@@ -345,6 +639,51 @@ public class ConditionParser implements ConditionParserConstants {
 
   /** Disable tracing. */
   static final public void disable_tracing() {
+  }
+
+  static private void jj_rescan_token() {
+    jj_rescan = true;
+    for (int i = 0; i < 11; i++) {
+    try {
+      JJCalls p = jj_2_rtns[i];
+      do {
+        if (p.gen > jj_gen) {
+          jj_la = p.arg; jj_lastpos = jj_scanpos = p.first;
+          switch (i) {
+            case 0: jj_3_1(); break;
+            case 1: jj_3_2(); break;
+            case 2: jj_3_3(); break;
+            case 3: jj_3_4(); break;
+            case 4: jj_3_5(); break;
+            case 5: jj_3_6(); break;
+            case 6: jj_3_7(); break;
+            case 7: jj_3_8(); break;
+            case 8: jj_3_9(); break;
+            case 9: jj_3_10(); break;
+            case 10: jj_3_11(); break;
+          }
+        }
+        p = p.next;
+      } while (p != null);
+      } catch(LookaheadSuccess ls) { }
+    }
+    jj_rescan = false;
+  }
+
+  static private void jj_save(int index, int xla) {
+    JJCalls p = jj_2_rtns[index];
+    while (p.gen > jj_gen) {
+      if (p.next == null) { p = p.next = new JJCalls(); break; }
+      p = p.next;
+    }
+    p.gen = jj_gen + xla - jj_la; p.first = token; p.arg = xla;
+  }
+
+  static final class JJCalls {
+    int gen;
+    Token first;
+    int arg;
+    JJCalls next;
   }
 
 }
