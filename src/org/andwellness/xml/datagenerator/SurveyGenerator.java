@@ -3,6 +3,7 @@ package org.andwellness.xml.datagenerator;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -42,10 +43,10 @@ public class SurveyGenerator {
      * datetime, lat/lon, and timezone.  
      * 
      * @param surveyNode An XML node that represents a survey.
-     * @param metadataTime The time we should use for now.
+     * @param creationTime The survey creation time, used as default datetime metadata
      * @return A List of DataPoints representing randomly generated responses to the survey.
      */
-    public List<DataPoint> generateSurvey(Node surveyNode, Date metadataTime) {
+    public List<DataPoint> generateSurvey(Node surveyNode, Date creationTime) {
         // Make sure this is a survey node
         String surveyNodeType = ((Element) surveyNode).getLocalName();
         if (!surveyNodeType.equals("survey")) {
@@ -57,7 +58,7 @@ public class SurveyGenerator {
         _logger.info("Creating survey id " + surveyId);
         
         // Create the initial metadata
-        surveyMetadata.put("datetime", ValueCreator.date(metadataTime));
+        surveyMetadata.put("datetime", ValueCreator.date(creationTime));
         surveyMetadata.put("tz", ValueCreator.tz());
         surveyMetadata.put("lat", new Double(ValueCreator.latitude()));
         surveyMetadata.put("lon", new Double(ValueCreator.longitude()));
@@ -85,8 +86,8 @@ public class SurveyGenerator {
                     
                     // Check the condition to see if this prompt should generate a data point
                     if (checkCondition(currentNodeCondition, dataPointList)) {
-                        DataPoint promptDataPoint = generatePrompt(currentNode);
-                        updateMetadata(promptDataPoint, surveyMetadata);
+                        DataPoint promptDataPoint = generatePrompt(currentNode, creationTime);
+                        updateMetadata(promptDataPoint, surveyMetadata, creationTime);
                         dataPointList.add(promptDataPoint);
                     }              
                 }
@@ -116,7 +117,7 @@ public class SurveyGenerator {
                     
                     // Check the condition to see if this repeatableSet should be run
                     if (checkCondition(currentNodeCondition, dataPointList)) {
-                        List<DataPoint> repeatableSetDataPointList = generateRepeatableSet(currentNode);
+                        List<DataPoint> repeatableSetDataPointList = generateRepeatableSet(currentNode, creationTime);
                         dataPointList.addAll(repeatableSetDataPointList);
                     }
                 }
@@ -134,11 +135,13 @@ public class SurveyGenerator {
      * randomly generated responses.  RepatableSets use their own metadata scope.
      * 
      * @param currentNode The repeatableSet to generate.
+     * @param creationTime A Date to represent the parent survey's creationTime
      * @return A List of DataPoints generated.
      */
-    private List<DataPoint> generateRepeatableSet(Node currentNode) {
+    private List<DataPoint> generateRepeatableSet(Node currentNode, Date creationTime) {
         String currentNodeId = currentNode.query("id").get(0).getValue();
         String currentNodeType = ((Element) currentNode).getLocalName();
+        // The repeatable set may need to update the metadata in its own scope
         @SuppressWarnings("unchecked")
         Map<String, Object> repeatableSetMetadata = (Map<String, Object>)((HashMap<String, Object>)surveyMetadata).clone();
         List<DataPoint> promptDataPointList = new ArrayList<DataPoint>();
@@ -146,7 +149,7 @@ public class SurveyGenerator {
         
         // Make sure this is a repeatable set
         if (!"repeatableSet".equals(currentNodeType)) {
-            throw new IllegalArgumentException("Need a repeatableSet, found instead a " + currentNodeType + " with id " + currentNodeId);
+            throw new IllegalArgumentException("Need a repeatableSet, instead found a node of type " + currentNodeType + " with id " + currentNodeId);
         }
         
         // Check out each prompt in the repeatable set
@@ -167,8 +170,8 @@ public class SurveyGenerator {
                 // Make sure the condition is valid
                 if (checkCondition(currentInnerCondition, promptDataPointList)) {
                     // Generate the prompt
-                    DataPoint promptDataPoint = generatePrompt(currentInnerNode);
-                    updateMetadata(promptDataPoint, repeatableSetMetadata);
+                    DataPoint promptDataPoint = generatePrompt(currentInnerNode, creationTime);
+                    updateMetadata(promptDataPoint, repeatableSetMetadata, creationTime);
                     promptDataPointList.add(promptDataPoint);
                 }
             }
@@ -181,18 +184,27 @@ public class SurveyGenerator {
         insertMetadata(promptDataPointList, repeatableSetMetadata);
         
         return promptDataPointList;
-        
     }
 
     /**
-     * Generate a single DataPoint from a single prompt.
+     * Generate a single DataPoint from a single prompt.  The DataPoint will only have an id and a value, no
+     * metadata will be added
      * 
      * @param currentNode The prompt node to generate.
+     * @param creationTime The time the prompt was created.
      * @return A DataPoint with the prompt response randomly generated based on the prompt properties and prompt type.
      */
-    private DataPoint generatePrompt(Node currentNode) {
-        // TODO Auto-generated method stub
-        return null;
+    private DataPoint generatePrompt(Node currentNode, Date creationTime) {
+        String promptType = currentNode.query("promptType").get(0).getValue();
+        DataPointCreator dataPointCreator = DataPointCreatorFactory.getDataPointCreator(promptType);
+        
+        DataPoint createdDataPoint = dataPointCreator.create(currentNode, creationTime);
+        
+        if (_logger.isDebugEnabled()) {
+            _logger.debug("Created a datapoint: " + createdDataPoint.toString());
+        }
+        
+        return createdDataPoint;
     }
 
     /**
@@ -200,8 +212,35 @@ public class SurveyGenerator {
      * 
      * @param dataPoint The datapoint to check.
      * @param metadata Update the metadata if the data point is labeled as metadata.
+     * @param creationTime Needed to translate hours_before_now data points into timestamps (creationTime is the "now")
      */
-    private void updateMetadata(DataPoint dataPoint, Map<String, Object> metadata) {
+    private void updateMetadata(DataPoint dataPoint, Map<String, Object> metadata, Date creationTime) {
+        String timestamp;
+        
+        // First check if this is of displayType metadata
+        if (!dataPoint.isMetadata()) {
+            if (_logger.isDebugEnabled()) {
+                _logger.debug("DataPoint " + dataPoint.getId() + " is not metadata.");
+                return;
+            }
+        }
+        
+        _logger.debug("DataPoint" + dataPoint.getId() + "is metadata.");
+        
+        // Only handle timestamps or hours_before_now for now, should not really be
+        // directly accessing prompt types here in case they change later
+        if (DataPoint.PromptType.timestamp.equals(dataPoint.getPromptType())) {
+            timestamp = (String) dataPoint.getValue();
+            metadata.put("datetime", timestamp);
+        }
+        
+        // Very hacky, need to translate hours_before_now into a time stamp, not sure where this
+        // should actually be done
+        if (DataPoint.PromptType.hours_before_now.equals(dataPoint.getPromptType())) {
+            String hoursBeforeNow = (String) dataPoint.getValue();
+            timestamp = ValueCreator.hours_before_date(creationTime, Integer.parseInt(hoursBeforeNow));
+            metadata.put("datetime", timestamp);
+        }
         
     }
     
@@ -221,11 +260,16 @@ public class SurveyGenerator {
      * Go through every data point in the list and update its metadata with the passed metadata.
      * 
      * @param dataPoints The data points to update.
-     * @param surveyMetadata2 
+     * @param metadata The metadata to use to update the datapoint. 
      */
     private void insertMetadata(List<DataPoint> dataPoints,
             Map<String, Object> metadata) {
-        // TODO Auto-generated method stub
+        
+        Iterator<DataPoint> dataPointsIterator = dataPoints.iterator();
+        while (dataPointsIterator.hasNext()) {
+            DataPoint currentDataPoint = dataPointsIterator.next();
+            currentDataPoint.updateMetadata(metadata);
+        }
         
     }    
 }

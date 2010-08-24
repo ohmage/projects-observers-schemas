@@ -173,83 +173,11 @@ public class DataGenerator {
         for (int x = 0; x < numberOfSurveys; x++) {            
             Node survey = surveys.get(x);
             
-            
-            
-            
-            
-            Nodes contentList = survey.query("contentList");
-            
-            int numberOfItemsInContentList = contentList.size();
-            
-            // Store a list of all prompt IDs in the survey that have been generated
-            Map<String, String> currentPromptResponses = new HashMap<String, String>();
-            
-            for(int y = 0; y < numberOfItemsInContentList; y++) {
-                // Content lists can contain conditions in prompts, repeatable sets, and prompts in repeatable sets 
-                
-                Nodes promptsAndRepeatableSets = contentList.get(y).query("prompt | repeatableSet");
-                int numberOfOuterElements = promptsAndRepeatableSets.size();
-                List<String> idList = new ArrayList<String>();
-                
-                for(int outerIndex = 0; outerIndex < numberOfOuterElements; outerIndex++) {
-                    
-                    Node currentNode = promptsAndRepeatableSets.get(outerIndex);
-                    String currentNodeId = currentNode.query("id").get(0).getValue(); 
-                    String currentNodeType = ((Element) currentNode).getLocalName();
-                    String currentNodeCondition = currentNode.query("condition").get(0).getValue();
-                    
-                    
-                    if("prompt".equals(currentNodeType)) {
-                        _logger.info("found a prompt with id " + currentNodeId);
-                        // Turn the prompt into JSON and append onto our array
-                        if (checkCondition(currentNodeCondition, currentPromptResponses)) {
-                            JSONArray singlePromptArray = generatePrompt(currentNode, creationDate);
-                            // Add to the current list of prompts generated
-                            //String responseValue = singlePromptArray.
-                            //currentPromptResponses.put(currentNodeId, responseValue);
-                            // Append the generated data on to the JSONArray
-                            //DataGenerator.appendJSONArray(singleResponseArray, singlePromptDataPoint.)
-                        }
-                        
-                    } else { 
-                        
-                         _logger.info("found a repeatableSet");
-                         
-                         //validateCondition(currentNode, outerIndex, currentId, currentIdIndex, idList);
-                         
-                         // Now check out each prompt in the repeatable set
-                         Nodes repeatableSetPromptNodes = currentNode.query("prompt");
-                         int numberOfInnerElements = repeatableSetPromptNodes.size();
-                         
-                         List<String> cumulativeIdList = new ArrayList<String>();
-                         cumulativeIdList.addAll(idList);  // copy the id list so it is not changed in the inner loop
-                         int cumulativeIndex = outerIndex; // make sure not to increment the outer index
-                                                 
-                         for(int i = 0; i < numberOfInnerElements; i++, cumulativeIndex++) {
-                             
-                             Node currentInnerNode = repeatableSetPromptNodes.get(i);
-                             String currentInnerId = currentNode.query("id").get(0).getValue();
-                             cumulativeIdList.add(currentInnerId);
-                             int cumulativeIdIndex = cumulativeIdList.indexOf(currentInnerId);
-                             
-                             //validateCondition(currentInnerNode, cumulativeIdIndex, currentInnerId, cumulativeIdIndex, cumulativeIdList);
-                         }
-                    }
-                }
-            }
+            // Create a new SurveyGenerator and create a list of DataPoints
+            SurveyGenerator surveyGenerator = new SurveyGenerator();
+            responseList.addAll(surveyGenerator.generateSurvey(survey, creationDate));            
         }
         
         return responseList;
-    }
-
-    private boolean checkCondition(String currentNodeCondition,
-            Map<String, String> currentPromptResponses) {
-        // TODO Implement condition checking, for now assume always true
-        return true;
-    }
-
-    private JSONArray generatePrompt(Node currentNode, Date creationDate) {
-        // TODO Auto-generated method stub
-        return null;
     }
 }

@@ -2,7 +2,9 @@ package org.andwellness.xml.datagenerator;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +59,15 @@ public class ValueCreator {
 // if specific timezones are added in the future, the epoch method will have to change so the value returned has the same tz
 //		sdf.setTimeZone(TimeZone.getTimeZone(tz));
 		return isoDateFormat.format(new Date(epoch(num_days_ago)));
+	}
+	
+	public static String hours_before_date(Date date, int hoursBeforeDate) {
+	    // Create a Date that is the passed Date minus the passed number of hours
+	    Calendar calendar = new GregorianCalendar();
+        calendar.setTime(date);
+        // Subtract the hours from the time
+        calendar.add(Calendar.HOUR_OF_DAY, hoursBeforeDate);
+        return ValueCreator.date(calendar.getTime());
 	}
 	
 	// Return a date that corresponds to the hours_before_now prompt type
