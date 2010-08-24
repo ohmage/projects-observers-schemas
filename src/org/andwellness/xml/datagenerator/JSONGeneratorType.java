@@ -1,8 +1,5 @@
 package org.andwellness.xml.datagenerator;
 
-
-import java.util.List;
-
 import org.json.JSONArray;
 
 /**
@@ -16,5 +13,5 @@ import org.json.JSONArray;
 public abstract class JSONGeneratorType implements DataPoint.ValueTranslator {
     public JSONGeneratorType() {};
     
-    public abstract JSONArray translateDataPointsToJsonArray(List<DataPoint> dataPointList);
+    public abstract JSONArray translateSurveyToJsonArray(Survey survey);
 }

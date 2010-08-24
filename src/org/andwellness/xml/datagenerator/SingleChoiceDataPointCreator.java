@@ -1,13 +1,11 @@
 package org.andwellness.xml.datagenerator;
 
-import java.util.Date;
-
 import nu.xom.Node;
 
 public class SingleChoiceDataPointCreator implements DataPointCreator {
 
     @Override
-    public DataPoint create(Node currentNode, Date creationTime) {
+    public DataPoint create(Node currentNode) {
         // Grab necessary values from the currentNode
         String displayType = currentNode.query("displayType").get(0).getValue();
         String nodeId = currentNode.query("id").get(0).getValue();

@@ -56,11 +56,9 @@ public class InJSONGeneratorType extends JSONGeneratorType {
     }
 
     @Override
-    public JSONArray translateDataPointsToJsonArray(
-            List<DataPoint> dataPointList) {
+    public JSONArray translateSurveyToJsonArray(Survey survey) {
         // TODO Auto-generated method stub
         return null;
     }
-
     
 }

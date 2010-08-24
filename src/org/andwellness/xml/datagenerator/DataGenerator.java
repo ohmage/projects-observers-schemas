@@ -7,6 +7,7 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import nu.xom.Builder;
@@ -18,7 +19,6 @@ import nu.xom.ParsingException;
 import nu.xom.ValidityException;
 
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -82,11 +82,20 @@ public class DataGenerator {
         
         // Create a new generator and generate a list of DataPoints
         DataGenerator generator = new DataGenerator();
-        List<DataPoint> surveyArray = generator.generateMultipleResponses(root, numberDays, numberSurveysPerDay);
+        List<Survey> surveyList = generator.generateMultipleResponses(root, numberDays, numberSurveysPerDay);
         
-        // Translate the list of data points to JSON based on the passed in argument jsonType
+        // Translate the list of Surveys to JSON based on the passed in argument jsonType
         JSONGeneratorType jsonGenerator = JSONGeneratorTypeFactory.getGenerator(jsonType);
-        JSONArray finalJSONArray = jsonGenerator.translateDataPointsToJsonArray(surveyArray);
+        JSONArray finalJSONArray = new JSONArray();
+        
+        Iterator<Survey> surveyListIterator = surveyList.iterator();
+        while (surveyListIterator.hasNext()) {
+            Survey survey = surveyListIterator.next();
+            
+            JSONArray surveyJSONArray = jsonGenerator.translateSurveyToJsonArray(survey);
+            appendJSONArray(finalJSONArray, surveyJSONArray);
+        }
+        
         
         // Output to a file
         DataGenerator.JSONArrayWriter(outputFileName, finalJSONArray);
@@ -142,10 +151,10 @@ public class DataGenerator {
      * @param root The XML root that defines the survey data types to generate.
      * @param numberDays The number of days of surveys to generate.
      * @param numberSurveysPerDay THe number of surveys to generate per day.
-     * @return A list of DataPoints containing the values and metadata.
+     * @return A list of Surveys.
      */
-    public List<DataPoint> generateMultipleResponses(Element root, int numberDays, int numberSurveysPerDay) {
-        List<DataPoint> responseList = new ArrayList<DataPoint>();
+    public List<Survey> generateMultipleResponses(Element root, int numberDays, int numberSurveysPerDay) {
+        List<Survey> responseList = new ArrayList<Survey>();
         
         // Hack this in here to get one response working for now
         responseList.addAll(generateSingleResponse(root, new Date()));
@@ -158,10 +167,10 @@ public class DataGenerator {
      * 
      * @param root The XML root that defines the survey data types to generate.
      * @param creationDate The date and time to use to create this survey.
-     * @return A JSONArray containing the single created survey.
+     * @return A Survey with the created data points.
      */
-    public List<DataPoint> generateSingleResponse(Element root, Date creationDate) {
-        List<DataPoint> responseList = new ArrayList<DataPoint>();
+    public List<Survey> generateSingleResponse(Element root, Date creationDate) {
+        List<Survey> generatedSurveys = new ArrayList<Survey>();
         
         Nodes surveys = root.query("//survey"); // get all surveys
         int numberOfSurveys = surveys.size();
@@ -170,11 +179,30 @@ public class DataGenerator {
         for (int x = 0; x < numberOfSurveys; x++) {            
             Node survey = surveys.get(x);
             
-            // Create a new SurveyGenerator and create a list of DataPoints
+            // Create a new SurveyGenerator and create the survey
             SurveyGenerator surveyGenerator = new SurveyGenerator();
-            responseList.addAll(surveyGenerator.generateSurvey(survey, creationDate));            
+            generatedSurveys.add(surveyGenerator.generateSurvey(survey, creationDate));
         }
         
-        return responseList;
+        return generatedSurveys;
+    }
+    
+    /**
+     * Utility function to append on JSONArray on to another.  Not at all efficient, does a one by one
+     * copy from one array to the other.
+     * 
+     * @param appendee Append onto this array.
+     * @param appender Append from this array.
+     */
+    private static void appendJSONArray(JSONArray appendee, JSONArray appender) {
+        int appenderSize = appender.length();
+        for (int i = 0; i < appenderSize; ++i) {
+            try {
+                appendee.put(appender.get(i));
+            // This should never break, but if it does just continue on
+            } catch (JSONException e) {
+                continue;
+            }
+        }
     }
 }

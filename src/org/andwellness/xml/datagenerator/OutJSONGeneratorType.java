@@ -10,8 +10,7 @@ import org.json.JSONArray;
 
 public class OutJSONGeneratorType extends JSONGeneratorType {
     @Override
-    public JSONArray translateDataPointsToJsonArray(
-            List<DataPoint> dataPointList) {
+    public JSONArray translateSurveyToJsonArray(Survey survey) {
         JSONArray translatedJSON = new JSONArray();
         
         // Loop over the DataPoints, set myself as translator, translate the value, then add to the JSON array
@@ -83,6 +82,11 @@ public class OutJSONGeneratorType extends JSONGeneratorType {
     @Override
     public List<String> translateHoursBeforeNow(Integer number) {
         List<String> translatedValues = new ArrayList<String>();
+        
+        // hoursBeforeNow data points keep the hours before the creation date
+        
+        
+        translatedValues.add("test");
         
         return translatedValues;
     }

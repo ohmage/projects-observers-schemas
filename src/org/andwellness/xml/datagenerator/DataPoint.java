@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DataPoint {
+public class DataPoint implements Response {
     // List of data fields in a data point, add more if necessary for extended data points
     private String id;
     private Object value;  
