@@ -2,12 +2,25 @@ PARSER_BEGIN( ConditionParser )
 package org.andwellness.grammar.parser;
 public class ConditionParser {
 
+     public static void main(String[] args) {
+        
+        try {
+            new ConditionParser(new java.io.StringReader(args[0])).start();
+            System.out.println("Syntax is okay");
+        } catch (Throwable e) {
+            // Catching Throwable is ugly but JavaCC throws Error objects!
+            e.printStackTrace();
+        }
+    }
+
 }
 PARSER_END( ConditionParser )
 
-void sentence() : {} { expr() sentence_prime() }
+void start() : {} { sentence() <EOF> }
 
-void sentence_prime() : {} { conjunction() expr() | < EOF >}  
+void sentence() : {} { expr() sentence_prime() | "(" sentence() ")"  sentence_prime() }
+
+void sentence_prime() : {} { (conjunction() sentence() sentence_prime())? }  
 
 void expr() : {} { id() condition() value() }
 
