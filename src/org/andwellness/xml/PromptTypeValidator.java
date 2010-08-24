@@ -2,6 +2,8 @@ package org.andwellness.xml;
 
 import nu.xom.Node;
 
+import org.andwellness.grammar.custom.ConditionValuePair;
+
 /**
  * Prompt types have collections of properties that (1) have unique requirements and (2) place bounds on values that are allowed in
  * conditions. 
@@ -19,5 +21,5 @@ public interface PromptTypeValidator {
 	/**
 	 * Determine if the provided value is valid for the type instance.
 	 */
-	public void validateValue(String value);
+	public void validateValue(ConditionValuePair pair);
 }

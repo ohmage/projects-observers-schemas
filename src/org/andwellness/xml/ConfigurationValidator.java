@@ -28,6 +28,7 @@ import nu.xom.ValidityException;
 
 import org.andwellness.grammar.custom.ConditionParseException;
 import org.andwellness.grammar.custom.ConditionValidator;
+import org.andwellness.grammar.custom.ConditionValuePair;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.xml.sax.InputSource;
@@ -84,16 +85,25 @@ public class ConfigurationValidator {
 		Element root = document.getRootElement();
 		
 		validator.checkIdUniqueness(root);
-		_logger.info("id uniqueness check successful");
+		_logger.info("id uniqueness check successful: all ids in the configuration are unique");
 		
 		validator.checkPromptTypes(root);
-		_logger.info("prompt type check successful");
+		_logger.info("prompt type check successful: all prompts have valid prompt types");
 		
 		validator.checkPromptTypeProperties(root);
-		_logger.info("prompt type values check successful");
+		_logger.info("prompt property configuration check successful: all prompts have valid configurations for their respective types");
 				
 		validator.checkConditions(root);		
-		_logger.info("conditions check successful");
+		_logger.info("conditions check successful: all conditions are valid");
+		
+		validator.checkSurveySpecialRules(root);
+		_logger.info("surveys check successful: all special survey config rules passed");
+		
+		validator.checkRepeatableSetSpecialRules(root);
+		_logger.info("repeatableSets check successful: all special repeatableSet config rules passed");
+		
+		validator.checkPromptSpecialRules(root);
+		_logger.info("prompts check successful: all special prompt config rules passed");
 		
 		_logger.info("configuration validation successful");
 	}
@@ -104,6 +114,102 @@ public class ConfigurationValidator {
 	
 	private ConfigurationValidator() {
 		_promptTypeValidatorMap = new HashMap<String, PromptTypeValidator>();
+	}
+	
+	/**
+	 * Validates dependencies between elements in each survey.
+	 */
+	private void checkSurveySpecialRules(Node root) {
+		Nodes surveys = root.query("//survey"); // get all surveys
+		int size = surveys.size();
+		
+		for(int i = 0; i < size; i++) {
+				
+			if(Boolean.valueOf(surveys.get(i).query("showSummary").get(0).getValue())) { // summaryText and editSummary must exist
+				
+				// the schema specifies a non-empty string if summaryText exists, so just check for its existence
+				if(surveys.get(i).query("summaryText").size() < 1) {
+					
+					throw new IllegalStateException("Invalid survey config for survey id " 
+						+ surveys.get(i).query("id").get(0).getValue() + ". summaryText is required if showSummary is true");
+				}
+				
+				// the schema specifies a boolean if editSummary exists, so just check for its existence
+				if(surveys.get(i).query("editSummary").size() < 1) {
+					
+					throw new IllegalStateException("Invalid survey config for survey id " 
+						+ surveys.get(i).query("id").get(0).getValue() + ". editSummary is required if showSummary is true");
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Validates dependencies between elements in each repeatableSet.
+	 */
+	private void checkRepeatableSetSpecialRules(Node root) {
+		Nodes repeatableSets = root.query("//repeatableSet");
+		int size = repeatableSets.size();
+		
+		for(int i = 0; i < size; i++) {
+			
+			if(Boolean.valueOf(repeatableSets.get(i).query("terminationSkipEnabled").get(0).getValue())) { // terminationSkipLabel
+				                                                                                           // must exist
+				
+				if(repeatableSets.get(i).query("terminationSkipLabel").size() < 1) {
+					
+					throw new IllegalStateException("Invalid repeatableSet config for repeatableSet id " 
+							+ repeatableSets.get(i).query("id").get(0).getValue() + ". terminationSkipLabel is required if "
+							+ "terminationSkipEnabled is true");
+				}
+			}	
+		}
+	}
+	
+	
+	/**
+	 * Validates dependencies between elements in each prompt and dependencies between a prompt and its parent repeatableSet or 
+	 * survey.
+	 */
+	private void checkPromptSpecialRules(Node root) {
+		Nodes prompts = root.query("//prompt");
+		int size = prompts.size();
+		
+		for(int i = 0; i < size; i++) {
+			
+			if(Boolean.valueOf(prompts.get(i).query("skippable").get(0).getValue())) { // skipLabel must exist
+				
+				if(prompts.get(i).query("skipLabel").size() < 1) {
+					
+					throw new IllegalStateException("Invalid prompt config for prompt id " 
+							+ prompts.get(i).query("id").get(0).getValue() + ". skipLabel is required if "
+							+ "skippable is true");
+				}
+			}
+			
+			boolean showSummary = false;
+			
+			// check showSummary on the parent survey
+			if("survey".equals(((Element) prompts.get(i).getParent().getParent()).getLocalName())) {
+				
+				showSummary = Boolean.valueOf(prompts.get(i).getParent().getParent().query("showSummary").get(0).getValue());
+				
+				
+			} else { // the parent is a repeatableSet so unwind 4 levels. the backwards path is prompt/prompts/repeatableSet/content_list/survey 
+				
+				showSummary = Boolean.valueOf(prompts.get(i).query("../../../..").get(0).query("showSummary").get(0).getValue());
+			}
+			
+			if(showSummary) {
+				
+				if(prompts.get(i).query("abbreviatedText").size() < 1) {
+					
+					throw new IllegalStateException("Invalid prompt config for prompt id " 
+							+ prompts.get(i).query("id").get(0).getValue() + ". abbreviatedText is required if "
+							+ "showSummary on the parent survey is true");
+				}
+			}
+		}
 	}
 	
 	/**
@@ -181,16 +287,16 @@ public class ConfigurationValidator {
 					
 					if("prompt".equals(currentNodeType)) {
 						
+						_logger.info("checking for a condition for prompt: " + currentId);
 						validateCondition(currentNode, outerIndex, currentId, currentIdIndex, idList);
 						
 					} else { 
 						
-						 _logger.info("found a repeatableSet");
-						 
+						 _logger.info("checking a for a condition for repeatableSet: " + currentId);
 						 validateCondition(currentNode, outerIndex, currentId, currentIdIndex, idList);
 						 
 						 // Now check out each prompt in the repeatable set
-						 Nodes repeatableSetPromptNodes = currentNode.query("prompt");
+						 Nodes repeatableSetPromptNodes = currentNode.query("prompts/prompt");
 						 int numberOfInnerElements = repeatableSetPromptNodes.size();
 						 
 						 List<String> cumulativeIdList = new ArrayList<String>();
@@ -198,9 +304,9 @@ public class ConfigurationValidator {
 						 int cumulativeIndex = outerIndex; // make sure not to increment the outer index
 						 						 
 						 for(int i = 0; i < numberOfInnerElements; i++, cumulativeIndex++) {
-							 
 							 Node currentInnerNode = repeatableSetPromptNodes.get(i);
-							 String currentInnerId = currentNode.query("id").get(0).getValue();
+							 String currentInnerId = currentInnerNode.query("id").get(0).getValue();
+							 _logger.info("checking condition for a prompt inside of a repeatableSet: " + currentInnerId);
 							 cumulativeIdList.add(currentInnerId);
 							 int cumulativeIdIndex = cumulativeIdList.indexOf(currentInnerId);
 							 
@@ -223,8 +329,8 @@ public class ConfigurationValidator {
 			String condition = conditionNodes.get(0).getValue();
 			
 			if(! "".equals(condition)) { // don't validate an empty node
-		
-				_logger.info("validating condition for id: " + currentId);
+				
+				_logger.info("validating condition [id: " + currentId + "][condition: " + condition + "]");
 				
 				if(0 == surveyIndex) {
 					throw new IllegalArgumentException("a condition is not allowed on the first prompt of a " +
@@ -233,10 +339,10 @@ public class ConfigurationValidator {
 				
 				try {
 					// check condition syntax
-					Map<String, List<String>> idValuesMap = ConditionValidator.validate(condition);
+					Map<String, List<ConditionValuePair>> idPairsMap = ConditionValidator.validate(condition);
 					
 					// check each id to make sure it references a prompt previous to the current prompt
-					Set<String> keySet = idValuesMap.keySet();
+					Set<String> keySet = idPairsMap.keySet();
 					Iterator<String> keySetIterator = keySet.iterator();
 					
 					while(keySetIterator.hasNext()) {
@@ -245,12 +351,12 @@ public class ConfigurationValidator {
 							throw new IllegalStateException("invalid id in condition for prompt id: " + currentId);
 						}
 						
-						// check each value 
-						List<String> values = idValuesMap.get(key);
+						// check each condition-value pair
+						List<ConditionValuePair> pairs = idPairsMap.get(key);
 						PromptTypeValidator promptTypeValidator = _promptTypeValidatorMap.get(key);
 						
-						for(String value : values) {
-							promptTypeValidator.validateValue(value);
+						for(ConditionValuePair pair : pairs) {
+							promptTypeValidator.validateValue(pair);
 						}
 					}
 					
@@ -259,7 +365,14 @@ public class ConfigurationValidator {
 					_logger.error("invalid condition at id: " + currentId);
 					throw cpe;
 				}
+				
+			} else {
+				
+				_logger.info("no condition found");
 			}
+		} else {
+			
+			_logger.info("no condition found");
 		}
 	}
 	
@@ -289,7 +402,7 @@ public class ConfigurationValidator {
 			// Get the prompt type and then validate the configured properties
 			Node promptNode = prompts.get(i);
 			String promptId = promptNode.query("id").get(0).getValue();
-			_logger.info("validating prompt id: " + promptId);
+			_logger.info("validating property configuration for prompt id: " + promptId);
 			String promptType = promptNode.query("promptType").get(0).getValue();
 			PromptTypeValidator v = PromptTypeValidatorFactory.getValidator(promptType);
 			v.validateAndSetConfiguration(promptNode);

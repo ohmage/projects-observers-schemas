@@ -30,7 +30,7 @@ public final class ConditionValidator {
 	 * double-quoted string.
 	 */
 	public static void main(String args[]) throws IOException, ConditionParseException {
-		Map<String, List<String>> map = validate(args[0]);
+		Map<String, List<ConditionValuePair>> map = validate(args[0]);
 		System.out.println(map);
 	}
 	
@@ -41,7 +41,7 @@ public final class ConditionValidator {
 	 * @return Map of id-value list pairs for each id-operation-value in the provided sentence
 	 * @throws ConditionParseException if the sentence does not conform to our grammar (see spec/condition-grammar.jj) 
 	 */
-	public static Map<String, List<String>> validate(String conditionSentence) {
+	public static Map<String, List<ConditionValuePair>> validate(String conditionSentence) {
 		start s = null;
 		
 		try {
@@ -49,8 +49,9 @@ public final class ConditionValidator {
 			s = new ConditionParser(new StringReader(conditionSentence)).start(); // the JavaCC classes use some strange
 			                                                                      // programming conventions -- you create a
 			                                                                      // parser only to invoke static methods on it
-			ConditionDepthFirst<Map<String, List<String>>> visitor = new ConditionDepthFirst<Map<String, List<String>>>();
-			Map<String, List<String>>map = new HashMap<String, List<String>>(); 
+			ConditionDepthFirst<Map<String, List<ConditionValuePair>>> visitor 
+				= new ConditionDepthFirst<Map<String, List<ConditionValuePair>>>();
+			Map<String, List<ConditionValuePair>>map = new HashMap<String, List<ConditionValuePair>>(); 
 			visitor.visit(s, map);
 			return map;
 			

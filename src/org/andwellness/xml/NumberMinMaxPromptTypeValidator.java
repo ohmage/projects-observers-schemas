@@ -3,6 +3,8 @@ package org.andwellness.xml;
 import nu.xom.Node;
 import nu.xom.Nodes;
 
+import org.andwellness.grammar.custom.ConditionValuePair;
+
 /**
  * Validates the prompt types number and hours_before now, which both require a min and max property that must be a valid integer.
  * 
@@ -59,17 +61,17 @@ public class NumberMinMaxPromptTypeValidator extends AbstractNumberPromptTypeVal
 	 * Checks values (from, e.g., conditions) against the min and max defined by this instance. 
 	 */
 	@Override
-	public void validateValue(String value) {
-		if(! isSkipped(value)) {
+	public void validateValue(ConditionValuePair pair) {
+		if(! isSkipped(pair.getValue())) {
 			int v = 0;
 			try {
-				v = Integer.parseInt(value);
+				v = Integer.parseInt(pair.getValue());
 			} catch (NumberFormatException nfe) {
-				throw new IllegalArgumentException("not a number: " + value); 
+				throw new IllegalArgumentException("not a number: " + pair.getValue()); 
 			}
 			if(v < _min || v > _max) {
 				throw new IllegalArgumentException("number or hours_before_now prompt value of out range. min=" + _min + ", max=" +
-				    _max + ", value=" + value);
+				    _max + ", value=" + pair.getValue());
 			}
 		}
 	}

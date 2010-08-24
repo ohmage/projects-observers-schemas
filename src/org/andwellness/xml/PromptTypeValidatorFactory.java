@@ -43,19 +43,16 @@ public class PromptTypeValidatorFactory {
 			
 			return new NumberMinMaxPromptTypeValidator();
 			
+		} else if ("single_choice".equals(promptType) || "single_choice_custom".equals(promptType) 
+				|| "multi_choice".equals(promptType) || "multi_choice_custom".equals(promptType) ) {
+								
+			return new ChoicePromptTypeValidator();
 			
-		} else if ("single_choice".equals(promptType) || "multi_choice".equals(promptType)
-				   || "single_choice_custom".equals(promptType) || "multi_choice_custom".equals(promptType)) {
-			
-			// for condition validation the custom types are treated the same way as the non-custom
-			
-			return new SingleAndMultiChoicePromptTypeValidator();
-			
-		} else if("text".equals("promptType"))  {
+		} else if("text".equals(promptType))  {
 		
 			return new TextMinMaxPromptTypeValidator();
 		
-		} else if("photo".equals("promptType"))  {
+		} else if("photo".equals(promptType))  {
 		
 			return new PhotoPromptTypeValidator();
 			

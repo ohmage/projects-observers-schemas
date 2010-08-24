@@ -3,6 +3,8 @@ package org.andwellness.xml;
 import nu.xom.Node;
 import nu.xom.Nodes;
 
+import org.andwellness.grammar.custom.ConditionValuePair;
+
 /**
  * Validates the text prompt type.
  * 
@@ -57,9 +59,9 @@ public class TextMinMaxPromptTypeValidator extends AbstractNumberPromptTypeValid
 	 * Only allowed value here is SKIPPED.
 	 */
 	@Override
-	public void validateValue(String value) {
-		if(! isSkipped(value)) {
-			throw new IllegalArgumentException("invalid value for photo prompt type: " + value);
+	public void validateValue(ConditionValuePair pair) {
+		if(! isSkipped(pair.getValue())) {
+			throw new IllegalArgumentException("invalid value for photo prompt type: " + pair.getValue());
 		}
 	}
 }

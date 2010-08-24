@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.andwellness.grammar.syntaxtree.NodeToken;
+import org.andwellness.grammar.syntaxtree.condition;
 import org.andwellness.grammar.syntaxtree.id;
 import org.andwellness.grammar.syntaxtree.value;
 import org.andwellness.grammar.visitor.GJVoidDepthFirst;
@@ -15,7 +17,9 @@ import org.andwellness.grammar.visitor.GJVoidDepthFirst;
  * @param <A> must be a Map<String, List<String>>
  */
 public class ConditionDepthFirst<A> extends GJVoidDepthFirst<A> {
-	public String _currentId;
+	// private static Logger _logger = Logger.getLogger(ConditionDepthFirst.class);
+	private String _currentId;
+	private ConditionValuePair _currentPair;
 	
     /**
      * f0 -> <TEXT>
@@ -26,6 +30,8 @@ public class ConditionDepthFirst<A> extends GJVoidDepthFirst<A> {
     @Override
     public void visit(id n, A map) {
     	
+    	// Lazy null check only occurs on the id node because if it is non-null here, it will be non-null throughout the rest
+    	// of the visitor process
     	if(! (map instanceof Map<?, ?>)) {
     		throw new IllegalArgumentException("argu parameter must be a Map");
     	}
@@ -43,7 +49,24 @@ public class ConditionDepthFirst<A> extends GJVoidDepthFirst<A> {
     	
         n.f0.accept(this, map);
     }
-   
+    
+    /**
+     * f0 -> "=="
+     *       | "!="
+     *       | "<"
+     *       | ">"
+     *       | "<="
+     *       | ">="
+     */
+    public void visit(condition n, A map) {
+        String tokenImage = (((NodeToken) n.f0.choice).tokenImage); // ugly cast, but it's the only way to get the value
+        ConditionValuePair pair = new ConditionValuePair();
+        pair.setCondition(tokenImage);
+        _currentPair = pair;
+         
+        n.f0.accept(this, map);
+    }
+    
     /**
      * f0 -> <TEXT>
      * 
@@ -52,16 +75,9 @@ public class ConditionDepthFirst<A> extends GJVoidDepthFirst<A> {
      * argu must be a non-null Map. 
      */
     public void visit(value n, A map) {
-    	
-    	if(! (map instanceof Map<?, ?>)) {
-    		throw new IllegalArgumentException("argu parameter must be a Map");
-    	}
-    	if(null == map) {
-    		throw new IllegalArgumentException("argu parameter must be non-null");
-    	}
-   	
-    	List<String> valueList = ((Map<String, List<String>>) map).get(_currentId);
-    	valueList.add(n.f0.tokenImage);
+    	List<ConditionValuePair> valueList = ((Map<String, List<ConditionValuePair>>) map).get(_currentId);
+    	_currentPair.setValue(n.f0.tokenImage);
+    	valueList.add(_currentPair);
     	
         n.f0.accept(this, map);
     }

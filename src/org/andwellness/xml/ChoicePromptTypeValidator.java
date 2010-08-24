@@ -8,15 +8,17 @@ import java.util.Set;
 import nu.xom.Node;
 import nu.xom.Nodes;
 
+import org.andwellness.grammar.custom.ConditionValuePair;
+
 /**
- * Single and multi choice (custom and non-custom) prompt type validator. 
+ * Single and multi-choice (custom and non-custom) prompt type validator. 
  * 
  * @author selsky
  */
-public class SingleAndMultiChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator {
+public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator {
 	private List<Integer> _choices;
 	
-	public SingleAndMultiChoicePromptTypeValidator() {
+	public ChoicePromptTypeValidator() {
 		_choices = new ArrayList<Integer>();
 	}
 	
@@ -50,13 +52,20 @@ public class SingleAndMultiChoicePromptTypeValidator extends AbstractNumberPromp
 	}
 
 	@Override
-	public void validateValue(String value) {
-		if(! isSkipped(value)) {
-			int i = getValidPosInteger(value);
+	public void validateValue(ConditionValuePair pair) {
+		if(! isSkipped(pair.getValue())) {
+			int i = getValidPosInteger(pair.getValue());
 			
 			if(! _choices.contains(i)) {
-				throw new IllegalArgumentException("value not found in set of choices: " + value);
+				throw new IllegalArgumentException("value not found in set of choices: " + pair.getValue());
 			} 
+		}
+		
+		// the only conditions allowed are == and !=
+		String condition = pair.getCondition();
+		
+		if(! "==".equals(condition) && ! "!=".equals(condition)) {
+			throw new IllegalArgumentException("invalid condition in multi or single choice prompt: " + pair.getCondition());
 		}
 	}
 }
