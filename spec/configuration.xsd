@@ -40,7 +40,7 @@
   <xs:element name="description" type="NonEmptyString"/>
   <xs:element name="introText" type="NonEmptyString"/>
   <xs:element name="submitText" type="NonEmptyString"/>
-  <xs:element name="showSummary" type="NonEmptyString"/>
+  <xs:element name="showSummary" type="xs:boolean"/>
   <xs:element name="editSummary" type="xs:boolean"/>
   <xs:element name="summaryText" type="NonEmptyString"/>
   <xs:element name="anytime" type="xs:boolean"/>
@@ -109,6 +109,7 @@
         <xs:element ref="default" minOccurs="0"/>
         <xs:element ref="condition" minOccurs="0"/>
         <xs:element ref="skippable"/>
+        <xs:element ref="skipLabel" minOccurs="0"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
@@ -138,6 +139,7 @@
   <xs:element name="default" type="NonEmptyString"/>
   <xs:element name="skippable" type="xs:boolean"/>
   <xs:element name="condition" type="NonEmptyString"/>
+  <xs:element name="skipLabel" type="NonEmptyString"/>
   <xs:simpleType name="NonEmptyString">
     <xs:restriction base="xs:string">
       <xs:minLength value="1" />
