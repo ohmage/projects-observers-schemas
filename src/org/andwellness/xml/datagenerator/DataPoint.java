@@ -20,7 +20,7 @@ public class DataPoint {
     
     // Possible display types
     public static enum DisplayType {
-        category, measurement, event, counter 
+        category, measurement, event, counter, metadata
     }
     
     // Possible prompt types
@@ -38,11 +38,6 @@ public class DataPoint {
         public List<Map<String, Object>> translateSingleChoice(Map<String,String> singleChoiceValue);
         public List<Map<String, Object>> translateSingleChoiceCustom(Map<String,String> singleChoiceValue);
         public List<Map<String, Object>> translateMultiChoiceCustom(List<Map<String,String>> multiChoiceValue);
-    }
-    
-    // Public interface that all metadata containers must implement!
-    public interface Metadata {
-        public Map<String, Object> getMetadata();
     }
     
     // Nothing to do here!
@@ -139,21 +134,28 @@ public class DataPoint {
         valueTranslator = _valueTranslator;
     }
     
+    public boolean isMetadata() {
+        if (DisplayType.metadata.equals(displayType)) {
+            return true;
+        }
+            
+        return false;
+    }
+    
     /**
      *  Grab a new metadata Map and copy all key/values into our current metadata.
      * 
      * @param _metadata Must implement the Metadata interface
      */
-    public void updateMetadata(Metadata _metadata) {
-        Map<String, Object> newMetadata = _metadata.getMetadata();
-        Iterator<String> newMetadataKeyIterator = newMetadata.keySet().iterator();
+    public void updateMetadata(Map<String, Object> metadata) {
+        Iterator<String> newMetadataKeyIterator = metadata.keySet().iterator();
         
         // Loop over every key, add to our current metadata
         // Overwrite any keys we already have
         while (newMetadataKeyIterator.hasNext()) {
             String currentKey = newMetadataKeyIterator.next();
             
-            metadata.put(currentKey, newMetadata.get(currentKey));
+            metadata.put(currentKey, metadata.get(currentKey));
         }
     }
 
