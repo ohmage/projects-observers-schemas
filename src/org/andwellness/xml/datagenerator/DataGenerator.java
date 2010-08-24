@@ -7,9 +7,7 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import nu.xom.Builder;
 import nu.xom.Document;
@@ -19,7 +17,6 @@ import nu.xom.Nodes;
 import nu.xom.ParsingException;
 import nu.xom.ValidityException;
 
-import org.andwellness.xml.ConfigurationValidator;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
@@ -97,7 +94,7 @@ public class DataGenerator {
     
     
     // DataGenerator fields go here
-    private static Logger _logger = Logger.getLogger(DataGenerator.class);
+    //private static Logger _logger = Logger.getLogger(DataGenerator.class);
     
     
     // DataGenerator methods go here

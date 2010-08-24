@@ -60,8 +60,8 @@ public class SurveyGenerator {
         // Create the initial metadata
         surveyMetadata.put("datetime", ValueCreator.date(creationTime));
         surveyMetadata.put("tz", ValueCreator.tz());
-        surveyMetadata.put("lat", new Double(ValueCreator.latitude()));
-        surveyMetadata.put("lon", new Double(ValueCreator.longitude()));
+        surveyMetadata.put("lat", new Double(ValueCreator.latitude()).toString());
+        surveyMetadata.put("lon", new Double(ValueCreator.longitude()).toString());
         
         // Every survey has a contentList to hold its prompts and repeatableSets
         Nodes contentList = surveyNode.query("contentList");
@@ -268,7 +268,19 @@ public class SurveyGenerator {
         Iterator<DataPoint> dataPointsIterator = dataPoints.iterator();
         while (dataPointsIterator.hasNext()) {
             DataPoint currentDataPoint = dataPointsIterator.next();
-            currentDataPoint.updateMetadata(metadata);
+            
+            if (metadata.containsKey("datetime")) {
+                currentDataPoint.setDatetime((String) metadata.get("datetime"));
+            }
+            if (metadata.containsKey("tz")) {
+                currentDataPoint.setTz((String) metadata.get("tz"));          
+            }
+            if (metadata.containsKey("lat")) {
+                currentDataPoint.setLat((String) metadata.get("lat"));
+            }
+            if (metadata.containsKey("lon")) {
+                currentDataPoint.setLon((String) metadata.get("lon"));
+            }            
         }
         
     }    

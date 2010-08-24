@@ -17,7 +17,7 @@ public class SingleChoiceDataPointCreator implements DataPointCreator {
         
         createdDataPoint.setId(nodeId);
         createdDataPoint.setPromptType(DataPoint.PromptType.number);
-        //createdDataPoint.setDisplayType(displayType);
+        createdDataPoint.setDisplayType(displayType);
         // TODO Set this from the max/min properties
         createdDataPoint.setValue(ValueCreator.randomPositiveIntModulus(10));
         

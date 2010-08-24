@@ -5,7 +5,16 @@ import java.util.List;
 
 import org.json.JSONArray;
 
-
-public interface JSONGeneratorType {
-    public JSONArray translateDataPointsToJsonArray(List<DataPoint> dataPointList);
+/**
+ * Use JSONGeneratorType to translate DataPoints to JSON one by one.  A class that
+ * extends JSONGeneratorType must implement a function to translate each data point prompt
+ * type as specified in the DataPoint.ValueTranslator interface.
+ * 
+ * @author jhicks
+ *
+ */
+public abstract class JSONGeneratorType implements DataPoint.ValueTranslator {
+    public JSONGeneratorType() {};
+    
+    public abstract JSONArray translateDataPointsToJsonArray(List<DataPoint> dataPointList);
 }

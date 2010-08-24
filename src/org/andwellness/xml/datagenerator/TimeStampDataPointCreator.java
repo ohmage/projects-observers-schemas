@@ -16,7 +16,7 @@ public class TimeStampDataPointCreator implements DataPointCreator {
         
         createdDataPoint.setId(nodeId);
         createdDataPoint.setPromptType(DataPoint.PromptType.timestamp);
-        //createdDataPoint.setDisplayType(displayType);
+        createdDataPoint.setDisplayType(displayType);
         createdDataPoint.setValue(ValueCreator.date());
         
         return createdDataPoint;

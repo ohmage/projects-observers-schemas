@@ -1,7 +1,6 @@
 package org.andwellness.xml.datagenerator;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -30,14 +29,14 @@ public class DataPoint {
     
     // Public interface that all JSON translators must implement!
     public interface ValueTranslator {
-        public List<Map<String, Object>> translateTimestamp(String timestampValue);
-        public List<Map<String, Object>> translateNumber(String numberValue);
-        public List<Map<String, Object>> translateHoursBeforeNow(String hoursBeforeNowValue);
-        public List<Map<String, Object>> translateText(String textValue);
-        public List<Map<String, Object>> translateMultiChoice(List<Map<String,String>> multiChoiceValue);
-        public List<Map<String, Object>> translateSingleChoice(Map<String,String> singleChoiceValue);
-        public List<Map<String, Object>> translateSingleChoiceCustom(Map<String,String> singleChoiceValue);
-        public List<Map<String, Object>> translateMultiChoiceCustom(List<Map<String,String>> multiChoiceValue);
+        public List<String> translateTimestamp(String timestamp);
+        public List<String> translateNumber(Integer number);
+        public List<String> translateHoursBeforeNow(Integer number);
+        public List<String> translateText(String text);
+        public List<String> translateMultiChoice(List<Integer> choiceList);
+        public List<String> translateSingleChoice(Integer choice);
+        public List<String> translateSingleChoiceCustom(Integer choice);
+        public List<String> translateMultiChoiceCustom(List<Integer> choiceList);
     }
     
     // Nothing to do here!
@@ -84,38 +83,50 @@ public class DataPoint {
         return (String) metadata.get("tz");
     }
     
-    public void setLat(double _lat) {
-        metadata.put("lat", new Double(_lat));
+    public void setLat(String _lat) {
+        metadata.put("lat", _lat);
     }
     
-    public double getLat() {
-        Double lat = (Double) metadata.get("lat");
-        
-        if (lat == null) {
-            return Double.NaN;
-        }
-        else {
-            return lat.doubleValue();
-        }
+    public String getLat() {
+        return (String) metadata.get("lat");
     }
     
-    public void setLon(double _lon) {
-        metadata.put("lon", new Double(_lon));
+    public void setLon(String _lon) {
+        metadata.put("lon", _lon);
     }
     
-    public double getLon() {
-        Double lon = (Double) metadata.get("lon");
-        
-        if (lon == null) {
-            return Double.NaN;
-        }
-        else {
-            return lon.doubleValue();
-        }
+    public String getLon() {
+        return (String) metadata.get("lon");
     }
     
     public void setDisplayType(DisplayType _displayType) {
         displayType = _displayType;
+    }
+    
+    /**
+     * Convenience function to set display type directly from a String
+     * 
+     * @param _displayType A String representing a type from DisplayType
+     */
+    public void setDisplayType(String _displayType) {
+        if (DisplayType.category.toString().equals(_displayType)) {
+            displayType = DisplayType.category;
+        }
+        else if (DisplayType.event.toString().equals(_displayType)) {
+            displayType = DisplayType.event;
+        }
+        else if (DisplayType.measurement.toString().equals(_displayType)) {
+            displayType = DisplayType.measurement;
+        }
+        else if (DisplayType.counter.toString().equals(_displayType)) {
+            displayType = DisplayType.counter;
+        }
+        else if (DisplayType.metadata.toString().equals(_displayType)) {
+            displayType = DisplayType.metadata;
+        }
+        else {
+            throw new IllegalArgumentException("Display type does not exist: " + _displayType);
+        }
     }
     
     public DisplayType getDisplayType() {
@@ -141,23 +152,7 @@ public class DataPoint {
             
         return false;
     }
-    
-    /**
-     *  Grab a new metadata Map and copy all key/values into our current metadata.
-     * 
-     * @param _metadata Must implement the Metadata interface
-     */
-    public void updateMetadata(Map<String, Object> metadata) {
-        Iterator<String> newMetadataKeyIterator = metadata.keySet().iterator();
-        
-        // Loop over every key, add to our current metadata
-        // Overwrite any keys we already have
-        while (newMetadataKeyIterator.hasNext()) {
-            String currentKey = newMetadataKeyIterator.next();
-            
-            metadata.put(currentKey, metadata.get(currentKey));
-        }
-    }
+
 
     /**
      * Translates the prompt value based on the promptType and the set translator that 
@@ -166,7 +161,7 @@ public class DataPoint {
      * @return A representation of the value that can be easily JSONified (List<Map<String,Object>>)
      */
     @SuppressWarnings("unchecked")
-    public List<Map<String,Object>> translateValue() {
+    public List<String> translateValue() {
         if (valueTranslator == null) {
             return null;
         }
@@ -176,25 +171,25 @@ public class DataPoint {
             return valueTranslator.translateTimestamp((String) value);
             
         case number:
-            return valueTranslator.translateNumber((String) value);
+            return valueTranslator.translateNumber((Integer) value);
             
         case hours_before_now:
-            return valueTranslator.translateHoursBeforeNow((String) value);
+            return valueTranslator.translateHoursBeforeNow((Integer) value);
             
         case text:
             return valueTranslator.translateText((String) value);
             
         case multi_choice:
-            return valueTranslator.translateMultiChoice((List<Map<String,String>>) value);
+            return valueTranslator.translateMultiChoice((List<Integer>) value);
             
         case single_choice:
-            return valueTranslator.translateSingleChoice((Map<String,String>) value);
+            return valueTranslator.translateSingleChoice((Integer) value);
             
         case single_choice_custom:
-            return valueTranslator.translateSingleChoiceCustom((Map<String,String>) value);
+            return valueTranslator.translateSingleChoiceCustom((Integer) value);
             
         case multi_choice_custom:
-            return valueTranslator.translateMultiChoiceCustom((List<Map<String,String>>) value);
+            return valueTranslator.translateMultiChoiceCustom((List<Integer>) value);
             
             // Not sure what to do with a photo yet
         case photo:
@@ -203,5 +198,9 @@ public class DataPoint {
         default:
             return null;
         }
+    }
+    
+    public String toString() {
+        return "type " + promptType.toString() + " id " + id + " value " + value;
     }
 }
