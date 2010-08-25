@@ -18,6 +18,9 @@ public class DataPointCreatorFactory {
         else if (DataPoint.PromptType.single_choice.toString().equals(promptType)) {
             return new SingleChoiceDataPointCreator();
         }
+        else if (DataPoint.PromptType.single_choice_custom.toString().equals(promptType)) {
+            return new SingleChoiceDataPointCreator();
+        }
         else if (DataPoint.PromptType.hours_before_now.toString().equals(promptType)) {
             return new HoursBeforeNowDataPointCreator();
         }

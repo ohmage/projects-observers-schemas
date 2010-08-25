@@ -66,7 +66,7 @@ public class ValueCreator {
 	    Calendar calendar = new GregorianCalendar();
         calendar.setTime(date);
         // Subtract the hours from the time
-        calendar.add(Calendar.HOUR_OF_DAY, hoursBeforeDate);
+        calendar.add(Calendar.HOUR_OF_DAY, -1 * hoursBeforeDate);
         return ValueCreator.date(calendar.getTime());
 	}
 	

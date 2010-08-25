@@ -2,7 +2,7 @@ package org.andwellness.xml.datagenerator;
 
 import nu.xom.Node;
 
-public class TimeStampDataPointCreator implements DataPointCreator {
+public class TimeStampDataPointCreator extends DataPointCreator {
 
     public DataPoint create(Node currentNode) {
         // Grab necessary values from the currentNode

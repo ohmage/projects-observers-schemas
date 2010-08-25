@@ -9,55 +9,69 @@ import java.util.Map;
 import org.json.JSONArray;
 
 public class OutJSONGeneratorType extends JSONGeneratorType {
+    // Hold the survey we are translating for use by the translate* functions
+    Survey _survey;
+    
     @Override
     public JSONArray translateSurveyToJsonArray(Survey survey) {
-        JSONArray translatedJSON = new JSONArray();
+        _survey = survey;
         
-        // Loop over the DataPoints, set myself as translator, translate the value, then add to the JSON array
-        Iterator<DataPoint> dataPointListIterator = dataPointList.iterator();
-        while (dataPointListIterator.hasNext()) {
-            DataPoint dataPoint = dataPointListIterator.next();
+        JSONArray translatedJSON = new JSONArray();
+        // Data point metadata, various rules control these from the wiki
+        Map<String, Object> metadata = new HashMap<String, Object>();
+        
+        // Loop over the Responses, set myself as translator, translate the value, then add to the JSON array
+        List<Response> responseList = survey.getResponseList();
+        Iterator<Response> responseListIterator = responseList.iterator();
+        while (responseListIterator.hasNext()) {
+            Response response = responseListIterator.next();
             
-            // The fields we need from the data point
-            String label, unit, datetime, tz, displayType, lat, lon;
-            
-            label = dataPoint.getId();
-            unit = dataPoint.getUnit();
-            datetime = dataPoint.getDatetime();
-            tz = dataPoint.getTz();
-            displayType = dataPoint.getDisplayType().toString();
-            lat = dataPoint.getLat();
-            lon = dataPoint.getLon();
-            
-            // Grab the translated value
-            dataPoint.setTranslator(this);
-            List<String> translatedValues = dataPoint.translateValue();
-            
-            // Make a data point for every translated value in the list
-            Iterator<String> translatedValuesIterator = translatedValues.iterator();
-            while (translatedValuesIterator.hasNext()) {
-                String translatedValue = translatedValuesIterator.next();
+            // Check if this is a DataPoint or a RepeatableSet
+            if (response instanceof org.andwellness.xml.datagenerator.DataPoint) {
+                DataPoint dataPoint = (DataPoint) response;
                 
-                // Create a HashMap of the required JSON
-                Map<String, Object> jsonHash = new HashMap<String, Object>();
-                jsonHash.put("label", label);
-                jsonHash.put("unit", unit);
-                jsonHash.put("datetime", datetime);
-                jsonHash.put("tz", tz);
-                jsonHash.put("type", displayType);
-                jsonHash.put("lat", new Double(lat).toString());
-                jsonHash.put("lon", new Double(lon).toString());
-                jsonHash.put("value", translatedValue);
+                // Fields we need from the data point
+                String label, value, displayType;
+            
+                label = dataPoint.getId();
+                displayType = dataPoint.getDisplayType().toString();
                 
-                // Put this into a data JSON object
-                Map<String, Object> jsonData = new HashMap<String, Object>();
-                jsonData.put("data", jsonHash);
+                // Grab the set of translated values, create a new data point for each
+                dataPoint.setTranslator(this);
+                List<String> valueList = dataPoint.translateValue();
+                Iterator<String> valueListIterator = valueList.iterator();
+                while (valueListIterator.hasNext()) {
+                    value = valueListIterator.next();
+                    
+                    // Create the data point
+                    Map<String, Object> jsonHash = new HashMap<String, Object>();
+                    
+                    jsonHash.put("label", label);
+                    jsonHash.put("datetime", ValueCreator.date(survey.getCreationTime()));
+                    jsonHash.put("value", value);
+                    jsonHash.put("tz", survey.getTz());
+                    jsonHash.put("lat", new Double(survey.getLat()).toString());
+                    jsonHash.put("long", new Double(survey.getLon()).toString());
+                    jsonHash.put("type", displayType);
+                    
+                    // Put this into a data JSON object
+                    Map<String, Object> jsonData = new HashMap<String, Object>();
+                    jsonData.put("data", jsonHash);
+                    
+                    // Add to the translatedJSON array
+                    translatedJSON.put(jsonData);
+                }
                 
-                // Add to the translatedJSON array
-                translatedJSON.put(jsonData);
+                
+            
+            }
+            else if (response instanceof org.andwellness.xml.datagenerator.RepeatableSet) {
+                RepeatableSet repeartableSet = (RepeatableSet) response;
+                
+                // Create a number of data points from the repeatable set
             }
         }
-        
+
         return translatedJSON;
     }
     
@@ -84,9 +98,8 @@ public class OutJSONGeneratorType extends JSONGeneratorType {
         List<String> translatedValues = new ArrayList<String>();
         
         // hoursBeforeNow data points keep the hours before the creation date
-        
-        
-        translatedValues.add("test");
+        String timestamp = ValueCreator.hours_before_date(_survey.getCreationTime(), number.intValue());
+        translatedValues.add(timestamp);
         
         return translatedValues;
     }

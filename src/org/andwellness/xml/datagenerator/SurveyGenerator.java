@@ -62,6 +62,9 @@ public class SurveyGenerator {
         generatedSurvey.setId(surveyId);
         generatedSurvey.setTitle(surveyTitle);
         generatedSurvey.setCreationTime(creationTime);
+        generatedSurvey.setLat(ValueCreator.latitude());
+        generatedSurvey.setLon(ValueCreator.longitude());
+        generatedSurvey.setTz(ValueCreator.tz());
         
         // Every survey has a contentList to hold its prompts and repeatableSets
         Nodes contentList = surveyNode.query("contentList");
@@ -90,7 +93,7 @@ public class SurveyGenerator {
                         generatedSurvey.addResponse(dataPoint);
                     }              
                 }
-                if ("repeatableSet".equals(currentNodeType)) {
+                else if ("repeatableSet".equals(currentNodeType)) {
                     _logger.info("found a repeatableSet with id " + currentNodeId);
                     
                     // Check the condition to see if this repeatableSet should be run
@@ -182,11 +185,6 @@ public class SurveyGenerator {
         DataPointCreator dataPointCreator = DataPointCreatorFactory.getDataPointCreator(promptType);
         
         DataPoint createdDataPoint = dataPointCreator.create(currentNode);
-        
-        if (_logger.isDebugEnabled()) {
-            _logger.debug("Created a datapoint: " + createdDataPoint.toString());
-        }
-        
         return createdDataPoint;
     }
 
