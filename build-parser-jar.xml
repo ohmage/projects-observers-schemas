@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="andwellness-config-validator" basedir="." default="dist-all">
+<project name="andwellness-condition-parser" basedir="." default="dist-all">
   <property file="build.properties"/>
   <property name="component.repository" location="${user.home}/.component-repository"/>
   <property name="version"  value="snapshot"/>
@@ -59,21 +59,19 @@
        <classpath refid="compile-classpath"/>
     </javadoc>
   </target>
-	
-  <target name="dist" depends="javac" description="Compiles Java files and creates an executable jar file with the dependencies embedded.">
+
+  <target name="dist" depends="javac" description="Compiles Java files and creates a non-executable jar with the compiled classes.">
     <mkdir dir="${dist}"/>
 	<echo message="Warning: Bundling of dependencies will not work if jars are organized in subdirs in component repository."/>
 	<jar destfile="${dist}/${ant.project.name}-${version}.jar">
-	  <fileset dir="${build}/classes" />
-	  <zipfileset src="${component.repository}/log4j-1.2.15.jar" excludes="META-INF/*" />
-	  <zipfileset src="${component.repository}/xom-1.2.6.jar" excludes="META-INF/*" />
-	  <zipfileset src="${component.repository}/xercesImpl-2.10.0.jar" excludes="META-INF/*" />
-	  <manifest>
-	    <attribute name="Main-Class" value="org.andwellness.xml.ConfigurationValidator" />
-	  </manifest>
-	</jar>
+	  <fileset dir="${build}/classes">
+	    <include name="**/org/andwellness/grammar/parser/*class" /> 
+	    <include name="**/org/andwellness/grammar/syntaxtree/*class" />
+	    <include name="**/org/andwellness/grammar/visitor/*class" />
+	  </fileset>
+    </jar>
   </target>
-	
+ 	
   <target name="dist-docs" depends="javadoc" description="Compiles Javadocs and creates gzipped tarball.">
     <mkdir dir="${dist}"/>
     <tar basedir="${build}/docs" destfile="${dist}/${ant.project.name}-docs-${version}.tar.gz" longfile="gnu" compression="gzip"/>
