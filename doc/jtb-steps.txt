@@ -4,7 +4,7 @@ java -jar jtb132.jar -p org.andwellness.grammar -o condition-grammar.jtb /Users/
 
 2. Compile the annotated grammar with JavaCC. (use --DEBUG_PARSER to annotate generated classes with debug messages)
 
-java -cp javacc-5.0.jar javacc condition-grammar.jtb
+java -cp javacc-5.0.jar javacc -LOOKAHEAD=2 condition-grammar.jtb
 
 3. Compile the generated Java classes.
 
