@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 
@@ -156,8 +158,19 @@ public class DataGenerator {
     public List<Survey> generateMultipleResponses(Element root, int numberDays, int numberSurveysPerDay) {
         List<Survey> responseList = new ArrayList<Survey>();
         
-        // Hack this in here to get one response working for now
-        responseList.addAll(generateSingleResponse(root, new Date()));
+        // Find the number of seconds between surveys to get the current number of
+        // surveys per day
+        int numberSecondsBetweenSurveys = (60 * 60 * 24) / numberSurveysPerDay;
+        Calendar calendar = new GregorianCalendar();  // Use for Date calculations
+        
+        // Now create numberDays x numberSurveysPeyDay, starting now and going back by the calculated seconds
+        for (int i = 0; i < numberDays * numberSurveysPerDay; ++i) {
+            // Generate a single response at this time
+            responseList.addAll(generateSingleResponse(root, calendar.getTime()));
+            
+            // Subtract the seconds
+            calendar.add(Calendar.SECOND, -1 * numberSecondsBetweenSurveys);
+        }
         
         return responseList;
     }

@@ -33,7 +33,7 @@ public class SingleChoiceDataPointCreator extends DataPointCreator {
         chosenKeyNumber = ValueCreator.randomPositiveIntModulus(numberKeys);
         chosenValue = Integer.parseInt((String) nodeProperties.keySet().toArray()[chosenKeyNumber]);
         
-        createdDataPoint.setValue(chosenValue);
+        createdDataPoint.setValue(new Integer(chosenValue));
         
         if (_logger.isDebugEnabled()) {
             _logger.debug("Creating a single choice data point with id " + nodeId + " value " + chosenValue);

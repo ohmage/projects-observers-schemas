@@ -20,7 +20,7 @@ public class HoursBeforeNowDataPointCreator extends DataPointCreator {
         DataPoint createdDataPoint = new DataPoint();
         
         createdDataPoint.setId(nodeId);
-        createdDataPoint.setPromptType(DataPoint.PromptType.number);
+        createdDataPoint.setPromptType(DataPoint.PromptType.hours_before_now);
         createdDataPoint.setDisplayType(displayType);
         
         // Find the min and max properties

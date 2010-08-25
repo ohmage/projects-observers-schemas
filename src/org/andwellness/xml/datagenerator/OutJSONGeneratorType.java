@@ -122,6 +122,8 @@ public class OutJSONGeneratorType extends JSONGeneratorType {
     public List<String> translateSingleChoice(Integer choice) {
         List<String> translatedValues = new ArrayList<String>();
         
+        translatedValues.add(choice.toString());
+        
         return translatedValues;
     }
 
