@@ -24,6 +24,12 @@ public class DataPointCreatorFactory {
         else if (DataPoint.PromptType.hours_before_now.toString().equals(promptType)) {
             return new HoursBeforeNowDataPointCreator();
         }
+        else if (DataPoint.PromptType.multi_choice.toString().equals(promptType)) {
+            return new MultiChoiceDataPointCreator();
+        }
+        else if (DataPoint.PromptType.multi_choice_custom.toString().equals(promptType)) {
+            return new MultiChoiceDataPointCreator();
+        }
         else {
             throw new IllegalArgumentException("No DataPointCreator for promptType " + promptType);
         }

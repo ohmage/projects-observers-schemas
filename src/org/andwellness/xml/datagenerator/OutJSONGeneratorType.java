@@ -61,14 +61,12 @@ public class OutJSONGeneratorType extends JSONGeneratorType {
                     // Add to the translatedJSON array
                     translatedJSON.put(jsonData);
                 }
-                
-                
-            
             }
             else if (response instanceof org.andwellness.xml.datagenerator.RepeatableSet) {
                 RepeatableSet repeartableSet = (RepeatableSet) response;
                 
                 // Create a number of data points from the repeatable set
+                
             }
         }
 
@@ -108,12 +106,20 @@ public class OutJSONGeneratorType extends JSONGeneratorType {
     public List<String> translateText(String text) {
         List<String> translatedValues = new ArrayList<String>();
         
+        translatedValues.add(text);
+        
         return translatedValues;
     }
 
     @Override
     public List<String> translateMultiChoice(List<Integer> choiceList) {
         List<String> translatedValues = new ArrayList<String>();
+        
+        // Loop over all choice, add to translated values as Strings
+        Iterator<Integer> choiceListIterator = choiceList.iterator();
+        while (choiceListIterator.hasNext()) {
+            translatedValues.add(choiceListIterator.next().toString());
+        }
         
         return translatedValues;
     }
@@ -131,12 +137,20 @@ public class OutJSONGeneratorType extends JSONGeneratorType {
     public List<String> translateSingleChoiceCustom(Integer choice) {
         List<String> translatedValues = new ArrayList<String>();
         
+        translatedValues.add(choice.toString());
+        
         return translatedValues;
     }
 
     @Override
     public List<String> translateMultiChoiceCustom(List<Integer> choiceList) {
         List<String> translatedValues = new ArrayList<String>();
+        
+        // Loop over all choice, add to translated values as Strings
+        Iterator<Integer> choiceListIterator = choiceList.iterator();
+        while (choiceListIterator.hasNext()) {
+            translatedValues.add(choiceListIterator.next().toString());
+        }
         
         return translatedValues;
     }}
