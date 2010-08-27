@@ -19,7 +19,7 @@ public interface PromptTypeValidator {
 	public void validateAndSetConfiguration(Node promptNode);
 	
 	/**
-	 * Determine if the provided value is valid for the type instance.
+	 * Determine if the provided value (most likely from a condition statement) is valid for the type instance.
 	 */
-	public void validateValue(ConditionValuePair pair);
+	public void validateConditionValuePair(ConditionValuePair pair);
 }

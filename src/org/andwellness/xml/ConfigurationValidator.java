@@ -41,14 +41,36 @@ import org.xml.sax.SAXException;
  * @author selsky
  */
 public class ConfigurationValidator {
+	private static Logger _logger = Logger.getLogger(ConfigurationValidator.class);
+	private static final String _schemaFile = "spec/configuration.xsd";
+	private Map<String, PromptTypeValidator> _promptTypeValidatorMap;
+	
+	static {
+		// Configure log4j. (pointing to System.out)
+		BasicConfigurator.configure();
+	}
+	
+	public ConfigurationValidator() {
+		_promptTypeValidatorMap = new HashMap<String, PromptTypeValidator>();
+	}
 	
 	/**
 	 * args[0]: the file name of the file to validate
 	 */
 	public static void main(String[] args) throws IOException, SAXException, ParsingException, ValidityException {
-		// Configure log4j. (pointing to System.out)
-		BasicConfigurator.configure();
+		if(args.length < 1) {
+			throw new IllegalArgumentException("You must pass a file name as the first argument.");
+		}
 		
+		String fileName = args[0];
+		ConfigurationValidator validator = new ConfigurationValidator();
+		validator.run(fileName);
+	}
+	
+	/**
+	 * Runs the entire validation process.
+	 */
+	public void run(String fileName) throws IOException, SAXException, ParsingException, ValidityException {
 		//
 		// 1. Validate against schema: spec/configuration.xsd
 		// 2. Make sure all ids are unique
@@ -62,14 +84,7 @@ public class ConfigurationValidator {
 		// operation in each condition
 		// 
 		
-		if(args.length < 1) {
-			throw new IllegalArgumentException("You must pass a file name as the first argument.");
-		}
-		
-		String fileName = args[0];
-		ConfigurationValidator validator = new ConfigurationValidator();
-		
-		validator.checkSchema(args[0]);
+		checkSchema(fileName);
 		_logger.info("schema validation successful");
 		
 		// Now use XOM to retrieve a Document and a root node for further processing. XOM is used because it has a 
@@ -84,36 +99,28 @@ public class ConfigurationValidator {
 		
 		Element root = document.getRootElement();
 		
-		validator.checkIdUniqueness(root);
+		checkIdUniqueness(root);
 		_logger.info("id uniqueness check successful: all ids in the configuration are unique");
 		
-		validator.checkPromptTypes(root);
+		checkPromptTypes(root);
 		_logger.info("prompt type check successful: all prompts have valid prompt types");
 		
-		validator.checkPromptTypeProperties(root);
+		checkPromptTypeProperties(root);
 		_logger.info("prompt property configuration check successful: all prompts have valid configurations for their respective types");
 				
-		validator.checkConditions(root);		
+		checkConditions(root);		
 		_logger.info("conditions check successful: all conditions are valid");
 		
-		validator.checkSurveySpecialRules(root);
+		checkSurveySpecialRules(root);
 		_logger.info("surveys check successful: all special survey config rules passed");
 		
-		validator.checkRepeatableSetSpecialRules(root);
+		checkRepeatableSetSpecialRules(root);
 		_logger.info("repeatableSets check successful: all special repeatableSet config rules passed");
 		
-		validator.checkPromptSpecialRules(root);
+		checkPromptSpecialRules(root);
 		_logger.info("prompts check successful: all special prompt config rules passed");
 		
 		_logger.info("configuration validation successful");
-	}
-	
-	private static Logger _logger = Logger.getLogger(ConfigurationValidator.class);
-	private static final String _schemaFile = "spec/configuration.xsd";
-	private Map<String, PromptTypeValidator> _promptTypeValidatorMap;
-	
-	private ConfigurationValidator() {
-		_promptTypeValidatorMap = new HashMap<String, PromptTypeValidator>();
 	}
 	
 	/**
@@ -347,7 +354,9 @@ public class ConfigurationValidator {
 					
 					while(keySetIterator.hasNext()) {
 						String key = keySetIterator.next();
-						if(idList.indexOf(key) >= currentIdIndex) {
+						int keyIndex = idList.indexOf(key); 
+						
+						if(keyIndex >= currentIdIndex || keyIndex == -1) {
 							throw new IllegalStateException("invalid id in condition for prompt id: " + currentId);
 						}
 						
@@ -356,7 +365,7 @@ public class ConfigurationValidator {
 						PromptTypeValidator promptTypeValidator = _promptTypeValidatorMap.get(key);
 						
 						for(ConditionValuePair pair : pairs) {
-							promptTypeValidator.validateValue(pair);
+							promptTypeValidator.validateConditionValuePair(pair);
 						}
 					}
 					

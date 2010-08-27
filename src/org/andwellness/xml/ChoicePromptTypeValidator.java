@@ -16,7 +16,7 @@ import org.andwellness.grammar.custom.ConditionValuePair;
  * @author selsky
  */
 public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator {
-	private List<Integer> _choices;
+	protected List<Integer> _choices;
 	
 	public ChoicePromptTypeValidator() {
 		_choices = new ArrayList<Integer>();
@@ -39,7 +39,7 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 		
 		int kSize = kNodes.size();
 		for(int j = 0; j < kSize; j++) {
-			_choices.add(getValidPosInteger(kNodes.get(j).getValue()));
+			_choices.add(getValidNonNegativeInteger(kNodes.get(j).getValue()));
 		}
 		
 		// Make sure there are not duplicate keys
@@ -49,12 +49,24 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 				throw new IllegalArgumentException("duplicate found for choice: " + i);
 			}
 		}
+		
+		Nodes vNodes = promptNode.query("properties/p/v");
+				
+		// Make sure there are not duplicate values
+		Set<String> valueSet = new HashSet<String>();
+		int vSize = vNodes.size();
+		
+		for(int i = 0; i < vSize; i++) {
+			if(! valueSet.add(vNodes.get(i).getValue())) {
+				throw new IllegalArgumentException("duplicate found for value: " + vNodes.get(i).getValue());
+			}
+		}
 	}
 
 	@Override
-	public void validateValue(ConditionValuePair pair) {
+	public void validateConditionValuePair(ConditionValuePair pair) {
 		if(! isSkipped(pair.getValue())) {
-			int i = getValidPosInteger(pair.getValue());
+			int i = getValidNonNegativeInteger(pair.getValue());
 			
 			if(! _choices.contains(i)) {
 				throw new IllegalArgumentException("value not found in set of choices: " + pair.getValue());
@@ -67,5 +79,9 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 		if(! "==".equals(condition) && ! "!=".equals(condition)) {
 			throw new IllegalArgumentException("invalid condition in multi or single choice prompt: " + pair.getCondition());
 		}
+	}
+	
+	protected void performExtendedConfigValidation(Node promptNode, Nodes minVNodes, Nodes maxVNodes) {
+		// do nothing
 	}
 }

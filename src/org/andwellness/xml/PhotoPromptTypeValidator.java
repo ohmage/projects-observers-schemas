@@ -37,16 +37,20 @@ public class PhotoPromptTypeValidator extends AbstractNumberPromptTypeValidator 
 			throw new IllegalStateException("missing or extra 'res' value for XML fragment: " + promptNode.toXML());
 		}
 		
-		getValidPosInteger(resVNodes.get(0).getValue());
+		getValidPositiveInteger(resVNodes.get(0).getValue()); // TODO we need a valid set of values for res (720, etc)
 	}
 
 	/**
 	 * Checks values (from, e.g., conditions) against the min and max defined by this instance. 
 	 */
 	@Override
-	public void validateValue(ConditionValuePair pair) {
+	public void validateConditionValuePair(ConditionValuePair pair) {
 		if(! isSkipped(pair.getValue())) {
 			throw new IllegalArgumentException("invalid value for photo prompt type: " + pair.getValue());
 		}
+	}
+	
+	protected void performExtendedConfigValidation(Node promptNode, Nodes minVNodes, Nodes maxVNodes) {
+		// do nothing
 	}
 }
