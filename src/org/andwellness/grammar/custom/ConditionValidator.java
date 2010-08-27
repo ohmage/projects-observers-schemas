@@ -17,6 +17,7 @@ import org.andwellness.grammar.syntaxtree.start;
  * @author selsky
  */
 public final class ConditionValidator {
+	private static boolean _first = true;
 	
 	/**
 	 * Prevent instantiation.
@@ -46,9 +47,21 @@ public final class ConditionValidator {
 		
 		try {
 			
-			s = new ConditionParser(new StringReader(conditionSentence)).start(); // the JavaCC classes use some strange
-			                                                                      // programming conventions -- you create a
-			                                                                      // parser only to invoke static methods on it
+			// TODO - fix the ConditionParser instatiation logic by rebuilding the parser and setting the JavaCC parameter STATIC
+			// to false. Without the false setting, the weird ReInit logic below must occur.
+			
+			if(_first) {
+				System.out.println("first");
+				_first = false;
+				s = new ConditionParser(new StringReader(conditionSentence)).start();
+				
+			} else {
+				System.out.println("not first");
+				ConditionParser.ReInit(new StringReader(conditionSentence)); // ReInit must be called for a multiple parse scenario
+				                                                             // i.e., when this method is called from a loop
+				s = ConditionParser.start();
+			}
+			
 			ConditionDepthFirst<Map<String, List<ConditionValuePair>>> visitor 
 				= new ConditionDepthFirst<Map<String, List<ConditionValuePair>>>();
 			Map<String, List<ConditionValuePair>>map = new HashMap<String, List<ConditionValuePair>>(); 
