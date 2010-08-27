@@ -105,7 +105,7 @@
         <xs:element ref="abbreviatedText" minOccurs="0"/>
         <xs:element ref="explanationText" minOccurs="0"/>
         <xs:element ref="promptType"/>
-        <xs:element ref="properties"/>
+        <xs:element ref="properties" minOccurs="0"/>
         <xs:element ref="default" minOccurs="0"/>
         <xs:element ref="condition" minOccurs="0"/>
         <xs:element ref="skippable"/>
@@ -122,7 +122,7 @@
   <xs:element name="properties">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="p"/>
+        <xs:element maxOccurs="unbounded" ref="p"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
