@@ -33,4 +33,11 @@ public class TextMinMaxPromptTypeValidator extends AbstractNumberPromptTypeValid
 			throw new IllegalStateException("max cannot be greater than min: " + promptNode.toXML());
 		}
 	}
+	
+	/**
+	 * @throws IllegalArgumentException because default text values are disallowed.
+	 */
+	public void checkDefaultValue(String value) {
+		throw new IllegalArgumentException("default values for text prompts are disallowed");
+	}
 }

@@ -31,6 +31,8 @@ public class NumberMinMaxPromptTypeValidator extends AbstractNumberPromptTypeVal
 		}
 	}
 	
+
+	
 	/**
 	 * Makes sure max is greater than min and that min and max are both valid integers.
 	 */

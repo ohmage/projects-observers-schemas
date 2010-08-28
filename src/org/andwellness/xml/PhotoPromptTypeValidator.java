@@ -50,6 +50,13 @@ public class PhotoPromptTypeValidator extends AbstractNumberPromptTypeValidator 
 		}
 	}
 	
+	/**
+	 * @throws IllegalArgumentException because photo prompts cannot have default values.
+	 */
+	public void checkDefaultValue(String value) {
+		throw new IllegalArgumentException("default values are disallowed for photo prompts.");
+	}
+	
 	protected void performExtendedConfigValidation(Node promptNode, Nodes minVNodes, Nodes maxVNodes) {
 		// do nothing
 	}

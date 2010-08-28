@@ -16,10 +16,16 @@ public interface PromptTypeValidator {
 	 * Validates the properties bundle for a specific instance of a type. Also sets the properties so they can be used for 
 	 * validation of values of the type.
 	 */
-	public void validateAndSetConfiguration(Node promptNode);
+	void validateAndSetConfiguration(Node promptNode);
 	
 	/**
-	 * Determine if the provided value (most likely from a condition statement) is valid for the type instance.
+	 * Determines if the provided value and its condition are valid for the type instance.
 	 */
-	public void validateConditionValuePair(ConditionValuePair pair);
+	void validateConditionValuePair(ConditionValuePair pair);
+	
+	/**
+	 * Determines if the provided default value is valid for the type instance.
+	 */
+	void checkDefaultValue(String value);
+	
 }

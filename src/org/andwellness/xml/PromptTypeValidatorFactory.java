@@ -63,6 +63,10 @@ public class PromptTypeValidatorFactory {
 		
 			return new PhotoPromptTypeValidator();
 			
+		} else if("timestamp".equals(promptType))  {
+			
+			return new TimestampPromptTypeValidator();
+			
 		} else { 
 			
 			throw new IllegalArgumentException("unknown prompt type.");

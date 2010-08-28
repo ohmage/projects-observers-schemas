@@ -19,7 +19,7 @@ public class HoursBeforeNowPromptTypeValidator extends NumberMinMaxPromptTypeVal
 		_max = getValidNonNegativeInteger(maxVNodes.get(0).getValue());
 		
 		if(_max < _min) {
-			throw new IllegalStateException("max cannot be less than min: " + promptNode.toXML());
+			throw new IllegalStateException("max cannot be less than min:\n" + promptNode.toXML());
 		}
 	}
 }

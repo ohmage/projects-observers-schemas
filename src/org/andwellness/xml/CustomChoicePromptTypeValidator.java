@@ -33,15 +33,11 @@ public class CustomChoicePromptTypeValidator extends ChoicePromptTypeValidator {
 			                                                   // and the values of the 'k' nodes are what needs to be validated 
 			int kSize = kNodes.size();
 			for(int j = 0; j < kSize; j++) {
-				_choices.add(getValidNonNegativeInteger(kNodes.get(j).getValue()));
-			}
-			
-			// Make sure there are not duplicate keys
-			Set<Integer> integerSet = new HashSet<Integer>();
-			for(Integer i : _choices) {
-				if(! integerSet.add(i)) {
-					throw new IllegalArgumentException("duplicate found for choice: " + i);
+				int key = getValidNonNegativeInteger(kNodes.get(j).getValue());
+				if(_choices.containsKey(key)) {
+					throw new IllegalArgumentException("duplicate choice key found: " + key); 
 				}
+				_choices.put(key, null);
 			}
 			
 			Nodes vNodes = promptNode.query("properties/p/v");
@@ -51,9 +47,12 @@ public class CustomChoicePromptTypeValidator extends ChoicePromptTypeValidator {
 			int vSize = vNodes.size();
 			
 			for(int i = 0; i < vSize; i++) {
-				if(! valueSet.add(vNodes.get(i).getValue())) {
-					throw new IllegalArgumentException("duplicate found for value: " + vNodes.get(i).getValue());
+				int key = Integer.parseInt(kNodes.get(i).getValue());
+				String value = vNodes.get(i).getValue();
+				if(! valueSet.add(value)) {
+					throw new IllegalArgumentException("duplicate choice value found: " + value);
 				}
+				_choices.put(key, value);
 			}
 		}
 	}

@@ -20,7 +20,7 @@ public abstract class AbstractNumberPromptTypeValidator extends AbstractPromptTy
 		// make sure there are no unknown props
 		Nodes propertyNodes = promptNode.query("properties/p"); 
 		if(2 != propertyNodes.size()) {
-			throw new IllegalStateException("invalid prompt configuration: " + promptNode.toXML());
+			throw new IllegalStateException("invalid prompt configuration:\n" + promptNode.toXML());
 		}
 		
 		Nodes minNodes = promptNode.query("properties/p/k[text()='min']");  
@@ -45,6 +45,19 @@ public abstract class AbstractNumberPromptTypeValidator extends AbstractPromptTy
 		
 		performExtendedConfigValidation(promptNode, minVNodes, maxVNodes);
 	} 
+	
+	public void checkDefaultValue(String value) {
+		int intValue = 0;
+		try {
+			intValue = Integer.parseInt(value);
+		} catch (NumberFormatException nfe) {
+			throw new IllegalArgumentException("value is not an integer: " + value);
+		}
+		
+		if(intValue < _min || intValue > _max) {
+			throw new IllegalArgumentException("value is out of min-max range: " + value);
+		}
+	}
 	
 	protected int getValidNegOrPosInteger(String value) {
 		try {

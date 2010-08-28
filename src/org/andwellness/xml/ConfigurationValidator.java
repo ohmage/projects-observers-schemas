@@ -35,15 +35,15 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- * The main driver for the configuration validation process. This is a giant procedural class that can be refactored into a nicer
- * OO form once our configuration process coalesces a bit.
+ * Giant procedural driver for the configuration validation process.
  * 
  * @author selsky
  */
 public class ConfigurationValidator {
 	private static Logger _logger = Logger.getLogger(ConfigurationValidator.class);
 	private static final String _schemaFile = "spec/configuration.xsd";
-	private Map<String, PromptTypeValidator> _promptTypeValidatorMap;
+	private Map<String, PromptTypeValidator> _promptTypeValidatorMap; // the map keys are the prompt ids in the input file
+	private List<String> _validDisplayTypes;
 	
 	static {
 		// Configure log4j. (pointing to System.out)
@@ -52,6 +52,13 @@ public class ConfigurationValidator {
 	
 	public ConfigurationValidator() {
 		_promptTypeValidatorMap = new HashMap<String, PromptTypeValidator>();
+		_validDisplayTypes = new ArrayList<String>();
+
+		_validDisplayTypes.add("measurement");
+		_validDisplayTypes.add("event");
+		_validDisplayTypes.add("counter");
+		_validDisplayTypes.add("categorical");
+		_validDisplayTypes.add("metadata");
 	}
 	
 	/**
@@ -111,6 +118,9 @@ public class ConfigurationValidator {
 		checkConditions(root);		
 		_logger.info("conditions check successful: all conditions are valid");
 		
+		checkDefaults(root);		
+		_logger.info("defaults check successful: all default values are valid");
+		
 		checkSurveySpecialRules(root);
 		_logger.info("surveys check successful: all special survey config rules passed");
 		
@@ -120,8 +130,66 @@ public class ConfigurationValidator {
 		checkPromptSpecialRules(root);
 		_logger.info("prompts check successful: all special prompt config rules passed");
 		
+		checkDisplayTypes(root);
+		_logger.info("displayType check successful: all displayTypes are valid");
+		
 		_logger.info("configuration validation successful");
 	}
+	
+	/**
+	 * Checks that configured default values are valid for their associated prompt types. Assumes that _promptTypeValidatorMap
+	 * has been correctly populated (i.e., that prompt types have been successfully validated).
+	 */
+	private void checkDefaults(Node root) {
+		Nodes prompts = root.query("//prompt"); // get all prompts
+		int size = prompts.size();
+		
+		for(int i = 0; i < size; i++) {
+			
+			Nodes defaultNodes = prompts.get(i).query("default");
+			if(defaultNodes.size() > 0) {
+				String promptId = prompts.get(i).query("id").get(0).getValue();
+				PromptTypeValidator ptv = _promptTypeValidatorMap.get(promptId);
+				ptv.checkDefaultValue(defaultNodes.get(0).getValue());
+			}
+		}
+	}
+	
+	/**
+	 * Checks that any displayType values are valid.
+	 */
+	private void checkDisplayTypes(Node root) {
+		Nodes surveys = root.query("//survey"); // get all surveys
+		int numberOfSurveys = surveys.size();
+		
+		for(int i = 0; i < numberOfSurveys; i++) {
+			Nodes prompts = surveys.get(i).query("contentList/prompt | contentList/repeatableSet/prompts/prompt");
+			int numberOfPrompts = prompts.size();
+			int numberOfMetadataTimestamps = 0;
+			
+			for(int j = 0; j < numberOfPrompts; j++) {
+				Nodes displayTypeNodes = prompts.get(j).query("displayType");
+				
+				if(displayTypeNodes.size() > 0) {
+					
+					String dt = displayTypeNodes.get(0).getValue();
+					if(! _validDisplayTypes.contains(dt)) {
+						throw new IllegalArgumentException("invalid display type: " + dt);
+					}
+					
+					String pt = prompts.get(j).query("promptType").get(0).getValue();
+					if("timestamp".equals(pt) && "metadata".equals(dt)) {
+						numberOfMetadataTimestamps++;
+					}
+				}
+			}
+			if(numberOfMetadataTimestamps > 1) {
+				_logger.warn("more than one metadata timetamp found for survey with id: "
+					+ surveys.get(i).query("id").get(0).getValue());
+			}
+		}
+	}
+	
 	
 	/**
 	 * Validates dependencies between elements in each survey.
@@ -326,7 +394,8 @@ public class ConfigurationValidator {
 	}
 	
 	/**
-	 * 
+	 * Validates conditions: checks grammar adherence, checks that ids exist and are for previous prompts, and checks that 
+	 * values are valid for the prompt type of the id on the left-hand side of expressions.
 	 */
 	private void validateCondition(Node currentNode, int surveyIndex, String currentId, int currentIdIndex, List<String> idList) {
 		Nodes conditionNodes = currentNode.query("condition");
