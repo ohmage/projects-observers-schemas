@@ -16,7 +16,7 @@
       <anytime>true</anytime>
       <contentList>
         <prompt>
-          <displayType>displayType</displayType>
+          <displayType>metadata</displayType>
           <displayLabel>displayLabel</displayLabel>
           <id>id</id>
           <promptText>promptText</promptText>
@@ -33,12 +33,12 @@
               <v>11</v>
             </p>
           </properties>
-          <default>default</default>
+          
           <skippable>true</skippable>
           <skipLabel>skipLabel</skipLabel>
         </prompt>
         <prompt>
-          <displayType>displayType</displayType>
+          <displayType>metadata</displayType>
           <displayLabel>displayLabel</displayLabel>
           <id>id1</id>
           <promptText>promptText</promptText>
@@ -55,7 +55,7 @@
               <v>11</v>
             </p>
           </properties>
-          <default>default</default>
+          
           <condition>id ^ 42</condition>
           <skippable>true</skippable>
           <skipLabel>skipLabel</skipLabel>

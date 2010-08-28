@@ -17,7 +17,7 @@
       <anytime>true</anytime>
       <contentList>
         <prompt>
-          <displayType>displayType</displayType>
+          <displayType>metadata</displayType>
           <displayLabel>displayLabel</displayLabel>
           <id>id</id>
           <promptText>promptText</promptText>
@@ -30,7 +30,7 @@
               <v>10</v>
             </p>
           </properties>
-          <default>default</default>
+          
           <condition>condition</condition>
           <skippable>true</skippable>
           <skipLabel>skipLabel</skipLabel>
