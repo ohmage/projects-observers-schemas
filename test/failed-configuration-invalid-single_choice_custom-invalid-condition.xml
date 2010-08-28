@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="configuration.xsd">
+  <campaignName>campaignName</campaignName>
+  <campaignVersion>campaignVersion</campaignVersion>
+  <serverUrl>serverUrl</serverUrl>
+  <surveys>
+    <survey>
+      <id>surveyId</id>
+      <title>title</title>
+      <description>description</description>
+      <introText>introText</introText>
+      <submitText>submitText</submitText>
+      <showSummary>true</showSummary>
+      <editSummary>true</editSummary>
+      <summaryText>summaryText</summaryText>
+      <anytime>true</anytime>
+      <contentList>
+        <prompt>
+          <displayType>metadata</displayType>
+          <displayLabel>displayLabel</displayLabel>
+          <id>id</id>
+          <promptText>promptText</promptText>
+          <abbreviatedText>abbreviatedText</abbreviatedText>
+          <explanationText>explanationText</explanationText>
+          <promptType>single_choice_custom</promptType>
+          <properties>
+            <p>
+              <k>0</k>
+              <v>10</v>
+            </p>
+            <p>
+              <k>1</k>
+              <v>11</v>
+            </p>
+          </properties>
+          
+          <skippable>true</skippable>
+          <skipLabel>skipLabel</skipLabel>
+        </prompt>
+        <prompt>
+          <displayType>metadata</displayType>
+          <displayLabel>displayLabel</displayLabel>
+          <id>id1</id>
+          <promptText>promptText</promptText>
+          <abbreviatedText>abbreviatedText</abbreviatedText>
+          <explanationText>explanationText</explanationText>
+          <promptType>multi_choice_custom</promptType>
+          <properties>
+            <p>
+              <k>0</k>
+              <v>10</v>
+            </p>
+            <p>
+              <k>1</k>
+              <v>11</v>
+            </p>
+          </properties>
+          
+          <skippable>true</skippable>
+          <skipLabel>skipLabel</skipLabel>
+          <condition>id > 1</condition>
+        </prompt>
+     </contentList>
+    </survey>
+  </surveys>
+</campaign>
