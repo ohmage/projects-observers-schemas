@@ -2,17 +2,17 @@
 <campaign>
   <campaignName>CHIPTS</campaignName>
   <campaignVersion>0.1</campaignVersion>
-
+  <serverUrl>https://www.andwellness.org</serverUrl>
+  
   <surveys>
     <survey>
       <id>medication</id>
       <title>Medication</title>
-      <description />
-      <introText />
-      <submitText />
+      <description>Every survey must have a description.</description>
+      <submitText>Every survey must include submitText.</submitText>
       <showSummary>true</showSummary>
       <editSummary>false</editSummary>
-      <summaryText  />
+      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
       <anytime>true</anytime>
      
       <contentList>
@@ -22,12 +22,8 @@
           <displayType>category</displayType>
           <displayLabel>Which medication</displayLabel>
           <promptText>Which medication?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>multi_choice_custom</promptType>
-          <properties />
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
@@ -36,8 +32,7 @@
           <displayType>metadata</displayType>
           <displayLabel>Took or missed</displayLabel>
           <promptText>Are you reporting that you took or missed medication?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
             <p>
@@ -49,8 +44,6 @@
               <v>missed</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
@@ -59,8 +52,7 @@
           <displayType>metadata</displayType>
           <displayLabel>Medication - How Many Hours Ago</displayLabel>
           <promptText>How many hours ago?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>hours_before_now</promptType>
           <properties>
             <p>
@@ -72,8 +64,7 @@
               <v>24</v>
             </p>
           </properties>
-          <default />
-          <condition>medicationTookOrMissed == took</condition> 
+          <condition>(medicationTookOrMissed == took)</condition> 
           <skippable>false</skippable>
         </prompt>
         
@@ -83,8 +74,7 @@
           <displayType>measurement</displayType>
           <displayLabel>Medication - On Time</displayLabel>
           <promptText>On time?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
             <p>
@@ -96,8 +86,7 @@
               <v>no</v>
             </p>
           </properties>
-          <default />
-          <condition>medicationTookOrMissed == took</condition>
+          <condition>(medicationTookOrMissed == took)</condition>
           <skippable>false</skippable>
         </prompt>
         
@@ -107,8 +96,7 @@
           <displayType>metadata</displayType>
           <displayLabel>Medication - Why Missed?</displayLabel> <!-- metadata probably does not need a display label -->
           <promptText>Why?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>text</promptType>
           <properties>
             <p>
@@ -120,8 +108,8 @@
               <v>500</v> <!-- ???? -->
             </p>
           </properties>
-          <default />
-          <condition>medicationTookOrMissed == missed</condition>
+          <condition>(medicationTookOrMissed == missed)</condition>
+          <skipLabel>Required if skippable is true.</skipLabel>
           <skippable>true</skippable>
         </prompt>
         

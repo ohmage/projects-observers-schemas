@@ -2,28 +2,26 @@
 <campaign>
   <campaignName>CHIPTS</campaignName>
   <campaignVersion>0.1</campaignVersion>
-  <serverUrl>http://i.am.an.url</serverUrl>
+  <serverUrl>https://www.andwellness.org/</serverUrl>
   
   <surveys>
     <survey>
       <id>specificStressfulEvent</id>
       <title>Specific Stressful Event</title>
-      <description />
-      <introText />
-      <submitText />
+      <description>Every survey must have a description.</description>
+      <submitText>Every survey must include submitText.</submitText>
       <showSummary>true</showSummary>
       <editSummary>false</editSummary>
-      <summaryText  />
+      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
       <anytime>true</anytime>
      
       <contentList>
         <prompt>
           <id>specificStressfulEventHoursAgo</id>
-          <displayType></displayType>
-          <displayLabel></displayLabel>
+          <displayType>metadata</displayType>
+          <displayLabel>how many hours agao</displayLabel>
           <promptText>How many hours ago did the event occur?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>hours_before_now</promptType>
           <properties>
             <p>
@@ -35,18 +33,15 @@
               <v>24</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
         <prompt>
           <id>specificStressfulEventWhatHappened</id>
-          <displayType></displayType>
-          <displayLabel></displayLabel>
+          <displayType>category</displayType>
+          <displayLabel>what happened</displayLabel>
           <promptText>What happened?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>text</promptType>
           <properties>
             <p>
@@ -58,28 +53,24 @@
               <v>500</v> <!-- ??? -->
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
         <prompt>
           <id>specificStressfulEventPhoto</id>
-          <displayType></displayType>
-          <displayLabel></displayLabel>
+          <displayType>metadata</displayType>
+          <displayLabel>photo</displayLabel>
           <promptText>Take a picture?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
-          <promptType>text</promptType>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptType>photo</promptType>
           <properties>
             <p>
               <k>res</k>
               <v>720</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>true</skippable>
+          <skipLabel>required if skippable is true</skipLabel>
         </prompt>
         
       </contentList>

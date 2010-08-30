@@ -2,18 +2,17 @@
 <campaign>
   <campaignName>CHIPTS</campaignName>
   <campaignVersion>0.1</campaignVersion>
-
+  <serverUrl>https://www.andwellness.org</serverUrl>
   
   <surveys>
     <survey>
       <id>alcohol</id>
       <title>Alcohol</title>
-      <description />
-      <introText />
-      <submitText />
+      <description>Every survey must have a description.</description>
+      <submitText>Every survey must include submitText.</submitText>
       <showSummary>true</showSummary>
       <editSummary>false</editSummary>
-      <summaryText  />
+      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
       <anytime>true</anytime>
     
       <contentList>
@@ -23,8 +22,7 @@
           <displayType>category</displayType>
           <displayLabel>Alcohol - Number of Drinks</displayLabel>
           <promptText>How many drinks did you have today?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
             <p>
@@ -48,8 +46,6 @@
               <v>10+</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
@@ -58,8 +54,7 @@
           <displayType>event</displayType>
           <displayLabel>Alcohol - How Many Hours Ago Was the First Drink</displayLabel>
           <promptText>How many hours ago was the first drink?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>hours_before_now</promptType>
           <properties>
             <p>
@@ -71,8 +66,6 @@
               <v>24</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
@@ -81,8 +74,7 @@
           <displayType>event</displayType>
           <displayLabel>Alcohol - How Many Hours Ago Was the Last Drink</displayLabel>
           <promptText>How many hours ago was the last drink?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>hours_before_now</promptType>
           <properties>
             <p>
@@ -94,8 +86,6 @@
               <v>24</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         

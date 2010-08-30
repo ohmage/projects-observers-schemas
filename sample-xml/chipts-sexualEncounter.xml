@@ -8,12 +8,11 @@
     <survey>
       <id>sexualEncounter</id>
       <title>Sexual Encounter</title>
-      <description />
-      <introText />
-      <submitText />
+      <description>Every survey must have a description.</description>
+      <submitText>Every survey must include submitText.</submitText>
       <showSummary>true</showSummary>
       <editSummary>false</editSummary>
-      <summaryText  />
+      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
       <anytime>true</anytime>
     
       <contentList>
@@ -23,8 +22,7 @@
           <displayType>metadata</displayType>
           <displayLabel>Sexual Encounter - How many hours ago</displayLabel>
           <promptText>How many hours ago did it occur?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>number</promptType>
            <properties>
             <p>
@@ -36,8 +34,6 @@
               <v>24</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
@@ -46,8 +42,7 @@
           <displayType>category</displayType>
           <displayLabel>Sexual Encounter - Partner Type</displayLabel>
           <promptText>Partner type?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
             <p>
@@ -63,8 +58,6 @@
               <v>regular</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
@@ -73,8 +66,7 @@
           <displayType>category</displayType>
           <displayLabel>Sexual Encounter - Partner Nickname</displayLabel>
           <promptText>Partner nickname?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>text</promptType>
           <properties>
             <p>
@@ -86,8 +78,7 @@
               <v>50</v>
             </p>
           </properties>
-          <default />
-          <condition />
+          <skipLabel>required if skippable is true</skipLabel>
           <skippable>true</skippable>
         </prompt>
         
@@ -97,8 +88,7 @@
           <displayType>category</displayType>
           <displayLabel>Sexual Encounter - Partner Gender</displayLabel>
           <promptText>Partner gender?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
             <p>
@@ -114,8 +104,6 @@
               <v>female</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
@@ -124,8 +112,7 @@
           <displayType>category</displayType>
           <displayLabel>Sexual Encounter - HIV Status</displayLabel>
           <promptText>Partner HIV status?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
             <p>
@@ -141,24 +128,19 @@
               <v>don't know</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
         <message>
           <messageText>Thr following three questions will ask about each individual  sexual activity you engaged in during this encounter. Start with the first activity, and repeat for each following act.</messageText>
-          <condition />
         </message>
         
         <repeatableSet>
           <id>sexualActivityRepeatableSet</id>
-          <terminationQuestion></terminationQuestion>
-          <terminationTrueLabel></terminationTrueLabel>
-          <terminationFalseLabel></terminationFalseLabel>
-          <terminationSkipLabel></terminationSkipLabel>
+          <terminationQuestion>termination question</terminationQuestion>
+          <terminationTrueLabel>true</terminationTrueLabel>
+          <terminationFalseLabel>false</terminationFalseLabel>
           <terminationSkipEnabled>false</terminationSkipEnabled>
-          <condition />
           <prompts>
           
             <prompt>
@@ -166,8 +148,7 @@
               <displayType>category</displayType>
               <displayLabel>Sexual Encounter - Kind of Sex</displayLabel>
               <promptText>What kind of sex?</promptText>
-              <abbreviatedText></abbreviatedText>
-              <explanationText></explanationText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
               <promptType>single_choice</promptType>
               <properties>
                 <p>
@@ -187,8 +168,6 @@
                   <v>other</v>
                 </p>
               </properties>
-              <default />
-              <condition />
               <skippable>false</skippable>
             </prompt>
             
@@ -197,8 +176,7 @@
               <displayType>category</displayType>
               <displayLabel>Sexual Encounter - Position (Anal, Vaginal, Other)</displayLabel>
               <promptText>Your position?</promptText>
-              <abbreviatedText></abbreviatedText>
-              <explanationText></explanationText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
               <promptType>single_choice</promptType>
               <properties>
                 <p>
@@ -210,8 +188,7 @@
                   <v>inserted/top</v>
                 </p>
               </properties>
-              <default />
-              <condition>sexualEncounterKindOfSex == anal or sexualEncounterKindOfSex == vaginal or sexualEncounterKindOfSex == other</condition>
+              <condition>(sexualEncounterKindOfSex == anal or sexualEncounterKindOfSex == vaginal or sexualEncounterKindOfSex == other)</condition>
               <skippable>false</skippable>
             </prompt>
             
@@ -220,8 +197,7 @@
               <displayType>category</displayType>
               <displayLabel>Sexual Encounter - Position (Oral)</displayLabel>
               <promptText>Your position?</promptText>
-              <abbreviatedText></abbreviatedText>
-              <explanationText></explanationText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
               <promptType>single_choice</promptType>
               <properties>
                 <p>
@@ -233,18 +209,16 @@
                   <v>performed</v>
                 </p>
               </properties>
-              <default />
-              <condition>sexualEncounterKindOfSex == oral</condition>
+              <condition>(sexualEncounterKindOfSex == oral)</condition>
               <skippable>false</skippable>
             </prompt>
             
-             <prompt>
+            <prompt>
               <id>sexualEncounterCondom</id>
               <displayType>measurement</displayType>
               <displayLabel>Sexual Encounter - Condom</displayLabel>
               <promptText>Was a condom used?</promptText>
-              <abbreviatedText></abbreviatedText>
-              <explanationText></explanationText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
               <promptType>single_choice</promptType>
               <properties>
                 <p>
@@ -256,8 +230,6 @@
                   <v>no</v>
                 </p>
               </properties>
-              <default />
-              <condition />
               <skippable>false</skippable>
             </prompt>
 
@@ -266,8 +238,7 @@
               <displayType>category</displayType>
               <displayLabel>Sexual Encounter - Safety</displayLabel>
               <promptText>Was safety discussed?</promptText>
-              <abbreviatedText></abbreviatedText>
-              <explanationText></explanationText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
               <promptType>single_choice</promptType>
               <properties>
                 <p>
@@ -283,8 +254,6 @@
                   <v>yes (previously)</v>
                 </p>
               </properties>
-              <default />
-              <condition />
               <skippable>false</skippable>
             </prompt>
             
@@ -293,8 +262,7 @@
               <displayType>measurement</displayType>
               <displayLabel>Sexual Encounter - High on Alcohol or Drugs</displayLabel>
               <promptText>Were you high on alcohol or drugs?</promptText>
-              <abbreviatedText></abbreviatedText>
-              <explanationText></explanationText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
               <promptType>single_choice</promptType>
               <properties>
                 <p>
@@ -306,8 +274,6 @@
                   <v>no</v>
                 </p>
               </properties>
-              <default />
-              <condition />
               <skippable>false</skippable>
             </prompt>
             

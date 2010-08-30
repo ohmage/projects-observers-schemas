@@ -2,17 +2,17 @@
 <campaign>
   <campaignName>CHIPTS</campaignName>
   <campaignVersion>0.1</campaignVersion>
+  <serverUrl>https://www.andwellness.org</serverUrl>
 
   <surveys>
     <survey>
       <id>drugs</id>
       <title>Drugs</title>
-      <description />
-      <introText />
-      <submitText />
+      <description>Every survey must have a description.</description>
+      <submitText>Every survey must include submitText.</submitText>
       <showSummary>true</showSummary>
       <editSummary>false</editSummary>
-      <summaryText  />
+      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
       <anytime>true</anytime>
       
       <contentList>
@@ -21,11 +21,12 @@
         
         <repeatableSet>
           <id>drugsRepeatableSet</id>
-          <terminationQuestion></terminationQuestion>
-          <terminationTrueLabel></terminationTrueLabel>
-          <terminationFalseLabel></terminationFalseLabel>
-          <terminationRefuseLabel></terminationRefuseLabel>
-          <condition />
+          <terminationQuestion>A terminationQuestion is required.</terminationQuestion>
+          <terminationTrueLabel>A terminationTrueLabel is required.</terminationTrueLabel>
+          <terminationFalseLabel>A terminationFalseLabel is required.</terminationFalseLabel>
+          <terminationSkipLabel>A terminationSkipLabel is required.</terminationSkipLabel>
+          <terminationSkipEnabled>true</terminationSkipEnabled>
+          
           <prompts>
           
             <prompt>
@@ -33,8 +34,7 @@
               <displayType>category</displayType>
               <displayLabel>Drugs - What Drug</displayLabel>
               <promptText>What drug did you take?</promptText>
-              <abbreviatedText></abbreviatedText>
-              <explanationText></explanationText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
               <promptType>single_choice_custom</promptType>
               <properties>
                 <p>
@@ -58,8 +58,6 @@
                   <v>opiates</v>
                 </p>
               </properties>
-              <default />
-              <condition />
               <skippable>false</skippable>
             </prompt> 
             
@@ -68,8 +66,7 @@
               <displayType>category</displayType>
               <displayLabel>Drugs - How Many Times</displayLabel>
               <promptText>How many times?</promptText>
-              <abbreviatedText></abbreviatedText>
-              <explanationText></explanationText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
               <promptType>single_choice</promptType>
               <properties>
                 <p>
@@ -89,8 +86,6 @@
                   <v>10+</v>
                 </p>
               </properties>
-              <default />
-              <condition />
               <skippable>false</skippable>
             </prompt> 
           
@@ -99,8 +94,7 @@
               <displayType>metadata</displayType>
               <displayLabel>Drugs - How Much Each Time</displayLabel>
               <promptText>How much each time?</promptText>
-              <abbreviatedText></abbreviatedText>
-              <explanationText></explanationText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
               <promptType>text</promptType>
               <properties>
                 <p>
@@ -112,57 +106,49 @@
                   <v>50</v>
                 </p>
               </properties>
-              <default />
-              <condition />
               <skippable>false</skippable>
             </prompt> 
+          
+            <prompt>
+              <id>drugsHowManyHoursFirst</id>
+              <displayType>event</displayType>
+              <displayLabel>Drugs - How Many Hours Ago Was the First Use</displayLabel>
+              <promptText>How many hours ago was the first use?</promptText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+              <promptType>hours_before_now</promptType>
+              <properties>
+                <p>
+                  <k>min</k>
+                  <v>0</v>
+                </p>
+                <p>
+                  <k>max</k>
+                  <v>24</v>
+                </p>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+            
+            <prompt>
+              <id>drugsHowManyHoursLast</id>
+              <displayType>event</displayType>
+              <displayLabel>Drugs - How Many Hours Ago Was the Last Use</displayLabel>
+              <promptText>How many hours ago was the last use?</promptText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+              <promptType>hours_before_now</promptType>
+              <properties>
+                <p>
+                  <k>min</k>
+                  <v>0</v>
+                </p>
+                <p>
+                  <k>max</k>
+                  <v>24</v>
+                </p>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
           </prompts>
-          
-           <prompt>
-            <id>drugsHowManyHoursFirst</id>
-            <displayType>event</displayType>
-            <displayLabel>Drugs - How Many Hours Ago Was the First Use</displayLabel>
-            <promptText>How many hours ago was the first use?</promptText>
-            <abbreviatedText></abbreviatedText>
-            <explanationText></explanationText>
-            <promptType>hours_before_now</promptType>
-            <properties>
-              <p>
-                <k>min</k>
-                <v>0</v>
-              </p>
-              <p>
-                <k>max</k>
-                <v>24</v>
-              </p>
-            </properties>
-            <default />
-            <condition />
-            <skippable>false</skippable>
-          </prompt>
-          
-          <prompt>
-            <id>drugsHowManyHoursLast</id>
-            <displayType>event</displayType>
-            <displayLabel>Drugs - How Many Hours Ago Was the Last Use</displayLabel>
-            <promptText>How many hours ago was the last use?</promptText>
-            <abbreviatedText></abbreviatedText>
-            <explanationText></explanationText>
-            <promptType>hours_before_now</promptType>
-            <properties>
-              <p>
-                <k>min</k>
-                <v>0</v>
-              </p>
-              <p>
-                <k>max</k>
-                <v>24</v>
-              </p>
-            </properties>
-            <default />
-            <condition />
-            <skippable>false</skippable>
-          </prompt>
         </repeatableSet>
          
       </contentList>

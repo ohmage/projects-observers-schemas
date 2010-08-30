@@ -2,17 +2,17 @@
 <campaign>
   <campaignName>CHIPTS</campaignName>
   <campaignVersion>0.1</campaignVersion>
+  <serverUrl>https://www.andwellness.org/</serverUrl>
 
   <surveys>
     <survey>
       <id>tobacco</id>
       <title>Tobacco</title>
-      <description />
-      <introText />
-      <submitText />
+      <description>Every survey must have a description.</description>
+      <submitText>Every survey must include submitText.</submitText>
       <showSummary>true</showSummary>
       <editSummary>false</editSummary>
-      <summaryText  />
+      <summaryText>required if showSummary is true.</summaryText>
       <anytime>true</anytime>
     
       <contentList>
@@ -22,8 +22,7 @@
           <displayType>category</displayType>
           <displayLabel>Tobacco - Number of Cigarettes</displayLabel>
           <promptText>How many cigarettes did you smoke today?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
             <p>
@@ -51,8 +50,6 @@
               <v>20+</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         

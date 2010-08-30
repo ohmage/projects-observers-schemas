@@ -2,47 +2,43 @@
 <campaign>
   <campaignName>CHIPTS</campaignName>
   <campaignVersion>0.1</campaignVersion>
+  <serverUrl>https://www.andwellness.org</serverUrl>
 
   <surveys>
     <survey>
       <id>photoDiary</id>
       <title>Photo Diary</title>
-      <description />
-      <introText />
-      <submitText />
+      <description>Every survey must have a description.</description>
+      <submitText>Every survey must include submitText.</submitText>
       <showSummary>true</showSummary>
       <editSummary>false</editSummary>
-      <summaryText  />
+      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
       <anytime>true</anytime>
      
       <contentList>
       
         <prompt>
           <id>photoDiaryPhoto</id>
-          <displayType></displayType>
-          <displayLabel></displayLabel>
+          <displayType>event</displayType>
+          <displayLabel>photo</displayLabel>
           <promptText>Take a picture?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
-          <promptType>text</promptType>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptType>photo</promptType>
           <properties>
             <p>
               <k>res</k>
               <v>720</v>
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
         <prompt>
           <id>photoDiaryText</id>
-          <displayType></displayType>
-          <displayLabel></displayLabel>
+          <displayType>metadata</displayType>
+          <displayLabel>text</displayLabel>
           <promptText>Add text?</promptText>
-          <abbreviatedText></abbreviatedText>
-          <explanationText></explanationText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>text</promptType>
           <properties>
             <p>
@@ -54,8 +50,6 @@
               <v>500</v> <!-- ??? -->
             </p>
           </properties>
-          <default />
-          <condition />
           <skippable>false</skippable>
         </prompt>
         
