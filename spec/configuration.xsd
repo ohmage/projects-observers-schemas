@@ -11,7 +11,13 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="campaignName" type="NonEmptyString"/>
-  <xs:element name="campaignVersion" type="NonEmptyString"/>
+  <xs:element name="campaignVersion">
+    <xs:simpleType>
+      <xs:restriction base="xs:decimal">
+        <xs:minExclusive value="0"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
   <xs:element name="serverUrl" type="NonEmptyString"/>
   <xs:element name="surveys">
     <xs:complexType>
