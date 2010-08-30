@@ -9,6 +9,7 @@ import nu.xom.ValidityException;
 
 import org.andwellness.xml.ConfigurationValidator;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 /**
  * ConfigurationValidator tester.
@@ -42,7 +43,21 @@ public class TestConfigValidator {
 				
 				try { 
 					currentFile = directory + "/" + fileName; 
+					
+					try {
+						
+						validator.run(currentFile);
+						
+					} catch(SAXParseException saxe) {
+						
+						System.out.println("Parsing failed at line number " + saxe.getLineNumber() + " column number " + saxe.getColumnNumber());
+						throw saxe;
+						
+					}
+					
 					validator.run(currentFile);
+					
+					
 					System.out.println("successful test from file: " + currentFile);
 					System.out.println(); 
 					System.out.println();
