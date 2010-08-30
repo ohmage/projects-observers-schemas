@@ -89,7 +89,7 @@
   <xs:element name="message">
     <xs:complexType>
       <xs:all>
-        <xs:element ref="condition"/>
+        <xs:element ref="condition" minOccurs="0" />
         <xs:element ref="messageText"/>
       </xs:all>
     </xs:complexType>
