@@ -33,6 +33,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 /**
  * Giant procedural driver for the configuration validation process.
@@ -57,7 +58,7 @@ public class ConfigurationValidator {
 		_validDisplayTypes.add("measurement");
 		_validDisplayTypes.add("event");
 		_validDisplayTypes.add("counter");
-		_validDisplayTypes.add("categorical");
+		_validDisplayTypes.add("category");
 		_validDisplayTypes.add("metadata");
 	}
 	
@@ -71,7 +72,17 @@ public class ConfigurationValidator {
 		
 		String fileName = args[0];
 		ConfigurationValidator validator = new ConfigurationValidator();
-		validator.run(fileName);
+		
+		try {
+			
+			validator.run(fileName);
+			
+		} catch(SAXParseException saxe) {
+			
+			_logger.error("Parsing failed at line number " + saxe.getLineNumber() + " column number " + saxe.getColumnNumber());
+			throw saxe;
+			
+		}
 	}
 	
 	/**
@@ -90,6 +101,8 @@ public class ConfigurationValidator {
 		// 5d. The values in conditions must be allowable for the prompt type indicated by the id on the left hand side of the 
 		// operation in each condition
 		// 
+		
+		_logger.info("Starting validation for " + fileName);
 		
 		checkSchema(fileName);
 		_logger.info("schema validation successful");
@@ -347,7 +360,7 @@ public class ConfigurationValidator {
 			for(int y = 0; y < numberOfItemsInContentList; y++) {
 				// Content lists can contain conditions in prompts, repeatable sets, and prompts in repeatable sets 
 				
-				Nodes promptsAndRepeatableSets = contentList.get(x).query("prompt | repeatableSet");
+				Nodes promptsAndRepeatableSets = contentList.get(y).query("prompt | repeatableSet");
 				int numberOfOuterElements = promptsAndRepeatableSets.size();
 				List<String> idList = new ArrayList<String>();
 				
