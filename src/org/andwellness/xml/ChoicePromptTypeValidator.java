@@ -75,7 +75,14 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 	@Override
 	public void validateConditionValuePair(ConditionValuePair pair) {
 		if(! isSkipped(pair.getValue())) {
-			if(! _choices.containsValue(pair.getValue())) {
+			int i = 0; 
+			try {
+				i = Integer.parseInt(pair.getValue());
+			} catch (NumberFormatException nfe) {
+				throw new IllegalArgumentException("invalid condition value: " + i);
+			}
+			
+			if(! _choices.containsKey(i)) {
 				throw new IllegalArgumentException("value not found in set of choices: " + pair.getValue());
 			} 
 		}
