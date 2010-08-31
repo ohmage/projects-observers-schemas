@@ -57,7 +57,6 @@ public class TestConfigValidator {
 					
 					validator.run(currentFile);
 					
-					
 					System.out.println("successful test from file: " + currentFile);
 					System.out.println(); 
 					System.out.println();
