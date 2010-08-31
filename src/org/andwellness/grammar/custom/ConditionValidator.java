@@ -51,12 +51,11 @@ public final class ConditionValidator {
 			// to false. Without the false setting, the weird ReInit logic below must occur.
 			
 			if(_first) {
-				System.out.println("first");
+				
 				_first = false;
 				s = new ConditionParser(new StringReader(conditionSentence)).start();
 				
 			} else {
-				System.out.println("not first");
 				ConditionParser.ReInit(new StringReader(conditionSentence)); // ReInit must be called for a multiple parse scenario
 				                                                             // i.e., when this method is called from a loop
 				s = ConditionParser.start();
