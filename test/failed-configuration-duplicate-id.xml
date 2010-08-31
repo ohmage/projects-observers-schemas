@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="configuration.xsd">
   <campaignName>campaignName</campaignName>
-  <campaignVersion>campaignVersion</campaignVersion>
+  <campaignVersion>0.1</campaignVersion>
   <serverUrl>serverUrl</serverUrl>
   <surveys>
     <survey>
