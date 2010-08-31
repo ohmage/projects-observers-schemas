@@ -64,7 +64,7 @@
               <v>24</v>
             </p>
           </properties>
-          <condition>(medicationTookOrMissed == took)</condition> 
+          <condition>(medicationTookOrMissed == 0)</condition> 
           <skippable>false</skippable>
         </prompt>
         
@@ -86,7 +86,7 @@
               <v>no</v>
             </p>
           </properties>
-          <condition>(medicationTookOrMissed == took)</condition>
+          <condition>(medicationTookOrMissed == 0)</condition>
           <skippable>false</skippable>
         </prompt>
         
@@ -108,7 +108,7 @@
               <v>500</v> <!-- ???? -->
             </p>
           </properties>
-          <condition>(medicationTookOrMissed == missed)</condition>
+          <condition>(medicationTookOrMissed == 1)</condition>
           <skipLabel>Required if skippable is true.</skipLabel>
           <skippable>true</skippable>
         </prompt>

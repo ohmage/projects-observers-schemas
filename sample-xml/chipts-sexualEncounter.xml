@@ -188,7 +188,7 @@
                   <v>inserted/top</v>
                 </p>
               </properties>
-              <condition>(sexualEncounterKindOfSex == anal or sexualEncounterKindOfSex == vaginal or sexualEncounterKindOfSex == other)</condition>
+              <condition>(sexualEncounterKindOfSex == 0 or sexualEncounterKindOfSex == 2 or sexualEncounterKindOfSex == 3)</condition>
               <skippable>false</skippable>
             </prompt>
             
@@ -209,7 +209,7 @@
                   <v>performed</v>
                 </p>
               </properties>
-              <condition>(sexualEncounterKindOfSex == oral)</condition>
+              <condition>(sexualEncounterKindOfSex == 1)</condition>
               <skippable>false</skippable>
             </prompt>
             
