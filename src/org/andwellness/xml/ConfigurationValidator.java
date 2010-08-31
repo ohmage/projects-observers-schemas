@@ -436,6 +436,7 @@ public class ConfigurationValidator {
 					
 					while(keySetIterator.hasNext()) {
 						String key = keySetIterator.next();
+						_logger.info("validating condition value for condition id " + key);
 						int keyIndex = idList.indexOf(key); 
 						
 						if(keyIndex >= currentIdIndex || keyIndex == -1) {
