@@ -70,6 +70,37 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 			}
 			_choices.put(Integer.parseInt(kNodes.get(i).getValue()), lNodes.get(i).getValue());
 		}
+		
+		
+		// This is an edge case, but until we have more of them it seems ok here
+		
+		String promptType = promptNode.query("promptType").get(0).getValue();
+		if("single_choice".equals(promptType)) {
+			
+			String displayType = promptNode.query("displayType").get(0).getValue();
+			if("count".equals(displayType) || "measurement".equals(displayType)) {
+				
+				// An integer value is required for each choice. 
+				Nodes vNodes = promptNode.query("properties/property/value");
+				if(vNodes.size() < 1) {
+					throw new IllegalArgumentException("values are required for single_choice prompts that have a displayType of "
+						+ "count or measurement");					
+				}
+				if(vNodes.size() != kNodes.size()) {
+					throw new IllegalArgumentException("values are required for each choice in single_choice prompts that have a " 
+						+ "displayType of count or measurement");
+				}
+				int vNodesSize = vNodes.size();
+				for(int i = 0; i < vNodesSize; i++) {
+					try {
+						Integer.parseInt(vNodes.get(i).getValue());
+					} catch(NumberFormatException nfe) {
+						throw new IllegalArgumentException("value must be an integer for choice option in prompt " 
+							+ promptNode.toXML());
+					}
+				}
+			}
+		}
 	}
 
 	@Override
