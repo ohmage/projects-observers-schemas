@@ -106,6 +106,7 @@
       <xs:all>
         <xs:element ref="displayType"/>
         <xs:element ref="displayLabel"/>
+        <xs:element ref="unit" minOccurs="0"/>
         <xs:element ref="id"/>
         <xs:element ref="promptText"/>
         <xs:element ref="abbreviatedText" minOccurs="0"/>
@@ -121,6 +122,7 @@
   </xs:element>
   <xs:element name="displayType" type="NonEmptyString"/>
   <xs:element name="displayLabel" type="NonEmptyString"/>
+  <xs:element name="unit" type="NonEmptyString"/>
   <xs:element name="promptText" type="NonEmptyString"/>
   <xs:element name="abbreviatedText" type="NonEmptyString" />
   <xs:element name="explanationText" type="NonEmptyString" />
@@ -128,20 +130,22 @@
   <xs:element name="properties">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="p"/>
+        <xs:element maxOccurs="unbounded" ref="property"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="p">
+  <xs:element name="property">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="k"/>
-        <xs:element ref="v"/>
+        <xs:element ref="key"/>
+        <xs:element ref="label"/>
+        <xs:element ref="value" minOccurs="0" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="k" type="NonEmptyString"/>
-  <xs:element name="v" type="NonEmptyString"/>
+  <xs:element name="key" type="NonEmptyString"/>
+  <xs:element name="label" type="NonEmptyString"/>
+  <xs:element name="value" type="NonEmptyString"/>
   <xs:element name="default" type="NonEmptyString"/>
   <xs:element name="skippable" type="xs:boolean"/>
   <xs:element name="condition" type="NonEmptyString"/>
