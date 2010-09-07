@@ -21,7 +21,7 @@
           <id>alcoholNumberOfDrinks</id>
           <displayType>count</displayType>
           <displayLabel>Alcohol - Number of Drinks</displayLabel>
-          <unit>alcholic drink(s)</unit>
+          <unit>alcoholic drink(s)</unit>
           
           <promptText>How many drinks did you have today?</promptText>
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
