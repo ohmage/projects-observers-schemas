@@ -28,9 +28,10 @@ public class CustomChoicePromptTypeValidator extends ChoicePromptTypeValidator {
 			// All k must be number
 			// 'v' nodes exist at this point because of schema validation
 			
-			Nodes kNodes = promptNode.query("properties/p/k"); // could check for the number of 'p' nodes here, but 
-			                                                   // the number of 'k' nodes == the number of 'p' nodes
-			                                                   // and the values of the 'k' nodes are what needs to be validated 
+			Nodes kNodes = promptNode.query("properties/property/key"); // could check for the number of 'p' nodes here, but 
+			                                                            // the number of 'k' nodes == the number of 'p' nodes
+			                                                            // and the values of the 'k' nodes are what needs to be 
+			                                                            // validated 
 			int kSize = kNodes.size();
 			for(int j = 0; j < kSize; j++) {
 				int key = getValidNonNegativeInteger(kNodes.get(j).getValue());
@@ -40,17 +41,17 @@ public class CustomChoicePromptTypeValidator extends ChoicePromptTypeValidator {
 				_choices.put(key, null);
 			}
 			
-			Nodes vNodes = promptNode.query("properties/p/v");
+			Nodes lNodes = promptNode.query("properties/property/label");
 					
 			// Make sure there are not duplicate values
 			Set<String> valueSet = new HashSet<String>();
-			int vSize = vNodes.size();
+			int vSize = lNodes.size();
 			
 			for(int i = 0; i < vSize; i++) {
 				int key = Integer.parseInt(kNodes.get(i).getValue());
-				String value = vNodes.get(i).getValue();
+				String value = lNodes.get(i).getValue();
 				if(! valueSet.add(value)) {
-					throw new IllegalArgumentException("duplicate choice value found: " + value);
+					throw new IllegalArgumentException("duplicate choice label found: " + value);
 				}
 				_choices.put(key, value);
 			}

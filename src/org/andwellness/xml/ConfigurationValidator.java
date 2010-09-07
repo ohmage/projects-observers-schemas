@@ -57,7 +57,7 @@ public class ConfigurationValidator {
 
 		_validDisplayTypes.add("measurement");
 		_validDisplayTypes.add("event");
-		_validDisplayTypes.add("counter");
+		_validDisplayTypes.add("count");
 		_validDisplayTypes.add("category");
 		_validDisplayTypes.add("metadata");
 	}

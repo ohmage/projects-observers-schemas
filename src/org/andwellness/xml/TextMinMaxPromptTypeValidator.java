@@ -25,9 +25,9 @@ public class TextMinMaxPromptTypeValidator extends AbstractNumberPromptTypeValid
 	/**
 	 * Makes sure that max is greater than min and that min and max are both positive integers.
 	 */
-	protected void performExtendedConfigValidation(Node promptNode, Nodes minVNodes, Nodes maxVNodes) {
-		int min = getValidPositiveInteger(minVNodes.get(0).getValue()); 
-		int max = getValidPositiveInteger(maxVNodes.get(0).getValue());
+	protected void performExtendedConfigValidation(Node promptNode, Nodes minLNodes, Nodes maxLNodes) {
+		int min = getValidPositiveInteger(minLNodes.get(0).getValue()); 
+		int max = getValidPositiveInteger(maxLNodes.get(0).getValue());
 		
 		if(max < min) {
 			throw new IllegalStateException("max cannot be greater than min: " + promptNode.toXML());

@@ -18,32 +18,32 @@ public abstract class AbstractNumberPromptTypeValidator extends AbstractPromptTy
 		setSkippable(promptNode);
 		
 		// make sure there are no unknown props
-		Nodes propertyNodes = promptNode.query("properties/p"); 
+		Nodes propertyNodes = promptNode.query("properties/property"); 
 		if(2 != propertyNodes.size()) {
 			throw new IllegalStateException("invalid prompt configuration:\n" + promptNode.toXML());
 		}
 		
-		Nodes minNodes = promptNode.query("properties/p/k[text()='min']");  
+		Nodes minNodes = promptNode.query("properties/property/key[text()='min']");  
 		if(1 != minNodes.size()) {
 			throw new IllegalStateException("missing or extra 'min' property for XML fragment: " + promptNode.toXML());
 		}
 		
-		Nodes maxNodes = promptNode.query("properties/p/k[text()='max']");
+		Nodes maxNodes = promptNode.query("properties/property/key[text()='max']");
 		if(1 != maxNodes.size()) {
 			throw new IllegalStateException("missing or extra 'max' property for XML fragment: " + promptNode.toXML());
 		}
 		
-		Nodes minVNodes = minNodes.get(0).getParent().query("v");
-		if(1 != minVNodes.size()) {
-			throw new IllegalStateException("missing or extra 'min' value for XML fragment: " + promptNode.toXML());
+		Nodes minLNodes = minNodes.get(0).getParent().query("label");
+		if(1 != minLNodes.size()) {
+			throw new IllegalStateException("missing or extra 'min' label for XML fragment: " + promptNode.toXML());
 		}
 		
-		Nodes maxVNodes = maxNodes.get(0).getParent().query("v");
-		if(1 != maxVNodes.size()) {
-			throw new IllegalStateException("missing or extra 'max' value for XML fragment: " + promptNode.toXML());
+		Nodes maxLNodes = maxNodes.get(0).getParent().query("label");
+		if(1 != maxLNodes.size()) {
+			throw new IllegalStateException("missing or extra 'max' label for XML fragment: " + promptNode.toXML());
 		}
 		
-		performExtendedConfigValidation(promptNode, minVNodes, maxVNodes);
+		performExtendedConfigValidation(promptNode, minLNodes, maxLNodes);
 	} 
 	
 	public void checkDefaultValue(String value) {

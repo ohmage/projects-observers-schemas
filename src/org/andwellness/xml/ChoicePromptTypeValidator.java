@@ -30,11 +30,11 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 		// All k must be number
 		// 'v' nodes exist at this point because of schema validation
 		
-		Nodes kNodes = promptNode.query("properties/p/k"); // could check for the number of 'p' nodes here, but 
-		                                                   // the number of 'k' nodes == the number of 'p' nodes
-		                                                   // and the values of the 'k' nodes are what needs to be validated 
+		Nodes kNodes = promptNode.query("properties/property/key"); // could check for the number of 'p' nodes here, but 
+		                                                            // the number of 'k' nodes == the number of 'p' nodes
+		                                                            // and the values of the 'k' nodes are what needs to be validated 
 		if(kNodes.size() < 2) {
-			throw new IllegalStateException("At least 2 'p' nodes are required for prompt:\n" + promptNode.toXML());
+			throw new IllegalStateException("At least 2 'property' nodes are required for prompt:\n" + promptNode.toXML());
 		}
 		
 		int kSize = kNodes.size();
@@ -55,20 +55,20 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 //			}
 //		}
 		
-		Nodes vNodes = promptNode.query("properties/p/v");
+		Nodes lNodes = promptNode.query("properties/property/label");
 				
 		// Make sure there are not duplicate values 
 		
 		// TODO should duplicate values be allowed in certain cases e.g., when the values are empty strings?
 		
 		Set<String> valueSet = new HashSet<String>();
-		int vSize = vNodes.size();
+		int vSize = lNodes.size();
 		
 		for(int i = 0; i < vSize; i++) {
-			if(! valueSet.add(vNodes.get(i).getValue())) {
-				throw new IllegalArgumentException("duplicate found for value: " + vNodes.get(i).getValue());
+			if(! valueSet.add(lNodes.get(i).getValue())) {
+				throw new IllegalArgumentException("duplicate found for label: " + lNodes.get(i).getValue());
 			}
-			_choices.put(Integer.parseInt(kNodes.get(i).getValue()), vNodes.get(i).getValue());
+			_choices.put(Integer.parseInt(kNodes.get(i).getValue()), lNodes.get(i).getValue());
 		}
 	}
 

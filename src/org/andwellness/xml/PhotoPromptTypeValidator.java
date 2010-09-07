@@ -22,22 +22,22 @@ public class PhotoPromptTypeValidator extends AbstractNumberPromptTypeValidator 
 		setSkippable(promptNode);
 		
 		// make sure there are no unknown props
-		Nodes propertyNodes = promptNode.query("properties/p"); 
+		Nodes propertyNodes = promptNode.query("properties/property"); 
 		if(1 != propertyNodes.size()) {
 			throw new IllegalStateException("invalid prompt configuration: " + promptNode.toXML());
 		}
 		
-		Nodes resNodes = promptNode.query("properties/p/k[text()='res']");
+		Nodes resNodes = promptNode.query("properties/property/key[text()='res']");
 		if(1 != resNodes.size()) {
 			throw new IllegalStateException("missing 'res' property for XML fragment: " + promptNode.toXML());
 		}
 						
-		Nodes resVNodes = resNodes.get(0).getParent().query("v"); // the schema check should prevent this 
-		if(1 != resVNodes.size()) {
-			throw new IllegalStateException("missing or extra 'res' value for XML fragment: " + promptNode.toXML());
+		Nodes resLabelNodes = resNodes.get(0).getParent().query("label"); // the schema check should prevent this 
+		if(1 != resLabelNodes.size()) {
+			throw new IllegalStateException("missing or extra 'res' label for XML fragment: " + promptNode.toXML());
 		}
 		
-		getValidPositiveInteger(resVNodes.get(0).getValue()); // TODO we need a valid set of values for res (720, etc)
+		getValidPositiveInteger(resLabelNodes.get(0).getValue()); // TODO we need a valid set of values for res (720, etc)
 	}
 
 	/**
