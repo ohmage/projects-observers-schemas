@@ -71,7 +71,7 @@
         
         <prompt>
           <id>medicationOnTime</id>
-          <displayType>measurement</displayType>
+          <displayType>category</displayType>
           <displayLabel>Medication - On Time</displayLabel>
           <promptText>On time?</promptText>
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>

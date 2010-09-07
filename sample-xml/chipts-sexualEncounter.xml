@@ -215,7 +215,7 @@
             
             <prompt>
               <id>sexualEncounterCondom</id>
-              <displayType>measurement</displayType>
+              <displayType>category</displayType>
               <displayLabel>Sexual Encounter - Condom</displayLabel>
               <promptText>Was a condom used?</promptText>
               <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
@@ -259,7 +259,7 @@
             
              <prompt>
               <id>sexualEncounterHighOnAlcoholOrDrugs</id>
-              <displayType>measurement</displayType>
+              <displayType>category</displayType>
               <displayLabel>Sexual Encounter - High on Alcohol or Drugs</displayLabel>
               <promptText>Were you high on alcohol or drugs?</promptText>
               <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
