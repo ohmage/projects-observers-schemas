@@ -24,10 +24,10 @@
           <explanationText>explanationText</explanationText>
           <promptType>photo</promptType>
           <properties>
-            <p>
-              <k>res</k>
-              <v>res</v>
-            </p>
+            <property>
+              <key>res</key>
+              <label>res</label>
+            </property>
           </properties>
           
           <skippable>true</skippable>

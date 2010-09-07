@@ -24,10 +24,10 @@
           <explanationText>explanationText</explanationText>
           <promptType>single_choice</promptType>
           <properties>
-            <p>
-              <k>0</k>
-              <v>10</v>
-            </p>
+            <property>
+              <key>0</key>
+              <label>10</label>
+            </property>
           </properties>
           
           <skippable>true</skippable>
@@ -42,10 +42,10 @@
           <explanationText>explanationText</explanationText>
           <promptType>invalid</promptType>
           <properties>
-            <p>
-              <k>0</k>
-              <v>10</v>
-            </p>
+            <property>
+              <key>0</key>
+              <label>10</label>
+            </property>
           </properties>
           
           <condition>unknownId == 42</condition>

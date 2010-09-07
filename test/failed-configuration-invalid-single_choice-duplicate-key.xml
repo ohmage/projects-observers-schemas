@@ -24,14 +24,14 @@
           <explanationText>explanationText</explanationText>
           <promptType>single_choice</promptType>
           <properties>
-            <p>
-              <k>2</k>
-              <v>10</v>
-            </p>
-            <p>
-              <k>2</k>
-              <v>10</v>
-            </p>
+            <property>
+              <key>2</key>
+              <label>10</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>10</label>
+            </property>
           </properties>
           
           <skippable>true</skippable>

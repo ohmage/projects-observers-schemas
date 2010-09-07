@@ -24,14 +24,14 @@
           <explanationText>explanationText</explanationText>
           <promptType>number</promptType>
           <properties>
-            <p>
-              <k>max</k>
-              <v>NaN</v>
-            </p>
-            <p>
-              <k>min</k>
-              <v>10</v>
-            </p>
+            <property>
+              <key>max</key>
+              <label>NaN</label>
+            </property>
+            <property>
+              <key>min</key>
+              <label>10</label>
+            </property>
           </properties>
           
           <skippable>true</skippable>

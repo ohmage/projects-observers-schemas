@@ -19,36 +19,44 @@
       
         <prompt>
           <id>tobaccoNumberOfCigarettes</id>
-          <displayType>category</displayType>
+          <displayType>count</displayType>
           <displayLabel>Tobacco - Number of Cigarettes</displayLabel>
+          <unit>cigarette(s)</unit>
+          
           <promptText>How many cigarettes did you smoke today?</promptText>
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
-            <p>
-              <k>0</k>
-              <v>0</v>
-            </p>
-            <p>
-              <k>1</k>
-              <v>1-5</v>
-            </p>
-            <p>
-              <k>2</k>
-              <v>6-10</v>
-            </p>
-            <p>
-              <k>3</k>
-              <v>11-15</v>
-            </p>
-            <p>
-              <k>4</k>
-              <v>16-20</v>
-            </p>
-            <p>
-              <k>5</k>
-              <v>20+</v>
-            </p>
+            <property>
+              <key>0</key>
+              <label>0</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>1-5</label>
+              <value>3</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>6-10</label>
+              <value>8</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>11-15</label>
+              <value>13</value>
+            </property>
+            <property>
+              <key>4</key>
+              <label>16-20</label>
+              <value>18</value>
+            </property>
+            <property>
+              <key>5</key>
+              <label>20+</label>
+              <value>20</value>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>

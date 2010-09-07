@@ -24,10 +24,10 @@
           <explanationText>explanationText</explanationText>
           <promptType>number</promptType>
           <properties>
-            <p>
-              <k>unknown</k>
-              <v>10</v>
-            </p>
+            <property>
+              <key>unknown</key>
+              <label>10</label>
+            </property>
           </properties>
           
           <skippable>true</skippable>

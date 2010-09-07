@@ -35,14 +35,14 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
-            <p>
-              <k>0</k>
-              <v>took</v>
-            </p>
-            <p>
-              <k>1</k>
-              <v>missed</v>
-            </p>
+            <property>
+              <key>0</key>
+              <label>took</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>missed</label>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
@@ -55,14 +55,14 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>hours_before_now</promptType>
           <properties>
-            <p>
-              <k>min</k>
-              <v>0</v>
-            </p>
-            <p>
-              <k>max</k>
-              <v>24</v>
-            </p>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
           </properties>
           <condition>(medicationTookOrMissed == 0)</condition> 
           <skippable>false</skippable>
@@ -77,14 +77,14 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
-            <p>
-              <k>0</k>
-              <v>yes</v>
-            </p>
-            <p>
-              <k>1</k>
-              <v>no</v>
-            </p>
+            <property>
+              <key>0</key>
+              <label>yes</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>no</label>
+            </property>
           </properties>
           <condition>(medicationTookOrMissed == 0)</condition>
           <skippable>false</skippable>
@@ -99,14 +99,14 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>text</promptType>
           <properties>
-            <p>
-              <k>min</k>
-              <v>1</v>
-            </p>
-            <p>
-              <k>max</k>
-              <v>500</v> <!-- ???? -->
-            </p>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> <!-- ???? -->
+            </property>
           </properties>
           <condition>(medicationTookOrMissed == 1)</condition>
           <skipLabel>Required if skippable is true.</skipLabel>

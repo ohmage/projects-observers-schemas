@@ -24,14 +24,14 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>hours_before_now</promptType>
           <properties>
-            <p>
-              <k>min</k>
-              <v>0</v>
-            </p>
-            <p>
-              <k>max</k>
-              <v>24</v>
-            </p>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
@@ -44,14 +44,14 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>text</promptType>
           <properties>
-            <p>
-              <k>min</k>
-              <v>1</v>
-            </p>
-            <p>
-              <k>max</k>
-              <v>500</v> <!-- ??? -->
-            </p>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> <!-- ??? -->
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
@@ -64,10 +64,10 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>photo</promptType>
           <properties>
-            <p>
-              <k>res</k>
-              <v>720</v>
-            </p>
+            <property>
+              <key>res</key>
+              <label>720</label>
+            </property>
           </properties>
           <skippable>true</skippable>
           <skipLabel>required if skippable is true</skipLabel>

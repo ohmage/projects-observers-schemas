@@ -24,14 +24,14 @@
           <explanationText>explanationText</explanationText>
           <promptType>hours_before_now</promptType>
           <properties>
-            <p>
-              <k>min</k>
-              <v>-1</v>
-            </p>
-            <p>
-              <k>max</k>
-              <v>10</v>
-            </p>
+            <property>
+              <key>min</key>
+              <label>-1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>10</label>
+            </property>
           </properties>
           
           <skippable>true</skippable>

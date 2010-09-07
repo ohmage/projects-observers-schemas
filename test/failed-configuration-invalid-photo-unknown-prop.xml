@@ -24,10 +24,10 @@
           <explanationText>explanationText</explanationText>
           <promptType>photo</promptType>
           <properties>
-            <p>
-              <k>photo</k>
-              <v>10</v>
-            </p>
+            <property>
+              <key>photo</key>
+              <label>10</label>
+            </property>
           </properties>
           
           <skippable>true</skippable>

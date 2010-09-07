@@ -25,22 +25,22 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
-            <p>
-              <k>0</k>
-              <v>not at all</v>
-            </p>
-            <p>
-              <k>1</k>
-              <v>slightly</v>
-            </p>
-            <p>
-              <k>2</k>
-              <v>moderately</v>
-            </p>
-            <p>
-              <k>3</k>
-              <v>extremely</v>
-            </p>
+            <property>
+              <key>0</key>
+              <label>not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>slightly</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>moderately</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>extremely</label>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
@@ -53,22 +53,22 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
-            <p>
-              <k>0</k>
-              <v>not at all</v>
-            </p>
-            <p>
-              <k>1</k>
-              <v>slightly</v>
-            </p>
-            <p>
-              <k>2</k>
-              <v>moderately</v>
-            </p>
-            <p>
-              <k>3</k>
-              <v>extremely</v>
-            </p>
+            <property>
+              <key>0</key>
+              <label>not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>slightly</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>moderately</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>extremely</label>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
@@ -81,22 +81,22 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
-            <p>
-              <k>0</k>
-              <v>not at all</v>
-            </p>
-            <p>
-              <k>1</k>
-              <v>slightly</v>
-            </p>
-            <p>
-              <k>2</k>
-              <v>moderately</v>
-            </p>
-            <p>
-              <k>3</k>
-              <v>extremely</v>
-            </p>
+            <property>
+              <key>0</key>
+              <label>not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>slightly</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>moderately</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>extremely</label>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
@@ -110,22 +110,22 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
-            <p>
-              <k>0</k>
-              <v>not at all</v>
-            </p>
-            <p>
-              <k>1</k>
-              <v>slightly</v>
-            </p>
-            <p>
-              <k>2</k>
-              <v>moderately</v>
-            </p>
-            <p>
-              <k>3</k>
-              <v>extremely</v>
-            </p>
+            <property>
+              <key>0</key>
+              <label>not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>slightly</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>moderately</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>extremely</label>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
@@ -139,22 +139,22 @@
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
-            <p>
-              <k>0</k>
-              <v>not at all</v>
-            </p>
-            <p>
-              <k>1</k>
-              <v>slightly</v>
-            </p>
-            <p>
-              <k>2</k>
-              <v>moderately</v>
-            </p>
-            <p>
-              <k>3</k>
-              <v>extremely</v>
-            </p>
+            <property>
+              <key>0</key>
+              <label>not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>slightly</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>moderately</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>extremely</label>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>

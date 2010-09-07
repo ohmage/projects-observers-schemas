@@ -26,10 +26,10 @@
           <skippable>true</skippable>
           <skipLabel>skipLabel</skipLabel>
           <properties>
-            <p>
-              <k>1</k>
-              <v>a</v>
-            </p>
+            <property>
+              <key>1</key>
+              <label>a</label>
+            </property>
           </properties>
         </prompt>
      </contentList>

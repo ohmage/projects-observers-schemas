@@ -23,14 +23,14 @@
           <explanationText>explanationText</explanationText>
           <promptType>single_choice</promptType>
           <properties>
-            <p>
-              <k>0</k>
-              <v>10</v>
-            </p>
-            <p>
-              <k>1</k>
-              <v>11</v>
-            </p>
+            <property>
+              <key>0</key>
+              <label>10</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>11</label>
+            </property>
           </properties>
           
           <condition>id == 42</condition>
