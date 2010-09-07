@@ -93,7 +93,7 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 				int vNodesSize = vNodes.size();
 				for(int i = 0; i < vNodesSize; i++) {
 					try {
-						Integer.parseInt(vNodes.get(i).getValue());
+						Float.parseFloat(vNodes.get(i).getValue());
 					} catch(NumberFormatException nfe) {
 						throw new IllegalArgumentException("value must be an integer for choice option in prompt " 
 							+ promptNode.toXML());
