@@ -29,7 +29,6 @@ import nu.xom.ValidityException;
 import org.andwellness.config.grammar.custom.ConditionParseException;
 import org.andwellness.config.grammar.custom.ConditionValidator;
 import org.andwellness.config.grammar.custom.ConditionValuePair;
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -45,12 +44,7 @@ public class ConfigurationValidator {
 	private static final String _schemaFile = "spec/configuration.xsd";
 	private Map<String, PromptTypeValidator> _promptTypeValidatorMap; // the map keys are the prompt ids in the input file
 	private List<String> _validDisplayTypes;
-	
-	static {
-		// Configure log4j. (pointing to System.out)
-		BasicConfigurator.configure();
-	}
-	
+		
 	public ConfigurationValidator() {
 		_promptTypeValidatorMap = new HashMap<String, PromptTypeValidator>();
 		_validDisplayTypes = new ArrayList<String>();
