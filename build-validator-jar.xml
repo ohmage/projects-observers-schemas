@@ -40,6 +40,7 @@
            debug="true" deprecation="true" optimize="false" failonerror="true" encoding="UTF-8">
       <compilerarg value="-Xlint:unchecked"/>
       <src path="${src}"/>
+      <exclude name="org/andwellness/config/load/**" />
       <classpath refid="compile-classpath"/>
     </javac>
     <copy todir="${build}/classes">
@@ -64,12 +65,17 @@
     <mkdir dir="${dist}"/>
 	<echo message="Warning: Bundling of dependencies will not work if jars are organized in subdirs in component repository."/>
 	<jar destfile="${dist}/${ant.project.name}-${version}.jar">
-	  <fileset dir="${build}/classes" />
+	  <fileset dir="${build}/classes">
+	  	<exclude name="org/andwellness/config/load/**" />
+	  </fileset>
+	  <fileset dir=".">
+	  	<include name="log4j.properties"/>
+	  </fileset>	
 	  <zipfileset src="${component.repository}/log4j-1.2.15.jar" excludes="META-INF/*" />
 	  <zipfileset src="${component.repository}/xom-1.2.6.jar" excludes="META-INF/*" />
 	  <zipfileset src="${component.repository}/xercesImpl-2.10.0.jar" excludes="META-INF/*" />
 	  <manifest>
-	    <attribute name="Main-Class" value="org.andwellness.xml.ConfigurationValidator" />
+	    <attribute name="Main-Class" value="org.andwellness.config.xml.ConfigurationValidator" />
 	  </manifest>
 	</jar>
   </target>
