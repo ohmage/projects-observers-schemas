@@ -40,6 +40,7 @@
            debug="true" deprecation="true" optimize="false" failonerror="true" encoding="UTF-8">
       <compilerarg value="-Xlint:unchecked"/>
       <src path="${src}"/>
+      <exclude name="org/andwellness/config/load/**" />
       <classpath refid="compile-classpath"/>
     </javac>
     <copy todir="${build}/classes">
@@ -65,9 +66,9 @@
 	<echo message="Warning: Bundling of dependencies will not work if jars are organized in subdirs in component repository."/>
 	<jar destfile="${dist}/${ant.project.name}-${version}.jar">
 	  <fileset dir="${build}/classes">
-	    <include name="**/org/andwellness/grammar/parser/*class" /> 
-	    <include name="**/org/andwellness/grammar/syntaxtree/*class" />
-	    <include name="**/org/andwellness/grammar/visitor/*class" />
+	    <include name="**/org/andwellness/config/grammar/parser/*class" /> 
+	    <include name="**/org/andwellness/config/grammar/syntaxtree/*class" />
+	    <include name="**/org/andwellness/config/grammar/visitor/*class" />
 	  </fileset>
     </jar>
   </target>
