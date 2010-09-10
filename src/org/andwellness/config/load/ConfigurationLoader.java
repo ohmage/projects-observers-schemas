@@ -17,6 +17,7 @@ import nu.xom.ValidityException;
 import org.andwellness.config.xml.ConfigurationValidator;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.log4j.Logger;
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -123,7 +124,7 @@ public class ConfigurationLoader {
 	private void insertConfiguration(Element root) {
 		final String campaignVersion = root.query("/campaign/campaignVersion").get(0).getValue(); // this query without error checking is ok
 													        					      			  // because our schema guarantees the structure
-		final String xml = root.toXML();
+		final String xml = root.toXML(); // whitespace is left intact - it can be removed with an XSLT in the future
 		final String sql = "insert into campaign_configuration (campaign_id, version, xml) values (?,?,?)"; 
 		
 		try {
@@ -133,7 +134,7 @@ public class ConfigurationLoader {
 					public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 						PreparedStatement ps = connection.prepareStatement(sql);
 						ps.setInt(1, _campaignId);
-						ps.setFloat(2, Float.parseFloat(campaignVersion));
+						ps.setString(2, campaignVersion);
 						ps.setString(3, xml);
 						return ps;
 					}
@@ -142,9 +143,17 @@ public class ConfigurationLoader {
 		
 		} catch (DataIntegrityViolationException dive) { // thrown if the unique key of campaign_id-version exists
 			
-			throw new IllegalStateException("campaign_id-version combination already exists", dive);
+			if(((SQLException) dive.getCause()).getErrorCode() == 1062) { // not great to hardcode the MySQL error code
 			
-		}
+			    throw new IllegalStateException("campaign_id-version combination already exists", dive);
+			    
+			} else {
+				
+				throw new IllegalStateException("caught DataIntegrityException - not a duplicate", dive);
+			}
+		} 
+		
+		// instead of catching it, just allow the Spring DataAccessException to be thrown up the call stack
 		
 	}	
 	
