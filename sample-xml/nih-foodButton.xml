@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignName>NIH</campaignName>
+  <campaignVersion>1.0</campaignVersion>
+  <serverUrl>https://heart.andwellness.org</serverUrl>
+  
+  <surveys>
+    <survey>
+      <id>foodButton</id>
+      <title>Stress</title>
+      <description>Not displayed</description>
+      <submitText>Not displayed</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+      
+        <prompt>
+          <id>foodPhoto</id>
+          <displayType>event</displayType>
+          <displayLabel>photo</displayLabel>
+          <promptText>Take a picture?</promptText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptType>photo</promptType>
+          <properties>
+            <property>
+              <key>res</key>
+              <label>720</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+        
+        <prompt>
+          <id>foodHowHungry</id>
+          <displayType>count</displayType>
+          <displayLabel>Hunger</displayLabel>
+          <unit>hunger amount</unit>
+          <promptText>How hungry are you now?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>not at all</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>slightly</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>moderately</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>very</label>
+              <value>3</value>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+      </contentList>
+    
+    </survey>
+  </surveys>
+</campaign>

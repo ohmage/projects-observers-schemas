@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignName>NIH</campaignName>
+  <campaignVersion>1.0</campaignVersion>
+  <serverUrl>https://heart.andwellness.org</serverUrl>
+  
+  <surveys>
+    <survey>
+      <id>sleep</id>
+      <title>Sleep</title>
+      <description>This is the sleep survey.</description>
+      <submitText>This is the sleep survey submit text.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+      
+        <prompt>
+          <id>hoursOfSleep</id>
+          <displayType>count</displayType>
+          <displayLabel>Hours of Sleep</displayLabel>
+          <promptText>How many hours did you sleep last night?</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+    
+      </contentList>
+    
+    </survey>
+  </surveys>
+</campaign>

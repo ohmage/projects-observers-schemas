@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contentList>
+  <prompt>
+    <id></id>
+    <displayType></displayType>
+    <displayLabel></displayLabel>
+    <promptText></promptText>
+    <abbreviatedText></abbreviatedText>
+    <explanationText></explanationText>
+    <promptType></promptType>
+    <properties>
+      <p>
+        <k></k>
+        <v></v>
+      </p>
+    </properties>
+    <default></default>
+    <condition></condition>
+    <skippable></skippable>
+  </prompt>
+</contentList>
+       
