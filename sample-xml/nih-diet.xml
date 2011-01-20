@@ -5,7 +5,7 @@
   <serverUrl>https://heart.andwellness.org</serverUrl>
   
   <surveys>
-    <survey>
+   <survey>
       <id>diet</id>
       <title>Diet</title>
       <description>This is the diet survey.</description>

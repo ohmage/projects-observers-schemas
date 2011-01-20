@@ -5,7 +5,7 @@
   <serverUrl>https://heart.andwellness.org</serverUrl>
   
   <surveys>
-    <survey>
+       <survey>
       <id>moodAndStress</id>
       <title>Mood and Stress</title>
       <description>This is the mood and stress survey.</description>
@@ -65,8 +65,8 @@
         <prompt>
           <id>feltStress</id>
           <displayType>category</displayType>
-          <displayLabel>Have you felt stress since your last survey</displayLabel>
-          <promptText>Have you felt stress since your last survey?</promptText>
+          <displayLabel>Did a stressful situation occur since your last survey</displayLabel>
+          <promptText>Did a stressful situation occur since your last survey?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -84,24 +84,43 @@
         <prompt>
           <id>howStressed</id>
           <displayType>measurement</displayType>
-          <displayLabel>How stressed were you feeling, on a scale of 1-10</displayLabel>
-          <promptText>How stressed were you feeling, on a scale of 1-10?</promptText>
-          <promptType>number</promptType>
+          <condition>feltStress == 1</condition>
+          <displayLabel>How stressed were you feeling, on a scale of 1-5</displayLabel>
+          <promptText>How stressed were you feeling, on a scale of 1-5?</promptText>
+          <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>min</key>
+              <key>0</key>
               <label>1</label>
+              <value>1</value>
             </property>
             <property>
-              <key>max</key>
-              <label>10</label>
+              <key>1</key>
+              <label>2</label>
+              <value>2</value>
             </property>
-          </properties>
+            <property>
+              <key>2</key>
+              <label>3</label>
+              <value>3</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>4</label>
+              <value>4</value>
+            </property>
+            <property>
+              <key>4</key>
+              <label>5</label>
+              <value>5</value>
+            </property> 
+           </properties>
           <skippable>false</skippable>
         </prompt>
 
         <prompt>
           <id>whatEvent</id>
+          <condition>feltStress == 1</condition>
           <displayType>category</displayType>
           <displayLabel>Who or what event triggered the situation</displayLabel>
           <promptText>Who or what event triggered the situation?</promptText>

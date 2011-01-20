@@ -29,7 +29,7 @@
             </property>
             <property>
               <key>max</key>
-              <label>500</label>
+              <label>1</label>
             </property>
           </properties>
           <skippable>false</skippable>

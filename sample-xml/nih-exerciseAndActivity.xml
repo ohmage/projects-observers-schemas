@@ -5,7 +5,7 @@
   <serverUrl>https://heart.andwellness.org</serverUrl>
   
   <surveys>
-    <survey>
+      <survey>
       <id>exerciseAndActivity</id>
       <title>Exercise and Activity</title>
       <description>This is the exercise and activity survey.</description>
@@ -101,34 +101,6 @@
           </properties>
           <skippable>false</skippable>
         </prompt>
-    
-        <prompt>
-          <id>intenseExercise</id>
-          <condition>didYouExercise == 1</condition>
-          <displayType>category</displayType>
-          <displayLabel>What was the most intense exercise that you did today</displayLabel>
-          <promptText>What was the most intense exercise that you did today?</promptText>
-          <promptType>single_choice</promptType>
-          <properties>
-            <property>
-              <key>0</key>
-              <label>Light</label>
-            </property>
-            <property>
-              <key>1</key>
-              <label>Moderate</label>
-            </property>
-            <property>
-              <key>2</key>
-              <label>Vigorous</label>
-            </property>
-            <property>
-              <key>3</key>
-              <label>Not applicable</label>
-            </property>
-          </properties>
-          <skippable>false</skippable>
-        </prompt>
 
         <prompt>
           <id>timeSpent</id>
@@ -157,6 +129,34 @@
             <property>
               <key>4</key>
               <label>60+ minutes</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>intenseExercise</id>
+          <condition>didYouExercise == 1</condition>
+          <displayType>category</displayType>
+          <displayLabel>Overall, how would you rate the intensity of your exercise activities today</displayLabel>
+          <promptText>Overall, how would you rate the intensity of your exercise activities today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Light</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Moderate</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Vigorous</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Not applicable</label>
             </property>
           </properties>
           <skippable>false</skippable>
