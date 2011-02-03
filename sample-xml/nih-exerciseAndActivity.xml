@@ -58,8 +58,8 @@
           <id>whyNotExercise</id>
           <condition>didYouExercise == 0 and planningToExercise == 1</condition>
           <displayType>category</displayType>
-          <displayLabel>Why did you not exercise as planned</displayLabel>
-          <promptText>Why did you not exercise as planned?</promptText>
+          <displayLabel>Disrupted plan</displayLabel>
+          <promptText>What prevented you from exercising as planned?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -103,71 +103,118 @@
         </prompt>
 
         <prompt>
-          <id>timeSpent</id>
+          <id>typeExercise</id>
           <condition>didYouExercise == 1</condition>
           <displayType>category</displayType>
-          <displayLabel>How much time in total did you exercise today</displayLabel>
-          <promptText>How much time in total did you exercise today?</promptText>
-          <promptType>single_choice</promptType>
+          <displayLabel>Type Exercise</displayLabel>
+          <promptText>Describe the types of exercise you did today.</promptText>
+          <promptType>multiple_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>&lt; 10 minutes</label>
+              <label>Walk</label>
             </property>
             <property>
               <key>1</key>
-              <label>10 to 29 minutes</label>
+              <label>Run</label>
             </property>
             <property>
               <key>2</key>
-              <label>30 to 44 minutes</label>
+              <label>Yoga</label>
             </property>
             <property>
               <key>3</key>
-              <label>45 to 60 minutes</label>
+              <label>Outdoor cycling or sports</label>
             </property>
             <property>
               <key>4</key>
-              <label>60+ minutes</label>
+              <label>Indoor sports</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Gym</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>Swim</label>
+            </property>
+            <property>
+              <key>7</key>
+              <label>Other</label>
             </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
 
         <prompt>
-          <id>intenseExercise</id>
+          <id>timeSpentLight</id>
           <condition>didYouExercise == 1</condition>
-          <displayType>category</displayType>
-          <displayLabel>Overall, how would you rate the intensity of your exercise activities today</displayLabel>
-          <promptText>Overall, how would you rate the intensity of your exercise activities today?</promptText>
-          <promptType>single_choice</promptType>
+          <displayType>count</displayType>
+          <displayLabel>Time light exercise</displayLabel>
+          <promptText>How many minutes of light exercise did you do today? (No increase in breathing or heart rate.)</promptText>
+          <promptType>number</promptType>
           <properties>
             <property>
-              <key>0</key>
-              <label>Light</label>
+              <key>min</key>
+              <label>0</label>
             </property>
             <property>
-              <key>1</key>
-              <label>Moderate</label>
-            </property>
-            <property>
-              <key>2</key>
-              <label>Vigorous</label>
-            </property>
-            <property>
-              <key>3</key>
-              <label>Not applicable</label>
+              <key>max</key>
+              <label>300</label>
             </property>
           </properties>
+          <default>15</default>
           <skippable>false</skippable>
         </prompt>
-        
+
+        <prompt>
+          <id>timeSpentModerate</id>
+          <condition>didYouExercise == 1</condition>
+          <displayType>count</displayType>
+          <displayLabel>Time moderate exercise</displayLabel>
+          <promptText>How many minutes of moderate exercise did you do today? (Mild increase in breathing or heart rate.)</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>300</label>
+            </property>
+          </properties>
+          <default>15</default>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>timeSpentVigorous</id>
+          <condition>didYouExercise == 1</condition>
+          <displayType>count</displayType>
+          <displayLabel>Time vigorous exercise</displayLabel>
+          <promptText>How many minutes of vigorous exercise did you do today? (Significant increase in breathing or heart rate.)</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>300</label>
+            </property>
+          </properties>
+          <default>15</default>
+          <skippable>false</skippable>
+        </prompt>
+
         <prompt>
           <id>whoWith</id>
           <condition>didYouExercise == 1</condition>
           <displayType>category</displayType>
           <displayLabel>Who did you exercise with</displayLabel>
-          <promptText>Who did you exercise with?</promptText>
+          <promptText>Who did you do this exercise with?</promptText>
           <promptType>multi_choice</promptType>
           <properties>
             <property>
@@ -194,6 +241,10 @@
               <key>5</key>
               <label>Class or group</label>
             </property>
+            <property>
+              <key>6</key>
+              <label>Other</label>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
@@ -211,22 +262,26 @@
             </property>
             <property>
               <key>1</key>
-              <label>Gardening</label>
+              <label>Housework / Gardening</label>
             </property>
             <property>
               <key>2</key>
-              <label>Housework</label>
+              <label>Work related</label>
             </property>
             <property>
               <key>3</key>
-              <label>Carrying light loads</label>
-            </property>
-            <property>
-              <key>4</key>
               <label>Carrying heavy loads</label>
             </property>
             <property>
+              <key>4</key>
+              <label>Active play with children</label>
+            </property>
+            <property>
               <key>5</key>
+              <label>Walking</label>
+            </property>
+            <property>
+              <key>6</key>
               <label>Other</label>
             </property>
           </properties>
@@ -235,32 +290,21 @@
         
         <prompt>
           <id>timeForYourself</id>
-          <displayType>category</displayType>
+          <displayType>count</displayType>
           <displayLabel>How much time did you have for yourself today</displayLabel>
           <promptText>How much time did you have for yourself today?</promptText>
-          <promptType>single_choice</promptType>
+          <promptType>number</promptType>
           <properties>
             <property>
-              <key>0</key>
-              <label>&lt; 10 minutes</label>
+              <key>min</key>
+              <label>0</label>
             </property>
             <property>
-              <key>1</key>
-              <label>10 to 29 minutes</label>
-            </property>
-            <property>
-              <key>2</key>
-              <label>30 to 44 minutes</label>
-            </property>
-            <property>
-              <key>3</key>
-              <label>45 to 60 minutes</label>
-            </property>
-            <property>
-              <key>4</key>
-              <label>60+ minutes</label>
+              <key>max</key>
+              <label>300</label>
             </property>
           </properties>
+          <default>15</default>
           <skippable>false</skippable>
         </prompt>
     

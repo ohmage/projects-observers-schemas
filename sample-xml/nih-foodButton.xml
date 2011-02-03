@@ -19,7 +19,7 @@
           <id>foodPhoto</id>
           <displayType>event</displayType>
           <displayLabel>photo</displayLabel>
-          <promptText>Take a picture?</promptText>
+          <promptText>Take a picture of your food</promptText>
           <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>photo</promptType>
           <properties>
@@ -31,34 +31,184 @@
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
         </prompt>
+
+        <prompt>
+          <id>foodSnackMeal</id>
+          <displayType>category</displayType>
+          <displayLabel>Type</displayLabel>
+          <promptText>Was this a snack or a meal?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Snack</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Meal</label>
+              <value>1</value>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
         
         <prompt>
           <id>foodHowHungry</id>
           <displayType>count</displayType>
           <displayLabel>Hunger</displayLabel>
           <unit>hunger amount</unit>
-          <promptText>How hungry are you now?</promptText>
+          <promptText>How hungry were you before eating?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>not at all</label>
+              <label>Very</label>
               <value>0</value>
             </property>
             <property>
               <key>1</key>
-              <label>slightly</label>
+              <label>Moderately</label>
               <value>1</value>
             </property>
             <property>
               <key>2</key>
-              <label>moderately</label>
+              <label>Slightly</label>
               <value>2</value>
             </property>
             <property>
               <key>3</key>
-              <label>very</label>
+              <label>Not at all</label>
               <value>3</value>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>foodHowPrepared</id>
+          <displayType>category</displayType>
+          <displayLabel>HowPrepared</displayLabel>
+          <promptText>How was this food prepared?</promptText>
+          <promptType>multiple_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Restaurant</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Fast food</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Home made</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Pre-pared (i.e., deli, salad bar) </label>
+              <value>3</value>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Frozen dinner</label>
+              <value>4</value>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Other </label>
+              <value>5</value>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>foodWhoAteWith</id>
+          <displayType>category</displayType>
+          <displayLabel>WhoWith</displayLabel>
+          <promptText>Who did you eat with?</promptText>
+          <promptType>multiple_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Alone</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Friends</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Family</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Co-workers</label>
+              <value>3</value>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Other</label>
+              <value>4</value>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>foodHowMuch</id>
+          <displayType>category</displayType>
+          <displayLabel>HowMuch</displayLabel>
+          <promptText>How much did you eat?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Too little / not enough</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Just right</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Too much</label>
+              <value>2</value>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>foodQuality</id>
+          <displayType>category</displayType>
+          <displayLabel>NutritionalQuality</displayLabel>
+          <promptText>Rate the nutritional quality of this meal?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Low</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Medium</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>High</label>
+              <value>2</value>
             </property>
           </properties>
           <skippable>false</skippable>
