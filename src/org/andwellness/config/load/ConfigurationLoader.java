@@ -17,7 +17,6 @@ import nu.xom.ValidityException;
 import org.andwellness.config.xml.ConfigurationValidator;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.log4j.Logger;
-import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -40,12 +39,13 @@ public class ConfigurationLoader {
 	 * Validates a configuration file and loads it into the AW database.
 	 */
 	public static void main(String[] args) throws ValidityException, SAXException, ParsingException, IOException {
-		if(args.length != 2) {
-			throw new IllegalArgumentException("the name of an AW configuration file is required as the first argument and the " +
-				"name of a properties file with db props must be the second argument");
+		if(args.length != 3) {
+			throw new IllegalArgumentException("Invalid arguments: the name of a campaign configuration file is required as the " +
+				"first argument, the name of a properties file with db props must be the second argument, and the name of a " +
+				"a campaign configuration XML schema file must be the third argument.");
 		}
 		ConfigurationLoader loader = new ConfigurationLoader();
-		loader.run(args[0], args[1]);
+		loader.run(args[0], args[1], args[3]);
 	}
 	
 	/**
@@ -57,7 +57,7 @@ public class ConfigurationLoader {
 	 * @throws ParsingException
 	 * @throws IOException
 	 */
-	public void run(String configFileName, String dbPropsFileName)
+	public void run(String configFileName, String dbPropsFileName, String schemaFileName)
 		throws ValidityException, SAXException, ParsingException, IOException {
 		
 		_logger.info("checking db props");
@@ -75,7 +75,7 @@ public class ConfigurationLoader {
 		_logger.info("validating config file ... " + configFileName);
 		
 		ConfigurationValidator validator = new ConfigurationValidator();
-		validator.run(configFileName);
+		validator.run(configFileName, schemaFileName);
 		
 		// set up connection to db
 		_jdbcTemplate = new JdbcTemplate(getDataSource(dbProps));

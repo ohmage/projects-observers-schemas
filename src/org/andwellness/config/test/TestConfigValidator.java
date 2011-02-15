@@ -19,7 +19,8 @@ import org.xml.sax.SAXParseException;
 public class TestConfigValidator {
 
 	/**
-	 * For a given directory (args[0]), attemps to validate all of the XML files present.
+	 * For a given directory (args[0]), attemps to validate all of the XML files present using the ConfigurationValidator and the 
+	 * schema file provided as the second argument.
 	 */
 	public static void main(String[] args) throws IOException, ValidityException, ParsingException, SAXException {
 		int totalFailures = 0;
@@ -46,7 +47,7 @@ public class TestConfigValidator {
 					
 					try {
 						
-						validator.run(currentFile);
+						validator.run(currentFile, args[1]);
 						
 					} catch(SAXParseException saxe) {
 						

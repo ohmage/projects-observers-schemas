@@ -41,7 +41,7 @@ import org.xml.sax.SAXParseException;
  */
 public class ConfigurationValidator {
 	private static Logger _logger = Logger.getLogger(ConfigurationValidator.class);
-	private static final String _schemaFile = "spec/configuration.xsd";
+//	private static final String _schemaFile = "spec/configuration.xsd";
 	private Map<String, PromptTypeValidator> _promptTypeValidatorMap; // the map keys are the prompt ids in the input file
 	private List<String> _validDisplayTypes;
 		
@@ -60,16 +60,18 @@ public class ConfigurationValidator {
 	 * args[0]: the file name of the file to validate
 	 */
 	public static void main(String[] args) throws IOException, SAXException, ParsingException, ValidityException {
-		if(args.length < 1) {
-			throw new IllegalArgumentException("You must pass a file name as the first argument.");
+		if(args.length < 2) {
+			throw new IllegalArgumentException("Invalid arguments: you must pass a file name of the file to be validated as " +
+				"the first argument and a file name of the schema to use in validation as the second argument.");
 		}
 		
 		String fileName = args[0];
+		String schemaFileName = args[1];
 		ConfigurationValidator validator = new ConfigurationValidator();
 		
 		try {
 			
-			validator.run(fileName);
+			validator.run(fileName, schemaFileName);
 			
 		} catch(SAXParseException saxe) {
 			
@@ -82,7 +84,7 @@ public class ConfigurationValidator {
 	/**
 	 * Runs the entire validation process.
 	 */
-	public void run(String fileName) throws IOException, SAXException, ParsingException, ValidityException {
+	public void run(String fileName, String schemaFileName) throws IOException, SAXException, ParsingException, ValidityException {
 		//
 		// 1. Validate against schema: spec/configuration.xsd
 		// 2. Make sure all ids are unique
@@ -98,7 +100,7 @@ public class ConfigurationValidator {
 		
 		_logger.info("Starting validation for " + fileName);
 		
-		checkSchema(fileName);
+		checkSchema(fileName, schemaFileName);
 		_logger.info("schema validation successful");
 		
 		// Now use XOM to retrieve a Document and a root node for further processing. XOM is used because it has a 
@@ -301,8 +303,8 @@ public class ConfigurationValidator {
 	 * @throws IOException if the file containing the instance document cannot be read 
 	 * @throws SAXException if schema validation fails  
 	 */
-	private void checkSchema(String fileName) throws IOException, SAXException {
-		StreamSource schemaDocument = new StreamSource(new File(_schemaFile));
+	private void checkSchema(String fileName, String schemaFileName) throws IOException, SAXException {
+		StreamSource schemaDocument = new StreamSource(new File(schemaFileName));
 		SAXSource instanceDocument = new SAXSource(new InputSource(new FileInputStream(fileName)));
 		
 		// Originally attempted to use "http://www.w3.org/XML/XMLSchema/v1.1" here, but neither Xerces2 nor the native
