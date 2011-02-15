@@ -20,7 +20,7 @@
           <displayType>category</displayType>
           <displayLabel>How would you describe your mood at this moment</displayLabel>
           <promptText>How would you describe your mood at this moment?</promptText>
-          <promptType>single_choice</promptType>
+          <promptType>multiple_choice</promptType>
           <properties>
             <property>
               <key>0</key>
@@ -58,6 +58,18 @@
               <key>8</key>
               <label>Calm</label>
             </property>
+            <property>
+              <key>9</key>
+              <label>Bored</label>
+            </property>
+            <property>
+              <key>10</key>
+              <label>Focused</label>
+            </property>
+            <property>
+              <key>11</key>
+              <label>Stressed</label>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
@@ -65,8 +77,8 @@
         <prompt>
           <id>feltStress</id>
           <displayType>category</displayType>
-          <displayLabel>Did a stressful situation occur since your last survey</displayLabel>
-          <promptText>Did a stressful situation occur since your last survey?</promptText>
+          <displayLabel>Stress in last two hours</displayLabel>
+          <promptText>Have you felt stress in the last two hours?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -84,9 +96,10 @@
         <prompt>
           <id>howStressed</id>
           <displayType>measurement</displayType>
+		  <unit>how stressed</unit>
           <condition>feltStress == 1</condition>
-          <displayLabel>How stressed were you feeling, on a scale of 1-5</displayLabel>
-          <promptText>How stressed were you feeling, on a scale of 1-5?</promptText>
+          <displayLabel>How stressed</displayLabel>
+          <promptText>How stressed were you, on a scale of 1-5?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -122,32 +135,36 @@
           <id>whatEvent</id>
           <condition>feltStress == 1</condition>
           <displayType>category</displayType>
-          <displayLabel>Who or what event triggered the situation</displayLabel>
-          <promptText>Who or what event triggered the situation?</promptText>
+          <displayLabel>Cause</displayLabel>
+          <promptText>What was the cause of your stress?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>Child</label>
+              <label>Finances</label>
             </property>
             <property>
               <key>1</key>
-              <label>Partner</label>
+              <label>Work/School</label>
             </property>
             <property>
               <key>2</key>
-              <label>Friend</label>
+              <label>Lack of control</label>
             </property>
             <property>
               <key>3</key>
-              <label>Work</label>
+              <label>Family/Relationships</label>
             </property>
             <property>
               <key>4</key>
-              <label>Domestic chores</label>
+              <label>Health</label>
             </property>
             <property>
               <key>5</key>
+              <label>Traffic</label>
+            </property>
+            <property>
+              <key>6</key>
               <label>Other</label>
             </property>
           </properties>

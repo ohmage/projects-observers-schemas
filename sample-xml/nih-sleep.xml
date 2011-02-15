@@ -19,7 +19,7 @@
           <id>hoursOfSleep</id>
           <displayType>count</displayType>
           <displayLabel>Hours of Sleep</displayLabel>
-          <promptText>How many hours did you sleep last night?</promptText>
+          <promptText>How many hours in total did you sleep last night?</promptText>
           <promptType>number</promptType>
           <properties>
             <property>
