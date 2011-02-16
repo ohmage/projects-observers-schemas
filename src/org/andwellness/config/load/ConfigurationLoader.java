@@ -45,7 +45,7 @@ public class ConfigurationLoader {
 				"a campaign configuration XML schema file must be the third argument.");
 		}
 		ConfigurationLoader loader = new ConfigurationLoader();
-		loader.run(args[0], args[1], args[3]);
+		loader.run(args[0], args[1], args[2]);
 	}
 	
 	/**
