@@ -90,7 +90,7 @@
           <displayType>category</displayType>
           <displayLabel>HowPrepared</displayLabel>
           <promptText>How was this food prepared?</promptText>
-          <promptType>multiple_choice</promptType>
+          <promptType>multi_choice</promptType>
           <properties>
             <property>
               <key>0</key>
@@ -131,7 +131,7 @@
           <displayType>category</displayType>
           <displayLabel>WhoWith</displayLabel>
           <promptText>Who did you eat with?</promptText>
-          <promptType>multiple_choice</promptType>
+          <promptType>multi_choice</promptType>
           <properties>
             <property>
               <key>0</key>

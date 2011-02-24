@@ -108,7 +108,7 @@
           <displayType>category</displayType>
           <displayLabel>Type Exercise</displayLabel>
           <promptText>Describe the types of exercise you did today.</promptText>
-          <promptType>multiple_choice</promptType>
+          <promptType>multi_choice</promptType>
           <properties>
             <property>
               <key>0</key>

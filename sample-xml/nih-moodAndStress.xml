@@ -20,7 +20,7 @@
           <displayType>category</displayType>
           <displayLabel>How would you describe your mood at this moment</displayLabel>
           <promptText>How would you describe your mood at this moment?</promptText>
-          <promptType>multiple_choice</promptType>
+          <promptType>multi_choice</promptType>
           <properties>
             <property>
               <key>0</key>
