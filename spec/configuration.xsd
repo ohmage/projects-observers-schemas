@@ -3,15 +3,15 @@
   <xs:element name="campaign">
     <xs:complexType>
       <xs:sequence>
+        <xs:element ref="campaignUrn"/>
         <xs:element ref="campaignName"/>
-        <xs:element ref="campaignVersion"/>
         <xs:element ref="serverUrl"/>
         <xs:element ref="surveys"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="campaignUrn" type="NonEmptyString"/>
   <xs:element name="campaignName" type="NonEmptyString"/>
-  <xs:element name="campaignVersion" type="NonEmptyString"/>
   <xs:element name="serverUrl" type="NonEmptyString"/>
   <xs:element name="surveys">
     <xs:complexType>

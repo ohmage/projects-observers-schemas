@@ -115,6 +115,9 @@ public class ConfigurationValidator {
 		
 		Element root = document.getRootElement();
 		
+		checkCampaignUrn(root);
+		_logger.info("campaignUrn is a valid URN");
+		
 		checkIdUniqueness(root);
 		_logger.info("id uniqueness check successful: all ids in the configuration are unique");
 		
@@ -143,6 +146,13 @@ public class ConfigurationValidator {
 		_logger.info("displayType check successful: all displayTypes are valid");
 		
 		_logger.info("configuration validation successful");
+	}
+	
+	private void checkCampaignUrn(Node root) {
+		String campaignUrn = root.query("/campaign/campaignUrn").get(0).getValue();
+		if(! campaignUrn.startsWith("urn:")) {
+			throw new IllegalStateException("campaignUrn is not a valid URN: " + campaignUrn);
+		}
 	}
 	
 	/**
