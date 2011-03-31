@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Properties;
 
 import nu.xom.Builder;
@@ -18,7 +19,6 @@ import org.andwellness.config.xml.ConfigurationValidator;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.log4j.Logger;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.xml.sax.SAXException;
@@ -63,14 +63,20 @@ public class ConfigurationLoader {
 		_logger.info("checking db props");
 				
 		BufferedReader in = new BufferedReader(new FileReader(dbPropsFileName)); 
-		Properties dbProps = new Properties();
-		dbProps.load(in);
+		Properties props = new Properties();
+		props.load(in);
 		in.close();
 		
-		checkProperty(dbProps, "dbUserName");
-		checkProperty(dbProps, "dbPassword");
-		checkProperty(dbProps, "dbDriver");
-		checkProperty(dbProps, "dbJdbcUrl");
+		checkProperty(props, "dbUserName");
+		checkProperty(props, "dbPassword");
+		checkProperty(props, "dbDriver");
+		checkProperty(props, "dbJdbcUrl");
+		checkProperty(props, "runningState");
+		checkProperty(props, "privacyState");
+		checkProperty(props, "description");
+		
+		validateStateProp(props.getProperty("privacyState"));
+		validateStateProp(props.getProperty("runningState"));
 		
 		_logger.info("validating config file ... " + configFileName);
 		
@@ -78,54 +84,35 @@ public class ConfigurationLoader {
 		validator.run(configFileName, schemaFileName);
 		
 		// set up connection to db
-		_jdbcTemplate = new JdbcTemplate(getDataSource(dbProps));
+		_jdbcTemplate = new JdbcTemplate(getDataSource(props));
 		
-		_logger.info("checking for valid campaign and campaign version ... ");
-
 		// grab the XML document using Xom
 		Builder builder = new Builder();
 		Document document = builder.build(configFileName);
 		Element root = document.getRootElement();
 		
-		checkCampaignName(root);
-		insertConfiguration(root);
+		insertCampaign(root, props);
 		
-		_logger.info("configuration inserted successfully");
+		_logger.info("campaign inserted successfully");
 		
 	}
-	
-	/**
-	 * Checks that the config file contains a campaign that the db already knows about. Then checks to make sure that the config
-	 * file references a version that is not already present in the db.
-	 * 
-	 *  @throws IllegalStateException if the campaign name references a campaign that does not exist
-	 */
-	private void checkCampaignName(Element root) {
 		
-		String campaignName = root.query("/campaign/campaignName").get(0).getValue(); // this query without error checking is ok
-		                                                                              // because our schema guarantees the structure
-		
-		try {
-			
-			_campaignId = _jdbcTemplate.queryForInt("select id from campaign where name = \"" + campaignName + "\"");
-			
-		} catch(IncorrectResultSizeDataAccessException irsdae) {
-			
-			throw new IllegalStateException("invalid config file. campaign name " + campaignName + " not found", irsdae);
-			
-		}
-	}
-	
 	/**
 	 * Inserts the configuration into the database. 
 	 * 
 	 * @throws IllegalStateException if the campaign version already exists in the database
 	 */
-	private void insertConfiguration(Element root) {
-		final String campaignVersion = root.query("/campaign/campaignVersion").get(0).getValue(); // this query without error checking is ok
-													        					      			  // because our schema guarantees the structure
+	private void insertCampaign(Element root, Properties props) {
+		final String campaignUrn = root.query("/campaign/campaignUrn").get(0).getValue(); 
+		_logger.info("inserting campaign " + campaignUrn);
+		final String campaignName = root.query("/campaign/campaignName").get(0).getValue();
+		final String description = props.getProperty("description");
+		final String privacyState = props.getProperty("privacyState");
+		final String runningState = props.getProperty("runningState");
 		final String xml = root.toXML(); // whitespace is left intact - it can be removed with an XSLT in the future
-		final String sql = "insert into campaign_configuration (campaign_id, version, xml) values (?,?,?)"; 
+		
+		final String sql = "insert into campaign (description, xml, running_state, privacy_state, name, urn, creation_timestamp)" +
+				" values (?,?,?,?,?,?,?)"; 
 		
 		try {
 			
@@ -133,9 +120,13 @@ public class ConfigurationLoader {
 				new PreparedStatementCreator() {
 					public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 						PreparedStatement ps = connection.prepareStatement(sql);
-						ps.setInt(1, _campaignId);
-						ps.setString(2, campaignVersion);
-						ps.setString(3, xml);
+						ps.setString(1, description);
+						ps.setString(2, xml);
+						ps.setString(3, runningState);
+						ps.setString(4, privacyState);
+						ps.setString(5, campaignName);
+						ps.setString(6, campaignUrn);
+						ps.setTimestamp(7, new Timestamp(System.currentTimeMillis()));
 						return ps;
 					}
 				}
@@ -158,7 +149,7 @@ public class ConfigurationLoader {
 	}	
 	
 	/**
-	 * Validates incoming property values. 
+	 * Validates incoming property values for non-emptiness.
 	 */
 	private void checkProperty(Properties props, String propName) {
 		if((! props.containsKey(propName)) || isEmptyOrWhitespaceOnly(props.getProperty(propName))) {
@@ -171,6 +162,15 @@ public class ConfigurationLoader {
 	 */
 	private boolean isEmptyOrWhitespaceOnly(String string) {
 		return null == string || "".equals(string.trim());
+	}
+	
+	/**
+	 * Validates that "state" properties (running_state and privacy_state) are Y or N.
+	 */
+	private void validateStateProp(String value) {
+		if(! "Y".equals(value) && ! "N".equals(value)) {
+			throw new IllegalArgumentException("invalid state value (it must be Y or N: " + value);
+		}
 	}
 	
 	/**
