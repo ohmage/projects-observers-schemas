@@ -15,7 +15,7 @@ import nu.xom.Element;
 import nu.xom.ParsingException;
 import nu.xom.ValidityException;
 
-import org.andwellness.config.xml.ConfigurationValidator;
+import org.andwellness.config.xml.CampaignValidator;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.log4j.Logger;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -26,13 +26,12 @@ import org.xml.sax.SAXException;
 /**
  * @author selsky
  */
-public class ConfigurationLoader {
-	private static final Logger _logger = Logger.getLogger(ConfigurationLoader.class);
+public class CampaignLoader {
+	private static final Logger _logger = Logger.getLogger(CampaignLoader.class);
 	private JdbcTemplate _jdbcTemplate;
-	private int _campaignId;
 	
-	public ConfigurationLoader() {
-		_campaignId = -1;
+	public CampaignLoader() {
+		
 	}
 	
 	/**
@@ -44,12 +43,12 @@ public class ConfigurationLoader {
 				"first argument, the name of a properties file with db props must be the second argument, and the name of a " +
 				"a campaign configuration XML schema file must be the third argument.");
 		}
-		ConfigurationLoader loader = new ConfigurationLoader();
+		CampaignLoader loader = new CampaignLoader();
 		loader.run(args[0], args[1], args[2]);
 	}
 	
 	/**
-	 * Validates a configuration file and loads it into the AW database.
+	 * Validates a campaign configuration file and loads it into the AW database.
 	 * 
 	 * @param fileName
 	 * @throws ValidityException
@@ -75,12 +74,12 @@ public class ConfigurationLoader {
 		checkProperty(props, "privacyState");
 		checkProperty(props, "description");
 		
-		validateStateProp(props.getProperty("privacyState"));
-		validateStateProp(props.getProperty("runningState"));
+		validatePrivacyStateProp(props.getProperty("privacyState"));
+		validateRunningStateProp(props.getProperty("runningState"));
 		
 		_logger.info("validating config file ... " + configFileName);
 		
-		ConfigurationValidator validator = new ConfigurationValidator();
+		CampaignValidator validator = new CampaignValidator();
 		validator.run(configFileName, schemaFileName);
 		
 		// set up connection to db
@@ -165,14 +164,23 @@ public class ConfigurationLoader {
 	}
 	
 	/**
-	 * Validates that "state" properties (running_state and privacy_state) are Y or N.
+	 * Validates the privacy state.
 	 */
-	private void validateStateProp(String value) {
-		if(! "Y".equals(value) && ! "N".equals(value)) {
-			throw new IllegalArgumentException("invalid state value (it must be Y or N: " + value);
+	private void validatePrivacyStateProp(String value) {
+		if(! "private".equals(value) && ! "shared".equals(value)) {
+			throw new IllegalArgumentException("invalid privacy state value: " + value + " (it must be either public or shared).");
 		}
 	}
-	
+
+	/**
+	 * Validates the running state.
+	 */
+	private void validateRunningStateProp(String value) {
+		if(! "active".equals(value) && ! "inactive".equals(value)) {
+			throw new IllegalArgumentException("invalid state value: " + value + " (it must be either active or inactive).");
+		}
+	}
+
 	/**
 	 * Returns a BasicDataSource configured using the provided Properties. 
 	 */

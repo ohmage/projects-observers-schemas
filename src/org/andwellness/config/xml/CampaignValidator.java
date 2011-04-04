@@ -35,17 +35,17 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 /**
- * Giant procedural driver for the configuration validation process.
+ * Giant procedural driver for the campaign validation process.
  * 
  * @author selsky
  */
-public class ConfigurationValidator {
-	private static Logger _logger = Logger.getLogger(ConfigurationValidator.class);
+public class CampaignValidator {
+	private static Logger _logger = Logger.getLogger(CampaignValidator.class);
 //	private static final String _schemaFile = "spec/configuration.xsd";
 	private Map<String, PromptTypeValidator> _promptTypeValidatorMap; // the map keys are the prompt ids in the input file
 	private List<String> _validDisplayTypes;
 		
-	public ConfigurationValidator() {
+	public CampaignValidator() {
 		_promptTypeValidatorMap = new HashMap<String, PromptTypeValidator>();
 		_validDisplayTypes = new ArrayList<String>();
 
@@ -67,7 +67,7 @@ public class ConfigurationValidator {
 		
 		String fileName = args[0];
 		String schemaFileName = args[1];
-		ConfigurationValidator validator = new ConfigurationValidator();
+		CampaignValidator validator = new CampaignValidator();
 		
 		try {
 			

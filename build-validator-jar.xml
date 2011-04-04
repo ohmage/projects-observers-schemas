@@ -75,7 +75,7 @@
 	  <zipfileset src="${component.repository}/xom-1.2.6.jar" excludes="META-INF/*" />
 	  <zipfileset src="${component.repository}/xercesImpl-2.10.0.jar" excludes="META-INF/*" />
 	  <manifest>
-	    <attribute name="Main-Class" value="org.andwellness.config.xml.ConfigurationValidator" />
+	    <attribute name="Main-Class" value="org.andwellness.config.xml.CampaignValidator" />
 	  </manifest>
 	</jar>
   </target>

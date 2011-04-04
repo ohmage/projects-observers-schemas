@@ -82,7 +82,7 @@
 	  <zipfileset src="${component.repository}/mysql-connector-java-5.1.10-bin.jar" excludes="META-INF/*" />
 	  <zipfileset src="${component.repository}/spring-2.5.6-SEC01.jar" excludes="META-INF/*" />
 	  <manifest>
-	    <attribute name="Main-Class" value="org.andwellness.config.load.ConfigurationLoader" />
+	    <attribute name="Main-Class" value="org.andwellness.config.load.CampaignLoader" />
 	  </manifest>
 	</jar>
   </target>
