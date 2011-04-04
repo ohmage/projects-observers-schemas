@@ -7,19 +7,19 @@ import java.io.IOException;
 import nu.xom.ParsingException;
 import nu.xom.ValidityException;
 
-import org.andwellness.config.xml.ConfigurationValidator;
+import org.andwellness.config.xml.CampaignValidator;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 /**
- * ConfigurationValidator tester.
+ * CampaignValidator tester.
  * 
  * @author selsky
  */
 public class TestConfigValidator {
 
 	/**
-	 * For a given directory (args[0]), attemps to validate all of the XML files present using the ConfigurationValidator and the 
+	 * For a given directory (args[0]), attemps to validate all of the XML files present using the CampaignValidator and the 
 	 * schema file provided as the second argument.
 	 */
 	public static void main(String[] args) throws IOException, ValidityException, ParsingException, SAXException {
@@ -38,7 +38,7 @@ public class TestConfigValidator {
 			};
 			files = directory.list(filter);
 			totalFiles = files.length;
-			ConfigurationValidator validator = new ConfigurationValidator();
+			CampaignValidator validator = new CampaignValidator();
 			String currentFile = null;
 			for (String fileName : files) {
 				
