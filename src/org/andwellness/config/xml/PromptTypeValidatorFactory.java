@@ -23,7 +23,6 @@ public class PromptTypeValidatorFactory {
 		_promptTypes.add("single_choice");
 		_promptTypes.add("single_choice_custom");
 		_promptTypes.add("photo");
-		_promptTypes.add("remote_activity");
 	}
 	
 	// prevent instantiation
@@ -67,10 +66,6 @@ public class PromptTypeValidatorFactory {
 		} else if("timestamp".equals(promptType))  {
 			
 			return new TimestampPromptTypeValidator();
-			
-		} else if("remote_activity".equals(promptType))  {
-			
-			return new RemoteActivityPromptTypeValidator();
 			
 		} else { 
 			
