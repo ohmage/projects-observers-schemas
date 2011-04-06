@@ -14,6 +14,7 @@
     <include name="**/xml-apis-xerces-2.10.0.jar"/>
     <include name="**/xom-1.2.6.jar"/>
   	<include name="**/log4j-1.2.15.jar"/>
+  	<include name="**/json-dot-org-2010-01-05.jar"/>
   </fileset>
   
   <path id="compile-classpath">
@@ -70,10 +71,11 @@
 	  </fileset>
 	  <fileset dir=".">
 	  	<include name="log4j.properties"/>
-	  </fileset>	
+	  </fileset>
+	  <zipfileset src="${component.repository}/json-dot-org-2010-01-05.jar" excludes="META-INF/*" />
 	  <zipfileset src="${component.repository}/log4j-1.2.15.jar" excludes="META-INF/*" />
 	  <zipfileset src="${component.repository}/xom-1.2.6.jar" excludes="META-INF/*" />
-	  <zipfileset src="${component.repository}/xercesImpl-2.10.0.jar" excludes="META-INF/*" />
+	  <zipfileset src="${component.repository}/xercesImpl-2.11.0.jar" excludes="META-INF/*" />
 	  <manifest>
 	    <attribute name="Main-Class" value="org.andwellness.config.xml.CampaignValidator" />
 	  </manifest>
