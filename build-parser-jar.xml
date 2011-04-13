@@ -11,7 +11,7 @@
   <property name="dist"  location="dist"/>
 
   <fileset id="compile-dependencies" dir="${component.repository}">
-    <include name="**/xml-apis-xerces-2.10.0.jar"/>
+    <include name="**/xml-apis-xerces-2.11.0.jar"/>
     <include name="**/xom-1.2.6.jar"/>
   	<include name="**/log4j-1.2.15.jar"/>
   </fileset>
