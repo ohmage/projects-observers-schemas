@@ -9,7 +9,7 @@
       <id>sleep</id>
       <title>Sleep</title>
       <description>This is the sleep survey.</description>
-      <submitText>This is the sleep survey submit text.</submitText>
+      <submitText>Thank you for taking this survey.</submitText>
       <showSummary>false</showSummary>
       <anytime>true</anytime>
     
@@ -31,7 +31,8 @@
               <label>24</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
         </prompt>
     
       </contentList>
