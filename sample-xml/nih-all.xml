@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
   <campaignName>NIH</campaignName>
-  <campaignVersion>1.0</campaignVersion>
+  <campaignVersion>1.1</campaignVersion>
   <serverUrl>https://heart.andwellness.org</serverUrl>
   
   <surveys>
