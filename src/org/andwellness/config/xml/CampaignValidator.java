@@ -1,14 +1,20 @@
 package org.andwellness.config.xml;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringReader;
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 
 import javax.xml.XMLConstants;
@@ -71,7 +77,7 @@ public class CampaignValidator {
 		
 		try {
 			
-			validator.run(fileName, schemaFileName);
+			validator.runAgainstFiles(fileName, schemaFileName);
 			
 		} catch(SAXParseException saxe) {
 			
@@ -82,36 +88,55 @@ public class CampaignValidator {
 	}
 	
 	/**
-	 * Runs the entire validation process.
+	 * Validates an XML String that is already in memory against a schema and
+	 * against our campaign rules.
+	 * 
+	 * @param xml A String that is the XML to be validated.
+	 * 
+	 * @param schemaFileName The filename of the schema to validate against.
+	 * 
+	 * @throws SAXException Thrown if there is a problem validating the XML
+	 * 						schema.
+	 * 
+	 * @throws InvalidParameterException Thrown if there is a serious internal
+	 * 									 error.
+	 * 
+	 * @throws ValidityException Thrown if 'xml' is not valid XML.
+	 * 
+	 * @throws ParsingException Thrown if the 'xml' is not well-formed.
+	 * 
+	 * @throws IllegalStateException Thrown if a specific part of the XML
+	 * 								 fails validation. See the exception's 
+	 * 								 message for more information.
+	 * 
+	 * @throws IllegalArgumentException Thrown if a specific part of the XML
+	 * 									fails validation. See the exception's
+	 * 									message for more information. 
 	 */
-	public void run(String fileName, String schemaFileName) throws IOException, SAXException, ParsingException, ValidityException {
-		//
-		// 1. Validate against schema: spec/configuration.xsd
-		// 2. Make sure all ids are unique
-		// 3. All prompts must be of a known type
-		// 4. Prompt type validation - configuration properties must be valid for the type.
-		// 5. Conditions
-		// 5a. The first prompt in a contentList cannot have a condition.
-		// 5b. Conditions must validate against the condition grammar.
-		// 5c. ids in conditions must exist in a prompt previous to the current prompt
-		// 5d. The values in conditions must be allowable for the prompt type indicated by the id on the left hand side of the 
-		// operation in each condition
-		// 
+	public void run(String xml, String schemaFileName) throws SAXException, InvalidParameterException, ValidityException, ParsingException {
+		_logger.info("Starting validation.");
 		
-		_logger.info("Starting validation for " + fileName);
-		
-		checkSchema(fileName, schemaFileName);
+		try {
+			checkSchemaOnStrings(xml, schemaFileName);
+		}
+		catch(IOException e) {
+			_logger.error("Failed to open schema to validate campaign.", e);
+			throw new InvalidParameterException("Problem reading schema file.");
+		}
 		_logger.info("schema validation successful");
 		
 		// Now use XOM to retrieve a Document and a root node for further processing. XOM is used because it has a 
-		// very simple XPath API
-				
+		// very simple XPath API	
 		Builder builder = new Builder();
-		Document document = builder.build(fileName);
-		
-//		if(_logger.isDebugEnabled()) {
-//			_logger.debug(document.toXML());
-//		}
+		Document document;
+		try {
+			document = builder.build(new StringReader(xml));
+		} catch (IOException e) {
+			// This should only be thrown if it can't read the 'xml', but
+			// given that it is already in memory this should never happen.
+			_logger.error("Unable to read 'xml'.", e);
+			throw new InvalidParameterException("XML was unreadable.");
+		}
 		
 		Element root = document.getRootElement();
 		
@@ -148,6 +173,53 @@ public class CampaignValidator {
 		_logger.info("configuration validation successful");
 	}
 	
+	
+	/**
+	 * Validates an XML String that is already in memory against a schema and
+	 * against our campaign rules.
+	 * 
+	 * @param xml A String that is the XML to be validated.
+	 * 
+	 * @param schemaFileName The filename of the schema to validate against.
+	 * 
+	 * @throws SAXException Thrown if there is a problem validating the XML
+	 * 						schema.
+	 * 
+	 * @throws InvalidParameterException Thrown if there is a serious internal
+	 * 									 error.
+	 * 
+	 * @throws ValidityException Thrown if 'xml' is not valid XML.
+	 * 
+	 * @throws ParsingException Thrown if the 'xml' is not well-formed.
+	 * 
+	 * @throws IllegalStateException Thrown if a specific part of the XML
+	 * 								 fails validation. See the exception's 
+	 * 								 message for more information.
+	 * 
+	 * @throws IllegalArgumentException Thrown if a specific part of the XML
+	 * 									fails validation. See the exception's
+	 * 									message for more information. 
+	 */
+	public void runAgainstFiles(String fileName, String schemaFileName) throws IOException, SAXException, ParsingException, ValidityException {
+		// Read the contents of fileName and save it in 'xml'.
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
+		String currLine;
+		String xml = "";
+		while((currLine = br.readLine()) != null) {
+			xml += currLine + "\n";
+		}
+		
+		run(xml, schemaFileName);
+	}
+	
+	/**
+	 * Checks that the campaign URN exists and is a valid URN as defined by
+	 * us.
+	 * 
+	 * @param root The root of the XML being validated.
+	 * 
+	 * @throws IllegalStateException Thrown if the URN fails validation.
+	 */
 	private void checkCampaignUrn(Node root) {
 		String campaignUrn = root.query("/campaign/campaignUrn").get(0).getValue();
 		if(! campaignUrn.startsWith("urn:")) {
@@ -328,7 +400,33 @@ public class CampaignValidator {
 	}
 	
 	/**
+	 * Validates a campaign's schema.
+	 * 
+	 * @param xml The campaign that will have its schema validated.
+	 * 
+	 * @param schema The schema used to validate the campaign XML.
+	 * 
+	 * @throws IOException Thrown if the schema file cannot be found or read.
+	 * 
+	 * @throws SAXException Thrown if the schema validation fails.
+	 */
+	private void checkSchemaOnStrings(String xml, String schemaFileName) throws IOException, SAXException {
+		SAXSource xmlSource = new SAXSource(new InputSource(new StringReader(xml)));
+		StreamSource schemaDocument = new StreamSource(new File(schemaFileName));
+		
+		// Originally attempted to use "http://www.w3.org/XML/XMLSchema/v1.1" here, but neither Xerces2 nor the native
+		// Java 6 implementation supports it out of the box.  
+		SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		
+		Schema s = sf.newSchema(schemaDocument);
+		Validator v = s.newValidator();
+		v.validate(xmlSource);
+	}
+	
+	/**
 	 * Checks each id in the instance document for uniqueness.
+	 * 
+	 * @throws IllegalStateException Thrown if there were duplicate IDs.
 	 */
 	private void checkIdUniqueness(Element root) {
 		Nodes idNodes = root.query("//id"); // find all of the id elements in the file
@@ -477,6 +575,9 @@ public class CampaignValidator {
 	
 	/**
 	 * Checks all prompt types to make sure that they are supported.
+	 * 
+	 * @throws IllegalStateException Thrown if a prompt type was found that
+	 * 								 the server doesn't know about.
 	 */
 	private void checkPromptTypes(Element root) {
 		Nodes promptTypeNodes = root.query("//promptType");
@@ -490,7 +591,11 @@ public class CampaignValidator {
 	}
 	
 	/**
-	 * Checks all prompt types to make sure that they have valid configurations.
+	 * Checks all prompt types to make sure that they have valid
+	 * configurations.
+	 * 
+	 * @throws IllegalStateException Thrown if the properties of a prompt
+	 * 								 don't successfully validate.
 	 */
 	private void checkPromptTypeProperties(Element root) {
 		Nodes prompts = root.query("//prompt");
