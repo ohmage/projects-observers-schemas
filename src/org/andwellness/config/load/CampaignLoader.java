@@ -176,8 +176,8 @@ public class CampaignLoader {
 	 * Validates the running state.
 	 */
 	private void validateRunningStateProp(String value) {
-		if(! "active".equals(value) && ! "inactive".equals(value)) {
-			throw new IllegalArgumentException("invalid state value: " + value + " (it must be either active or inactive).");
+		if(! "running".equals(value) && ! "stopped".equals(value)) {
+			throw new IllegalArgumentException("invalid state value: " + value + " (it must be either running or stopped).");
 		}
 	}
 
