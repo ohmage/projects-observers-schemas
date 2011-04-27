@@ -13,7 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidator {
-	private static final int _MAX_INPUT_LENGTH = 10000;
+	private static final int MAX_INPUT_LENGTH = 65536;
 
 	/**
 	 * Check that the following properties exist and that they are sane.
@@ -295,8 +295,8 @@ public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidat
 	 * @param value The value of the 'input' property.
 	 */
 	private void validateInput(String value) {
-		if(value.length() > _MAX_INPUT_LENGTH) {
-			throw new IllegalArgumentException("'input' can only be " + _MAX_INPUT_LENGTH + " characters");
+		if(value.length() > MAX_INPUT_LENGTH) {
+			throw new IllegalArgumentException("'input' can only be " + MAX_INPUT_LENGTH + " characters");
 		}
 	}
 }
