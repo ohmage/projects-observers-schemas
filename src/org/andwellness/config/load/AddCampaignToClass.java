@@ -154,9 +154,9 @@ public class AddCampaignToClass {
 				    		);
 				    		ps.setInt(1, userId);
 				    		ps.setInt(2, campaignId);
-				    		if("supervisor".equals(classRole)) {
+				    		if("privileged".equals(classRole)) {
 				    			ps.setInt(3, supervisorId);
-				    		} else if("normal".equals(classRole)) {
+				    		} else if("restricted".equals(classRole)) {
 				    			ps.setInt(3, participantId);
 				    		} else {
 				    			// this is bad because it means there is incorrect data in the user_class table 

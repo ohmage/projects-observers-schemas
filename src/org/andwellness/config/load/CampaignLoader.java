@@ -80,7 +80,7 @@ public class CampaignLoader {
 		_logger.info("validating config file ... " + configFileName);
 		
 		CampaignValidator validator = new CampaignValidator();
-		validator.run(configFileName, schemaFileName);
+		validator.runAgainstFiles(configFileName, schemaFileName);
 		
 		// set up connection to db
 		_jdbcTemplate = new JdbcTemplate(getDataSource(props));
@@ -135,11 +135,11 @@ public class CampaignLoader {
 			
 			if(((SQLException) dive.getCause()).getErrorCode() == 1062) { // not great to hardcode the MySQL error code
 			
-			    throw new IllegalStateException("campaign_id-version combination already exists", dive);
+			    throw new IllegalStateException("Campaign with URN already exists.", dive);
 			    
 			} else {
 				
-				throw new IllegalStateException("caught DataIntegrityException - not a duplicate", dive);
+				throw new IllegalStateException("Caught DataIntegrityViolation.", dive);
 			}
 		} 
 		
@@ -176,8 +176,8 @@ public class CampaignLoader {
 	 * Validates the running state.
 	 */
 	private void validateRunningStateProp(String value) {
-		if(! "active".equals(value) && ! "inactive".equals(value)) {
-			throw new IllegalArgumentException("invalid state value: " + value + " (it must be either active or inactive).");
+		if(! "running".equals(value) && ! "stopped".equals(value)) {
+			throw new IllegalArgumentException("invalid state value: " + value + " (it must be either running or stopped).");
 		}
 	}
 
