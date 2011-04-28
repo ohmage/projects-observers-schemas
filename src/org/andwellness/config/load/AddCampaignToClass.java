@@ -13,7 +13,6 @@ import java.util.Properties;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
-import org.springframework.dao.InvalidDataAccessResourceUsageException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
@@ -25,6 +24,8 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 /**
  * Procedure for adding a campaign to a class in the database: creates the campaign_class relation and for each user in the 
  * class, creates the user_role_campaign relation based on the user's class_role.   
+ * 
+ * This class will be replaced by /app/campaign/create and /app/campaign/update.
  * 
  * @author selsky
  */
@@ -68,12 +69,15 @@ public class AddCampaignToClass {
 		BasicDataSource dataSource = getDataSource(props);
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		
+		
 		// make sure the campaign exists
 		final int campaignId = jdbcTemplate.queryForInt( // throws an IncorrectResultSizeDataAccessException 
 				                                         // if the campaign cannot be found
 			"select id from campaign where urn = '" + props.getProperty("campaignUrn") + "'"
 		); 
 		_logger.info("found campaign.id " + campaignId + " for campaign URN " + props.getProperty("campaignUrn")); 
+		
+		
 		
 		// make sure the class exists
 		final int classId = jdbcTemplate.queryForInt( // throws an IncorrectResultSizeDataAccessException 
@@ -82,24 +86,45 @@ public class AddCampaignToClass {
 		); 
 		_logger.info("found class.id " + classId + " for class URN " + props.getProperty("classUrn"));
 		
+		
+		
 		// find the user role ids for participants and supervisors
-		// for creation of analysts and authors, other means must be used i.e., the web app or raw SQL
 		final int participantId = jdbcTemplate.queryForInt( // throws an IncorrectResultSizeDataAccessException 
 			                                                // if the id cannot be found
 			"select id from user_role where role = 'participant'"
 		); 
 		_logger.info("found user_role.id " + participantId + " for role 'participant'");
 		
+		
+		
 		final int supervisorId = jdbcTemplate.queryForInt( // throws an IncorrectResultSizeDataAccessException 
 		                                                   // if the id cannot be found
 			"select id from user_role where role = 'supervisor'"
 		); 
 		_logger.info("found user_role.id " + supervisorId + " for role 'supervisor'");
+
 		
+		
+		final int authorId = jdbcTemplate.queryForInt( // throws an IncorrectResultSizeDataAccessException 
+			                                                // if the id cannot be found
+			"select id from user_role where role = 'author'"
+		); 
+		_logger.info("found user_role.id " + authorId + " for role 'author'");
+		
+		
+		
+		final int analystId = jdbcTemplate.queryForInt( // throws an IncorrectResultSizeDataAccessException 
+		                                                   // if the id cannot be found
+			"select id from user_role where role = 'analyst'"
+		); 
+		_logger.info("found user_role.id " + analystId + " for role 'analyst'");
+		
+		int[] privilegedCampaignRoles = {supervisorId, participantId};
+		int[] restrictedCampaignRoles = {participantId, authorId, analystId};
 		
 		// prep for inserting into user_role_campaign
-		String selectUserClass = "select user_id, class_role from user_class, class " +
-				                 "where class.urn = ? and user_class.class_id = class.id";
+		String selectUserClass = "select user_id, role, user_class_role_id from user_class, class, user_class_role " +
+				                 "where class.urn = ? and user_class.class_id = class.id and user_class.user_class_role_id = user_class_role.id";
 		
 		@SuppressWarnings("unchecked")
 		List<UserIdClassRole> results = (List<UserIdClassRole>) jdbcTemplate.query(
@@ -141,32 +166,84 @@ public class AddCampaignToClass {
 			    }
 			);
 			
-			// create the user_role_campaign relationship
+//			// create the user_role_campaign relationship
+//			for(UserIdClassRole uicr : results) {
+//				final int userId = uicr.getId();
+//				final String classRole = uicr.getClassRole();
+//				
+//				jdbcTemplate.update(
+//				    new PreparedStatementCreator() {
+//				    	public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+//				    		PreparedStatement ps = connection.prepareStatement(
+//				    			"insert into user_role_campaign (user_id, campaign_id, user_role_id) values (?,?,?)"
+//				    		);
+//				    		ps.setInt(1, userId);
+//				    		ps.setInt(2, campaignId);
+//				    		if("privileged".equals(classRole)) {
+//				    			ps.setInt(3, supervisorId);
+//				    		} else if("restricted".equals(classRole)) {
+//				    			ps.setInt(3, participantId);
+//				    		} else {
+//				    			// this is bad because it means there is incorrect data in the user_class table 
+//				    			// TODO add a lookup table for class_role ??
+//				    			throw new InvalidDataAccessResourceUsageException("incorrect class_role found for user id " + userId);
+//				    		}
+//				    		return ps;
+//				    	}
+//				    }
+//				);
+//			}
+//			
+			// create the user_role_campaign relationship for privileged users
 			for(UserIdClassRole uicr : results) {
+				
 				final int userId = uicr.getId();
 				final String classRole = uicr.getClassRole();
 				
-				jdbcTemplate.update(
-				    new PreparedStatementCreator() {
-				    	public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				    		PreparedStatement ps = connection.prepareStatement(
-				    			"insert into user_role_campaign (user_id, campaign_id, user_role_id) values (?,?,?)"
-				    		);
-				    		ps.setInt(1, userId);
-				    		ps.setInt(2, campaignId);
-				    		if("privileged".equals(classRole)) {
-				    			ps.setInt(3, supervisorId);
-				    		} else if("restricted".equals(classRole)) {
-				    			ps.setInt(3, participantId);
-				    		} else {
-				    			// this is bad because it means there is incorrect data in the user_class table 
-				    			// TODO add a lookup table for class_role ??
-				    			throw new InvalidDataAccessResourceUsageException("incorrect class_role found for user id " + userId);
-				    		}
-				    		return ps;
-				    	}
-				    }
-				);
+				if("privileged".equals(classRole)) {
+					
+					for(final int role : privilegedCampaignRoles) {
+						jdbcTemplate.update(
+						    new PreparedStatementCreator() {
+						    	public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+						    		PreparedStatement ps = connection.prepareStatement(
+						    			"insert into user_role_campaign (user_id, campaign_id, user_role_id) values (?,?,?)"
+						    		);
+						    		ps.setInt(1, userId);
+						    		ps.setInt(2, campaignId);
+						    		ps.setInt(3, role);
+						    		return ps;
+						    	}
+						    }
+						);
+					}
+				}
+			}
+			
+			// create the user_role_campaign relationship for restricted users
+			for(UserIdClassRole uicr : results) {
+				
+				final int userId = uicr.getId();
+				final String classRole = uicr.getClassRole();
+				
+				if("restricted".equals(classRole)) {
+					
+					for(final int role : restrictedCampaignRoles) {
+						jdbcTemplate.update(
+						    new PreparedStatementCreator() {
+						    	public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+						    		PreparedStatement ps = connection.prepareStatement(
+						    			"insert into user_role_campaign (user_id, campaign_id, user_role_id) values (?,?,?)"
+						    		);
+						    		ps.setInt(1, userId);
+						    		ps.setInt(2, campaignId);
+						    		ps.setInt(3, role);
+						    		return ps;
+						    	}
+						    }
+						);
+					}
+				}
 			}
 			
 			transactionManager.commit(status); // end transaction
@@ -235,11 +312,19 @@ public class AddCampaignToClass {
 	public class UserIdClassRole {
 		private int _id;
 		private String _classRole;
+		private int _classRoleId;
+		
 		public int getId() {
 			return _id;
 		}
 		public void setId(int id) {
 			_id = id;
+		}
+		public int getClassRoleId() {
+			return _classRoleId;
+		}
+		public void setClassRoleId(int id) {
+			_classRoleId = id;
 		}
 		public String getClassRole() {
 			return _classRole;
