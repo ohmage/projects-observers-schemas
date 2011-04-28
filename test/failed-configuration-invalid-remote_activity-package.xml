@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="configuration.xsd">
+	<campaignUrn>urn:andwellness:prompt:remote_activity</campaignUrn>
+	<campaignName>campaignName</campaignName>
+	<serverUrl>https://validationTesting.andwellness.org/</serverUrl>
+	<surveys>
+		<survey>
+			<id>surveyId</id>
+		    <title>title</title>
+		    <description>description</description>
+		    <introText>introText</introText>
+		    <submitText>submitText</submitText>
+		    <showSummary>true</showSummary>
+		    <editSummary>true</editSummary>
+		    <summaryText>summaryText</summaryText>
+		    <anytime>true</anytime>
+		    <contentList>
+				<prompt>
+					<id>id</id>
+					<displayType>event</displayType>
+					<displayLabel>Remote Activity Type</displayLabel>
+					<promptText>promptText</promptText>
+					<abbreviatedText>abbreviatedText</abbreviatedText>
+					<explanationText>explanationText</explanationText>
+					<promptType>remote_activity</promptType>
+					<properties>
+						<property>
+							<key>package</key>
+							<label>package</label>
+						</property>
+						<property>
+							<key>activity</key>
+							<label>valid.package.activity</label>
+						</property>
+						<property>
+							<key>action</key>
+							<label>valid.action</label>
+						</property>
+						<property>
+							<key>autolaunch</key>
+							<label>true</label>
+						</property>
+						<property>
+							<key>retries</key>
+							<label>2</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+			</contentList>
+		</survey>
+	</surveys>
+</campaign>
