@@ -120,7 +120,7 @@ public class AddCampaignToClass {
 		_logger.info("found user_role.id " + analystId + " for role 'analyst'");
 		
 		int[] privilegedCampaignRoles = {supervisorId, participantId};
-		int[] restrictedCampaignRoles = {participantId, authorId, analystId};
+		int[] restrictedCampaignRoles = {participantId, analystId};
 		
 		// prep for inserting into user_role_campaign
 		String selectUserClass = "select user_id, role, user_class_role_id from user_class, class, user_class_role " +
