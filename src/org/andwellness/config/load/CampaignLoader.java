@@ -110,9 +110,15 @@ public class CampaignLoader {
 		final String runningState = props.getProperty("runningState");
 		final String xml = root.toXML(); // whitespace is left intact - it can be removed with an XSLT in the future
 		
-		final String sql = "insert into campaign (description, xml, running_state, privacy_state, name, urn, creation_timestamp)" +
+		final String sqlGetRunningStateId = "select id from campaign_running_state where running_state = '" + runningState + "'";
+		final String sqlGetPrivacyStateId = "select id from campaign_privacy_state where privacy_state = '" + privacyState + "'";
+		
+		final String sql = "insert into campaign (description, xml, running_state_id, privacy_state_id, name, urn, creation_timestamp)" +
 				" values (?,?,?,?,?,?,?)"; 
 		
+		final int runningStateId = _jdbcTemplate.queryForInt(sqlGetRunningStateId);
+		final int privacyStateId = _jdbcTemplate.queryForInt(sqlGetPrivacyStateId);
+
 		try {
 			
 			_jdbcTemplate.update(
@@ -121,8 +127,8 @@ public class CampaignLoader {
 						PreparedStatement ps = connection.prepareStatement(sql);
 						ps.setString(1, description);
 						ps.setString(2, xml);
-						ps.setString(3, runningState);
-						ps.setString(4, privacyState);
+						ps.setInt(3, runningStateId);
+						ps.setInt(4, privacyStateId);
 						ps.setString(5, campaignName);
 						ps.setString(6, campaignUrn);
 						ps.setTimestamp(7, new Timestamp(System.currentTimeMillis()));
