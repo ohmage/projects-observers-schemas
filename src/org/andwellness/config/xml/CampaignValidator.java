@@ -5,16 +5,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.StringReader;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.Set;
 
 import javax.xml.XMLConstants;
@@ -43,7 +40,8 @@ import org.xml.sax.SAXParseException;
 /**
  * Giant procedural driver for the campaign validation process.
  * 
- * @author selsky
+ * @author Joshua Selsky
+ * @author John Jenkins
  */
 public class CampaignValidator {
 	private static Logger _logger = Logger.getLogger(CampaignValidator.class);
@@ -98,7 +96,7 @@ public class CampaignValidator {
 	 * @throws SAXException Thrown if there is a problem validating the XML
 	 * 						schema.
 	 * 
-	 * @throws InvalidParameterException Thrown if there is a serious internal
+	 * @throws IllegalStateException Thrown if there is a serious internal
 	 * 									 error.
 	 * 
 	 * @throws ValidityException Thrown if 'xml' is not valid XML.
@@ -113,7 +111,7 @@ public class CampaignValidator {
 	 * 									fails validation. See the exception's
 	 * 									message for more information. 
 	 */
-	public void run(String xml, String schemaFileName) throws SAXException, InvalidParameterException, ValidityException, ParsingException {
+	public void run(String xml, String schemaFileName) throws SAXException, ValidityException, ParsingException {
 		_logger.info("Starting validation.");
 		
 		try {
@@ -121,7 +119,7 @@ public class CampaignValidator {
 		}
 		catch(IOException e) {
 			_logger.error("Failed to open schema to validate campaign.", e);
-			throw new InvalidParameterException("Problem reading schema file.");
+			throw new IllegalStateException("Problem reading schema file.");
 		}
 		_logger.info("schema validation successful");
 		
@@ -135,7 +133,7 @@ public class CampaignValidator {
 			// This should only be thrown if it can't read the 'xml', but
 			// given that it is already in memory this should never happen.
 			_logger.error("Unable to read 'xml'.", e);
-			throw new InvalidParameterException("XML was unreadable.");
+			throw new IllegalStateException("XML was unreadable.");
 		}
 		
 		Element root = document.getRootElement();
@@ -185,7 +183,7 @@ public class CampaignValidator {
 	 * @throws SAXException Thrown if there is a problem validating the XML
 	 * 						schema.
 	 * 
-	 * @throws InvalidParameterException Thrown if there is a serious internal
+	 * @throws IllegalStateException Thrown if there is a serious internal
 	 * 									 error.
 	 * 
 	 * @throws ValidityException Thrown if 'xml' is not valid XML.
