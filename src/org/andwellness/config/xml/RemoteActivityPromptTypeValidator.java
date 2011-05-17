@@ -14,6 +14,9 @@ import org.json.JSONException;
 
 public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidator {
 	private static final int MAX_INPUT_LENGTH = 65536;
+	
+	private int _minRuns;
+	private int _retries;
 
 	/**
 	 * Check that the following properties exist and that they are sane.
@@ -98,6 +101,12 @@ public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidat
 			}
 			else if(! propertyKeys.contains("retries")) {
 				throw new IllegalStateException("Missing 'retries' key: " + promptNode.toXML());
+			}
+			else if(! propertyKeys.contains("minRuns")) {
+				throw new IllegalStateException("Missing 'minRuns' key: " + promptNode.toXML());
+			}
+			else if(! validateRetriesAndMinRuns()) {
+				throw new IllegalStateException("'minRuns' dictates that the user must run the remote Activity more times than they are allowed to run it via 'retries': " + promptNode.toXML());
 			}
 		}
 		catch(XPathException e) {
@@ -221,6 +230,9 @@ public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidat
 		else if(key.equals("input")) {
 			validateInput(label);
 		}
+		else if(key.equals("minRuns")) {
+			validateMinRuns(label);
+		}
 		else {
 			throw new IllegalArgumentException("Invalid key in properties list: " + key);
 		}
@@ -276,9 +288,9 @@ public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidat
 	 */
 	private void validateRetries(String value) {
 		try {
-			int retries = Integer.parseInt(value);
+			_retries = Integer.parseInt(value);
 			
-			if(retries < 0) {
+			if(_retries < 0) {
 				throw new IllegalArgumentException("'retries' must be non-negative");
 			}
 		}
@@ -298,5 +310,38 @@ public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidat
 		if(value.length() > MAX_INPUT_LENGTH) {
 			throw new IllegalArgumentException("'input' can only be " + MAX_INPUT_LENGTH + " characters");
 		}
+	}
+	
+	/**
+	 * Validates that the minimum number of runs a user must do of the remote
+	 * Activity is a non-negative integer.
+	 * 
+	 * @param value The minimum number of times a user must run the remote
+	 * 				Activity.
+	 */
+	private void validateMinRuns(String value) {
+		try {
+			_minRuns = Integer.parseInt(value);
+			
+			if(_minRuns < 0) {
+				throw new IllegalArgumentException("'minRuns' must be non-negative.");
+			}
+		}
+		catch(NumberFormatException e) {
+			throw new IllegalArgumentException("'minRuns' is not a valid integer.", e);
+		}
+	}
+	
+	/**
+	 * Validates that the minimum number of runs is less than or equal to the
+	 * maximum number of times that a user can actually execute the remote
+	 * Activity.
+	 */
+	private boolean validateRetriesAndMinRuns() {
+		if(_minRuns > (_retries + 1)) {
+			return false;
+		}
+		
+		return true;
 	}
 }
