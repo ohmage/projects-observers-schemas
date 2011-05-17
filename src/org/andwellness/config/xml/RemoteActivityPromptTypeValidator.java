@@ -102,11 +102,11 @@ public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidat
 			else if(! propertyKeys.contains("retries")) {
 				throw new IllegalStateException("Missing 'retries' key: " + promptNode.toXML());
 			}
-			else if(! propertyKeys.contains("minRuns")) {
-				throw new IllegalStateException("Missing 'minRuns' key: " + promptNode.toXML());
+			else if(! propertyKeys.contains("min_runs")) {
+				throw new IllegalStateException("Missing 'min_runs' key: " + promptNode.toXML());
 			}
 			else if(! validateRetriesAndMinRuns()) {
-				throw new IllegalStateException("'minRuns' dictates that the user must run the remote Activity more times than they are allowed to run it via 'retries': " + promptNode.toXML());
+				throw new IllegalStateException("'min_runs' dictates that the user must run the remote Activity more times than they are allowed to run it via 'retries': " + promptNode.toXML());
 			}
 		}
 		catch(XPathException e) {
@@ -230,7 +230,7 @@ public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidat
 		else if(key.equals("input")) {
 			validateInput(label);
 		}
-		else if(key.equals("minRuns")) {
+		else if(key.equals("min_runs")) {
 			validateMinRuns(label);
 		}
 		else {
@@ -324,11 +324,11 @@ public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidat
 			_minRuns = Integer.parseInt(value);
 			
 			if(_minRuns < 0) {
-				throw new IllegalArgumentException("'minRuns' must be non-negative.");
+				throw new IllegalArgumentException("'min_runs' must be non-negative.");
 			}
 		}
 		catch(NumberFormatException e) {
-			throw new IllegalArgumentException("'minRuns' is not a valid integer.", e);
+			throw new IllegalArgumentException("'min_runs' is not a valid integer.", e);
 		}
 	}
 	
