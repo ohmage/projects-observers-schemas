@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignName>NIH</campaignName>
+  <campaignVersion>1.0</campaignVersion>
+  <serverUrl>https://heart.andwellness.org</serverUrl>
+  
+  <surveys>
+      <survey>
+      <id>exerciseAndActivity</id>
+      <title>Exercise and Activity</title>
+      <description>This is the exercise and activity survey.</description>
+      <submitText>Thank you for completing the survey.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+
+        <prompt>
+          <id>didYouExercise</id>
+          <displayType>category</displayType>
+          <displayLabel>Have you exercised today</displayLabel>
+          <promptText>Have you exercised today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>planningToExercise</id>
+          <condition>didYouExercise == 0</condition>
+          <displayType>category</displayType>
+          <displayLabel>Were you planning to exercise today</displayLabel>
+          <promptText>Were you planning to exercise today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>whyNotExercise</id>
+          <condition>didYouExercise == 0 and planningToExercise == 1</condition>
+          <displayType>category</displayType>
+          <displayLabel>Disrupted plan</displayLabel>
+          <promptText>What prevented you from exercising as planned?</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Child care</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Work</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Personal needs</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Household responsibilities</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Injured, in pain</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Social function</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>Medical emergency</label>
+            </property>
+            <property>
+              <key>7</key>
+              <label>No energy</label>
+            </property>
+            <property>
+              <key>8</key>
+              <label>Other</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>whatDid</id>
+          <condition>didYouExercise == 1</condition>
+          <displayType>category</displayType>
+          <displayLabel>What exercise did you do?</displayLabel>
+          <promptText>What exercise did you do?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Walking</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Bicycling</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Running</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Yoga</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Elliptical machine</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Stretching</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>Other</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>heartRate</id>
+          <condition>didYouExercise == 1</condition>
+          <displayType>category</displayType>
+          <displayLabel>Did your exercise cause any increase in your heart rate and/or breathing?</displayLabel>
+          <promptText>Did your exercise cause any increase in your heart rate and/or breathing?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <condition>didYouExercise == 1</condition>
+          <id>timeExercised</id>
+          <displayType>category</displayType>
+          <displayLabel>How much time did you do this exercise?</displayLabel>
+          <promptText>How much time did you do this exercise?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>10 minutes or less</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>20 minutes</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label> 30 minutes </label>
+            </property>
+            <property>
+              <key>3</key>
+              <label> 40 minutes </label>
+            </property>
+            <property>
+              <key>4</key>
+              <label> 50 minutes </label>
+            </property>
+            <property>
+              <key>5</key>
+              <label> 60+ minutes </label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>enjoyExercise</id>
+          <condition>didYouExercise == 1</condition>
+          <displayType>category</displayType>
+          <displayLabel>Did you enjoy exercising?</displayLabel>
+          <promptText>Did you enjoy exercising?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>whoWith</id>
+          <condition>didYouExercise == 1</condition>
+          <displayType>category</displayType>
+          <displayLabel>Who did you exercise with</displayLabel>
+          <promptText>Who did you do this exercise with?</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>By myself</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Friend</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Partner</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Child</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>meetGoal</id>
+          <condition>didYouExercise == 1</condition>
+          <displayType>category</displayType>
+          <displayLabel>Did you meet your goal for exercise today?</displayLabel>
+          <promptText>meet your goal for exercise today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Did not have a goal</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>whyNotMeetGoal</id>
+          <condition>didYouExercise == 1 and meetGoal == 0</condition>
+          <displayType>category</displayType>
+          <displayLabel>Why were you not able to meet your goal?</displayLabel>
+          <promptText>Why were you not able to meet your goal?</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Household responsibilities</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Lack of time</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Too much stress</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Not feeling well</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Too tired</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Weather</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>Not motivated/did not feel like it</label>
+            </property>
+            <property>
+              <key>7</key>
+              <label>Other</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>doChores</id>
+          <displayType>category</displayType>
+          <displayLabel>Did you do any household chores today?</displayLabel>
+          <promptText>Did you do any household chores today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>typeChores</id>
+          <condition>doChores == 1</condition>
+          <displayType>category</displayType>
+          <displayLabel>What type of household chores did you do today?</displayLabel>
+          <promptText>What type of household chores did you do today?</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Light Housework (cooking, washing dishes, folding laundry)</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Heavy housework (vacuuming, mopping, carrying laundry up/down stairs)</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Taking care of child and/or elderly person (bathing, dressing, feeding)</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Outdoor work (gardening, raking, shoveling)</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Other</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <condition>doChores == 1</condition>
+          <id>timeChores</id>
+          <displayType>category</displayType>
+          <displayLabel>How much time did you do household chores today?</displayLabel>
+          <promptText>How much time did you do household chores today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>10 minutes or less</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>20 minutes</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label> 30 minutes </label>
+            </property>
+            <property>
+              <key>3</key>
+              <label> 40 minutes </label>
+            </property>
+            <property>
+              <key>4</key>
+              <label> 50 minutes </label>
+            </property>
+            <property>
+              <key>5</key>
+              <label> 60+ minutes </label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>walkOrBike</id>
+          <displayType>category</displayType>
+          <displayLabel>Did you do any traveling by walking or biking today?</displayLabel>
+          <promptText>do any traveling by walking or biking today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+
+        <prompt>
+          <condition>walkOrBike == 1</condition>
+          <id>timeWalkBike</id>
+          <displayType>category</displayType>
+          <displayLabel>How much time did you travel by walking or biking today?</displayLabel>
+          <promptText>How much time did you travel by walking or biking today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>10 minutes or less</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>20 minutes</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label> 30 minutes </label>
+            </property>
+            <property>
+              <key>3</key>
+              <label> 40 minutes </label>
+            </property>
+            <property>
+              <key>4</key>
+              <label> 50 minutes </label>
+            </property>
+            <property>
+              <key>5</key>
+              <label> 60+ minutes </label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>timeSitting</id>
+          <displayType>category</displayType>
+          <displayLabel>How much time did you spend sitting today?</displayLabel>
+          <promptText>How much time did you spend sitting today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Less than an hour</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>1-2 hours</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than 2 hours</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Refused</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+     </contentList>
+
+    </survey>
+  </surveys>
+</campaign>
