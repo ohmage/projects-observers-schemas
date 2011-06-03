@@ -260,7 +260,7 @@
           <condition>didYouExercise == 1</condition>
           <displayType>category</displayType>
           <displayLabel>Did you meet your goal for exercise today?</displayLabel>
-          <promptText>meet your goal for exercise today?</promptText>
+          <promptText>Did you meet your goal for exercise today?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -382,8 +382,8 @@
           <condition>doChores == 1</condition>
           <id>timeChores</id>
           <displayType>category</displayType>
-          <displayLabel>How much time did you do household chores today?</displayLabel>
-          <promptText>How much time did you do household chores today?</promptText>
+          <displayLabel>How much time did you spend doing household chores today?</displayLabel>
+          <promptText>How much time did you spend doing household chores today?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -419,7 +419,7 @@
           <id>walkOrBike</id>
           <displayType>category</displayType>
           <displayLabel>Did you do any traveling by walking or biking today?</displayLabel>
-          <promptText>do any traveling by walking or biking today?</promptText>
+          <promptText>Did you do any traveling by walking or biking today?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
