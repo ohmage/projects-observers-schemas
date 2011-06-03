@@ -2,7 +2,8 @@
 <campaign>
   <campaignName>NIH</campaignName>
   <campaignVersion>1.0</campaignVersion>
-  <serverUrl>https://heart.andwellness.org</serverUrl>
+  <serverUrl>https://students.andwellness.org/</serverUrl>
+
   
   <surveys>
       <survey>
