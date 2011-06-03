@@ -2,7 +2,7 @@
 <campaign>
   <campaignName>NIH</campaignName>
   <campaignVersion>1.1</campaignVersion>
-  <serverUrl>https://heart.andwellness.org</serverUrl>
+  <serverUrl>https://dev.andwellness.org/</serverUrl>
   
   <surveys>
        <survey>
@@ -727,7 +727,7 @@
 
     <survey>
       <id>foodButton</id>
-      <title>Stress</title>
+      <title>Food</title>
       <description>Not displayed</description>
       <submitText>Not displayed</submitText>
       <showSummary>false</showSummary>
@@ -850,6 +850,7 @@
             </property>
           </properties>
           <skippable>false</skippable>
+          <default>*</default>
         </prompt>
         
       </contentList>
