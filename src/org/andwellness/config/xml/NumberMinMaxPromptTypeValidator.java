@@ -36,8 +36,8 @@ public class NumberMinMaxPromptTypeValidator extends AbstractNumberPromptTypeVal
 	 * Makes sure max is greater than min and that min and max are both valid integers.
 	 */
 	protected void performExtendedConfigValidation(Node promptNode, Nodes minLNodes, Nodes maxLNodes) {
-		_min = getValidNegOrPosInteger(minLNodes.get(0).getValue()); 
-		_max = getValidNegOrPosInteger(maxLNodes.get(0).getValue());
+		_min = getValidNegOrPosInteger(minLNodes.get(0).getValue().trim()); 
+		_max = getValidNegOrPosInteger(maxLNodes.get(0).getValue().trim());
 		
 		if(_max < _min) {
 			throw new IllegalStateException("max cannot be less than min: " + promptNode.toXML());

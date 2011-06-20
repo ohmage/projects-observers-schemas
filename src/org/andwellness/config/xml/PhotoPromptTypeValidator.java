@@ -27,7 +27,7 @@ public class PhotoPromptTypeValidator extends AbstractNumberPromptTypeValidator 
 			throw new IllegalStateException("invalid prompt configuration: " + promptNode.toXML());
 		}
 		
-		Nodes resNodes = promptNode.query("properties/property/key[text()='res']");
+		Nodes resNodes = promptNode.query("properties/property/key[normalize-space(text())='res']");
 		if(1 != resNodes.size()) {
 			throw new IllegalStateException("missing 'res' property for XML fragment: " + promptNode.toXML());
 		}
@@ -37,7 +37,7 @@ public class PhotoPromptTypeValidator extends AbstractNumberPromptTypeValidator 
 			throw new IllegalStateException("missing or extra 'res' label for XML fragment: " + promptNode.toXML());
 		}
 		
-		getValidPositiveInteger(resLabelNodes.get(0).getValue()); // TODO we need a valid set of values for res (720, etc)
+		getValidPositiveInteger(resLabelNodes.get(0).getValue().trim()); // TODO we need a valid set of values for res (720, etc)
 	}
 
 	/**

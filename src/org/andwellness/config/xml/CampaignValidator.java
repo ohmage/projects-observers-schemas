@@ -219,7 +219,7 @@ public class CampaignValidator {
 	 * @throws IllegalStateException Thrown if the URN fails validation.
 	 */
 	private void checkCampaignUrn(Node root) {
-		String campaignUrn = root.query("/campaign/campaignUrn").get(0).getValue();
+		String campaignUrn = root.query("/campaign/campaignUrn").get(0).getValue().trim();
 		if(! campaignUrn.startsWith("urn:")) {
 			throw new IllegalStateException("campaignUrn is not a valid URN: " + campaignUrn);
 		}
@@ -237,9 +237,9 @@ public class CampaignValidator {
 			
 			Nodes defaultNodes = prompts.get(i).query("default");
 			if(defaultNodes.size() > 0) {
-				String promptId = prompts.get(i).query("id").get(0).getValue();
+				String promptId = prompts.get(i).query("id").get(0).getValue().trim();
 				PromptTypeValidator ptv = _promptTypeValidatorMap.get(promptId);
-				ptv.checkDefaultValue(defaultNodes.get(0).getValue());
+				ptv.checkDefaultValue(defaultNodes.get(0).getValue().trim());
 			}
 		}
 	}
@@ -261,12 +261,12 @@ public class CampaignValidator {
 				
 				if(displayTypeNodes.size() > 0) {
 					
-					String dt = displayTypeNodes.get(0).getValue();
+					String dt = displayTypeNodes.get(0).getValue().trim();
 					if(! _validDisplayTypes.contains(dt)) {
 						throw new IllegalArgumentException("invalid display type: " + dt);
 					}
 					
-					String pt = prompts.get(j).query("promptType").get(0).getValue();
+					String pt = prompts.get(j).query("promptType").get(0).getValue().trim();
 					if("timestamp".equals(pt) && "metadata".equals(dt)) {
 						numberOfMetadataTimestamps++;
 					}
@@ -274,7 +274,7 @@ public class CampaignValidator {
 			}
 			if(numberOfMetadataTimestamps > 1) {
 				_logger.warn("more than one metadata timetamp found for survey with id: "
-					+ surveys.get(i).query("id").get(0).getValue());
+					+ surveys.get(i).query("id").get(0).getValue().trim());
 			}
 		}
 	}
@@ -289,20 +289,20 @@ public class CampaignValidator {
 		
 		for(int i = 0; i < size; i++) {
 				
-			if(Boolean.valueOf(surveys.get(i).query("showSummary").get(0).getValue())) { // summaryText and editSummary must exist
+			if(Boolean.valueOf(surveys.get(i).query("showSummary").get(0).getValue().trim())) { // summaryText and editSummary must exist
 				
 				// the schema specifies a non-empty string if summaryText exists, so just check for its existence
 				if(surveys.get(i).query("summaryText").size() < 1) {
 					
 					throw new IllegalStateException("Invalid survey config for survey id " 
-						+ surveys.get(i).query("id").get(0).getValue() + ". summaryText is required if showSummary is true");
+						+ surveys.get(i).query("id").get(0).getValue().trim() + ". summaryText is required if showSummary is true");
 				}
 				
 				// the schema specifies a boolean if editSummary exists, so just check for its existence
 				if(surveys.get(i).query("editSummary").size() < 1) {
 					
 					throw new IllegalStateException("Invalid survey config for survey id " 
-						+ surveys.get(i).query("id").get(0).getValue() + ". editSummary is required if showSummary is true");
+						+ surveys.get(i).query("id").get(0).getValue().trim() + ". editSummary is required if showSummary is true");
 				}
 			}
 		}
@@ -317,13 +317,13 @@ public class CampaignValidator {
 		
 		for(int i = 0; i < size; i++) {
 			
-			if(Boolean.valueOf(repeatableSets.get(i).query("terminationSkipEnabled").get(0).getValue())) { // terminationSkipLabel
+			if(Boolean.valueOf(repeatableSets.get(i).query("terminationSkipEnabled").get(0).getValue().trim())) { // terminationSkipLabel
 				                                                                                           // must exist
 				
 				if(repeatableSets.get(i).query("terminationSkipLabel").size() < 1) {
 					
 					throw new IllegalStateException("Invalid repeatableSet config for repeatableSet id " 
-							+ repeatableSets.get(i).query("id").get(0).getValue() + ". terminationSkipLabel is required if "
+							+ repeatableSets.get(i).query("id").get(0).getValue().trim() + ". terminationSkipLabel is required if "
 							+ "terminationSkipEnabled is true");
 				}
 			}	
@@ -341,12 +341,12 @@ public class CampaignValidator {
 		
 		for(int i = 0; i < size; i++) {
 			
-			if(Boolean.valueOf(prompts.get(i).query("skippable").get(0).getValue())) { // skipLabel must exist
+			if(Boolean.valueOf(prompts.get(i).query("skippable").get(0).getValue().trim())) { // skipLabel must exist
 				
 				if(prompts.get(i).query("skipLabel").size() < 1) {
 					
 					throw new IllegalStateException("Invalid prompt config for prompt id " 
-							+ prompts.get(i).query("id").get(0).getValue() + ". skipLabel is required if "
+							+ prompts.get(i).query("id").get(0).getValue().trim() + ". skipLabel is required if "
 							+ "skippable is true");
 				}
 			}
@@ -356,12 +356,12 @@ public class CampaignValidator {
 			// check showSummary on the parent survey
 			if("survey".equals(((Element) prompts.get(i).getParent().getParent()).getLocalName())) {
 				
-				showSummary = Boolean.valueOf(prompts.get(i).getParent().getParent().query("showSummary").get(0).getValue());
+				showSummary = Boolean.valueOf(prompts.get(i).getParent().getParent().query("showSummary").get(0).getValue().trim());
 				
 				
 			} else { // the parent is a repeatableSet so unwind 4 levels. the backwards path is prompt/prompts/repeatableSet/content_list/survey 
 				
-				showSummary = Boolean.valueOf(prompts.get(i).query("../../../..").get(0).query("showSummary").get(0).getValue());
+				showSummary = Boolean.valueOf(prompts.get(i).query("../../../..").get(0).query("showSummary").get(0).getValue().trim());
 			}
 			
 			if(showSummary) {
@@ -369,7 +369,7 @@ public class CampaignValidator {
 				if(prompts.get(i).query("abbreviatedText").size() < 1) {
 					
 					throw new IllegalStateException("Invalid prompt config for prompt id " 
-							+ prompts.get(i).query("id").get(0).getValue() + ". abbreviatedText is required if "
+							+ prompts.get(i).query("id").get(0).getValue().trim() + ". abbreviatedText is required if "
 							+ "showSummary on the parent survey is true");
 				}
 			}
@@ -433,7 +433,7 @@ public class CampaignValidator {
 		Set<String> stringSet = new HashSet<String>(size);
 		
 		for(int i = 0; i < size; i++) {
-			String value = idNodes.get(i).getValue();
+			String value = idNodes.get(i).getValue().trim();
 			if(! stringSet.add(value)) { // if add() returns false, it means there is a duplicate in the list
 				
 				throw new IllegalStateException("Invalid configuration: a duplicate id was found: " + value);
@@ -469,7 +469,7 @@ public class CampaignValidator {
 				for(int outerIndex = 0; outerIndex < numberOfOuterElements; outerIndex++) {
 					
 					Node currentNode = promptsAndRepeatableSets.get(outerIndex);
-					String currentId = currentNode.query("id").get(0).getValue(); 
+					String currentId = currentNode.query("id").get(0).getValue().trim(); 
 					idList.add(currentId);
 					int currentIdIndex = idList.indexOf(currentId);
 					
@@ -495,7 +495,7 @@ public class CampaignValidator {
 						 						 
 						 for(int i = 0; i < numberOfInnerElements; i++, cumulativeIndex++) {
 							 Node currentInnerNode = repeatableSetPromptNodes.get(i);
-							 String currentInnerId = currentInnerNode.query("id").get(0).getValue();
+							 String currentInnerId = currentInnerNode.query("id").get(0).getValue().trim();
 							 _logger.info("checking condition for a prompt inside of a repeatableSet: " + currentInnerId);
 							 cumulativeIdList.add(currentInnerId);
 							 int cumulativeIdIndex = cumulativeIdList.indexOf(currentInnerId);
@@ -517,7 +517,7 @@ public class CampaignValidator {
 		
 		if(conditionNodes.size() > 0) { // conditions are optional
 			
-			String condition = conditionNodes.get(0).getValue();
+			String condition = conditionNodes.get(0).getValue().trim();
 			
 			if(! "".equals(condition)) { // don't validate an empty node
 				
@@ -602,9 +602,9 @@ public class CampaignValidator {
 		for(int i = 0; i < size; i++) {
 			// Get the prompt type and then validate the configured properties
 			Node promptNode = prompts.get(i);
-			String promptId = promptNode.query("id").get(0).getValue();
+			String promptId = promptNode.query("id").get(0).getValue().trim();
 			_logger.info("validating property configuration for prompt id: " + promptId);
-			String promptType = promptNode.query("promptType").get(0).getValue();
+			String promptType = promptNode.query("promptType").get(0).getValue().trim();
 			PromptTypeValidator v = PromptTypeValidatorFactory.getValidator(promptType);
 			v.validateAndSetConfiguration(promptNode);
 			// add the validator for use in validating condition values
@@ -627,7 +627,7 @@ public class CampaignValidator {
 		List<String> stringList = new ArrayList<String>();
 		
 		for(int i = 0; i < size; i++) {
-			stringList.add(nodes.get(i).getValue());
+			stringList.add(nodes.get(i).getValue().trim());
 		}
 		
 		return stringList;

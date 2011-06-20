@@ -39,12 +39,12 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 		
 		int kSize = kNodes.size();
 		for(int j = 0; j < kSize; j++) {
-			int key = getValidNonNegativeInteger(kNodes.get(j).getValue());
+			int key = getValidNonNegativeInteger(kNodes.get(j).getValue().trim());
 			if(_choices.containsKey(key)) {
 				throw new IllegalArgumentException("duplicate found for choice key: " + key);
 			}
 			
-			_choices.put(getValidNonNegativeInteger(kNodes.get(j).getValue()), null);
+			_choices.put(getValidNonNegativeInteger(kNodes.get(j).getValue().trim()), null);
 		}
 		
 //		// Make sure there are not duplicate keys
@@ -65,19 +65,19 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 		int vSize = lNodes.size();
 		
 		for(int i = 0; i < vSize; i++) {
-			if(! valueSet.add(lNodes.get(i).getValue())) {
-				throw new IllegalArgumentException("duplicate found for label: " + lNodes.get(i).getValue());
+			if(! valueSet.add(lNodes.get(i).getValue().trim())) {
+				throw new IllegalArgumentException("duplicate found for label: " + lNodes.get(i).getValue().trim());
 			}
-			_choices.put(Integer.parseInt(kNodes.get(i).getValue()), lNodes.get(i).getValue());
+			_choices.put(Integer.parseInt(kNodes.get(i).getValue().trim()), lNodes.get(i).getValue().trim());
 		}
 		
 		
 		// This is an edge case, but until we have more of them it seems ok here
 		
-		String promptType = promptNode.query("promptType").get(0).getValue();
+		String promptType = promptNode.query("promptType").get(0).getValue().trim();
 		if("single_choice".equals(promptType)) {
 			
-			String displayType = promptNode.query("displayType").get(0).getValue();
+			String displayType = promptNode.query("displayType").get(0).getValue().trim();
 			if("count".equals(displayType) || "measurement".equals(displayType)) {
 				
 				// An integer value is required for each choice. 
@@ -93,7 +93,7 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 				int vNodesSize = vNodes.size();
 				for(int i = 0; i < vNodesSize; i++) {
 					try {
-						Float.parseFloat(vNodes.get(i).getValue());
+						Float.parseFloat(vNodes.get(i).getValue().trim());
 					} catch(NumberFormatException nfe) {
 						throw new IllegalArgumentException("value must be an integer for choice option in prompt " 
 							+ promptNode.toXML());

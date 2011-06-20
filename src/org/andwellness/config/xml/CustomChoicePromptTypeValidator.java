@@ -34,7 +34,7 @@ public class CustomChoicePromptTypeValidator extends ChoicePromptTypeValidator {
 			                                                            // validated 
 			int kSize = kNodes.size();
 			for(int j = 0; j < kSize; j++) {
-				int key = getValidNonNegativeInteger(kNodes.get(j).getValue());
+				int key = getValidNonNegativeInteger(kNodes.get(j).getValue().trim());
 				if(_choices.containsKey(key)) {
 					throw new IllegalArgumentException("duplicate choice key found: " + key); 
 				}
@@ -48,8 +48,8 @@ public class CustomChoicePromptTypeValidator extends ChoicePromptTypeValidator {
 			int vSize = lNodes.size();
 			
 			for(int i = 0; i < vSize; i++) {
-				int key = Integer.parseInt(kNodes.get(i).getValue());
-				String value = lNodes.get(i).getValue();
+				int key = Integer.parseInt(kNodes.get(i).getValue().trim());
+				String value = lNodes.get(i).getValue().trim();
 				if(! valueSet.add(value)) {
 					throw new IllegalArgumentException("duplicate choice label found: " + value);
 				}

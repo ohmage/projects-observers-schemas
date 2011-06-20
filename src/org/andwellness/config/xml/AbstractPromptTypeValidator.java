@@ -26,6 +26,6 @@ public abstract class AbstractPromptTypeValidator implements PromptTypeValidator
 	}
 	
 	public void setSkippable(Node promptNode) {
-		_skippable = Boolean.valueOf(promptNode.query("skippable").get(0).getValue());
+		_skippable = Boolean.valueOf(promptNode.query("skippable").get(0).getValue().trim());
 	}
 }

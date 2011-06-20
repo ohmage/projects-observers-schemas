@@ -23,12 +23,12 @@ public abstract class AbstractNumberPromptTypeValidator extends AbstractPromptTy
 			throw new IllegalStateException("invalid prompt configuration:\n" + promptNode.toXML());
 		}
 		
-		Nodes minNodes = promptNode.query("properties/property/key[text()='min']");  
+		Nodes minNodes = promptNode.query("properties/property/key[normalize-space(text())='min']");  
 		if(1 != minNodes.size()) {
 			throw new IllegalStateException("missing or extra 'min' property for XML fragment: " + promptNode.toXML());
 		}
 		
-		Nodes maxNodes = promptNode.query("properties/property/key[text()='max']");
+		Nodes maxNodes = promptNode.query("properties/property/key[normalize-space(text())='max']");
 		if(1 != maxNodes.size()) {
 			throw new IllegalStateException("missing or extra 'max' property for XML fragment: " + promptNode.toXML());
 		}

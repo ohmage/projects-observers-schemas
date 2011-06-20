@@ -82,8 +82,8 @@ public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidat
 //					throw new IllegalStateException("Too many property values. Expected 2 but found " + currProperty.getChildCount() + ": " + currProperty.toXML());
 //				}
 
-				validateKeyLabelPair(currPropertyKeyNode.getValue(), currPropertyLabelNode.getValue());
-				propertyKeys.add(currPropertyKeyNode.getValue());
+				validateKeyLabelPair(currPropertyKeyNode.getValue().trim(), currPropertyLabelNode.getValue().trim());
+				propertyKeys.add(currPropertyKeyNode.getValue().trim());
 			}
 			
 			// Finally, make sure all of the required properties were found.
