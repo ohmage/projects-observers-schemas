@@ -292,7 +292,7 @@
           <id>stressToday</id>
           <displayType>count</displayType>
           <displayLabel>Rate stress today</displayLabel>
-          <promptText>How stressful was your day today, in general, on a scale of 1-5?</promptText>
+          <promptText>How stressful was your day today on a scale of 1-5?</promptText>
           <promptType>number</promptType>
           <properties>
             <property>
@@ -313,7 +313,7 @@
           <id>rateEating</id>
           <displayType>category</displayType>
           <displayLabel>Rate your eating</displayLabel>
-          <promptText>How healthy would you rate your eating today in terms of both quantity and quality, compared to your typical day?</promptText>
+          <promptText>How healthy would you rate your eating today, compared to your typical day?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
