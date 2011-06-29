@@ -2,7 +2,6 @@ package org.andwellness.config.xml;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringReader;
@@ -62,6 +61,7 @@ public class CampaignValidator {
 	
 	/**
 	 * args[0]: the file name of the file to validate
+	 * args[1]: the file name of the schema to validate against
 	 */
 	public static void main(String[] args) throws IOException, SAXException, ParsingException, ValidityException {
 		if(args.length < 2) {
@@ -318,7 +318,7 @@ public class CampaignValidator {
 		for(int i = 0; i < size; i++) {
 			
 			if(Boolean.valueOf(repeatableSets.get(i).query("terminationSkipEnabled").get(0).getValue().trim())) { // terminationSkipLabel
-				                                                                                           // must exist
+				                                                                                                  // must exist
 				
 				if(repeatableSets.get(i).query("terminationSkipLabel").size() < 1) {
 					
@@ -375,28 +375,7 @@ public class CampaignValidator {
 			}
 		}
 	}
-	
-	/**
-	 * Validate an instance document represented by the provided file name against the schema.
-	 * 
-	 * @throws IOException if the file containing the instance document cannot be found 
-	 * @throws IOException if the file containing the instance document cannot be read 
-	 * @throws SAXException if schema validation fails  
-	 */
-	private void checkSchema(String fileName, String schemaFileName) throws IOException, SAXException {
-		StreamSource schemaDocument = new StreamSource(new File(schemaFileName));
-		SAXSource instanceDocument = new SAXSource(new InputSource(new FileInputStream(fileName)));
-		
-		// Originally attempted to use "http://www.w3.org/XML/XMLSchema/v1.1" here, but neither Xerces2 nor the native
-		// Java 6 implementation supports it out of the box.  
-		SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);  
-		// System.out.println(sf.getClass().getName());
-		
-		Schema s = sf.newSchema(schemaDocument);
-		Validator v = s.newValidator();
-		v.validate(instanceDocument);
-	}
-	
+
 	/**
 	 * Validates a campaign's schema.
 	 * 

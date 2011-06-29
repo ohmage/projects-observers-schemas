@@ -13,7 +13,7 @@ import org.andwellness.config.grammar.custom.ConditionValuePair;
 /**
  * Single and multi-choice (custom and non-custom) prompt type validator. 
  * 
- * @author selsky
+ * @author Joshua Selsky
  */
 public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator {
 	protected Map<Integer, String> _choices;
@@ -26,53 +26,51 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 	public void validateAndSetConfiguration(Node promptNode) {
 		setSkippable(promptNode);
 
-		// At least two k-v pairs must be present
-		// All k must be number
-		// 'v' nodes exist at this point because of schema validation
+		// At least two key-label pairs must be present
+		// All keys must be number
 		
-		Nodes kNodes = promptNode.query("properties/property/key"); // could check for the number of 'p' nodes here, but 
-		                                                            // the number of 'k' nodes == the number of 'p' nodes
-		                                                            // and the values of the 'k' nodes are what needs to be validated 
-		if(kNodes.size() < 2) {
+		Nodes keyNodes = promptNode.query("properties/property/key"); // could check for the number of 'p' nodes here, but 
+		                                                              // the number of 'k' nodes == the number of 'p' nodes
+		                                                              // and the values of the 'k' nodes are what needs to be validated 
+		if(keyNodes.size() < 2) {
 			throw new IllegalStateException("At least 2 'property' nodes are required for prompt:\n" + promptNode.toXML());
 		}
-		
-		int kSize = kNodes.size();
+
+		// Make sure there are not duplicate keys
+		int kSize = keyNodes.size();
 		for(int j = 0; j < kSize; j++) {
-			int key = getValidNonNegativeInteger(kNodes.get(j).getValue().trim());
+			int key = getValidNonNegativeInteger(keyNodes.get(j).getValue().trim());
 			if(_choices.containsKey(key)) {
 				throw new IllegalArgumentException("duplicate found for choice key: " + key);
 			}
 			
-			_choices.put(getValidNonNegativeInteger(kNodes.get(j).getValue().trim()), null);
+			_choices.put(getValidNonNegativeInteger(keyNodes.get(j).getValue().trim()), null);
 		}
 		
-//		// Make sure there are not duplicate keys
-//		Set<Integer> integerSet = new HashSet<Integer>();
-//		for(Integer i : _choices) {
-//			if(! integerSet.add(i)) {
-//				
-//			}
-//		}
-		
-		Nodes lNodes = promptNode.query("properties/property/label");
+		Nodes labelNodes = promptNode.query("properties/property/label");
 				
-		// Make sure there are not duplicate values 
+		// Make sure there are not duplicate labels
+		Set<String> labelSet = new HashSet<String>();
+		int lSize = labelNodes.size();
 		
-		// TODO should duplicate values be allowed in certain cases e.g., when the values are empty strings?
-		
-		Set<String> valueSet = new HashSet<String>();
-		int vSize = lNodes.size();
-		
-		for(int i = 0; i < vSize; i++) {
-			if(! valueSet.add(lNodes.get(i).getValue().trim())) {
-				throw new IllegalArgumentException("duplicate found for label: " + lNodes.get(i).getValue().trim());
+		for(int i = 0; i < lSize; i++) {
+			if(! labelSet.add(labelNodes.get(i).getValue().trim())) {
+				throw new IllegalArgumentException("duplicate found for label: " + labelNodes.get(i).getValue().trim());
 			}
-			_choices.put(Integer.parseInt(kNodes.get(i).getValue().trim()), lNodes.get(i).getValue().trim());
+			_choices.put(Integer.parseInt(keyNodes.get(i).getValue().trim()), labelNodes.get(i).getValue().trim());
 		}
 		
+		// If values exists, there must be one present for each key-label pair
+		Nodes valueNodes = promptNode.query("properties/property/value");
+		if(0 != valueNodes.size()) {
+			if(valueNodes.size() != labelNodes.size()) {
+				throw new IllegalArgumentException("The number of value nodes is not equal to the number of label nodes. " +
+					"If values are present, each label must also specify a value");
+			}
+		}
 		
-		// This is an edge case, but until we have more of them it seems ok here
+		// This is an edge case, but until we have more displayTypes it seems ok here
+		// Eventually displayType will either be repurposed or thrown out altogether.
 		
 		String promptType = promptNode.query("promptType").get(0).getValue().trim();
 		if("single_choice".equals(promptType)) {
@@ -86,7 +84,7 @@ public class ChoicePromptTypeValidator extends AbstractNumberPromptTypeValidator
 					throw new IllegalArgumentException("values are required for single_choice prompts that have a displayType of "
 						+ "count or measurement");					
 				}
-				if(vNodes.size() != kNodes.size()) {
+				if(vNodes.size() != keyNodes.size()) {
 					throw new IllegalArgumentException("values are required for each choice in single_choice prompts that have a " 
 						+ "displayType of count or measurement");
 				}
