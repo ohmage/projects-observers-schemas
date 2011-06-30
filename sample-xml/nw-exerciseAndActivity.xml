@@ -36,75 +36,7 @@
           <skipLabel>skip</skipLabel>
         </prompt>
 
-        <prompt>
-          <id>planningToExercise</id>
-          <condition>didYouExercise == 0</condition>
-          <displayType>category</displayType>
-          <displayLabel>Were you planning to exercise today</displayLabel>
-          <promptText>Were you planning to exercise today?</promptText>
-          <promptType>single_choice</promptType>
-          <properties>
-            <property>
-              <key>0</key>
-              <label>No</label>
-            </property>
-            <property>
-              <key>1</key>
-              <label>Yes</label>
-            </property>
-          </properties>
-          <skippable>true</skippable>
-          <skipLabel>skip</skipLabel>
-        </prompt>
 
-        <prompt>
-          <id>whyNotExercise</id>
-          <condition>didYouExercise == 0 and planningToExercise == 1</condition>
-          <displayType>category</displayType>
-          <displayLabel>Disrupted plan</displayLabel>
-          <promptText>What prevented you from exercising as planned?</promptText>
-          <promptType>multi_choice</promptType>
-          <properties>
-            <property>
-              <key>0</key>
-              <label>Child care</label>
-            </property>
-            <property>
-              <key>1</key>
-              <label>Work</label>
-            </property>
-            <property>
-              <key>2</key>
-              <label>Personal needs</label>
-            </property>
-            <property>
-              <key>3</key>
-              <label>Household responsibilities</label>
-            </property>
-            <property>
-              <key>4</key>
-              <label>Injured, in pain</label>
-            </property>
-            <property>
-              <key>5</key>
-              <label>Social function</label>
-            </property>
-            <property>
-              <key>6</key>
-              <label>Medical emergency</label>
-            </property>
-            <property>
-              <key>7</key>
-              <label>No energy</label>
-            </property>
-            <property>
-              <key>8</key>
-              <label>Other</label>
-            </property>
-          </properties>
-          <skippable>true</skippable>
-          <skipLabel>skip</skipLabel>
-        </prompt>
 
         <prompt>
           <id>whatDid</id>
@@ -112,7 +44,7 @@
           <displayType>category</displayType>
           <displayLabel>What exercise did you do?</displayLabel>
           <promptText>What exercise did you do?</promptText>
-          <promptType>single_choice</promptType>
+          <promptType>multi_choice</promptType>
           <properties>
             <property>
               <key>0</key>
@@ -143,6 +75,27 @@
               <label>Other</label>
             </property>
           </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>listOtherExercises</id>
+          <condition>didYouExercise == 1 and whatDid == 6</condition>
+          <displayType>category</displayType>
+          <displayLabel>Please list other exercises you did. </displayLabel>
+          <promptText>Please list other exercises you did. </promptText>
+          <promptType>text</promptType>
+ 			<properties>
+   				<property>
+     				<key>min</key>
+     				<label>1</label>
+   					</property>
+   				<property>
+     				<key>max</key>
+     				<label>180</label>
+  			 	</property>
+ 			</properties>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
         </prompt>
@@ -250,6 +203,18 @@
               <key>3</key>
               <label>Child</label>
             </property>
+            <property>
+              <key>4</key>
+              <label>Co-worker</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Class</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>Other</label>
+            </property>
           </properties>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
@@ -314,16 +279,90 @@
             </property>
             <property>
               <key>6</key>
-              <label>Not motivated/did not feel like it</label>
+              <label>Job related responsibilities</label>
             </property>
             <property>
               <key>7</key>
+              <label>Not motivated/did not feel like it</label>
+            </property>
+            <property>
+              <key>8</key>
               <label>Other</label>
             </property>
           </properties>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
         </prompt>
+
+        <prompt>
+          <id>planningToExercise</id>
+          <displayType>category</displayType>
+          <displayLabel>Were you planning to exercise today</displayLabel>
+          <promptText>Were you planning to exercise today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>whyNotExercise</id>
+          <condition>didYouExercise == 0 and planningToExercise == 1</condition>
+          <displayType>category</displayType>
+          <displayLabel>Disrupted plan</displayLabel>
+          <promptText>What prevented you from exercising as planned?</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Child care</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Work</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Personal needs</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Household responsibilities</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Injured, in pain</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Social function</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>Medical emergency</label>
+            </property>
+            <property>
+              <key>7</key>
+              <label>No energy</label>
+            </property>
+            <property>
+              <key>8</key>
+              <label>Other</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
 
         <prompt>
           <id>doChores</id>
