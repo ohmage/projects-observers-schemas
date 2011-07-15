@@ -8,8 +8,8 @@
        <survey>
 
       <id>dietMood</id>
-      <title>Diet and Mood</title>
-      <description>This is your Diet and Mood survey</description>
+      <title>Diet and Stress</title>
+      <description>This is your Diet and Stress survey</description>
       <submitText>Please use the food button on your phone top to take pictures of your food.</submitText>
       <showSummary>false</showSummary>
       <anytime>true</anytime>

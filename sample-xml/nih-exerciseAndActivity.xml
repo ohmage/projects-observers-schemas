@@ -97,6 +97,10 @@
             </property>
             <property>
               <key>8</key>
+              <label>No access</label>
+            </property>
+            <property>
+              <key>9</key>
               <label>Other</label>
             </property>
           </properties>
@@ -264,7 +268,7 @@
             </property>
             <property>
               <key>1</key>
-              <label>Less than 10 minutes</label>
+              <label>10 minutes or less</label>
             </property>
             <property>
               <key>2</key>
@@ -292,7 +296,7 @@
           <id>stressToday</id>
           <displayType>count</displayType>
           <displayLabel>Rate stress today</displayLabel>
-          <promptText>How stressful was your day today on a scale of 1-5?</promptText>
+          <promptText>How stressful was your day overall on a scale of 1-5?</promptText>
           <promptType>number</promptType>
           <properties>
             <property>
