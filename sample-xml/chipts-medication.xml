@@ -8,11 +8,9 @@
     <survey>
       <id>medication</id>
       <title>Medication</title>
-      <description>Every survey must have a description.</description>
-      <submitText>Every survey must include submitText.</submitText>
-      <showSummary>true</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
+      <description>Please describe a medication you would like to report on.</description>
+      <submitText>If you want to report on another medication now, please repeat this survey by going to the homescreen and selecting the Medication survey.</submitText>
+      <showSummary>false</showSummary>
       <anytime>true</anytime>
      
       <contentList>
@@ -21,9 +19,8 @@
           <id>medicationWhich</id>
           <displayType>category</displayType>
           <displayLabel>Which medication</displayLabel>
-          <promptText>Which medication?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
-          <promptType>multi_choice_custom</promptType>
+          <promptText>Which medication do you want to report on?</promptText>
+          <promptType>single_choice_custom</promptType>
           <skippable>false</skippable>
         </prompt>
         
@@ -31,86 +28,106 @@
           <id>medicationTookOrMissed</id>
           <displayType>metadata</displayType>
           <displayLabel>Took or missed</displayLabel>
-          <promptText>Are you reporting that you took or missed medication?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptText>Did you take or miss taking this medication today?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>took</label>
+              <label>Missed</label>
             </property>
             <property>
               <key>1</key>
-              <label>missed</label>
+              <label>Took</label>
             </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
         
         <prompt>
-          <id>medicationHowManyHoursAgo</id>
+          <condition>(medicationTookOrMissed == 1)</condition> 
+          <id>medicationTime</id>
           <displayType>metadata</displayType>
-          <displayLabel>Medication - How Many Hours Ago</displayLabel>
-          <promptText>How many hours ago?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
-          <promptType>hours_before_now</promptType>
-          <properties>
-            <property>
-              <key>min</key>
-              <label>0</label>
-            </property>
-            <property>
-              <key>max</key>
-              <label>24</label>
-            </property>
-          </properties>
-          <condition>(medicationTookOrMissed == 0)</condition> 
+          <displayLabel>Medication Time</displayLabel>
+          <promptText>What time did you take this medication?</promptText>
+          <promptType>timestamp</promptType>
           <skippable>false</skippable>
         </prompt>
         
         
         <prompt>
+          <condition>(medicationTookOrMissed == 1)</condition> 
           <id>medicationOnTime</id>
           <displayType>category</displayType>
-          <displayLabel>Medication - On Time</displayLabel>
-          <promptText>On time?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <displayLabel>Medication On Time</displayLabel>
+          <promptText>Was this on time?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>yes</label>
+              <label>Yes</label>
             </property>
             <property>
               <key>1</key>
-              <label>no</label>
+              <label>No</label>
             </property>
           </properties>
-          <condition>(medicationTookOrMissed == 0)</condition>
           <skippable>false</skippable>
         </prompt>
         
+        <prompt>
+          <condition>(medicationTookOrMissed == 1 and medicationOnTime == 1)</condition> 
+          <id>medicationWhyLate</id>
+          <displayType>category</displayType>
+          <displayLabel>Medication Late</displayLabel>
+          <promptText>Why were you late taking this medication?</promptText>
+          <promptType>multi_choice_custom</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Forgot</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Ran out</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Didn't have with me</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Didn't want people to see</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
         
         <prompt>
+          <condition>(medicationTookOrMissed == 0)</condition>
           <id>medicationWhyMissed</id>
           <displayType>metadata</displayType>
           <displayLabel>Medication - Why Missed?</displayLabel> <!-- metadata probably does not need a display label -->
-          <promptText>Why?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
-          <promptType>text</promptType>
+          <promptText>Why did you miss taking this medication?</promptText>
+          <promptType>multi_choice_custom</promptType>
           <properties>
             <property>
-              <key>min</key>
-              <label>1</label>
+              <key>0</key>
+              <label>Forgot</label>
             </property>
             <property>
-              <key>max</key>
-              <label>500</label> <!-- ???? -->
+              <key>1</key>
+              <label>Ran out</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Didn't have with me</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Didn't want people to see</label>
             </property>
           </properties>
-          <condition>(medicationTookOrMissed == 1)</condition>
-          <skipLabel>Required if skippable is true.</skipLabel>
-          <skippable>true</skippable>
+          <skippable>false</skippable>
         </prompt>
         
       </contentList>

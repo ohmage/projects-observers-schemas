@@ -8,40 +8,18 @@
     <survey>
       <id>specificStressfulEvent</id>
       <title>Specific Stressful Event</title>
-      <description>Every survey must have a description.</description>
-      <submitText>Every survey must include submitText.</submitText>
-      <showSummary>true</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
+      <description>Please describe a specific stressful event that took place today.</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>false</showSummary>
       <anytime>true</anytime>
      
       <contentList>
-        <prompt>
-          <id>specificStressfulEventHoursAgo</id>
-          <displayType>metadata</displayType>
-          <displayLabel>how many hours agao</displayLabel>
-          <promptText>How many hours ago did the event occur?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
-          <promptType>hours_before_now</promptType>
-          <properties>
-            <property>
-              <key>min</key>
-              <label>0</label>
-            </property>
-            <property>
-              <key>max</key>
-              <label>24</label>
-            </property>
-          </properties>
-          <skippable>false</skippable>
-        </prompt>
         
         <prompt>
           <id>specificStressfulEventWhatHappened</id>
           <displayType>category</displayType>
           <displayLabel>what happened</displayLabel>
           <promptText>What happened?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>text</promptType>
           <properties>
             <property>
@@ -50,18 +28,26 @@
             </property>
             <property>
               <key>max</key>
-              <label>500</label> <!-- ??? -->
+              <label>500</label> 
             </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
-        
+
+        <prompt>
+          <id>specificStressfulEventTime</id>
+          <displayType>category</displayType>
+          <displayLabel>What Time</displayLabel>
+          <promptText>What time did this happen?</promptText>
+          <promptType>timestamp</promptType>
+          <skippable>false</skippable>
+        </prompt>
+
         <prompt>
           <id>specificStressfulEventPhoto</id>
           <displayType>metadata</displayType>
           <displayLabel>photo</displayLabel>
-          <promptText>Take a picture?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptText>Take a picture related to the stress or event.</promptText>
           <promptType>photo</promptType>
           <properties>
             <property>

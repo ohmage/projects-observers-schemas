@@ -8,11 +8,9 @@
     <survey>
       <id>photoDiary</id>
       <title>Photo Diary</title>
-      <description>Every survey must have a description.</description>
-      <submitText>Every survey must include submitText.</submitText>
-      <showSummary>true</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
+      <description>You can use this photo diary to take pictures and record notes.</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>false</showSummary>
       <anytime>true</anytime>
      
       <contentList>
@@ -21,8 +19,7 @@
           <id>photoDiaryPhoto</id>
           <displayType>event</displayType>
           <displayLabel>photo</displayLabel>
-          <promptText>Take a picture?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptText>Take a photo.</promptText>
           <promptType>photo</promptType>
           <properties>
             <property>
@@ -37,8 +34,7 @@
           <id>photoDiaryText</id>
           <displayType>metadata</displayType>
           <displayLabel>text</displayLabel>
-          <promptText>Add text?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptText>Write a note.</promptText>
           <promptType>text</promptType>
           <properties>
             <property>
@@ -47,10 +43,11 @@
             </property>
             <property>
               <key>max</key>
-              <label>500</label> <!-- ??? -->
+              <label>500</label> 
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
       </contentList>
