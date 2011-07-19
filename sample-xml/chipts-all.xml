@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignName>CHIPTS</campaignName>
+  <campaignVersion>0.1</campaignVersion>
+  <serverUrl>https://www.andwellness.org</serverUrl>
+
+  <surveys>
+    <survey>
+      <id>generalFeelingToday</id>
+      <title>General Feeling Today</title>
+      <description>How are you feeling today?</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+      
+        <prompt>
+          <id>generalFeelingTodaySad</id>
+          <displayType>measurement</displayType>
+          <displayLabel>Sad, blue, or depressed</displayLabel>
+          <promptText>Sad, blue, or depressed?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>A little</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Somewhat</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Extremely</label>
+              <value>3</value>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>generalFeelingTodayWorried</id>
+          <displayType>measurement</displayType>
+          <displayLabel>Worried, tense, or anxious</displayLabel>
+          <promptText>Worried, tense, or anxious?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>A little</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Somewhat</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Extremely</label>
+              <value>3</value>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>generalFeelingTodayNotEnoughRest</id>
+          <displayType>measurement</displayType>
+          <displayLabel>Not get enough rest or sleep</displayLabel>
+          <promptText>Not get enough rest or sleep?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>A little</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Somewhat</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Extremely</label>
+              <value>3</value>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>generalFeelingTodayVeryHealthy</id>
+          <displayType>measurement</displayType>
+          <displayLabel>Very healthy and full of energy</displayLabel>
+          <promptText>Very healthy and full of energy?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>A little</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Somewhat</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Extremely</label>
+              <value>3</value>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        
+        <prompt>
+          <id>generalFeelingTodayUsualActivities</id>
+          <displayType>measurement</displayType>
+          <displayLabel>Usual activities were hard to do</displayLabel>
+          <promptText>Usual activities were hard to do?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>A little</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Somewhat</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Extremely</label>
+              <value>3</value>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+      </contentList>
+    
+    </survey>
+
+    <survey>
+      <id>medication</id>
+      <title>Medication</title>
+      <description>Please describe a medication you would like to report on.</description>
+      <submitText>If you want to report on another medication now, please repeat this survey by going to the homescreen and selecting the Medication survey.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+     
+      <contentList>
+      
+        <prompt>
+          <id>medicationWhich</id>
+          <displayType>category</displayType>
+          <displayLabel>Which medication</displayLabel>
+          <promptText>Which medication do you want to report on?</promptText>
+          <promptType>single_choice_custom</promptType>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>medicationTookOrMissed</id>
+          <displayType>metadata</displayType>
+          <displayLabel>Took or missed</displayLabel>
+          <promptText>Did you take or miss taking this medication today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Missed</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Took</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <condition>(medicationTookOrMissed == 1)</condition> 
+          <id>medicationTime</id>
+          <displayType>metadata</displayType>
+          <displayLabel>Medication Time</displayLabel>
+          <promptText>What time did you take this medication?</promptText>
+          <promptType>timestamp</promptType>
+          <skippable>false</skippable>
+        </prompt>
+        
+        
+        <prompt>
+          <condition>(medicationTookOrMissed == 1)</condition> 
+          <id>medicationOnTime</id>
+          <displayType>category</displayType>
+          <displayLabel>Medication On Time</displayLabel>
+          <promptText>Was this on time?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Yes</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>No</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <condition>(medicationTookOrMissed == 1 and medicationOnTime == 1)</condition> 
+          <id>medicationWhyLate</id>
+          <displayType>category</displayType>
+          <displayLabel>Medication Late</displayLabel>
+          <promptText>Why were you late taking this medication?</promptText>
+          <promptType>multi_choice_custom</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Forgot</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Ran out</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Didn't have with me</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Didn't want people to see</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <condition>(medicationTookOrMissed == 0)</condition>
+          <id>medicationWhyMissed</id>
+          <displayType>metadata</displayType>
+          <displayLabel>Medication - Why Missed?</displayLabel> <!-- metadata probably does not need a display label -->
+          <promptText>Why did you miss taking this medication?</promptText>
+          <promptType>multi_choice_custom</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Forgot</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Ran out</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Didn't have with me</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Didn't want people to see</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+      </contentList>
+    
+    </survey>
+
+    <survey>
+      <id>photoDiary</id>
+      <title>Photo Diary</title>
+      <description>You can use this photo diary to take pictures and record notes.</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+     
+      <contentList>
+      
+        <prompt>
+          <id>photoDiaryPhoto</id>
+          <displayType>event</displayType>
+          <displayLabel>photo</displayLabel>
+          <promptText>Take a photo.</promptText>
+          <promptType>photo</promptType>
+          <properties>
+            <property>
+              <key>res</key>
+              <label>720</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>photoDiaryText</id>
+          <displayType>metadata</displayType>
+          <displayLabel>text</displayLabel>
+          <promptText>Write a note.</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+        
+      </contentList>
+    
+    </survey>
+
+    <survey>
+      <id>sexualEncounter</id>
+      <title>Sexual Encounter</title>
+      <description>The following questions ask about each individual sexual activity you engaged in during one encounter. Please start with the first sexual encounter since your last report.</description>
+      <submitText>If you want to report on another sexual encounter now, please repeat this survey by going to the homescreen and selecting the Sexual Encounter survey.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+      
+        <prompt>
+          <id>sexualEncounterHowManyHoursAgo</id>
+          <displayType>metadata</displayType>
+          <displayLabel>Sexual Encounter - How many hours ago</displayLabel>
+          <promptText>How many hours ago did the encounter end?</promptText>
+          <promptType>number</promptType>
+           <properties>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>sexualEncounterPartnerNickname</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual Encounter - Partner Nickname</displayLabel>
+          <promptText>Enter or select this partner's nickname (to protect privacy)</promptText>
+          <promptType>single_choice_custom</promptType>
+          <skipLabel>Skip</skipLabel>
+          <skippable>true</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>sexualEncounterPartnerType</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual Encounter - Partner Type</displayLabel>
+          <promptText>What type of partner was this?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>One-time</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Casual</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Regular</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>sexualEncounterPartnerGender</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual Encounter - Partner Gender</displayLabel>
+          <promptText>Partner's gender?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Male</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Transgender</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Female</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>sexualEncounterPartnerHivStatus</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual Encounter - HIV Status</displayLabel>
+          <promptText>What is this partner's HIV status?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Positive</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Negative</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Don't know</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+            <prompt>
+              <id>sexualEncounterSafety</id>
+              <displayType>category</displayType>
+              <displayLabel>Sexual Encounter - Safety</displayLabel>
+              <promptText>Did you and this partner discuss safe sex or using condoms?</promptText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>No</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>Yes (this time)</label>
+                </property>
+                <property>
+                  <key>2</key>
+                  <label>Yes (but not this time, only previously)</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+        
+        <prompt>
+              <id>sexualEncounterKindOfSex</id>
+              <displayType>category</displayType>
+              <displayLabel>Sexual Encounter - Kind of Sex</displayLabel>
+              <promptText>What kind of sexual activities did you engage in?</promptText>
+              <promptType>multi_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>Anal</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>Oral</label>
+                </property>
+                <property>
+                  <key>2</key>
+                  <label>Vaginal</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+            
+            <prompt>
+              <condition>(sexualEncounterKindOfSex == 0)</condition>
+              <id>sexualEncounterPositionAnal</id>
+              <displayType>category</displayType>
+              <displayLabel>Sexual Encounter - Anal</displayLabel>
+              <promptText>What was your position during anal sex?</promptText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>Received ("bottom")</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>Inserted ("top")</label>
+                </property>
+                <property>
+                  <key>2</key>
+                  <label>Both</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+
+            <prompt>
+              <condition>(sexualEncounterKindOfSex == 0)</condition>
+              <id>AnalEncounterCondom</id>
+              <displayType>category</displayType>
+              <displayLabel>Anal Encounter - Condom</displayLabel>
+              <promptText>Did you use condoms during anal sex in this encounter?</promptText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>No</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>Yes</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+
+            <prompt>
+              <condition>(sexualEncounterKindOfSex == 1)</condition>
+              <id>sexualEncounterPositionOral</id>
+              <displayType>category</displayType>
+              <displayLabel>Sexual Encounter - Oral</displayLabel>
+              <promptText>What was your role during oral sex?</promptText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>Received</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>Performed</label>
+                </property>
+                <property>
+                  <key>2</key>
+                  <label>Both</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+
+            <prompt>
+              <condition>(sexualEncounterKindOfSex == 2)</condition>
+              <id>VaginalEncounterCondom</id>
+              <displayType>category</displayType>
+              <displayLabel>Vaginal Encounter - Condom</displayLabel>
+              <promptText>Did you use condoms during vaginal sex in this encounter?</promptText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>No</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>Yes</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+
+             <prompt>
+              <id>sexualEncounterHighOnAlcoholOrDrugs</id>
+              <displayType>category</displayType>
+              <displayLabel>Sexual Encounter - High on Alcohol or Drugs</displayLabel>
+              <promptText>Were you intoxicated (high on alcohol or drugs) during this encounter?</promptText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>Yes</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>No</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+
+        <prompt>
+          <id>SexualEncounterDescription</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual encounter description</displayLabel>
+          <promptText>You can write notes about this encounter here.</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+            
+      </contentList>
+    
+    </survey>
+
+    <survey>
+      <id>specificStressfulEvent</id>
+      <title>Specific Stressful Event</title>
+      <description>Please describe a specific stressful event that took place today.</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+     
+      <contentList>
+        
+        <prompt>
+          <id>specificStressfulEventWhatHappened</id>
+          <displayType>category</displayType>
+          <displayLabel>what happened</displayLabel>
+          <promptText>What happened?</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>specificStressfulEventTime</id>
+          <displayType>category</displayType>
+          <displayLabel>What Time</displayLabel>
+          <promptText>What time did this happen?</promptText>
+          <promptType>timestamp</promptType>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>specificStressfulEventPhoto</id>
+          <displayType>metadata</displayType>
+          <displayLabel>photo</displayLabel>
+          <promptText>Take a picture related to the stress or event.</promptText>
+          <promptType>photo</promptType>
+          <properties>
+            <property>
+              <key>res</key>
+              <label>720</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>required if skippable is true</skipLabel>
+        </prompt>
+        
+      </contentList>
+    
+    </survey>
+
+    <survey>
+      <id>alcohol</id>
+      <title>Alcohol</title>
+      <description>Please describe your substance use since your last report.</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+
+        <prompt>
+          <id>substancesUsed</id>
+          <displayType>category</displayType>
+          <displayLabel>Substances used</displayLabel>
+          <promptText>Which substances did you use since your last report?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Alcohol</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Tobacco</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Marijuana</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Cocaine</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Methamphetamine</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+      
+        <prompt>
+          <condition>(substancesUsed == 0)</condition>
+          <id>alcoholNumberOfDrinks</id>
+          <displayType>count</displayType>
+          <displayLabel>Alcohol - Number of Drinks</displayLabel>
+          <promptText>How many drinks have you had since your last report?</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <condition>(substancesUsed == 0)</condition>
+          <id>alcoholHowManyHoursFirst</id>
+          <displayType>event</displayType>
+          <displayLabel>Alcohol - Time First Drink</displayLabel>
+          <promptText>What time was the first drink?</promptText>
+          <promptType>timestamp</promptType>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <condition>(substancesUsed == 1)</condition>
+          <id>numberCigarettes</id>
+          <displayType>count</displayType>
+          <displayLabel>Number Cigarettes</displayLabel>
+          <promptText>How many cigarettes have you smoked since your last report?</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <condition>(substancesUsed == 2)</condition>
+          <id>timesMarijuana</id>
+          <displayType>count</displayType>
+          <displayLabel>Times used Marijuana</displayLabel>
+          <promptText>How many times did you use marijuana since your last report?</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <condition>(substancesUsed == 2)</condition>
+          <id>MarijuanaTime</id>
+          <displayType>event</displayType>
+          <displayLabel>Marijuana - Time First</displayLabel>
+          <promptText>What time did you first use marijuana today?</promptText>
+          <promptType>timestamp</promptType>
+          <skippable>false</skippable>
+        </prompt>
+
+        
+        <prompt>
+          <condition>(substancesUsed == 3)</condition>
+          <id>timesCocaine</id>
+          <displayType>count</displayType>
+          <displayLabel>Times used Cocaine</displayLabel>
+          <promptText>How many times did you use cocaine since your last report?</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <condition>(substancesUsed == 3)</condition>
+          <id>CocaineTime</id>
+          <displayType>event</displayType>
+          <displayLabel>Cocaine - Time First </displayLabel>
+          <promptText>What time did you first use cocaine today?</promptText>
+          <promptType>timestamp</promptType>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <condition>(substancesUsed == 4)</condition>
+          <id>timesMeth</id>
+          <displayType>count</displayType>
+          <displayLabel>Times used Meth/Crystal</displayLabel>
+          <promptText>How many times did you use meth/crystal since your last report?</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <condition>(substancesUsed == 4)</condition>
+          <id>MethTime</id>
+          <displayType>event</displayType>
+          <displayLabel>Meth/Crystal - Time First</displayLabel>
+          <promptText>What time did you first use meth/crystal today?</promptText>
+          <promptType>timestamp</promptType>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>SubstanceUseDescription</id>
+          <displayType>category</displayType>
+          <displayLabel>Substance use description</displayLabel>
+          <promptText>You can write notes about your alcohol, tobacco, or other drug use here.</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+            
+      </contentList>
+    
+    </survey>
+  </surveys>
+</campaign>
