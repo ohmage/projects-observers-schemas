@@ -52,17 +52,10 @@ public class RemoteActivityPromptTypeValidator extends AbstractPromptTypeValidat
 		try {
 			Nodes propertyNodes = promptNode.query("properties/property");
 			
-			// Check that the number of properties is at least the number of
-			// required properties and not more than the number of required
-			// properties plus the number of optional properties.
-			int numProperties = propertyNodes.size();
-			if((numProperties < 5) || (numProperties > 6)) {
-				throw new IllegalStateException("Invalid number of properties. Expected 5 or 6 and got " + propertyNodes.size() + ": " + promptNode.toXML());
-			}
-			
 			// Check all the property values to make sure they are valid and
 			// remember all the keys to make sure all required properties
 			// existed.
+			int numProperties = propertyNodes.size();
 			List<String> propertyKeys = new ArrayList<String>(numProperties);
 			Node currProperty, currPropertyKeyNode, currPropertyLabelNode;
 			for(int i = 0; i < numProperties; i++)
