@@ -234,18 +234,18 @@
           <properties>
             <property>
               <key>0</key>
-              <label>Yes</label>
+              <label>No</label>
             </property>
             <property>
               <key>1</key>
-              <label>No</label>
+              <label>Yes</label>
             </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
         
         <prompt>
-          <condition>(medicationTookOrMissed == 1 and medicationOnTime == 1)</condition> 
+          <condition>(medicationTookOrMissed == 1 and medicationOnTime == 0)</condition> 
           <id>medicationWhyLate</id>
           <displayType>category</displayType>
           <displayLabel>Medication Late</displayLabel>
@@ -297,6 +297,32 @@
               <label>Didn't want people to see</label>
             </property>
           </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>anotherMedication</id>
+          <displayType>category</displayType>
+          <displayLabel>Report another medication</displayLabel>
+          <promptText>Do you want to report on another medication now?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>howReport</id>
+          <condition>(anotherMedication == 1)</condition> 
+          <messageText>After submitting this survey please launch a survey for your other medication at the home screen.</messageText>
           <skippable>false</skippable>
         </prompt>
         
@@ -513,7 +539,7 @@
               <displayType>category</displayType>
               <displayLabel>Sexual Encounter - Anal</displayLabel>
               <promptText>What was your position during anal sex?</promptText>
-              <promptType>single_choice</promptType>
+              <promptType>multi_choice</promptType>
               <properties>
                 <property>
                   <key>0</key>
@@ -576,6 +602,26 @@
             </prompt>
 
             <prompt>
+              <condition>(sexualEncounterKindOfSex == 1)</condition>
+              <id>OralEncounterCondom</id>
+              <displayType>category</displayType>
+              <displayLabel>Oral Encounter - Condom</displayLabel>
+              <promptText>Did you use condoms during oral sex in this encounter?</promptText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>No</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>Yes</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+
+            <prompt>
               <condition>(sexualEncounterKindOfSex == 2)</condition>
               <id>VaginalEncounterCondom</id>
               <displayType>category</displayType>
@@ -604,11 +650,11 @@
               <properties>
                 <property>
                   <key>0</key>
-                  <label>Yes</label>
+                  <label>No</label>
                 </property>
                 <property>
                   <key>1</key>
-                  <label>No</label>
+                  <label>Yes</label>
                 </property>
               </properties>
               <skippable>false</skippable>
@@ -732,6 +778,10 @@
               <key>4</key>
               <label>Methamphetamine</label>
             </property>
+            <property>
+              <key>5</key>
+              <label>Other</label>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
@@ -761,7 +811,7 @@
           <id>alcoholHowManyHoursFirst</id>
           <displayType>event</displayType>
           <displayLabel>Alcohol - Time First Drink</displayLabel>
-          <promptText>What time was the first drink?</promptText>
+          <promptText>What time was the first drink today?</promptText>
           <promptType>timestamp</promptType>
           <skippable>false</skippable>
         </prompt>
@@ -813,7 +863,8 @@
           <displayLabel>Marijuana - Time First</displayLabel>
           <promptText>What time did you first use marijuana today?</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Did not use today</skipLabel>
         </prompt>
 
         
@@ -844,7 +895,8 @@
           <displayLabel>Cocaine - Time First </displayLabel>
           <promptText>What time did you first use cocaine today?</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Did not use today</skipLabel>
         </prompt>
 
         <prompt>
@@ -874,7 +926,29 @@
           <displayLabel>Meth/Crystal - Time First</displayLabel>
           <promptText>What time did you first use meth/crystal today?</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Did not use today</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>OtherDrugs</id>
+          <condition>(substancesUsed == 5)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Other drugs description</displayLabel>
+          <promptText>What other drugs did you use since your last report?</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -893,7 +967,8 @@
               <label>500</label> 
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
             
       </contentList>

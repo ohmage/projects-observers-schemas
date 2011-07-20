@@ -42,6 +42,10 @@
               <key>4</key>
               <label>Methamphetamine</label>
             </property>
+            <property>
+              <key>5</key>
+              <label>Other</label>
+            </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
@@ -71,7 +75,7 @@
           <id>alcoholHowManyHoursFirst</id>
           <displayType>event</displayType>
           <displayLabel>Alcohol - Time First Drink</displayLabel>
-          <promptText>What time was the first drink?</promptText>
+          <promptText>What time was the first drink today?</promptText>
           <promptType>timestamp</promptType>
           <skippable>false</skippable>
         </prompt>
@@ -123,7 +127,8 @@
           <displayLabel>Marijuana - Time First</displayLabel>
           <promptText>What time did you first use marijuana today?</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Did not use today</skipLabel>
         </prompt>
 
         
@@ -154,7 +159,8 @@
           <displayLabel>Cocaine - Time First </displayLabel>
           <promptText>What time did you first use cocaine today?</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Did not use today</skipLabel>
         </prompt>
 
         <prompt>
@@ -184,7 +190,29 @@
           <displayLabel>Meth/Crystal - Time First</displayLabel>
           <promptText>What time did you first use meth/crystal today?</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Did not use today</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>OtherDrugs</id>
+          <condition>(substancesUsed == 5)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Other drugs description</displayLabel>
+          <promptText>What other drugs did you use since your last report?</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -203,7 +231,8 @@
               <label>500</label> 
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
             
       </contentList>
