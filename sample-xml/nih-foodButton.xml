@@ -61,12 +61,12 @@
             </property>
             <property>
               <key>4</key>
-              <label>I was very hungry before eating.</label>
+              <label>Very hungry before eating.</label>
               <value>4</value>
             </property>
             <property>
               <key>5</key>
-              <label>I am uncomfortably full.</label>
+              <label>Uncomfortably full after eating.</label>
               <value>5</value>
             </property>
           </properties>
