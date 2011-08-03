@@ -31,6 +31,7 @@ import nu.xom.ValidityException;
 import org.andwellness.config.grammar.custom.ConditionParseException;
 import org.andwellness.config.grammar.custom.ConditionValidator;
 import org.andwellness.config.grammar.custom.ConditionValuePair;
+import org.andwellness.utils.StringUtils;
 import org.apache.log4j.Logger;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -220,7 +221,7 @@ public class CampaignValidator {
 	 */
 	private void checkCampaignUrn(Node root) {
 		String campaignUrn = root.query("/campaign/campaignUrn").get(0).getValue().trim();
-		if(! campaignUrn.startsWith("urn:")) {
+		if(! StringUtils.isValidUrn(campaignUrn)) {
 			throw new IllegalStateException("campaignUrn is not a valid URN: " + campaignUrn);
 		}
 	}
