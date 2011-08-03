@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignName>CHIPTS</campaignName>
+  <campaignVersion>0.1</campaignVersion>
+  <serverUrl>https://www.andwellness.org</serverUrl>
+  <surveys>
+
+    <survey>
+      <id>generalFeelingToday</id>
+      <title>General Feeling Today</title>
+      <description>Every survey must have a description.</description>
+      <submitText>Every survey must include submitText.</submitText>
+      <showSummary>true</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
+      <anytime>true</anytime>
+    
+      <contentList>
+  
+            <prompt>
+              <id>drugsHowManyHoursFirst</id>
+              <displayType>event</displayType>
+              <displayLabel>Drugs - How Many Hours Ago Was the First Use</displayLabel>
+              <promptText>How many hours ago was the first use?</promptText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+              <promptType>hours_before_now</promptType>
+              <properties>
+                <property>
+                  <key>min</key>
+                  <label>0</label>
+                </property>
+                <property>
+                  <key>max</key>
+                  <label>24</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+            
+            <prompt>
+              <id>drugsHowManyHoursLast</id>
+              <displayType>event</displayType>
+              <displayLabel>Drugs - How Many Hours Ago Was the Last Use</displayLabel>
+              <promptText>How many hours ago was the last use?</promptText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+              <promptType>hours_before_now</promptType>
+              <properties>
+                <property>
+                  <key>min</key>
+                  <label>0</label>
+                </property>
+                <property>
+                  <key>max</key>
+                  <label>24</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+    
+        <prompt>
+          <id>medicationWhich</id>
+          <displayType>category</displayType>
+          <displayLabel>Which medication</displayLabel>
+          <promptText>Which medication?</promptText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptType>multi_choice_custom</promptType>
+          <skippable>false</skippable>
+        </prompt>
+        
+            <prompt>
+              <id>sexualEncounterKindOfSex</id>
+              <displayType>category</displayType>
+              <displayLabel>Sexual Encounter - Kind of Sex</displayLabel>
+              <promptText>What kind of sex did you engage in?</promptText>
+              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+              <promptType>multi_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>anal</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>oral</label>
+                </property>
+                <property>
+                  <key>2</key>
+                  <label>vaginal</label>
+                </property>
+                <property>
+                  <key>3</key>
+                  <label>other</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+            
+      </contentList>
+    </survey>
+    
+  </surveys>
+</campaign>

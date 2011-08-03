@@ -8,11 +8,9 @@
     <survey>
       <id>generalFeelingToday</id>
       <title>General Feeling Today</title>
-      <description>Every survey must have a description.</description>
-      <submitText>Every survey must include submitText.</submitText>
-      <showSummary>true</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
+      <description>How are you feeling today?</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>false</showSummary>
       <anytime>true</anytime>
     
       <contentList>
@@ -22,27 +20,26 @@
           <displayType>measurement</displayType>
           <displayLabel>Sad, blue, or depressed</displayLabel>
           <promptText>Sad, blue, or depressed?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>not at all</label>
+              <label>Not at all</label>
               <value>0</value>
             </property>
             <property>
               <key>1</key>
-              <label>slightly</label>
+              <label>A little</label>
               <value>1</value>
             </property>
             <property>
               <key>2</key>
-              <label>moderately</label>
+              <label>Somewhat</label>
               <value>2</value>
             </property>
             <property>
               <key>3</key>
-              <label>extremely</label>
+              <label>Extremely</label>
               <value>3</value>
             </property>
           </properties>
@@ -54,27 +51,26 @@
           <displayType>measurement</displayType>
           <displayLabel>Worried, tense, or anxious</displayLabel>
           <promptText>Worried, tense, or anxious?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>not at all</label>
+              <label>Not at all</label>
               <value>0</value>
             </property>
             <property>
               <key>1</key>
-              <label>slightly</label>
+              <label>A little</label>
               <value>1</value>
             </property>
             <property>
               <key>2</key>
-              <label>moderately</label>
+              <label>Somewhat</label>
               <value>2</value>
             </property>
             <property>
               <key>3</key>
-              <label>extremely</label>
+              <label>Extremely</label>
               <value>3</value>
             </property>
           </properties>
@@ -85,28 +81,27 @@
           <id>generalFeelingTodayNotEnoughRest</id>
           <displayType>measurement</displayType>
           <displayLabel>Not get enough rest or sleep</displayLabel>
-          <promptText>Not get enough rest or sleep</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptText>Not get enough rest or sleep?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>not at all</label>
+              <label>Not at all</label>
               <value>0</value>
             </property>
             <property>
               <key>1</key>
-              <label>slightly</label>
+              <label>A little</label>
               <value>1</value>
             </property>
             <property>
               <key>2</key>
-              <label>moderately</label>
+              <label>Somewhat</label>
               <value>2</value>
             </property>
             <property>
               <key>3</key>
-              <label>extremely</label>
+              <label>Extremely</label>
               <value>3</value>
             </property>
           </properties>
@@ -117,28 +112,27 @@
           <id>generalFeelingTodayVeryHealthy</id>
           <displayType>measurement</displayType>
           <displayLabel>Very healthy and full of energy</displayLabel>
-          <promptText>Very healthy and full of energy</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptText>Very healthy and full of energy?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>not at all</label>
+              <label>Not at all</label>
               <value>0</value>
             </property>
             <property>
               <key>1</key>
-              <label>slightly</label>
+              <label>A little</label>
               <value>1</value>
             </property>
             <property>
               <key>2</key>
-              <label>moderately</label>
+              <label>Somewhat</label>
               <value>2</value>
             </property>
             <property>
               <key>3</key>
-              <label>extremely</label>
+              <label>Extremely</label>
               <value>3</value>
             </property>
           </properties>
@@ -151,27 +145,26 @@
           <displayType>measurement</displayType>
           <displayLabel>Usual activities were hard to do</displayLabel>
           <promptText>Usual activities were hard to do?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>not at all</label>
+              <label>Not at all</label>
               <value>0</value>
             </property>
             <property>
               <key>1</key>
-              <label>slightly</label>
+              <label>A little</label>
               <value>1</value>
             </property>
             <property>
               <key>2</key>
-              <label>moderately</label>
+              <label>Somewhat</label>
               <value>2</value>
             </property>
             <property>
               <key>3</key>
-              <label>extremely</label>
+              <label>Extremely</label>
               <value>3</value>
             </property>
           </properties>

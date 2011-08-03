@@ -8,11 +8,9 @@
     <survey>
       <id>sexualEncounter</id>
       <title>Sexual Encounter</title>
-      <description>Every survey must have a description.</description>
-      <submitText>Every survey must include submitText.</submitText>
-      <showSummary>true</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
+      <description>The following questions ask about each individual sexual activity you engaged in during one encounter. Please start with the first sexual encounter since your last report.</description>
+      <submitText>If you want to report on another sexual encounter now, please repeat this survey by going to the homescreen and selecting the Sexual Encounter survey.</submitText>
+      <showSummary>false</showSummary>
       <anytime>true</anytime>
     
       <contentList>
@@ -21,8 +19,7 @@
           <id>sexualEncounterHowManyHoursAgo</id>
           <displayType>metadata</displayType>
           <displayLabel>Sexual Encounter - How many hours ago</displayLabel>
-          <promptText>How many hours ago did it occur?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptText>How many hours ago did the encounter end?</promptText>
           <promptType>number</promptType>
            <properties>
             <property>
@@ -36,72 +33,58 @@
           </properties>
           <skippable>false</skippable>
         </prompt>
+
+        <prompt>
+          <id>sexualEncounterPartnerNickname</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual Encounter - Partner Nickname</displayLabel>
+          <promptText>Enter or select this partner's nickname (to protect privacy)</promptText>
+          <promptType>single_choice_custom</promptType>
+          <skipLabel>Skip</skipLabel>
+          <skippable>true</skippable>
+        </prompt>
         
         <prompt>
           <id>sexualEncounterPartnerType</id>
           <displayType>category</displayType>
           <displayLabel>Sexual Encounter - Partner Type</displayLabel>
-          <promptText>Partner type?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptText>What type of partner was this?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>one-time</label>
+              <label>One-time</label>
             </property>
             <property>
               <key>1</key>
-              <label>casual</label>
+              <label>Casual</label>
             </property>
             <property>
               <key>2</key>
-              <label>regular</label>
+              <label>Regular</label>
             </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
         
         <prompt>
-          <id>sexualEncounterPartnerNickname</id>
-          <displayType>category</displayType>
-          <displayLabel>Sexual Encounter - Partner Nickname</displayLabel>
-          <promptText>Partner nickname?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
-          <promptType>text</promptType>
-          <properties>
-            <property>
-              <key>min</key>
-              <label>1</label>
-            </property>
-            <property>
-              <key>max</key>
-              <label>50</label>
-            </property>
-          </properties>
-          <skipLabel>required if skippable is true</skipLabel>
-          <skippable>true</skippable>
-        </prompt>
-        
-        
-        <prompt>
           <id>sexualEncounterPartnerGender</id>
           <displayType>category</displayType>
           <displayLabel>Sexual Encounter - Partner Gender</displayLabel>
-          <promptText>Partner gender?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptText>Partner's gender?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>male</label>
+              <label>Male</label>
             </property>
             <property>
               <key>1</key>
-              <label>transgender</label>
+              <label>Transgender</label>
             </property>
             <property>
               <key>2</key>
-              <label>female</label>
+              <label>Female</label>
             </property>
           </properties>
           <skippable>false</skippable>
@@ -111,174 +94,217 @@
           <id>sexualEncounterPartnerHivStatus</id>
           <displayType>category</displayType>
           <displayLabel>Sexual Encounter - HIV Status</displayLabel>
-          <promptText>Partner HIV status?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptText>What is this partner's HIV status?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>positive</label>
+              <label>Positive</label>
             </property>
             <property>
               <key>1</key>
-              <label>negative</label>
+              <label>Negative</label>
             </property>
             <property>
               <key>2</key>
-              <label>don't know</label>
+              <label>Don't know</label>
             </property>
           </properties>
           <skippable>false</skippable>
         </prompt>
-        
-        <message>
-          <messageText>Thr following three questions will ask about each individual  sexual activity you engaged in during this encounter. Start with the first activity, and repeat for each following act.</messageText>
-        </message>
-        
-        <repeatableSet>
-          <id>sexualActivityRepeatableSet</id>
-          <terminationQuestion>termination question</terminationQuestion>
-          <terminationTrueLabel>true</terminationTrueLabel>
-          <terminationFalseLabel>false</terminationFalseLabel>
-          <terminationSkipEnabled>false</terminationSkipEnabled>
-          <prompts>
-          
+
             <prompt>
-              <id>sexualEncounterKindOfSex</id>
+              <id>sexualEncounterSafety</id>
               <displayType>category</displayType>
-              <displayLabel>Sexual Encounter - Kind of Sex</displayLabel>
-              <promptText>What kind of sex?</promptText>
-              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+              <displayLabel>Sexual Encounter - Safety</displayLabel>
+              <promptText>Did you and this partner discuss safe sex or using condoms?</promptText>
               <promptType>single_choice</promptType>
               <properties>
                 <property>
                   <key>0</key>
-                  <label>anal</label>
+                  <label>No</label>
                 </property>
                 <property>
                   <key>1</key>
-                  <label>oral</label>
+                  <label>Yes (this time)</label>
                 </property>
                 <property>
                   <key>2</key>
-                  <label>vaginal</label>
+                  <label>Yes (but not this time, only previously)</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+        
+        <prompt>
+              <id>sexualEncounterKindOfSex</id>
+              <displayType>category</displayType>
+              <displayLabel>Sexual Encounter - Kind of Sex</displayLabel>
+              <promptText>What kind of sexual activities did you engage in?</promptText>
+              <promptType>multi_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>Anal</label>
                 </property>
                 <property>
-                  <key>3</key>
-                  <label>other</label>
+                  <key>1</key>
+                  <label>Oral</label>
+                </property>
+                <property>
+                  <key>2</key>
+                  <label>Vaginal</label>
                 </property>
               </properties>
               <skippable>false</skippable>
             </prompt>
             
             <prompt>
-              <id>sexualEncounterPositionAnalVaginalOther</id>
+              <condition>(sexualEncounterKindOfSex == 0)</condition>
+              <id>sexualEncounterPositionAnal</id>
               <displayType>category</displayType>
-              <displayLabel>Sexual Encounter - Position (Anal, Vaginal, Other)</displayLabel>
-              <promptText>Your position?</promptText>
-              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
-              <promptType>single_choice</promptType>
+              <displayLabel>Sexual Encounter - Anal</displayLabel>
+              <promptText>What was your position during anal sex?</promptText>
+              <promptType>multi_choice</promptType>
               <properties>
                 <property>
                   <key>0</key>
-                  <label>received/bottom</label>
+                  <label>Received ("bottom")</label>
                 </property>
                 <property>
                   <key>1</key>
-                  <label>inserted/top</label>
-                </property>
-              </properties>
-              <condition>(sexualEncounterKindOfSex == 0 or sexualEncounterKindOfSex == 2 or sexualEncounterKindOfSex == 3)</condition>
-              <skippable>false</skippable>
-            </prompt>
-            
-            <prompt>
-              <id>sexualEncounterPositionOral</id>
-              <displayType>category</displayType>
-              <displayLabel>Sexual Encounter - Position (Oral)</displayLabel>
-              <promptText>Your position?</promptText>
-              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
-              <promptType>single_choice</promptType>
-              <properties>
-                <property>
-                  <key>0</key>
-                  <label>received</label>
+                  <label>Inserted ("top")</label>
                 </property>
                 <property>
-                  <key>1</key>
-                  <label>performed</label>
-                </property>
-              </properties>
-              <condition>(sexualEncounterKindOfSex == 1)</condition>
-              <skippable>false</skippable>
-            </prompt>
-            
-            <prompt>
-              <id>sexualEncounterCondom</id>
-              <displayType>category</displayType>
-              <displayLabel>Sexual Encounter - Condom</displayLabel>
-              <promptText>Was a condom used?</promptText>
-              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
-              <promptType>single_choice</promptType>
-              <properties>
-                <property>
-                  <key>0</key>
-                  <label>yes</label>
-                </property>
-                <property>
-                  <key>1</key>
-                  <label>no</label>
+                  <key>2</key>
+                  <label>Both</label>
                 </property>
               </properties>
               <skippable>false</skippable>
             </prompt>
 
             <prompt>
-              <id>sexualEncounterSafety</id>
+              <condition>(sexualEncounterKindOfSex == 0)</condition>
+              <id>AnalEncounterCondom</id>
               <displayType>category</displayType>
-              <displayLabel>Sexual Encounter - Safety</displayLabel>
-              <promptText>Was safety discussed?</promptText>
-              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+              <displayLabel>Anal Encounter - Condom</displayLabel>
+              <promptText>Did you use condoms during anal sex in this encounter?</promptText>
               <promptType>single_choice</promptType>
               <properties>
                 <property>
                   <key>0</key>
-                  <label>no</label>
+                  <label>No</label>
                 </property>
                 <property>
                   <key>1</key>
-                  <label>yes (this time)</label>
-                </property>
-                <property>
-                  <key>2</key>
-                  <label>yes (previously)</label>
+                  <label>Yes</label>
                 </property>
               </properties>
               <skippable>false</skippable>
             </prompt>
-            
+
+            <prompt>
+              <condition>(sexualEncounterKindOfSex == 1)</condition>
+              <id>sexualEncounterPositionOral</id>
+              <displayType>category</displayType>
+              <displayLabel>Sexual Encounter - Oral</displayLabel>
+              <promptText>What was your role during oral sex?</promptText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>Received</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>Performed</label>
+                </property>
+                <property>
+                  <key>2</key>
+                  <label>Both</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+
+            <prompt>
+              <condition>(sexualEncounterKindOfSex == 1)</condition>
+              <id>OralEncounterCondom</id>
+              <displayType>category</displayType>
+              <displayLabel>Oral Encounter - Condom</displayLabel>
+              <promptText>Did you use condoms during oral sex in this encounter?</promptText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>No</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>Yes</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+
+            <prompt>
+              <condition>(sexualEncounterKindOfSex == 2)</condition>
+              <id>VaginalEncounterCondom</id>
+              <displayType>category</displayType>
+              <displayLabel>Vaginal Encounter - Condom</displayLabel>
+              <promptText>Did you use condoms during vaginal sex in this encounter?</promptText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>No</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>Yes</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+            </prompt>
+
              <prompt>
               <id>sexualEncounterHighOnAlcoholOrDrugs</id>
               <displayType>category</displayType>
               <displayLabel>Sexual Encounter - High on Alcohol or Drugs</displayLabel>
-              <promptText>Were you high on alcohol or drugs?</promptText>
-              <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+              <promptText>Were you intoxicated (high on alcohol or drugs) during this encounter?</promptText>
               <promptType>single_choice</promptType>
               <properties>
                 <property>
                   <key>0</key>
-                  <label>yes</label>
+                  <label>No</label>
                 </property>
                 <property>
                   <key>1</key>
-                  <label>no</label>
+                  <label>Yes</label>
                 </property>
               </properties>
               <skippable>false</skippable>
             </prompt>
+
+        <prompt>
+          <id>SexualEncounterDescription</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual encounter description</displayLabel>
+          <promptText>You can write notes about this encounter here.</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
             
-          </prompts>
-        </repeatableSet>
       </contentList>
     
     </survey>

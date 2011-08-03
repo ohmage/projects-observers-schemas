@@ -9,7 +9,7 @@
       <id>exerciseAndActivity</id>
       <title>Exercise and Activity</title>
       <description>This is the exercise and activity survey.</description>
-      <submitText>This is the exercise and activity survey submit text.</submitText>
+      <submitText>Please charge your phone tonight. </submitText>
       <showSummary>false</showSummary>
       <anytime>true</anytime>
     
@@ -31,12 +31,12 @@
               <label>Yes</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
         </prompt>
 
         <prompt>
           <id>planningToExercise</id>
-          <condition>didYouExercise == 0</condition>
           <displayType>category</displayType>
           <displayLabel>Were you planning to exercise today</displayLabel>
           <promptText>Were you planning to exercise today?</promptText>
@@ -51,7 +51,8 @@
               <label>Yes</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -96,54 +97,15 @@
             </property>
             <property>
               <key>8</key>
+              <label>No access</label>
+            </property>
+            <property>
+              <key>9</key>
               <label>Other</label>
             </property>
           </properties>
-          <skippable>false</skippable>
-        </prompt>
-
-        <prompt>
-          <id>typeExercise</id>
-          <condition>didYouExercise == 1</condition>
-          <displayType>category</displayType>
-          <displayLabel>Type Exercise</displayLabel>
-          <promptText>Describe the types of exercise you did today.</promptText>
-          <promptType>multi_choice</promptType>
-          <properties>
-            <property>
-              <key>0</key>
-              <label>Walk</label>
-            </property>
-            <property>
-              <key>1</key>
-              <label>Run</label>
-            </property>
-            <property>
-              <key>2</key>
-              <label>Yoga</label>
-            </property>
-            <property>
-              <key>3</key>
-              <label>Outdoor cycling or sports</label>
-            </property>
-            <property>
-              <key>4</key>
-              <label>Indoor sports</label>
-            </property>
-            <property>
-              <key>5</key>
-              <label>Gym</label>
-            </property>
-            <property>
-              <key>6</key>
-              <label>Swim</label>
-            </property>
-            <property>
-              <key>7</key>
-              <label>Other</label>
-            </property>
-          </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -164,7 +126,8 @@
             </property>
           </properties>
           <default>15</default>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -185,7 +148,8 @@
             </property>
           </properties>
           <default>15</default>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -206,7 +170,8 @@
             </property>
           </properties>
           <default>15</default>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -246,7 +211,8 @@
               <label>Other</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -266,7 +232,7 @@
             </property>
             <property>
               <key>2</key>
-              <label>Work related</label>
+              <label>Carrying light loads</label>
             </property>
             <property>
               <key>3</key>
@@ -285,27 +251,90 @@
               <label>Other</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
         </prompt>
         
         <prompt>
           <id>timeForYourself</id>
+          <displayType>category</displayType>
+          <displayLabel>Time to yourself today</displayLabel>
+          <promptText>How much time did you have to yourself today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>None</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>10 minutes or less</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label> 10 to 30 minutes </label>
+            </property>
+            <property>
+              <key>3</key>
+              <label> 1 hour </label>
+            </property>
+            <property>
+              <key>4</key>
+              <label> 2 hours </label>
+            </property>
+            <property>
+              <key>5</key>
+              <label> More than 2 hours </label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+
+        <prompt>
+          <id>stressToday</id>
           <displayType>count</displayType>
-          <displayLabel>How much time did you have for yourself today</displayLabel>
-          <promptText>How much time did you have for yourself today?</promptText>
+          <displayLabel>Rate stress today</displayLabel>
+          <promptText>How stressful was your day overall on a scale of 1-5?</promptText>
           <promptType>number</promptType>
           <properties>
             <property>
               <key>min</key>
-              <label>0</label>
+              <label>1</label>
             </property>
             <property>
               <key>max</key>
-              <label>300</label>
+              <label>5</label>
             </property>
           </properties>
-          <default>15</default>
-          <skippable>false</skippable>
+          <default>3</default>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>rateEating</id>
+          <displayType>category</displayType>
+          <displayLabel>Rate your eating</displayLabel>
+          <promptText>How healthy would you rate your eating today, compared to your typical day?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label> Less healthy than usual </label>
+            </property>
+            <property>
+              <key>1</key>
+              <label> Typical </label>
+            </property>
+            <property>
+              <key>2</key>
+              <label> Healthier than usual </label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
         </prompt>
     
       </contentList>
