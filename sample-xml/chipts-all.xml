@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
-  <campaignUrn>urn:campaign:andwellness:chipts:08032011</campaignUrn>
+  <campaignUrn>urn:campaign:andwellness:chipts:08032011:1</campaignUrn>
   <campaignName>CHIPTS 08-03-2011</campaignName>
   <serverUrl>https://www.andwellness.org</serverUrl>
 
@@ -839,7 +839,7 @@
         </prompt>
       
         <prompt>
-          <condition>(substancesUsed == 0 or substancesUsed == SKIPPED)</condition>
+          <condition>(substancesUsed == 0) or (substancesUsed == SKIPPED)</condition>
           <id>alcoholNumberOfDrinks</id>
           <displayType>count</displayType>
           <displayLabel>Alcohol - Number of Drinks</displayLabel>
@@ -867,7 +867,7 @@
           <promptText>What time was the first drink today?</promptText>
           <promptType>timestamp</promptType>
           <skippable>true</skippable>
-          <skipLabel>Skip</skipLabel>
+          <skipLabel>Did Not Drink Today</skipLabel>
         </prompt>
 
         <prompt>
@@ -920,7 +920,7 @@
           <promptText>What time did you first use marijuana today?</promptText>
           <promptType>timestamp</promptType>
           <skippable>true</skippable>
-          <skipLabel>Skip</skipLabel>
+          <skipLabel>Did Not Use Today</skipLabel>
         </prompt>
 
         
@@ -953,7 +953,7 @@
           <promptText>What time did you first use cocaine today?</promptText>
           <promptType>timestamp</promptType>
           <skippable>true</skippable>
-          <skipLabel>Skip</skipLabel>
+          <skipLabel>Did Not Use Today</skipLabel>
         </prompt>
 
         <prompt>
@@ -985,7 +985,7 @@
           <promptText>What time did you first use meth/crystal today?</promptText>
           <promptType>timestamp</promptType>
           <skippable>true</skippable>
-          <skipLabel>Skip</skipLabel>
+          <skipLabel>Did Not Use Today</skipLabel>
         </prompt>
 
         <prompt>

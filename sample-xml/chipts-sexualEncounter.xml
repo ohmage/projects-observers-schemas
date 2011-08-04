@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
-  <campaignUrn>urn:andwellness:chipts</campaignUrn>
-  <campaignName>CHIPTS</campaignName>
-  <serverUrl>https://www.andwellness.org/app/sensor/upload</serverUrl>
+  <campaignUrn>urn:andwellness:chipts:sexualEncounter</campaignUrn>
+  <campaignName>CHIPTS - Sexual Encounter</campaignName>
+  <serverUrl>https://www.andwellness.org/</serverUrl>
 
   <surveys>
-    <survey>
+      <survey>
       <id>sexualEncounter</id>
       <title>Sexual Encounter</title>
       <description>The following questions ask about each individual sexual activity you engaged in during one encounter. Please start with the first sexual encounter since your last report.</description>
@@ -31,7 +31,8 @@
               <label>24</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -64,7 +65,8 @@
               <label>Regular</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
         <prompt>
@@ -87,7 +89,8 @@
               <label>Female</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
         <prompt>
@@ -110,181 +113,182 @@
               <label>Don't know</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
-            <prompt>
-              <id>sexualEncounterSafety</id>
-              <displayType>category</displayType>
-              <displayLabel>Sexual Encounter - Safety</displayLabel>
-              <promptText>Did you and this partner discuss safe sex or using condoms?</promptText>
-              <promptType>single_choice</promptType>
-              <properties>
-                <property>
-                  <key>0</key>
-                  <label>No</label>
-                </property>
-                <property>
-                  <key>1</key>
-                  <label>Yes (this time)</label>
-                </property>
-                <property>
-                  <key>2</key>
-                  <label>Yes (but not this time, only previously)</label>
-                </property>
-              </properties>
-              <skippable>false</skippable>
-            </prompt>
+        <prompt>
+          <id>sexualEncounterSafety</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual Encounter - Safety</displayLabel>
+          <promptText>Did you and this partner discuss safe sex or using condoms?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+             </property>
+            <property>
+              <key>1</key>
+              <label>Yes (this time)</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Yes (but not this time, only previously)</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
         
         <prompt>
-              <id>sexualEncounterKindOfSex</id>
-              <displayType>category</displayType>
-              <displayLabel>Sexual Encounter - Kind of Sex</displayLabel>
-              <promptText>What kind of sexual activities did you engage in?</promptText>
-              <promptType>multi_choice</promptType>
-              <properties>
-                <property>
-                  <key>0</key>
-                  <label>Anal</label>
-                </property>
-                <property>
-                  <key>1</key>
-                  <label>Oral</label>
-                </property>
-                <property>
-                  <key>2</key>
-                  <label>Vaginal</label>
-                </property>
-              </properties>
-              <skippable>false</skippable>
-            </prompt>
+          <id>sexualEncounterKindOfSex</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual Encounter - Kind of Sex</displayLabel>
+          <promptText>What kind of sexual activities did you engage in?</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Anal</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Oral</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Vaginal</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
             
-            <prompt>
-              <condition>(sexualEncounterKindOfSex == 0)</condition>
-              <id>sexualEncounterPositionAnal</id>
-              <displayType>category</displayType>
-              <displayLabel>Sexual Encounter - Anal</displayLabel>
-              <promptText>What was your position during anal sex?</promptText>
-              <promptType>multi_choice</promptType>
-              <properties>
-                <property>
-                  <key>0</key>
-                  <label>Received ("bottom")</label>
-                </property>
-                <property>
-                  <key>1</key>
-                  <label>Inserted ("top")</label>
-                </property>
-                <property>
-                  <key>2</key>
-                  <label>Both</label>
-                </property>
-              </properties>
-              <skippable>false</skippable>
-            </prompt>
+        <prompt>
+          <condition>(sexualEncounterKindOfSex == 0)</condition>
+          <id>sexualEncounterPositionAnal</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual Encounter - Anal</displayLabel>
+          <promptText>What was your position during anal sex?</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Received ("bottom")</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Inserted ("top")</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
 
-            <prompt>
-              <condition>(sexualEncounterKindOfSex == 0)</condition>
-              <id>AnalEncounterCondom</id>
-              <displayType>category</displayType>
-              <displayLabel>Anal Encounter - Condom</displayLabel>
-              <promptText>Did you use condoms during anal sex in this encounter?</promptText>
-              <promptType>single_choice</promptType>
-              <properties>
-                <property>
-                  <key>0</key>
-                  <label>No</label>
-                </property>
-                <property>
-                  <key>1</key>
-                  <label>Yes</label>
-                </property>
-              </properties>
-              <skippable>false</skippable>
-            </prompt>
+        <prompt>
+          <condition>(sexualEncounterKindOfSex == 0)</condition>
+          <id>AnalEncounterCondom</id>
+          <displayType>category</displayType>
+          <displayLabel>Anal Encounter - Condom</displayLabel>
+          <promptText>Did you use condoms during anal sex in this encounter?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
 
-            <prompt>
-              <condition>(sexualEncounterKindOfSex == 1)</condition>
-              <id>sexualEncounterPositionOral</id>
-              <displayType>category</displayType>
-              <displayLabel>Sexual Encounter - Oral</displayLabel>
-              <promptText>What was your role during oral sex?</promptText>
-              <promptType>single_choice</promptType>
-              <properties>
-                <property>
-                  <key>0</key>
-                  <label>Received</label>
-                </property>
-                <property>
-                  <key>1</key>
-                  <label>Performed</label>
-                </property>
-                <property>
-                  <key>2</key>
-                  <label>Both</label>
-                </property>
-              </properties>
-              <skippable>false</skippable>
-            </prompt>
+        <prompt>
+          <condition>(sexualEncounterKindOfSex == 1)</condition>
+          <id>sexualEncounterPositionOral</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual Encounter - Oral</displayLabel>
+          <promptText>What was your role during oral sex?</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Received</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Performed</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
 
-            <prompt>
-              <condition>(sexualEncounterKindOfSex == 1)</condition>
-              <id>OralEncounterCondom</id>
-              <displayType>category</displayType>
-              <displayLabel>Oral Encounter - Condom</displayLabel>
-              <promptText>Did you use condoms during oral sex in this encounter?</promptText>
-              <promptType>single_choice</promptType>
-              <properties>
-                <property>
-                  <key>0</key>
-                  <label>No</label>
-                </property>
-                <property>
-                  <key>1</key>
-                  <label>Yes</label>
-                </property>
-              </properties>
-              <skippable>false</skippable>
-            </prompt>
+        <prompt>
+          <condition>(sexualEncounterKindOfSex == 1)</condition>
+          <id>OralEncounterCondom</id>
+          <displayType>category</displayType>
+          <displayLabel>Oral Encounter - Condom</displayLabel>
+          <promptText>Did you use condoms during oral sex in this encounter?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
 
-            <prompt>
-              <condition>(sexualEncounterKindOfSex == 2)</condition>
-              <id>VaginalEncounterCondom</id>
-              <displayType>category</displayType>
-              <displayLabel>Vaginal Encounter - Condom</displayLabel>
-              <promptText>Did you use condoms during vaginal sex in this encounter?</promptText>
-              <promptType>single_choice</promptType>
-              <properties>
-                <property>
-                  <key>0</key>
-                  <label>No</label>
-                </property>
-                <property>
-                  <key>1</key>
-                  <label>Yes</label>
-                </property>
-              </properties>
-              <skippable>false</skippable>
-            </prompt>
+        <prompt>
+          <condition>(sexualEncounterKindOfSex == 2)</condition>
+          <id>VaginalEncounterCondom</id>
+          <displayType>category</displayType>
+          <displayLabel>Vaginal Encounter - Condom</displayLabel>
+          <promptText>Did you use condoms during vaginal sex in this encounter?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
 
-             <prompt>
-              <id>sexualEncounterHighOnAlcoholOrDrugs</id>
-              <displayType>category</displayType>
-              <displayLabel>Sexual Encounter - High on Alcohol or Drugs</displayLabel>
-              <promptText>Were you intoxicated (high on alcohol or drugs) during this encounter?</promptText>
-              <promptType>single_choice</promptType>
-              <properties>
-                <property>
-                  <key>0</key>
-                  <label>No</label>
-                </property>
-                <property>
-                  <key>1</key>
-                  <label>Yes</label>
-                </property>
-              </properties>
-              <skippable>false</skippable>
-            </prompt>
+        <prompt>
+          <id>sexualEncounterHighOnAlcoholOrDrugs</id>
+          <displayType>category</displayType>
+          <displayLabel>Sexual Encounter - High on Alcohol or Drugs</displayLabel>
+          <promptText>Were you intoxicated (high on alcohol or drugs) during this encounter?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
 
         <prompt>
           <id>SexualEncounterDescription</id>
@@ -302,11 +306,38 @@
               <label>500</label> 
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+          <skippable>true</skippable>
         </prompt>
+        
+        <prompt>
+          <id>AnyOtherSexualEncounters</id>
+          <displayType>category</displayType>
+          <displayLabel>Any Other Encounter?</displayLabel>
+          <promptText>Did you have any other sexual encounters since your last survey?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label> 
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+        
+        <message>
+          <condition>(AnyOtherSexualEncounters == 1)</condition> 
+          <messageText>After submitting this survey please launch a survey for another sexual encounter at the home screen.</messageText>
+        </message>
             
       </contentList>
     
     </survey>
+  
   </surveys>
 </campaign>

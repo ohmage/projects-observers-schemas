@@ -1,101 +1,247 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
-  <campaignUrn>urn:andwellness:chipts</campaignUrn>
-  <campaignName>CHIPTS</campaignName>
+  <campaignUrn>urn:campaign:andwellness:chipts:alcohol</campaignUrn>
+  <campaignName>CHIPTS - Alcohol</campaignName>
   <serverUrl>https://www.andwellness.org</serverUrl>
   
   <surveys>
-    <survey>
+       <survey>
       <id>alcohol</id>
       <title>Alcohol</title>
-      <description>Every survey must have a description.</description>
-      <submitText>Every survey must include submitText.</submitText>
-      <showSummary>true</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>This is the summary text. Our rules state that if showSummary is true, this element cannot be empty.</summaryText>
+      <description>Please describe your substance use since your last report.</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>false</showSummary>
       <anytime>true</anytime>
     
       <contentList>
-      
+
         <prompt>
-          <id>alcoholNumberOfDrinks</id>
-          <displayType>count</displayType>
-          <displayLabel>Alcohol - Number of Drinks</displayLabel>
-          <unit>alcoholic drink(s)</unit>
-          
-          <promptText>How many drinks did you have today?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <id>substancesUsed</id>
+          <displayType>category</displayType>
+          <displayLabel>Substances used</displayLabel>
+          <promptText>Which substances did you use since your last report?</promptText>
           <promptType>single_choice</promptType>
           <properties>
             <property>
               <key>0</key>
-              <label>0</label>
-              <value>0</value>
+              <label>Alcohol</label>
             </property>
             <property>
               <key>1</key>
-              <label>1-3</label>
-              <value>2</value>
+              <label>Tobacco</label>
             </property>
             <property>
               <key>2</key>
-              <label>4-6</label>
-              <value>5</value>
+              <label>Marijuana</label>
             </property>
             <property>
               <key>3</key>
-              <label>7-10</label>
-              <value>8.5</value>
+              <label>Cocaine</label>
             </property>
             <property>
               <key>4</key>
-              <label>10+</label>
-              <value>10</value>
+              <label>Methamphetamine</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Other</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+      
+        <prompt>
+          <condition>(substancesUsed == 0) or (substancesUsed == SKIPPED)</condition>
+          <id>alcoholNumberOfDrinks</id>
+          <displayType>count</displayType>
+          <displayLabel>Alcohol - Number of Drinks</displayLabel>
+          <promptText>How many drinks have you had since your last report?</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
         <prompt>
+          <condition>(substancesUsed == 0)</condition>
           <id>alcoholHowManyHoursFirst</id>
           <displayType>event</displayType>
-          <displayLabel>Alcohol - How Many Hours Ago Was the First Drink</displayLabel>
-          <promptText>How many hours ago was the first drink?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
-          <promptType>hours_before_now</promptType>
+          <displayLabel>Alcohol - Time First Drink</displayLabel>
+          <promptText>What time was the first drink today?</promptText>
+          <promptType>timestamp</promptType>
+          <skippable>true</skippable>
+          <skipLabel>Did Not Drink Today</skipLabel>
+        </prompt>
+
+        <prompt>
+          <condition>(substancesUsed == 1)</condition>
+          <id>numberCigarettes</id>
+          <displayType>count</displayType>
+          <displayLabel>Number Cigarettes</displayLabel>
+          <promptText>How many cigarettes have you smoked since your last report?</promptText>
+          <promptType>number</promptType>
           <properties>
             <property>
               <key>min</key>
-              <label>0</label>
+              <label>1</label>
             </property>
             <property>
               <key>max</key>
               <label>24</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
         <prompt>
-          <id>alcoholHowManyHoursLast</id>
-          <displayType>event</displayType>
-          <displayLabel>Alcohol - How Many Hours Ago Was the Last Drink</displayLabel>
-          <promptText>How many hours ago was the last drink?</promptText>
-          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
-          <promptType>hours_before_now</promptType>
+          <condition>(substancesUsed == 2)</condition>
+          <id>timesMarijuana</id>
+          <displayType>count</displayType>
+          <displayLabel>Times used Marijuana</displayLabel>
+          <promptText>How many times did you use marijuana since your last report?</promptText>
+          <promptType>number</promptType>
           <properties>
             <property>
               <key>min</key>
-              <label>0</label>
+              <label>1</label>
             </property>
             <property>
               <key>max</key>
               <label>24</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
+
+        <prompt>
+          <condition>(substancesUsed == 2)</condition>
+          <id>MarijuanaTime</id>
+          <displayType>event</displayType>
+          <displayLabel>Marijuana - Time First</displayLabel>
+          <promptText>What time did you first use marijuana today?</promptText>
+          <promptType>timestamp</promptType>
+          <skippable>true</skippable>
+          <skipLabel>Did Not Use Today</skipLabel>
+        </prompt>
+
         
+        <prompt>
+          <condition>(substancesUsed == 3)</condition>
+          <id>timesCocaine</id>
+          <displayType>count</displayType>
+          <displayLabel>Times used Cocaine</displayLabel>
+          <promptText>How many times did you use cocaine since your last report?</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <condition>(substancesUsed == 3)</condition>
+          <id>CocaineTime</id>
+          <displayType>event</displayType>
+          <displayLabel>Cocaine - Time First </displayLabel>
+          <promptText>What time did you first use cocaine today?</promptText>
+          <promptType>timestamp</promptType>
+          <skippable>true</skippable>
+          <skipLabel>Did Not Use Today</skipLabel>
+        </prompt>
+
+        <prompt>
+          <condition>(substancesUsed == 4)</condition>
+          <id>timesMeth</id>
+          <displayType>count</displayType>
+          <displayLabel>Times used Meth/Crystal</displayLabel>
+          <promptText>How many times did you use meth/crystal since your last report?</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>24</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <condition>(substancesUsed == 4)</condition>
+          <id>MethTime</id>
+          <displayType>event</displayType>
+          <displayLabel>Meth/Crystal - Time First</displayLabel>
+          <promptText>What time did you first use meth/crystal today?</promptText>
+          <promptType>timestamp</promptType>
+          <skippable>true</skippable>
+          <skipLabel>Did Not Use Today</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>OtherDrugs</id>
+          <condition>(substancesUsed == 5)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Other drugs description</displayLabel>
+          <promptText>What other drugs did you use since your last report?</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>SubstanceUseDescription</id>
+          <displayType>category</displayType>
+          <displayLabel>Substance use description</displayLabel>
+          <promptText>You can write notes about your alcohol, tobacco, or other drug use here.</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+            
       </contentList>
     
     </survey>

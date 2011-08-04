@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
-  <campaignUrn>urn:andwellness:chipts</campaignUrn>
-  <campaignName>CHIPTS</campaignName>
+  <campaignUrn>urn:andwellness:chipts:photoDiary</campaignUrn>
+  <campaignName>CHIPTS - Photo Diary</campaignName>
   <serverUrl>https://www.andwellness.org</serverUrl>
 
   <surveys>
-    <survey>
+      <survey>
       <id>photoDiary</id>
       <title>Photo Diary</title>
       <description>You can use this photo diary to take pictures and record notes.</description>
@@ -27,7 +27,8 @@
               <label>720</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
         <prompt>
@@ -53,5 +54,6 @@
       </contentList>
     
     </survey>
+
   </surveys>
 </campaign>
