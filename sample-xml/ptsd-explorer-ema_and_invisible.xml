@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignUrn>urn:campaign:va:ptsd_explorer_with_invisible</campaignUrn>
+  <campaignName>PTSD Explorer With Invisible Surveys</campaignName>
+  <serverUrl>https://www.andwellness.org</serverUrl>
+  
+  <surveys>
+      <survey>
+      <id>dailyAssessment</id>
+      <title>Daily Assessment</title>
+      <description>Please perform your daily assessment.</description>
+      <submitText>Thank you for finishing! This information will help you pay attention to important things in your recovery.</submitText>
+      <showSummary>false</showSummary>
+      <!-- Should be set to false if the survey can only be launched via trigger -->
+      <anytime>true</anytime>
+    
+      <contentList>
+
+        <prompt>
+          <id>overallMood</id>
+          <displayType>category</displayType>
+          <displayLabel>Overall Mood</displayLabel>
+          <promptText>How would you rate your overall mood today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Very bad</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Bad</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Neither good nor bad</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Good</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Very good</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>sleepWell</id>
+          <displayType>category</displayType>
+          <displayLabel>Sleep Quality</displayLabel>
+          <promptText>How well did you sleep last night?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Very poorly</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Poorly</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Neither well nor poorly</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Well</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Very well</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>howMuchAnger</id>
+          <displayType>category</displayType>
+          <displayLabel>How Much Anger</displayLabel>
+          <promptText>How much anger did you experience today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No anger</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>A little anger</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Some anger</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>A lot of anger</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Extreme amount of anger</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+      
+        <prompt>
+          <id>conflictWithOthers</id>
+          <displayType>category</displayType>
+          <displayLabel>Conflict With Others</displayLabel>
+          <promptText>How much conflict with others did you have today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No conflict</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>A little conflict</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Some conflict</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>A lot of conflict</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Extreme amount of conflict</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>copingSituations</id>
+          <displayType>category</displayType>
+          <displayLabel>Coping Situations</displayLabel>
+          <promptText>What situations happened today that you needed to try and cope with?</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+        
+        <prompt>
+          <id>overallCoping</id>
+          <displayType>category</displayType>
+          <displayLabel>Overall Coping</displayLabel>
+          <promptText>Overall, how well or poorly did you cope with things in the last 24 hours?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Very poorly</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Poorly</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Slightly poorly</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Neither well nor poorly</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Slightly well</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Well</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>Very well</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>qualityOfGettingThingsDone</id>
+          <displayType>category</displayType>
+          <displayLabel>Quality Of Getting Things Done</displayLabel>
+          <promptText>How well did you get things today that you needed to do?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Very poorly</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Poorly</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Slightly poorly</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Neither well nor poorly</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Slightly well</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Well</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>Very well</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+      
+        <prompt>
+          <id>copingToolsUsed</id>
+          <displayType>category</displayType>
+          <displayLabel>Coping Tools Used</displayLabel>
+          <promptText>In the last 24 hours, which of the following coping tools did you use?</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Practice a formal relaxation or meditation method?</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Deliberately face a situation that you have been avoiding?</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Consciously talk to yourself as a way of coping?</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Do some kind of positive activity to try and improve your mood?</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Talk to somebody about a problem or seek support in some way?</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+		
+		<prompt>
+          <id>copingSupport</id>
+          <condition>(copingToolsUsed == 4)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Coping Support</displayLabel>
+          <promptText>How was the support you got from other(s)?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Made me feel a lot worse</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Made me feel somewhat worse</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Made me feel a little worse</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Had no effect on me</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Helped me feel a little better</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Helped me feel somewhat better</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>Helped me feel a lot better</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+		
+		<prompt>
+          <id>activitiesInLastDay</id>
+          <displayType>category</displayType>
+          <displayLabel>Activities Performed</displayLabel>
+          <promptText>In the last 24 hours, did you do any of the following activities?</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>At least 15 minutes of exercise?</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Spend time socializing with others?</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Do a homework task assigned by your treatment provider?</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>takePrescribedMedications</id>
+          <displayType>category</displayType>
+          <displayLabel>Prescribed Medications</displayLabel>
+          <promptText>Did you take your doctor-prescribed medication(s) today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No, my doctor has not prescribed any medications to me</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>No, I didn't take them</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+        <prompt>
+          <id>medicationSideEffects</id>
+          <condition>(takePrescribedMedications == 2)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Medication Side Effects</displayLabel>
+          <promptText>Did you experience any side effects?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>drinkAlcohol</id>          
+          <displayType>category</displayType>
+          <displayLabel>Alcohol</displayLabel>
+          <promptText>Did you drink alcohol in the last 24 hours?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Yes</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>No</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>howMuchAlcohol</id>
+          <condition>(drinkAlcohol == 0)</condition>
+          <displayType>category</displayType>
+          <displayLabel>How Much Alcohol</displayLabel>
+          <promptText>How much did you drink? (One drink = 12oz of beer = one 6oz glass of wine = one 1.5oz shot of vodka or whiskey or gin)</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>1 drink</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>2 drinks</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>3 drinks</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>4 drinks</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>5-6 drinks</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>7-8 drinks</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>More than 8 drinks</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+	    
+        <prompt>
+          <id>takeNonPrescribedDrug</id>          
+          <displayType>category</displayType>
+          <displayLabel>Non-Prescribed Drug</displayLabel>
+          <promptText>Did you take any non-prescribed drug in the last 24 hours?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Yes</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>No</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+     </contentList>
+    
+    </survey>
+    
+    
+    <!-- 
+         The following surveys will be invisible to the end user; they are intended to collect device information
+         and stats regarding the way the participant is interacting with the application 
+         
+         PCL stands for PTSD Checklist (an acronym of acronyms :) http://www.ptsd.va.gov/professional/pages/assessments/ptsd-checklist.asp 
+    
+         Surveys are the ohmage atomic unit of work, so unfortunately these cannot be individual prompts and we have some
+         naming redundancy. 
+    -->
+    
+    <survey>
+      <id>pclAssessmentStartedSurvey</id>
+      <title>PCL Assessment Started</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <!-- all we really care about here is the timestamp metadata, which is required for every survey upload -->
+        <prompt>
+          <id>pclAssessmentStartedPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>1</label> 
+            </property>
+          </properties>          
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+
+    <survey>
+      <id>pclQuestionAnsweredSurvey</id>
+      <title>PCL Assessment Started</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>pclQuestionAnsweredPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!-- 
+            The text payload can be JSON 
+                { "number_of_questions_answered": 0 }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+    
+	<survey>
+      <id>buttonPressedSurvey</id>
+      <title>Button Pressed Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>buttonPressedPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!-- 
+            The text payload can be JSON 
+                { "id": 0, "title":"Title" }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+    
+    <survey>
+      <id>contentScreenViewedSurvey</id>
+      <title>Content Screen Viewed Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>contentScreenViewedPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!-- 
+            The text payload can be JSON 
+                { "timestamp_start": "2011-09-14 17:19", "timestamp_dismissal":"2011-09-14 17:20", "content_name":"name", "content_display_name": "display_name", "content_id":"id" }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>    
+
+    <survey>
+      <id>contentObjectSelectedSurvey</id>
+      <title>Content Object Selected Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>contentObjectSelectedPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!-- 
+            The text payload can be JSON 
+                { "content_name":"name", "content_display_name": "display_name", "content_id":"id" }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>    
+
+	<!-- SUDs stands for substance abuse disorders -->
+	
+    <survey>
+      <id>preExerciseSudsSurvey</id>
+      <title>Pre Exercise SUDs Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>preExerciseSudsPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!-- 
+            The text payload can be JSON 
+                { "suds_score":0 }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>    
+        
+    <survey>
+      <id>postExerciseSudsSurvey</id>
+      <title>Pre Exercise SUDs Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>postExerciseSudsPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!-- 
+            No need for timestamp because it is part of the required survey upload metadata.
+             
+            The text payload can be JSON 
+                { "initial_suds_score":0, "post_exercise_suds_score":1 }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+    
+    <survey>
+      <id>appLaunchSurvey</id>
+      <title>App Launch Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>appLaunchPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+            
+            The text payload can be JSON 
+                { "accessibility_features_active":"true" }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>    
+        
+    <survey>
+      <id>appExitedSurvey</id>
+      <title>App Exited Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>appExitedPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+            
+            The text payload can be JSON 
+                { "accessibility_features_active":"true" }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>    
+
+    <survey>
+      <id>pclReminderScheduledSurvey</id>
+      <title>PCL Reminder Scheduled Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>pclReminderScheduledPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>1</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>    
+
+    <survey>
+      <id>pclAssessmentAbortedSurvey</id>
+      <title>PCL Assessment Aborted Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>pclAssessmentAbortedPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>1</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+    
+    <!-- 
+      Carolyn's List 
+    	
+      Josh: I have omitted some of Carolyn's items here because they are better suited by info viz or taken care of by
+      metadata sent with each survey upload. Omitted items are noted inline.
+    -->
+   
+     <survey>
+      <id>totalTimeOnAppSurvey</id>
+      <title>Total Time On App Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>totalTimeOnAppPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+            
+             The text payload can be JSON 
+                { "total_time_on_app":"00:00:00" }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+	
+    <survey>
+      <id>numberOfIndividualUsesSurvey</id>
+      <title>Number Of Individual Uses Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>numberOfIndividualUsesPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+            
+             The text payload can be JSON 
+                { "number_of_uses":256 }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+    
+    <!-- Omitted time-per-use because that will be part of a time series viz -->
+    
+    <survey>
+      <id>timePerScreenSurvey</id>
+      <title>Time Per Screen Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>timePerScreenPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+            
+             The text payload can be JSON 
+                { "screen_id":"screen_id", "time_spent":"00:00:00" }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+    
+    <survey>
+      <id>useOfToolsVsPsychoEdSurvey</id>
+      <title>Use Of Tools Vs. Psycho-Ed Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>useOfToolsVsPsychoEdPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+            
+             The text payload can be JSON 
+                { "tool_use":"00:00:00", "psycho_ed_use":"00:00:00" }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+    
+    <survey>
+      <id>timeElapsedBetweenSessionsSurvey</id>
+      <title>Time Elapsed Between Sessions Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>timeElapsedBetweenSessionsPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+            
+             The text payload can be JSON 
+                { "time_between_sessions":"00:00:00" }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+	   
+    <survey>
+      <id>timeElapsedBetweenPCLAssessmentSurvey</id>
+      <title>Time Elapsed Between PCL Assessment Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>timeElapsedBetweenPCLAssessmentPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+            
+             The text payload can be JSON 
+                { "time_between_pcl_assessment":"00:00:00" }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+    
+    <!-- Omitted symptoms reported because that is taken care of by the EMA questions -->
+    
+    <survey>
+      <id>numberOfToolsUsedDuringOneSessionSurvey</id>
+      <title>Number Of Tools Used During One Session Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>numberOfToolsUsedDuringOneSessionPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+            
+             The text payload can be JSON 
+                { "number_of_tools":16 }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+    
+    <!-- Omitted time of day of use because it can be inferred from EMA metadata, i.e., timestamp and timezone -->
+    
+    <survey>
+      <id>toolsAbortedSurvey</id>
+      <title>Tools Aborted Survey</title>
+      <description>invisible</description>
+      <submitText>invisible</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>toolsAbortedPrompt</id>          
+          <displayType>category</displayType>
+          <displayLabel>invisible</displayLabel>
+          <promptText>invisible</promptText>
+          <promptType>text</promptType>
+          <!--
+            No need for timestamp because it is part of the required survey upload metadata.
+            
+             The text payload can be JSON 
+                { "tool1":"tool name", "tool2","" ... }
+          -->
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label> 
+            </property>
+          </properties>     
+          <skippable>false</skippable>
+        </prompt>      
+      </contentList>
+    </survey>
+    
+     <!-- Omitted technical problems because that is probably best addressed in-person -->
+     
+     <!-- 
+     
+         Omitted the rest of Carolyn's List because the rest can be inferred via viz
+         
+         SUDs ratings in relation to: when device is used, pre-post tools, over time
+         Use of support: type of support, related symptom
+         PCL Scores
+     -->
+        
+  </surveys>
+</campaign>
