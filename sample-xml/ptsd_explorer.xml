@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
-  <campaignUrn>urn:campaign:va:ptsd_explorer_probes_ema_pcl</campaignUrn>
-  <campaignName>PTSD Explorer 2011-10-26</campaignName>
+  <campaignUrn>urn:campaign:va:ptsd_explorer</campaignUrn>
+  <campaignName>PTSD Explorer 2011-10-31</campaignName>
   <serverUrl>https://www.andwellness.org</serverUrl>
   
   <surveys>
@@ -90,11 +90,11 @@
           <properties>
             <property>
               <key>0</key>
-              <label>No anger</label>
+              <label>Extreme amount of anger</label>
             </property>
-            <property>
+            <property>            
               <key>1</key>
-              <label>A little anger</label>
+              <label>A lot of anger</label>
             </property>
             <property>
               <key>2</key>
@@ -102,11 +102,11 @@
             </property>
             <property>
               <key>3</key>
-              <label>A lot of anger</label>
+              <label>A little anger</label>
             </property>
             <property>
               <key>4</key>
-              <label>Extreme amount of anger</label>
+              <label>No anger</label>
             </property>
           </properties>
           <skippable>false</skippable>
@@ -121,11 +121,11 @@
           <properties>
             <property>
               <key>0</key>
-              <label>No conflict</label>
+              <label>Extreme amount of conflict</label>
             </property>
             <property>
               <key>1</key>
-              <label>A little conflict</label>
+              <label>A lot of conflict</label>
             </property>
             <property>
               <key>2</key>
@@ -133,11 +133,11 @@
             </property>
             <property>
               <key>3</key>
-              <label>A lot of conflict</label>
+              <label>A little conflict</label>
             </property>
             <property>
               <key>4</key>
-              <label>Extreme amount of conflict</label>
+              <label>No conflict</label>
             </property>
           </properties>
           <skippable>false</skippable>
@@ -1005,6 +1005,270 @@
       </contentList>
     </survey>
     
+    <!-- 
+       PHQ-9
+    -->
+    <survey>
+      <id>phq9Survey</id>
+      <title>PHQ-9 Survey</title>
+      <description>PHQ-9 Survey</description>
+      <submitText>none</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      <contentList>
+
+        <prompt>
+          <id>phq91</id>          
+          <displayType>category</displayType>
+          <displayLabel>Little Interest or Pleasure</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by having little interest or pleasure in doing things?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>phq92</id>          
+          <displayType>category</displayType>
+          <displayLabel>Depressed or Hopeless</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by feeling down, depressed or hopeless?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+      
+        <prompt>
+          <id>phq93</id>
+          <condition>(phq91 == 2) or (phq91 == 3) or (phq92 == 2) or (phq92 == 3)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Trouble with Sleep</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by trouble falling or staying asleep, or sleeping too much?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>phq94</id>
+          <condition>(phq91 == 2) or (phq91 == 3) or (phq92 == 2) or (phq92 == 3)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Feeling Tired</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by feeling tired or having little energy?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>phq95</id>
+          <condition>(phq91 == 2) or (phq91 == 3) or (phq92 == 2) or (phq92 == 3)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Poor Apetite or Overeating</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by poor appetite or overeating?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>phq96</id>
+          <condition>(phq91 == 2) or (phq91 == 3) or (phq92 == 2) or (phq92 == 3)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Feeling Bad about Yourself</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by feeling bad about yourself - or that you are a failure or have let your family down?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>phq97</id>
+          <condition>(phq91 == 2) or (phq91 == 3) or (phq92 == 2) or (phq92 == 3)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Trouble Concentrating</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by trouble concentrating on things, such as reading the newspaper or watching television?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>phq98</id>
+          <condition>(phq91 == 2) or (phq91 == 3) or (phq92 == 2) or (phq92 == 3)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Moving Slowly or Feeling Fidgety</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>phq99</id>
+          <condition>(phq91 == 2) or (phq91 == 3) or (phq92 == 2) or (phq92 == 3)</condition>
+          <displayType>category</displayType>
+          <displayLabel>Suicidal Ideation</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by thoughts that you would be better off dead, or of hurting yourself in some way?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+      </contentList>
+    </survey>
     
     <!-- 
        Probes
