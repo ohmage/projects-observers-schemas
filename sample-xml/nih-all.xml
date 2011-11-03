@@ -727,7 +727,7 @@
     </survey>
     <survey>
       <id>foodButton</id>
-      <title>Stress</title>
+      <title>Food</title>
       <description>Not displayed</description>
       <submitText>Not displayed</submitText>
       <showSummary>false</showSummary>
@@ -845,7 +845,7 @@
           <displayType>metadata</displayType>
           <displayLabel>Stress</displayLabel>
                     
-          <promptText>Not displayed</promptText>
+          <promptText>Stressed?</promptText>
           <promptType>text</promptType>
           <properties>
             <property>
@@ -857,6 +857,7 @@
               <label>1</label>
             </property>
           </properties>
+          <default>*</default>
           <skippable>false</skippable>
         </prompt>
         
