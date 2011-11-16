@@ -294,10 +294,10 @@
       <id>photoSurvey</id>
       <title>Photo Survey</title>
       <description>This is a survey to test behavior of the photo prompt type.</description>
-      <submitText>Done with the text survey</submitText>
+      <submitText>Done with the photo survey</submitText>
       <showSummary>false</showSummary>
       <editSummary>false</editSummary>
-      <summaryText>Number Test</summaryText>
+      <summaryText>Photo Test</summaryText>
       <anytime>true</anytime>
       <contentList>
         <prompt>
@@ -560,6 +560,181 @@
         </prompt>
       </contentList>
     </survey>
+
+   <survey>
+      <id>singleChoiceCustomSurvey</id>
+      <title>Single Choice Custom Survey</title>
+      <description>This is a survey to test behavior of the single choice custom prompt type.</description>
+      <submitText>Done with the single choice custom survey</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Single Choice Custom Test</summaryText>
+      <anytime>true</anytime>
+      <contentList>
+        <prompt>
+          <id>singleChoiceCustom1</id>
+          <displayType>event</displayType>
+          <displayLabel>Single Choice Custom 1</displayLabel>
+          <promptText>Add a choice.</promptText>
+          <abbreviatedText>Add a choice.</abbreviatedText>
+          <promptType>single_choice_custom</promptType>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+        <prompt>
+          <id>singleChoiceCustom2</id>
+          <displayType>event</displayType>
+          <displayLabel>Single Choice Custom 2</displayLabel>
+          <promptText>The door is locked. Do you:</promptText>
+          <abbreviatedText>locked door</abbreviatedText>
+          <promptType>single_choice_custom</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>kick the door down</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>knock politely</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>hunt in your pockets for the key</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>turn around and walk away</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+	 </contentList>
+   </survey>
+
+   <survey>
+      <id>multiChoiceSurvey</id>
+      <title>Multi Choice Survey</title>
+      <description>This is a survey to test behavior of the multi choice prompt type.</description>
+      <submitText>Done with the multi choice survey</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Multi Choice Test</summaryText>
+      <anytime>true</anytime>
+      <contentList>
+        <prompt>
+          <id>multiChoice</id>
+          <displayType>event</displayType>
+          <displayLabel>Multi Choice</displayLabel>
+          <promptText>The Transverse Ranges are a group of mountain ranges of southern California, in the Pacific Coast Ranges physiographic region that runs along the Pacific coast from Alaska to Mexico in North America. The Transverse Ranges begin at the southern end of the California Coast Ranges and lie between Santa Barbara and San Diego counties. They derive the name Transverse Ranges due to their East-West orientation, making them transverse to the general North-South orientation of most of California's coastal mountains.</promptText>
+          <abbreviatedText>transverse ranges</abbreviatedText>
+          <promptType>multi_choice</promptType>
+          <properties>
+          
+            <property>
+              <key>0</key>
+              <label>Santa Ynez Mountains</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>San Rafael Mountains</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Sierra Madre Mountains</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Topatopa Mountains</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Santa Susana Mountains</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Santa Monica Mountains</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>San Gabriel Mountains</label>
+            </property>
+            <property>
+              <key>7</key>
+              <label>San Bernadino Mountains</label>
+            </property>
+            <property>
+              <key>8</key>
+              <label>Little San Bernadino Mountains</label>
+            </property>
+            <property>
+              <key>9</key>
+              <label>Tehachapi Mountains</label>
+            </property>
+            <property>
+              <key>10</key>
+              <label>San Bernadino Mountains</label>
+            </property>
+            <property>
+              <key>11</key>
+              <label>San Bernadino Mountains</label>
+            </property>
+          
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+	 </contentList>
+   </survey>
+
+
+   <survey>
+      <id>multiChoiceCustomSurvey</id>
+      <title>Multi Choice Custom Survey</title>
+      <description>This is a survey to test behavior of the multi choice custom prompt type.</description>
+      <submitText>Done with the multi choice custom survey</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Multi Choice Custom Test</summaryText>
+      <anytime>true</anytime>
+      <contentList>
+        <prompt>
+          <id>multiChoiceCustom1</id>
+          <displayType>event</displayType>
+          <displayLabel>Multi Choice Custom 1</displayLabel>
+          <promptText>Add a choice:</promptText>
+          <abbreviatedText>add a choice</abbreviatedText>
+          <promptType>multi_choice_custom</promptType>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+        <prompt>
+          <id>multiChoiceCustom2</id>
+          <displayType>event</displayType>
+          <displayLabel>Multi Choice Custom 2</displayLabel>
+          <promptText>Geographical facets of southern California</promptText>
+          <abbreviatedText>geo facets</abbreviatedText>
+          <promptType>multi_choice_custom</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>The Beach</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>The Desert</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>The Mountains</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+	 </contentList>
+   </survey>
+
 
   </surveys>
 </campaign>
