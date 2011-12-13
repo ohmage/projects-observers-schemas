@@ -125,7 +125,7 @@
               <label>300</label>
             </property>
           </properties>
-          <default>15</default>
+          <default>0</default>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
         </prompt>
@@ -147,7 +147,7 @@
               <label>300</label>
             </property>
           </properties>
-          <default>15</default>
+          <default>0</default>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
         </prompt>
@@ -169,7 +169,7 @@
               <label>300</label>
             </property>
           </properties>
-          <default>15</default>
+          <default>0</default>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
         </prompt>
@@ -268,23 +268,19 @@
             </property>
             <property>
               <key>1</key>
-              <label>10 minutes or less</label>
+              <label>less than 30 minutes</label>
             </property>
             <property>
               <key>2</key>
-              <label> 10 to 30 minutes </label>
+              <label> 30 minutes to 1 hour</label>
             </property>
             <property>
               <key>3</key>
-              <label> 1 hour </label>
+              <label> more than 1 hour </label>
             </property>
             <property>
               <key>4</key>
-              <label> 2 hours </label>
-            </property>
-            <property>
-              <key>5</key>
-              <label> More than 2 hours </label>
+              <label> more than 2 hours </label>
             </property>
           </properties>
           <skippable>true</skippable>
@@ -296,7 +292,7 @@
           <id>stressToday</id>
           <displayType>count</displayType>
           <displayLabel>Rate stress today</displayLabel>
-          <promptText>How stressful was your day overall on a scale of 1-5?</promptText>
+          <promptText>How stressful was your day overall on a scale of 1-5 (with 5 being very stressful)?</promptText>
           <promptType>number</promptType>
           <properties>
             <property>
@@ -317,22 +313,19 @@
           <id>rateEating</id>
           <displayType>category</displayType>
           <displayLabel>Rate your eating</displayLabel>
-          <promptText>How healthy would you rate your eating today, compared to your typical day?</promptText>
-          <promptType>single_choice</promptType>
+          <promptText>How healthy would you rate your eating today, in terms of both quality and quantity, on a scale of 1 to 5 (with 5 being very healthy)?</promptText>
+          <promptType>number</promptType>
           <properties>
             <property>
-              <key>0</key>
-              <label> Less healthy than usual </label>
+              <key>min</key>
+              <label>1</label>
             </property>
             <property>
-              <key>1</key>
-              <label> Typical </label>
-            </property>
-            <property>
-              <key>2</key>
-              <label> Healthier than usual </label>
+              <key>max</key>
+              <label>5</label>
             </property>
           </properties>
+          <default>3</default>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
         </prompt>
