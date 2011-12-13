@@ -3,7 +3,7 @@
   <campaignUrn>urn:andwellness:nih</campaignUrn>
   <campaignName>NIH</campaignName>
   <serverUrl>https://heart.andwellness.org</serverUrl>
-  
+
   <surveys>
     <survey>
       <id>Morning</id>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
-  <campaignUrn>urn:campaign:va:ptsd_explorer_probes_ema_pcl</campaignUrn>
-  <campaignName>PTSD Explorer 2011-10-26</campaignName>
+  <campaignUrn>urn:campaign:va:ptsd_explorer</campaignUrn>
+  <campaignName>PTSD Explorer 2011-12-05</campaignName>
   <serverUrl>https://www.andwellness.org</serverUrl>
   
   <surveys>
@@ -47,7 +47,8 @@
               <label>Very good</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
         <prompt>
@@ -78,7 +79,8 @@
               <label>Very well</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
         <prompt>
@@ -90,11 +92,11 @@
           <properties>
             <property>
               <key>0</key>
-              <label>No anger</label>
+              <label>Extreme amount of anger</label>
             </property>
-            <property>
+            <property>            
               <key>1</key>
-              <label>A little anger</label>
+              <label>A lot of anger</label>
             </property>
             <property>
               <key>2</key>
@@ -102,14 +104,15 @@
             </property>
             <property>
               <key>3</key>
-              <label>A lot of anger</label>
+              <label>A little anger</label>
             </property>
             <property>
               <key>4</key>
-              <label>Extreme amount of anger</label>
+              <label>No anger</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
       
         <prompt>
@@ -121,11 +124,11 @@
           <properties>
             <property>
               <key>0</key>
-              <label>No conflict</label>
+              <label>Extreme amount of conflict</label>
             </property>
             <property>
               <key>1</key>
-              <label>A little conflict</label>
+              <label>A lot of conflict</label>
             </property>
             <property>
               <key>2</key>
@@ -133,14 +136,15 @@
             </property>
             <property>
               <key>3</key>
-              <label>A lot of conflict</label>
+              <label>A little conflict</label>
             </property>
             <property>
               <key>4</key>
-              <label>Extreme amount of conflict</label>
+              <label>No conflict</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
         <prompt>
@@ -199,7 +203,8 @@
               <label>Very well</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -238,7 +243,8 @@
               <label>Very well</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
       
         <prompt>
@@ -269,7 +275,8 @@
               <label>Talk to somebody about a problem or seek support in some way?</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
 		
@@ -310,7 +317,8 @@
               <label>Helped me feel a lot better</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 		
 		<prompt>
@@ -333,7 +341,8 @@
               <label>Do a homework task assigned by your treatment provider?</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
         <prompt>
@@ -356,7 +365,8 @@
               <label>Yes</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
         <prompt>
@@ -376,7 +386,8 @@
               <label>Yes</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -395,7 +406,8 @@
               <label>No</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -435,7 +447,8 @@
               <label>More than 8 drinks</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 	    
         <prompt>
@@ -454,11 +467,53 @@
               <label>No</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
      </contentList>
     
+    </survey>
+    
+    <survey>
+      <id>functioningAssessment</id>
+      <title>Functioning Assessment</title>
+      <description>Please perform your functioning assessment.</description>
+      <submitText>Thank you for finishing! This information will help you pay attention to important things in your recovery.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+
+        <prompt>
+          <id>howDifficult</id>
+          <displayType>category</displayType>
+          <displayLabel>Functioning</displayLabel>
+          <promptText>How difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Somewhat difficult</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Very difficult</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Extremely difficult</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+    
+      </contentList>
     </survey>
     
     <!-- 
@@ -483,27 +538,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -514,27 +570,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -545,27 +602,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -576,27 +634,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -607,27 +666,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -638,27 +698,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -669,27 +730,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
       	
         <prompt>
@@ -700,27 +762,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -731,27 +794,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -762,27 +826,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -793,27 +858,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -824,27 +890,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -855,27 +922,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -886,27 +954,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -917,27 +986,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -948,27 +1018,28 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -979,32 +1050,299 @@
           <promptType>single_choice</promptType>
           <properties>
             <property>
-              <key>0</key>
+              <key>1</key>
               <label>Not at all</label>
             </property>
             <property>
-              <key>1</key>
+              <key>2</key>
               <label>A little bit</label>
             </property>
             <property>
-              <key>2</key>
+              <key>3</key>
               <label>Moderately</label>
             </property>
             <property>
-              <key>3</key>
+              <key>4</key>
               <label>Quite a bit</label>
             </property>
             <property>
-              <key>4</key>
+              <key>5</key>
               <label>Extremely</label>
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
       
       </contentList>
     </survey>
     
+    <!-- 
+       PHQ-9
+    -->
+    <survey>
+      <id>phq9Survey</id>
+      <title>PHQ-9 Survey</title>
+      <description>PHQ-9 Survey</description>
+      <submitText>none</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      <contentList>
+
+        <prompt>
+          <id>phq91</id>          
+          <displayType>category</displayType>
+          <displayLabel>Little Interest or Pleasure</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by having little interest or pleasure in doing things?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>phq92</id>          
+          <displayType>category</displayType>
+          <displayLabel>Depressed or Hopeless</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by feeling down, depressed or hopeless?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+      
+        <prompt>
+          <id>phq93</id>
+          <displayType>category</displayType>
+          <displayLabel>Trouble with Sleep</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by trouble falling or staying asleep, or sleeping too much?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>phq94</id>
+          <displayType>category</displayType>
+          <displayLabel>Feeling Tired</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by feeling tired or having little energy?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>phq95</id>
+          <displayType>category</displayType>
+          <displayLabel>Poor Apetite or Overeating</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by poor appetite or overeating?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>phq96</id>
+          <displayType>category</displayType>
+          <displayLabel>Feeling Bad about Yourself</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by feeling bad about yourself - or that you are a failure or have let your family down?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>phq97</id>
+          <displayType>category</displayType>
+          <displayLabel>Trouble Concentrating</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by trouble concentrating on things, such as reading the newspaper or watching television?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>phq98</id>
+          <displayType>category</displayType>
+          <displayLabel>Moving Slowly or Feeling Fidgety</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>phq99</id>
+          <displayType>category</displayType>
+          <displayLabel>Suicidal Ideation</displayLabel>
+          <promptText>Over the last two weeks, how often have you been bothered by thoughts that you would be better off dead, or of hurting yourself in some way?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Several days</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>More than half of the days</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Nearly every day</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+        
+      </contentList>
+    </survey>
     
     <!-- 
        Probes
@@ -1025,7 +1363,8 @@
           <displayLabel>PCL Assessment Started Timestamp</displayLabel>
           <promptText>PCL Assessment Started Timestamp</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
               
       </contentList>
@@ -1056,7 +1395,8 @@
               <label>17</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
               
       </contentList>
@@ -1087,7 +1427,8 @@
               <label>500</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
 
         <prompt>
@@ -1106,7 +1447,8 @@
               <label>500</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
       </contentList>
     </survey>
@@ -1125,7 +1467,8 @@
           <displayLabel>Start Timestamp</displayLabel>
           <promptText>Start Timestamp</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         <prompt>
           <id>contentScreenTimestampDismissal</id>          
@@ -1133,7 +1476,8 @@
           <displayLabel>Dismissal Timestamp</displayLabel>
           <promptText>Dismissal Timestamp</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         <prompt>
           <id>contentScreenName</id>          
@@ -1151,7 +1495,8 @@
               <label>500</label> 
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         <prompt>
           <id>contentScreenDisplayName</id>          
@@ -1169,7 +1514,8 @@
               <label>500</label> 
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
          <prompt>
           <id>contentScreenType</id>          
@@ -1191,7 +1537,8 @@
               <label>other</label> 
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
          <prompt>
           <id>contentScreenId</id>          
@@ -1209,7 +1556,8 @@
               <label>500</label> 
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
       </contentList>
     </survey>    
@@ -1239,7 +1587,8 @@
               <label>500</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         <prompt>
           <id>contentObjectDisplayName</id>          
@@ -1257,7 +1606,8 @@
               <label>500</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
          <prompt>
           <id>contentObjectId</id>          
@@ -1275,7 +1625,8 @@
               <label>500</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>     
       </contentList>
     </survey>    
@@ -1304,7 +1655,8 @@
               <label>10</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>      
       </contentList>
     </survey>    
@@ -1333,7 +1685,8 @@
               <label>10</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         <prompt>
           <id>postExerciseSudsScore</id>          
@@ -1351,7 +1704,8 @@
               <label>10</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
       </contentList>
     </survey>
@@ -1380,7 +1734,8 @@
               <label>true</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>      
       </contentList>
     </survey>    
@@ -1409,7 +1764,8 @@
               <label>true</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>      
       </contentList>
     </survey>    
@@ -1428,7 +1784,8 @@
           <displayLabel>Scheduled At</displayLabel>
           <promptText>Scheduled At</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>      
       </contentList>
     </survey>    
@@ -1447,7 +1804,8 @@
           <displayLabel>Aborted At</displayLabel>
           <promptText>Aborted At</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>      
       </contentList>
     </survey>
@@ -1476,7 +1834,8 @@
               <label>85</label> 
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         <prompt>
           <id>pclAssessmentCompleted</id>          
@@ -1494,7 +1853,8 @@
               <label>true</label> 
             </property>
           </properties>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
       </contentList>
     </survey>
@@ -1513,18 +1873,19 @@
           <displayType>category</displayType>
           <displayLabel>Time</displayLabel>
           <promptText>Time</promptText>
-          <promptType>text</promptType> <!-- this is text for now, but we will be adding a time prompt type -->
-          <properties> <!-- 00:00:00 -->
+          <promptType>number</promptType>
+          <properties>
             <property>
               <key>min</key>
-              <label>1</label>
+              <label>0</label>
             </property>
             <property>
               <key>max</key>
-              <label>8</label> 
-            </property>
-          </properties>     
-          <skippable>false</skippable>
+              <label>9223372036854775807</label> 
+            </property>           
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>      
       </contentList>
     </survey>
@@ -1554,7 +1915,8 @@
               <label>500</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>      
       
         <prompt>
@@ -1563,7 +1925,8 @@
           <displayLabel>Start Time</displayLabel>
           <promptText>Start Time</promptText>
           <promptType>timestamp</promptType>
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         
         <prompt>
@@ -1571,18 +1934,19 @@
           <displayType>category</displayType>
           <displayLabel>Time Spent</displayLabel>
           <promptText>Time Spent</promptText>
-          <promptType>text</promptType> <!-- this is text for now, but we will be adding a time prompt type -->
+          <promptType>number</promptType>
           <properties>
             <property>
               <key>min</key>
-              <label>1</label>
+              <label>0</label>
             </property>
             <property>
               <key>max</key>
-              <label>8</label> 
-            </property>
-          </properties>     
-          <skippable>false</skippable>
+              <label>9223372036854775807</label> 
+            </property>           
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>      
               
       </contentList>
@@ -1602,18 +1966,19 @@
           <displayType>category</displayType>
           <displayLabel>Time</displayLabel>
           <promptText>Time</promptText>
-          <promptType>text</promptType>
-          <properties> <!-- this is text for now, but we will be adding a time prompt type -->
+          <promptType>number</promptType>
+          <properties>
             <property>
               <key>min</key>
-              <label>1</label>
+              <label>0</label>
             </property>
             <property>
               <key>max</key>
-              <label>8</label> 
-            </property>
-          </properties>     
-          <skippable>false</skippable>
+              <label>9223372036854775807</label> 
+            </property>           
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>      
       </contentList>
     </survey>
@@ -1632,18 +1997,19 @@
           <displayType>category</displayType>
           <displayLabel>Time</displayLabel>
           <promptText>Time</promptText>
-          <promptType>text</promptType>
-          <properties> <!-- this is text for now, but we will be adding a time prompt type -->
+          <promptType>number</promptType>
+          <properties>
             <property>
               <key>min</key>
-              <label>1</label>
+              <label>0</label>
             </property>
             <property>
               <key>max</key>
-              <label>8</label> 
-            </property>
-          </properties>     
-          <skippable>false</skippable>
+              <label>9223372036854775807</label> 
+            </property>           
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>      
       </contentList>
     </survey>
@@ -1674,7 +2040,8 @@
               <label>500</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
         <prompt>
           <id>toolName</id>          
@@ -1692,7 +2059,8 @@
               <label>500</label> 
             </property>
           </properties>     
-          <skippable>false</skippable>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
         </prompt>
       </contentList>
     </survey>
