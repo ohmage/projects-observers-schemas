@@ -94,7 +94,7 @@
 		  <unit>how stressed</unit>
           <condition>feltStress == 1</condition>
           <displayLabel>How stressed</displayLabel>
-          <promptText>How stressed were you, on a scale of 1-5?</promptText>
+          <promptText>How stressed were you, on a scale of 1-5 (with 5 being very stressed)?</promptText>
           <promptType>single_choice</promptType>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
