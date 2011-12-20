@@ -556,7 +556,7 @@
           </properties>
           <skippable>false</skippable>
           <skipLabel>Skip</skipLabel>
-          <default>Los Angeles River</default>
+          <default>34</default>
         </prompt>
       </contentList>
     </survey>
