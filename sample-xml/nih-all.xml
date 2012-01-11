@@ -9,7 +9,7 @@
       <id>Morning</id>
       <title>Morning</title>
       <description>This is the morning survey.</description>
-      <submitText>Please use the food button on your phone top to take pictures of your food.</submitText>
+      <submitText>Please use the food button on your phone to to take pictures of your food.</submitText>
       <showSummary>false</showSummary>
       <anytime>true</anytime>
     
@@ -36,7 +36,7 @@
         </prompt>
 
         <prompt>
-          <id>mood</id>
+          <id>mood1</id>
           <displayType>category</displayType>
           <displayLabel>How would you describe your mood at this moment</displayLabel>
           <promptText>How would you describe your mood at this moment?</promptText>
@@ -88,67 +88,41 @@
         </prompt>
 
         <prompt>
-          <id>feltStress</id>
-          <displayType>category</displayType>
-          <displayLabel>Stress in last two hours</displayLabel>
-          <promptText>Have you felt stress in the last two hours?</promptText>
-          <promptType>single_choice</promptType>
-          <skippable>true</skippable>
-          <skipLabel>skip</skipLabel>
-          <properties>
-            <property>
-              <key>0</key>
-              <label>No</label>
-            </property>
-            <property>
-              <key>1</key>
-              <label>Yes</label>
-            </property>
-          </properties>
-        </prompt>
-
-        <prompt>
-          <id>howStressed</id>
+          <id>feltStress1</id>
           <displayType>measurement</displayType>
 		  <unit>how stressed</unit>
-          <condition>feltStress == 1</condition>
-          <displayLabel>How stressed</displayLabel>
-          <promptText>How stressed were you, on a scale of 1-5 (with 5 being very stressed)?</promptText>
+          <displayLabel>Felt Stress</displayLabel>
+          <promptText>Have you felt stressed in the last two hours? </promptText>
           <promptType>single_choice</promptType>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
           <properties>
             <property>
               <key>0</key>
-              <label>1</label>
+              <label>Not at all</label>
               <value>1</value>
             </property>
             <property>
               <key>1</key>
-              <label>2</label>
+              <label>Slightly</label>
               <value>2</value>
             </property>
             <property>
               <key>2</key>
-              <label>3</label>
+              <label>Moderately</label>
               <value>3</value>
             </property>
             <property>
               <key>3</key>
-              <label>4</label>
+              <label>Very</label>
               <value>4</value>
             </property>
-            <property>
-              <key>4</key>
-              <label>5</label>
-              <value>5</value>
-            </property> 
            </properties>
         </prompt>
 
         <prompt>
-          <id>whatEvent</id>
-          <condition>feltStress == 1</condition>
+          <id>whatEvent1</id>
+          <condition>feltStress1 > 0</condition>
           <displayType>category</displayType>
           <displayLabel>Cause</displayLabel>
           <promptText>What was the cause of your stress?</promptText>
@@ -188,7 +162,7 @@
         </prompt>
     
         <prompt>
-          <id>eatenRecently</id>
+          <id>eatenRecently1</id>
           <displayType>category</displayType>
           <displayLabel>Eaten since your last survey</displayLabel>
           <promptText>Have you eaten since you completed your last diet survey?</promptText>
@@ -208,8 +182,8 @@
         </prompt>
 
         <prompt>
-          <id>foodWhoAteWith</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodWhoAteWith1</id>
+          <condition>eatenRecently1 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>WhoWith</displayLabel>
           <promptText>Who did you eat with?</promptText>
@@ -247,8 +221,8 @@
 
       
         <prompt>
-           <id>foodSnackMeal</id>
-          <condition>eatenRecently == 1</condition>
+           <id>foodSnackMeal1</id>
+          <condition>eatenRecently1 == 1</condition>
            <displayType>category</displayType>
            <displayLabel>Type</displayLabel>
            <promptText>Was this a snack or a meal?</promptText>
@@ -271,8 +245,8 @@
         </prompt>
 
         <prompt>
-          <id>foodHowPrepared</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodHowPrepared1</id>
+          <condition>eatenRecently1 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>HowPrepared</displayLabel>
           <promptText>How was this food prepared?</promptText>
@@ -314,8 +288,8 @@
         </prompt>
 
         <prompt>
-          <id>foodQuality</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodQuality1</id>
+          <condition>eatenRecently1 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>NutritionalQuality</displayLabel>
           <promptText>Rate the nutritional quality of this meal?</promptText>
@@ -343,8 +317,8 @@
         
         
         <prompt>
-          <id>foodHowHungry</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodHowHungry1</id>
+          <condition>eatenRecently1 == 1</condition>
           <displayType>count</displayType>
           <displayLabel>Hunger</displayLabel>
           <unit>hunger amount</unit>
@@ -378,8 +352,8 @@
 
 
         <prompt>
-          <id>foodHowMuch</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodHowMuch1</id>
+          <condition>eatenRecently1 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>HowMuch</displayLabel>
           <promptText>How much did you eat?</promptText>
@@ -417,7 +391,7 @@
       <anytime>true</anytime>
       <contentList>
         <prompt>
-          <id>mood</id>
+          <id>mood2</id>
           <displayType>category</displayType>
           <displayLabel>How would you describe your mood at this moment</displayLabel>
           <promptText>How would you describe your mood at this moment?</promptText>
@@ -469,67 +443,41 @@
         </prompt>
 
         <prompt>
-          <id>feltStress</id>
-          <displayType>category</displayType>
-          <displayLabel>Stress in last two hours</displayLabel>
-          <promptText>Have you felt stress in the last two hours?</promptText>
-          <promptType>single_choice</promptType>
-          <skippable>true</skippable>
-          <skipLabel>skip</skipLabel>
-          <properties>
-            <property>
-              <key>0</key>
-              <label>No</label>
-            </property>
-            <property>
-              <key>1</key>
-              <label>Yes</label>
-            </property>
-          </properties>
-        </prompt>
-
-        <prompt>
-          <id>howStressed</id>
+          <id>feltStress2</id>
           <displayType>measurement</displayType>
 		  <unit>how stressed</unit>
-          <condition>feltStress == 1</condition>
-          <displayLabel>How stressed</displayLabel>
-          <promptText>How stressed were you, on a scale of 1-5 (with 5 being very stressed)?</promptText>
+          <displayLabel>Felt Stress</displayLabel>
+          <promptText>Have you felt stressed in the last two hours? </promptText>
           <promptType>single_choice</promptType>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
           <properties>
             <property>
               <key>0</key>
-              <label>1</label>
+              <label>Not at all</label>
               <value>1</value>
             </property>
             <property>
               <key>1</key>
-              <label>2</label>
+              <label>Slightly</label>
               <value>2</value>
             </property>
             <property>
               <key>2</key>
-              <label>3</label>
+              <label>Moderately</label>
               <value>3</value>
             </property>
             <property>
               <key>3</key>
-              <label>4</label>
+              <label>Very</label>
               <value>4</value>
             </property>
-            <property>
-              <key>4</key>
-              <label>5</label>
-              <value>5</value>
-            </property> 
            </properties>
         </prompt>
 
         <prompt>
-          <id>whatEvent</id>
-          <condition>feltStress == 1</condition>
+          <id>whatEvent2</id>
+          <condition>feltStress2 > 0</condition>
           <displayType>category</displayType>
           <displayLabel>Cause</displayLabel>
           <promptText>What was the cause of your stress?</promptText>
@@ -569,7 +517,7 @@
         </prompt>
     
         <prompt>
-          <id>eatenRecently</id>
+          <id>eatenRecently2</id>
           <displayType>category</displayType>
           <displayLabel>Eaten since your last survey</displayLabel>
           <promptText>Have you eaten since you completed your last diet survey?</promptText>
@@ -589,8 +537,8 @@
         </prompt>
 
         <prompt>
-          <id>foodWhoAteWith</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodWhoAteWith2</id>
+          <condition>eatenRecently2 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>WhoWith</displayLabel>
           <promptText>Who did you eat with?</promptText>
@@ -628,8 +576,8 @@
 
       
         <prompt>
-           <id>foodSnackMeal</id>
-          <condition>eatenRecently == 1</condition>
+           <id>foodSnackMeal2</id>
+          <condition>eatenRecently2 == 1</condition>
            <displayType>category</displayType>
            <displayLabel>Type</displayLabel>
            <promptText>Was this a snack or a meal?</promptText>
@@ -652,8 +600,8 @@
         </prompt>
 
         <prompt>
-          <id>foodHowPrepared</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodHowPrepared2</id>
+          <condition>eatenRecently2 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>HowPrepared</displayLabel>
           <promptText>How was this food prepared?</promptText>
@@ -695,8 +643,8 @@
         </prompt>
 
         <prompt>
-          <id>foodQuality</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodQuality2</id>
+          <condition>eatenRecently2 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>NutritionalQuality</displayLabel>
           <promptText>Rate the nutritional quality of this meal?</promptText>
@@ -724,8 +672,8 @@
         
         
         <prompt>
-          <id>foodHowHungry</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodHowHungry2</id>
+          <condition>eatenRecently2 == 1</condition>
           <displayType>count</displayType>
           <displayLabel>Hunger</displayLabel>
           <unit>hunger amount</unit>
@@ -759,8 +707,8 @@
 
 
         <prompt>
-          <id>foodHowMuch</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodHowMuch2</id>
+          <condition>eatenRecently2 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>HowMuch</displayLabel>
           <promptText>How much did you eat?</promptText>
@@ -798,7 +746,7 @@
       <anytime>true</anytime>
       <contentList>
         <prompt>
-          <id>mood</id>
+          <id>mood3</id>
           <displayType>category</displayType>
           <displayLabel>How would you describe your mood at this moment</displayLabel>
           <promptText>How would you describe your mood at this moment?</promptText>
@@ -850,67 +798,42 @@
         </prompt>
 
         <prompt>
-          <id>feltStress</id>
-          <displayType>category</displayType>
-          <displayLabel>Stress in last two hours</displayLabel>
-          <promptText>Have you felt stress in the last two hours?</promptText>
-          <promptType>single_choice</promptType>
-          <skippable>true</skippable>
-          <skipLabel>skip</skipLabel>
-          <properties>
-            <property>
-              <key>0</key>
-              <label>No</label>
-            </property>
-            <property>
-              <key>1</key>
-              <label>Yes</label>
-            </property>
-          </properties>
-        </prompt>
-
-        <prompt>
-          <id>howStressed</id>
+          <id>feltStress3</id>
           <displayType>measurement</displayType>
 		  <unit>how stressed</unit>
-          <condition>feltStress == 1</condition>
-          <displayLabel>How stressed</displayLabel>
-          <promptText>How stressed were you, on a scale of 1-5 (with 5 being very stressed)?</promptText>
+          <displayLabel>Felt Stress</displayLabel>
+          <promptText>Have you felt stressed in the last two hours? </promptText>
           <promptType>single_choice</promptType>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
           <properties>
             <property>
               <key>0</key>
-              <label>1</label>
+              <label>Not at all</label>
               <value>1</value>
             </property>
             <property>
               <key>1</key>
-              <label>2</label>
+              <label>Slightly</label>
               <value>2</value>
             </property>
             <property>
               <key>2</key>
-              <label>3</label>
+              <label>Moderately</label>
               <value>3</value>
             </property>
             <property>
               <key>3</key>
-              <label>4</label>
+              <label>Very</label>
               <value>4</value>
             </property>
-            <property>
-              <key>4</key>
-              <label>5</label>
-              <value>5</value>
-            </property> 
            </properties>
         </prompt>
 
+
         <prompt>
-          <id>whatEvent</id>
-          <condition>feltStress == 1</condition>
+          <id>whatEvent3</id>
+          <condition>feltStress3 > 0</condition>
           <displayType>category</displayType>
           <displayLabel>Cause</displayLabel>
           <promptText>What was the cause of your stress?</promptText>
@@ -950,7 +873,7 @@
         </prompt>
     
         <prompt>
-          <id>eatenRecently</id>
+          <id>eatenRecently3</id>
           <displayType>category</displayType>
           <displayLabel>Eaten since your last survey</displayLabel>
           <promptText>Have you eaten since you completed your last diet survey?</promptText>
@@ -970,8 +893,8 @@
         </prompt>
 
         <prompt>
-          <id>foodWhoAteWith</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodWhoAteWith3</id>
+          <condition>eatenRecently3 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>WhoWith</displayLabel>
           <promptText>Who did you eat with?</promptText>
@@ -1009,8 +932,8 @@
 
       
         <prompt>
-           <id>foodSnackMeal</id>
-          <condition>eatenRecently == 1</condition>
+           <id>foodSnackMeal3</id>
+          <condition>eatenRecently3 == 1</condition>
            <displayType>category</displayType>
            <displayLabel>Type</displayLabel>
            <promptText>Was this a snack or a meal?</promptText>
@@ -1033,8 +956,8 @@
         </prompt>
 
         <prompt>
-          <id>foodHowPrepared</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodHowPrepared3</id>
+          <condition>eatenRecently3 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>HowPrepared</displayLabel>
           <promptText>How was this food prepared?</promptText>
@@ -1076,8 +999,8 @@
         </prompt>
 
         <prompt>
-          <id>foodQuality</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodQuality3</id>
+          <condition>eatenRecently3 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>NutritionalQuality</displayLabel>
           <promptText>Rate the nutritional quality of this meal?</promptText>
@@ -1105,8 +1028,8 @@
         
         
         <prompt>
-          <id>foodHowHungry</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodHowHungry3</id>
+          <condition>eatenRecently3 == 1</condition>
           <displayType>count</displayType>
           <displayLabel>Hunger</displayLabel>
           <unit>hunger amount</unit>
@@ -1140,8 +1063,8 @@
 
 
         <prompt>
-          <id>foodHowMuch</id>
-          <condition>eatenRecently == 1</condition>
+          <id>foodHowMuch3</id>
+          <condition>eatenRecently3 == 1</condition>
           <displayType>category</displayType>
           <displayLabel>HowMuch</displayLabel>
           <promptText>How much did you eat?</promptText>
@@ -1498,5 +1421,111 @@
       </contentList>
     
     </survey>
+
+    <survey>
+      <id>foodButton</id>
+      <title>Stress</title>
+      <description>Not displayed</description>
+      <submitText>Not displayed</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+      
+        <prompt>
+          <id>foodPhoto</id>
+          <displayType>event</displayType>
+          <displayLabel>photo</displayLabel>
+          <promptText>Take a picture of your food</promptText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptType>photo</promptType>
+          <properties>
+            <property>
+              <key>res</key>
+              <label>720</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>foodTag</id>
+          <displayType>category</displayType>
+          <displayLabel>Type</displayLabel>
+          <promptText>Tag this image</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Snack</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Meal</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Planned</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Unplanned</label>
+              <value>3</value>
+            </property>
+            <property>
+              <key>4</key>
+              <label>I was very hungry before eating.</label>
+              <value>4</value>
+            </property>
+            <property>
+              <key>5</key>
+              <label>I am uncomfortably full.</label>
+              <value>5</value>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+      </contentList>
+    </survey>
+
+    <survey>
+      <id>stressButton</id>
+      <title>Stress</title>
+      <description>Not displayed</description>
+      <submitText>Not displayed</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+      
+        <prompt>
+          <id>stress</id>
+          <displayType>metadata</displayType>
+          <displayLabel>Stress</displayLabel>
+                    
+          <promptText>Not displayed</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>1</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+        
+      </contentList>
+    
+    </survey>
+
   </surveys>
 </campaign>
