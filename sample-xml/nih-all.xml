@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
-  <campaignUrn>urn:andwellness:moms</campaignUrn>
-  <campaignName>Moms</campaignName>
+  <campaignUrn>urn:andwellness:moms3</campaignUrn>
+  <campaignName>Moms3</campaignName>
   <serverUrl>https://heart.andwellness.org</serverUrl>
 
   <surveys>
@@ -126,7 +126,7 @@
           <displayType>category</displayType>
           <displayLabel>Cause</displayLabel>
           <promptText>What was the cause of your stress?</promptText>
-          <promptType>single_choice</promptType>
+          <promptType>multi_choice</promptType>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
           <properties>
@@ -1201,7 +1201,7 @@
           <condition>didYouExercise == 1</condition>
           <displayType>count</displayType>
           <displayLabel>Time light exercise</displayLabel>
-          <promptText>How many minutes of light exercise did you do today? (No increase in breathing or heart rate.)</promptText>
+          <promptText>How many minutes of light exercise did you do today? (No increase in breathing or heart rate, e.g. stretching)</promptText>
           <promptType>number</promptType>
           <properties>
             <property>
@@ -1223,7 +1223,7 @@
           <condition>didYouExercise == 1</condition>
           <displayType>count</displayType>
           <displayLabel>Time moderate exercise</displayLabel>
-          <promptText>How many minutes of moderate exercise did you do today? (Mild increase in breathing or heart rate.)</promptText>
+          <promptText>How many minutes of moderate exercise did you do today? (Small increase in breathing or heart rate, e.g. fast walking)</promptText>
           <promptType>number</promptType>
           <properties>
             <property>
@@ -1245,7 +1245,7 @@
           <condition>didYouExercise == 1</condition>
           <displayType>count</displayType>
           <displayLabel>Time vigorous exercise</displayLabel>
-          <promptText>How many minutes of vigorous exercise did you do today? (Significant increase in breathing or heart rate.)</promptText>
+          <promptText>How many minutes of vigorous exercise did you do today? (Significant increase in breathing or heart rate, e.g. running)</promptText>
           <promptType>number</promptType>
           <properties>
             <property>
@@ -1258,6 +1258,51 @@
             </property>
           </properties>
           <default>0</default>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>typeExercise</id>
+          <condition>didYouExercise == 1</condition>
+          <displayType>category</displayType>
+          <displayLabel>Type of exercise</displayLabel>
+          <promptText>Describe the types of exercise you did today?</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Walk</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Run</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Yoga</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Outdoor cycling/sports</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Indoor sports</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Gym</label>
+            </property>
+            <property>
+              <key>6</key>
+              <label>Swim</label>
+            </property>
+            <property>
+              <key>7</key>
+              <label>Other</label>
+            </property>
+          </properties>
           <skippable>true</skippable>
           <skipLabel>skip</skipLabel>
         </prompt>
@@ -1424,7 +1469,7 @@
 
     <survey>
       <id>foodButton</id>
-      <title>Stress</title>
+      <title>Food</title>
       <description>Not displayed</description>
       <submitText>Not displayed</submitText>
       <showSummary>false</showSummary>
@@ -1521,6 +1566,7 @@
             </property>
           </properties>
           <skippable>false</skippable>
+          <default>*</default>
         </prompt>
         
       </contentList>
