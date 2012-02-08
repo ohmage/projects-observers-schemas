@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignUrn>urn:ohmage:instantrecess</campaignUrn>
+  <campaignName>InstantRecess</campaignName>
+  <serverUrl>https://heart.andwellness.org</serverUrl>
+
+  <surveys>
+    <survey>
+      <id>RecessStart</id>
+      <title>RecessStart</title>
+      <description>Please answer the following questions at the start of the break.</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>true</showSummary>
+      <editSummary>true</editSummary>
+      <summaryText>Response summary.</summaryText>
+      <anytime>true</anytime>
+    
+      <contentList>
+
+        <prompt>
+          <id>participantsStart</id>
+          <displayType>event</displayType>
+          <displayLabel>photo</displayLabel>
+          <promptText>Please take a picture of the participants at the start of the break.</promptText>
+          <abbreviatedText>Break Start</abbreviatedText>
+          <promptType>photo</promptType>
+          <properties>
+            <property>
+              <key>res</key>
+              <label>720</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+
+        <prompt>
+          <id>numberParticipants</id>
+          <displayType>count</displayType>
+          <displayLabel>Number of participants</displayLabel>
+          <promptText>How many participants are there?</promptText>
+          <abbreviatedText>Number participants</abbreviatedText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>50</label>
+            </property>
+          </properties>
+          <default>5</default>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>LeaderName</id>
+          <displayType>category</displayType>
+          <displayLabel>LeaderName</displayLabel>
+          <promptText>What is the break leader's name?</promptText>
+          <abbreviatedText>Leader name</abbreviatedText>
+          <promptType>text</promptType>
+          <default></default>
+          <skippable>false</skippable>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>50</label>
+            </property>
+          </properties>
+        </prompt>
+
+        <prompt>
+          <id>LeaderId</id>
+          <displayType>category</displayType>
+          <displayLabel>LeaderId</displayLabel>
+          <promptText>What is the break leader's ID?</promptText>
+          <abbreviatedText>Leader ID</abbreviatedText>
+          <promptType>text</promptType>
+          <default></default>
+          <skippable>false</skippable>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>50</label>
+            </property>
+          </properties>
+        </prompt>
+
+        <prompt>
+          <id>TeamName</id>
+          <displayType>category</displayType>
+          <displayLabel>TeamName</displayLabel>
+          <promptText>What is the break team name?</promptText>
+          <abbreviatedText>Team name</abbreviatedText>
+          <promptType>text</promptType>
+          <default></default>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>50</label>
+            </property>
+          </properties>
+        </prompt>
+
+
+        <prompt>
+          <id>videoUsed</id>
+          <displayType>category</displayType>
+          <displayLabel>Video used</displayLabel>
+          <promptText>Was any video/audio used?</promptText>
+          <abbreviatedText>Video/audio used</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <skippable>false</skippable>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+        </prompt>
+
+        <prompt>
+          <id>videoKeyWords</id>
+          <condition>videoUsed == 1</condition>
+          <displayType>category</displayType>
+          <displayLabel>KeyWords</displayLabel>
+          <promptText>Please enter any key words that can be used to search for the video.</promptText>
+          <abbreviatedText>Key words</abbreviatedText>
+          <promptType>text</promptType>
+          <default></default>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>100</label>
+            </property>
+          </properties>
+        </prompt>
+
+        <prompt>
+          <id>AdditionalInformation</id>
+          <displayType>category</displayType>
+          <displayLabel>AdditionalInformation</displayLabel>
+          <promptText>Anything else you would like to add?</promptText>
+          <abbreviatedText>Additional information</abbreviatedText>
+          <promptType>text</promptType>
+          <default></default>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>200</label>
+            </property>
+          </properties>
+        </prompt>
+
+      </contentList>
+    </survey>
+
+    <survey>
+      <id>RecessEnd</id>
+      <title>RecessEnd</title>
+      <description>Please answer the following questions after the break.</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>true</showSummary>
+      <editSummary>true</editSummary>
+      <summaryText>Response summary.</summaryText>
+      <anytime>true</anytime>
+    
+      <contentList>
+
+        <prompt>
+          <id>participantsEnd</id>
+          <displayType>event</displayType>
+          <displayLabel>photo</displayLabel>
+          <promptText>Please take a picture of the participants at the end of the break.</promptText>
+          <abbreviatedText>Break End</abbreviatedText>
+          <promptType>photo</promptType>
+          <properties>
+            <property>
+              <key>res</key>
+              <label>720</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+      </contentList>
+    </survey>
+  </surveys>
+</campaign>
