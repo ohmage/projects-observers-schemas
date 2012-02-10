@@ -6,8 +6,8 @@
 
   <surveys>
     <survey>
-      <id>RecessStart</id>
-      <title>RecessStart</title>
+      <id>Recess</id>
+      <title>Recess</title>
       <description>Please answer the following questions at the end of the recess break.</description>
       <submitText>Thank you for completing this survey.</submitText>
       <showSummary>true</showSummary>
@@ -18,11 +18,11 @@
       <contentList>
 
         <prompt>
-          <id>participantsStart</id>
+          <id>participants</id>
           <displayType>event</displayType>
           <displayLabel>photo</displayLabel>
           <promptText>Take a photo of participants. (Minimum shoes/feet; group shot preferred.)</promptText>
-          <abbreviatedText>Recess start photo</abbreviatedText>
+          <abbreviatedText>Recess photo</abbreviatedText>
           <promptType>photo</promptType>
           <properties>
             <property>
