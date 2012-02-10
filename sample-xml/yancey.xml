@@ -21,8 +21,8 @@
           <id>participantsStart</id>
           <displayType>event</displayType>
           <displayLabel>photo</displayLabel>
-          <promptText>Please take a picture of the participants at the start of the break.</promptText>
-          <abbreviatedText>Break Start</abbreviatedText>
+          <promptText>Take a photo of participants. (Minimum shoes/feet; group shot preferred.)</promptText>
+          <abbreviatedText>Recess start photo</abbreviatedText>
           <promptType>photo</promptType>
           <properties>
             <property>
@@ -30,10 +30,70 @@
               <label>720</label>
             </property>
           </properties>
-          <skippable>true</skippable>
-          <skipLabel>skip</skipLabel>
+          <skippable>false</skippable>
         </prompt>
 
+        <prompt>
+          <id>leaderPhoto</id>
+          <displayType>event</displayType>
+          <displayLabel>photo</displayLabel>
+          <promptText>Take a profile photo of the Sparkplug or recess leader.</promptText>
+          <abbreviatedText>Leader photo</abbreviatedText>
+          <promptType>photo</promptType>
+          <properties>
+            <property>
+              <key>res</key>
+              <label>720</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>LeaderName</id>
+          <displayType>category</displayType>
+          <displayLabel>LeaderName</displayLabel>
+          <promptText>Recess leader's sign-in/profile name.</promptText>
+          <abbreviatedText>Leader name</abbreviatedText>
+          <promptType>text</promptType>
+          <default></default>
+          <skippable>false</skippable>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>50</label>
+            </property>
+          </properties>
+        </prompt>
+
+        <prompt>
+          <id>TeamName</id>
+          <displayType>category</displayType>
+          <displayLabel>TeamName</displayLabel>
+          <promptText>Recess team name.</promptText>
+          <abbreviatedText>Team name</abbreviatedText>
+          <promptType>single_choice_custom</promptType>
+          <skippable>false</skippable>
+        </prompt>
+
+      </contentList>
+    </survey>
+
+    <survey>
+      <id>RecessEnd</id>
+      <title>RecessEnd</title>
+      <description>Please answer the following questions after the break.</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>true</showSummary>
+      <editSummary>true</editSummary>
+      <summaryText>Response summary.</summaryText>
+      <anytime>true</anytime>
+    
+      <contentList>
 
         <prompt>
           <id>numberParticipants</id>
@@ -57,101 +117,71 @@
         </prompt>
 
         <prompt>
-          <id>LeaderName</id>
-          <displayType>category</displayType>
-          <displayLabel>LeaderName</displayLabel>
-          <promptText>What is the break leader's name?</promptText>
-          <abbreviatedText>Leader name</abbreviatedText>
-          <promptType>text</promptType>
-          <default></default>
-          <skippable>false</skippable>
+          <id>recessDuration</id>
+          <displayType>count</displayType>
+          <displayLabel>Recess duration</displayLabel>
+          <promptText>Duration of recess (in minutes).</promptText>
+          <abbreviatedText>Recess duration</abbreviatedText>
+          <promptType>number</promptType>
           <properties>
             <property>
               <key>min</key>
-              <label>1</label>
+              <label>0</label>
             </property>
             <property>
               <key>max</key>
               <label>50</label>
             </property>
           </properties>
+          <default>10</default>
+          <skippable>false</skippable>
         </prompt>
 
         <prompt>
-          <id>LeaderId</id>
+          <id>RecessType</id>
           <displayType>category</displayType>
-          <displayLabel>LeaderId</displayLabel>
-          <promptText>What is the break leader's ID?</promptText>
-          <abbreviatedText>Leader ID</abbreviatedText>
-          <promptType>text</promptType>
-          <default></default>
+          <displayLabel>RecessType</displayLabel>
+          <promptText>What type of recess did you complete today?</promptText>
+          <abbreviatedText>Recess type</abbreviatedText>
+          <promptType>single_choice_custom</promptType>
           <skippable>false</skippable>
           <properties>
-            <property>
-              <key>min</key>
-              <label>1</label>
-            </property>
-            <property>
-              <key>max</key>
-              <label>50</label>
-            </property>
-          </properties>
-        </prompt>
-
-        <prompt>
-          <id>TeamName</id>
-          <displayType>category</displayType>
-          <displayLabel>TeamName</displayLabel>
-          <promptText>What is the break team name?</promptText>
-          <abbreviatedText>Team name</abbreviatedText>
-          <promptType>text</promptType>
-          <default></default>
-          <skippable>true</skippable>
-          <skipLabel>skip</skipLabel>
-          <properties>
-            <property>
-              <key>min</key>
-              <label>1</label>
-            </property>
-            <property>
-              <key>max</key>
-              <label>50</label>
-            </property>
-          </properties>
-        </prompt>
-
-
-        <prompt>
-          <id>videoUsed</id>
-          <displayType>category</displayType>
-          <displayLabel>Video used</displayLabel>
-          <promptText>Was any video/audio used?</promptText>
-          <abbreviatedText>Video/audio used</abbreviatedText>
-          <promptType>single_choice</promptType>
-          <skippable>false</skippable>
-          <properties>
-            <property>
-              <key>0</key>
-              <label>No</label>
-            </property>
             <property>
               <key>1</key>
-              <label>Yes</label>
+              <label>Instant Recess DVD</label>
+              <value>1</value>
             </property>
-          </properties>
+            <property>
+              <key>2</key>
+              <label>Instant Recess CD</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Walking group</label>
+              <value>3</value>
+            </property>
+           </properties>
         </prompt>
 
         <prompt>
-          <id>videoKeyWords</id>
-          <condition>videoUsed == 1</condition>
+		  <condition>(RecessType == 1) or (RecessType == 2)</condition>
+          <id>InstantRecessType</id>
           <displayType>category</displayType>
-          <displayLabel>KeyWords</displayLabel>
-          <promptText>Please enter any key words that can be used to search for the video.</promptText>
-          <abbreviatedText>Key words</abbreviatedText>
-          <promptType>text</promptType>
-          <default></default>
-          <skippable>true</skippable>
-          <skipLabel>skip</skipLabel>
+          <displayLabel>IRType</displayLabel>
+          <promptText>Describe the Instant Recess DVD/CD.</promptText>
+          <abbreviatedText>Recess type</abbreviatedText>
+          <promptType>single_choice_custom</promptType>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>recessSuccess</id>
+          <displayType>count</displayType>
+          <displayLabel>Recess success</displayLabel>
+          <promptText>On a scale of 1-5 rate the success of today's recess.</promptText>
+          <abbreviatedText>Recess success</abbreviatedText>
+          <promptType>number</promptType>
           <properties>
             <property>
               <key>min</key>
@@ -159,16 +189,18 @@
             </property>
             <property>
               <key>max</key>
-              <label>100</label>
+              <label>5</label>
             </property>
           </properties>
+          <default>3</default>
+          <skippable>false</skippable>
         </prompt>
 
         <prompt>
           <id>AdditionalInformation</id>
           <displayType>category</displayType>
           <displayLabel>AdditionalInformation</displayLabel>
-          <promptText>Anything else you would like to add?</promptText>
+          <promptText>How did recess go today (optional)?</promptText>
           <abbreviatedText>Additional information</abbreviatedText>
           <promptType>text</promptType>
           <default></default>
@@ -185,39 +217,8 @@
             </property>
           </properties>
         </prompt>
-
       </contentList>
     </survey>
 
-    <survey>
-      <id>RecessEnd</id>
-      <title>RecessEnd</title>
-      <description>Please answer the following questions after the break.</description>
-      <submitText>Thank you for completing this survey.</submitText>
-      <showSummary>true</showSummary>
-      <editSummary>true</editSummary>
-      <summaryText>Response summary.</summaryText>
-      <anytime>true</anytime>
-    
-      <contentList>
-
-        <prompt>
-          <id>participantsEnd</id>
-          <displayType>event</displayType>
-          <displayLabel>photo</displayLabel>
-          <promptText>Please take a picture of the participants at the end of the break.</promptText>
-          <abbreviatedText>Break End</abbreviatedText>
-          <promptType>photo</promptType>
-          <properties>
-            <property>
-              <key>res</key>
-              <label>720</label>
-            </property>
-          </properties>
-          <skippable>true</skippable>
-          <skipLabel>skip</skipLabel>
-        </prompt>
-      </contentList>
-    </survey>
   </surveys>
 </campaign>
