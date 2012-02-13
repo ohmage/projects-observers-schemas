@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
   <campaignUrn>urn:ohmage:instantrecess</campaignUrn>
-  <campaignName>InstantRecess2</campaignName>
+  <campaignName>InstantRecess</campaignName>
   <serverUrl>https://heart.andwellness.org</serverUrl>
 
   <surveys>
