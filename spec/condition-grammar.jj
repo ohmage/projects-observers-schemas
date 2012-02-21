@@ -1,5 +1,5 @@
 PARSER_BEGIN( ConditionParser )
-package org.andwellness.grammar.parser;
+package org.ohmage.config.grammar.parser;
 public class ConditionParser {
 
      public static void main(String[] args) {
@@ -33,4 +33,4 @@ void value() : {} { <TEXT> }
 void conjunction() : {} { "and" | "or" }
 
 SKIP    : { " " | "\t" | "\n" | "\r" }
-TOKEN   : { < TEXT : ( ["a" - "z", "A" - "Z", "0" - "9", "_"] )+ > }
+TOKEN   : { < TEXT : ( ["a" - "z", "A" - "Z", "0" - "9", "_", "-"] )+ > }
