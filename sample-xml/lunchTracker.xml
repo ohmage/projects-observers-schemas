@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignUrn>urn:campaign:ohmage:lunch_tracker</campaignUrn>
+  <campaignName>Lunch Tracker!</campaignName>
+  <serverUrl>https://www.example.com</serverUrl>
+  
+  <surveys>
+    <survey>
+      <id>lunchTracker</id>
+      <title>Track Your Lunch</title>
+      <description>This survey allows you to track your lunching behaviors.</description>
+      <submitText>Snack</submitText>
+      <showSummary>true</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Have a great afternoon!</summaryText>
+      <anytime>true</anytime>
+    
+      <contentList>
+
+        <prompt>
+          <id>lunchTimestamp</id>
+          <displayType>event</displayType>
+          <displayLabel>Lunch Time</displayLabel>
+	      <unit/>
+          <promptText>What time are you having your lunch?</promptText>
+          <abbreviatedText>Lunch Time</abbreviatedText>
+          <promptType>timestamp</promptType>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>lunchPhoto</id>
+          <displayType>event</displayType>
+          <displayLabel>Take a Picture</displayLabel>
+	      <unit/>
+          <promptText>Take a photo of your lunch.</promptText>
+          <abbreviatedText>Take a photo of your lunch.</abbreviatedText>
+          <promptType>photo</promptType>
+          <properties>
+            <property>
+              <key>res</key>
+              <label>720</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>didYouPackYourLunch</id>
+          <displayType>event</displayType>
+          <displayLabel>Did You Bring Your Lunch From Home</displayLabel>
+	      <unit/>
+          <promptText>Did you bring your lunch from home?</promptText>
+          <abbreviatedText>Did you bring your lunch from home?</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>lunchFromHomeBehaviorReinforcement</id>
+          <displayType>event</displayType>
+          <displayLabel>Congrats</displayLabel>
+	      <unit/>
+          <promptText>Congratulations! It's often better for your waist, your wallet and the environment when you pack a lunch.</promptText>
+          <abbreviatedText>Congrats</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Seeing this message makes me feel rewarded</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Seeing this message has no emotional or intellectual impact</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Seeing this message makes me annoyed</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+          <condition>didYouPackYourLunch == 1</condition>
+        </prompt>
+
+        <prompt>
+          <id>boughtLunchBehaviorReinforcement</id>
+          <displayType>event</displayType>
+          <displayLabel>Pack Lunch Reminder</displayLabel>
+	      <unit/>
+          <promptText>It's often better for your waist, your wallet and the environment when you pack a lunch.</promptText>
+          <abbreviatedText>Pack Lunch Reminder</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Seeing this message has reminded me to pack a lunch more often in the future</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Seeing this message has no emotional or intellectual impact</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Seeing this message makes me annoyed</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+          <condition>didYouPackYourLunch == 0</condition>
+        </prompt>
+
+        <prompt>
+          <id>packedLunchMoneySaved</id>
+          <displayType>event</displayType>
+          <displayLabel>Money Saved</displayLabel>
+	      <unit/>
+          <promptText>How much money do you think you saved by bringing your lunch today?</promptText>
+          <abbreviatedText>Money Saved</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>$0.00</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>$0.01 - $2.50</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>$2.51 - $5.00</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>More than $5.00</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+          <condition>didYouPackYourLunch == 1</condition>
+        </prompt>
+
+        <prompt>
+          <id>boughtLunchMoneySpent</id>
+          <displayType>event</displayType>
+          <displayLabel>Money Spent</displayLabel>
+	      <unit/>
+          <promptText>How much did your lunch cost?</promptText>
+          <abbreviatedText>Money Spent</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>$0.01 - $2.50</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>$2.51 - $5.00</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>$5.01 - $7.50</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>$7.51 - $10.00</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>More than $10.00</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+          <condition>didYouPackYourLunch == 0</condition>
+        </prompt>
+
+        <prompt>
+          <id>foodGroupsRepresented</id>
+          <displayType>event</displayType>
+          <displayLabel>Food Groups Represented</displayLabel>
+	      <unit/>
+          <promptText>What food groups are present in your lunch?</promptText>
+          <abbreviatedText>Food Groups Represented</abbreviatedText>
+          <promptType>multi_choice_custom</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Grains (Whole wheat bread and rolls, whole wheat pasta, English muffin, pita bread, bagel, cereals, grits, oatmeal, brown rice, unsalted pretzels and popcorn)</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Fruits (Apples, apricots, bananas, dates, grapes, oranges, grapefruit, grapefruit juice, mangoes, melons, peaches, pineapples, raisins, strawberries, tangerines, and 100% fruit  juice)</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Vegetables (Broccoli, carrots, collards, green beans, green peas, kale, lima beans, potatoes, spinach, squash, sweet potatoes, tomatoes)</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Fat-free or low-fat milk and milk products (Fat-free (skim) or low-fat (1%) milk or buttermilk, fat-free, low-fat, or reduced-fat cheese, fat-free or low-fat regular or frozen yogurt)</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Lean meats, poultry, and fish (Beef, poultry, pork, game meats, fish, shellfish  Select only lean; trim away visible fats; broil, roast, or poach; remove skin from poultry)</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Nuts, seeds, and legumes (Almonds, hazelnuts, mixed nuts, peanuts, walnuts, sunflower seeds, peanut butter, kidney beans, lentils, split peas)</label>
+            </property>
+          </properties>
+          <skipLabel>Skip</skipLabel>
+          <skippable>true</skippable>
+        </prompt>
+
+        <prompt>
+          <id>typeOfDrink</id>
+          <displayType>event</displayType>
+          <displayLabel>Drink</displayLabel>
+	      <unit/>
+          <promptText>If you had a drink with your meal, what was it?</promptText>
+          <abbreviatedText>Drink</abbreviatedText>
+          <promptType>single_choice_custom</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Water</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>howManyCalories</id>
+          <displayType>event</displayType>
+          <displayLabel>Calories</displayLabel>
+	      <unit/>
+          <promptText>Can you estimate how many calories were in your meal?</promptText>
+          <abbreviatedText>Calories</abbreviatedText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>5000</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>whoDidYouEatWith</id>
+          <displayType>category</displayType>
+          <displayLabel>Who Did You Eat With</displayLabel>
+	      <unit/>
+          <promptText>Who did you eat with?</promptText>
+          <abbreviatedText>Who did you eat with?</abbreviatedText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Alone</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Family</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Friends</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Classmates</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Co-workers</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Other</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>trySomethingNew</id>
+          <displayType>category</displayType>
+          <displayLabel>Try Something New</displayLabel>
+	      <unit/>
+          <promptText>Did you try something new today?</promptText>
+          <abbreviatedText>Did you try something new today?</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>whatWasTheNewThing</id>
+          <displayType>category</displayType>
+          <displayLabel>What Was It</displayLabel>
+	      <unit/>
+          <promptText>What was the new item?</promptText>
+          <abbreviatedText>What was the new item?</abbreviatedText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+          <condition>trySomethingNew == 1</condition>
+        </prompt>
+
+        <prompt>
+          <id>comments</id>
+          <displayType>category</displayType>
+          <displayLabel>Comments</displayLabel>
+	      <unit/>
+          <promptText>You can add any comments about your lunch here.</promptText>
+          <abbreviatedText>Comments</abbreviatedText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>500</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+      </contentList>
+    
+    </survey>
+  </surveys>
+</campaign>
