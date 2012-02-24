@@ -21,7 +21,6 @@
           <id>lunchTimestamp</id>
           <displayType>event</displayType>
           <displayLabel>Lunch Time</displayLabel>
-	      <unit/>
           <promptText>What time are you having your lunch?</promptText>
           <abbreviatedText>Lunch Time</abbreviatedText>
           <promptType>timestamp</promptType>
@@ -33,7 +32,6 @@
           <id>lunchPhoto</id>
           <displayType>event</displayType>
           <displayLabel>Take a Picture</displayLabel>
-	      <unit/>
           <promptText>Take a photo of your lunch.</promptText>
           <abbreviatedText>Take a photo of your lunch.</abbreviatedText>
           <promptType>photo</promptType>
@@ -51,7 +49,6 @@
           <id>didYouPackYourLunch</id>
           <displayType>event</displayType>
           <displayLabel>Did You Bring Your Lunch From Home</displayLabel>
-	      <unit/>
           <promptText>Did you bring your lunch from home?</promptText>
           <abbreviatedText>Did you bring your lunch from home?</abbreviatedText>
           <promptType>single_choice</promptType>
@@ -73,7 +70,6 @@
           <id>lunchFromHomeBehaviorReinforcement</id>
           <displayType>event</displayType>
           <displayLabel>Congrats</displayLabel>
-	      <unit/>
           <promptText>Congratulations! It's often better for your waist, your wallet and the environment when you pack a lunch.</promptText>
           <abbreviatedText>Congrats</abbreviatedText>
           <promptType>single_choice</promptType>
@@ -100,7 +96,6 @@
           <id>boughtLunchBehaviorReinforcement</id>
           <displayType>event</displayType>
           <displayLabel>Pack Lunch Reminder</displayLabel>
-	      <unit/>
           <promptText>It's often better for your waist, your wallet and the environment when you pack a lunch.</promptText>
           <abbreviatedText>Pack Lunch Reminder</abbreviatedText>
           <promptType>single_choice</promptType>
@@ -127,7 +122,6 @@
           <id>packedLunchMoneySaved</id>
           <displayType>event</displayType>
           <displayLabel>Money Saved</displayLabel>
-	      <unit/>
           <promptText>How much money do you think you saved by bringing your lunch today?</promptText>
           <abbreviatedText>Money Saved</abbreviatedText>
           <promptType>single_choice</promptType>
@@ -158,7 +152,6 @@
           <id>boughtLunchMoneySpent</id>
           <displayType>event</displayType>
           <displayLabel>Money Spent</displayLabel>
-	      <unit/>
           <promptText>How much did your lunch cost?</promptText>
           <abbreviatedText>Money Spent</abbreviatedText>
           <promptType>single_choice</promptType>
@@ -193,7 +186,6 @@
           <id>foodGroupsRepresented</id>
           <displayType>event</displayType>
           <displayLabel>Food Groups Represented</displayLabel>
-	      <unit/>
           <promptText>What food groups are present in your lunch?</promptText>
           <abbreviatedText>Food Groups Represented</abbreviatedText>
           <promptType>multi_choice_custom</promptType>
@@ -231,7 +223,6 @@
           <id>typeOfDrink</id>
           <displayType>event</displayType>
           <displayLabel>Drink</displayLabel>
-	      <unit/>
           <promptText>If you had a drink with your meal, what was it?</promptText>
           <abbreviatedText>Drink</abbreviatedText>
           <promptType>single_choice_custom</promptType>
@@ -249,7 +240,6 @@
           <id>howManyCalories</id>
           <displayType>event</displayType>
           <displayLabel>Calories</displayLabel>
-	      <unit/>
           <promptText>Can you estimate how many calories were in your meal?</promptText>
           <abbreviatedText>Calories</abbreviatedText>
           <promptType>number</promptType>
@@ -271,7 +261,6 @@
           <id>whoDidYouEatWith</id>
           <displayType>category</displayType>
           <displayLabel>Who Did You Eat With</displayLabel>
-	      <unit/>
           <promptText>Who did you eat with?</promptText>
           <abbreviatedText>Who did you eat with?</abbreviatedText>
           <promptType>multi_choice</promptType>
@@ -309,7 +298,6 @@
           <id>trySomethingNew</id>
           <displayType>category</displayType>
           <displayLabel>Try Something New</displayLabel>
-	      <unit/>
           <promptText>Did you try something new today?</promptText>
           <abbreviatedText>Did you try something new today?</abbreviatedText>
           <promptType>single_choice</promptType>
@@ -331,7 +319,6 @@
           <id>whatWasTheNewThing</id>
           <displayType>category</displayType>
           <displayLabel>What Was It</displayLabel>
-	      <unit/>
           <promptText>What was the new item?</promptText>
           <abbreviatedText>What was the new item?</abbreviatedText>
           <promptType>text</promptType>
@@ -354,7 +341,6 @@
           <id>comments</id>
           <displayType>category</displayType>
           <displayLabel>Comments</displayLabel>
-	      <unit/>
           <promptText>You can add any comments about your lunch here.</promptText>
           <abbreviatedText>Comments</abbreviatedText>
           <promptType>text</promptType>
