@@ -1,0 +1,51 @@
+{
+    "type":"object",
+    "doc":"Each point is an object.",
+    "schema":[
+        {
+            "name":"date_started",
+            "type":"string",
+            "doc":"The date a medication was started."
+        },
+        {
+            "name":"date_discontinued",
+            "type":"string",
+            "doc":"The date a medication was discontinued."
+        },
+        {
+            "name":"name",
+            "type":"string",
+            "doc":"The name of the medication."
+        },
+        {
+            "name":"dose",
+            "type":"string",
+            "doc":"The medication dosage."
+        },
+        {
+            "name":"frequency",
+            "type":"string",
+            "doc":"The frequency at which the medication is taken."
+        },
+        {
+            "name":"strength",
+            "type":"string",
+            "doc":"The strength of the medication."
+        },
+        {
+            "name":"note",
+            "type":"string",
+            "doc":"A general note for this entry."
+        },
+        {
+            "name":"prescribed",
+            "type":"string",
+            "doc":"Information about the prescription."
+        },
+        {
+            "name":"how_taken",
+            "type":"string",
+            "doc":"How the medication is ingested."
+        }
+    ]
+}

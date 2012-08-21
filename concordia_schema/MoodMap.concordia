@@ -1,0 +1,55 @@
+{
+    "type":"object",
+    "doc":"Each point is an object.",
+    "schema":[
+        {
+            "name":"device_id",
+            "type":"string",
+            "doc":"The unique ID for the device."
+        },
+        {
+            "name":"participant",
+            "type":"string",
+            "doc":"The participant's MoodMap username."
+        },
+        {
+            "name":"packet",
+            "type":"array",
+            "doc":"The events that took place during this interaction.",
+            "schema":{
+                "type":"object",
+                "schema":[
+                    {
+                        "name":"time",
+                        "type":"string",
+                        "doc":"An ISO-8601 timestamp without the timezone."
+                    },
+                    {
+                        "name":"location",
+                        "type":"string",
+                        "doc":"The self-reported location of the user."
+                    },
+                    {
+                        "name":"mood_reading",
+                        "type":"array",
+                        "doc":"These are the moods for this location at this reading.",
+                        "schema":{
+                            "type":"object",
+                            "schema":[
+                                {
+                                    "name":"energy",
+                                    "type":"number"
+                                },
+                                {
+                                    "name":"mood",
+                                    "type":"number"
+                                }
+                            ]
+                        },
+                        "optional":true
+                    }
+                ]
+            }
+        }
+    ]
+}
