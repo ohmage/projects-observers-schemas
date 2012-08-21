@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+	<campaignUrn>urn:campaign:kp:GingerWellness</campaignUrn>
+	<campaignName>Ginger.io Wellness Explorer</campaignName>
+	<serverUrl>https://cch.ginger.io/</serverUrl>
+	<surveys>
+		<survey>
+			<id>gbi</id>
+			<title>GBI</title>
+			<description>Your GBI Values.</description>
+			<submitText>Thank you for finishing! This information will help you pay attention to important things in your recovery.</submitText>
+			<showSummary>false</showSummary>
+			<anytime>false</anytime>
+			<contentList>
+				<prompt>
+					<id>gbi_1</id>
+					<displayType>category</displayType>
+					<displayLabel>Interaction Diversity</displayLabel>
+					<promptText>Interaction Diversity</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_2</id>
+					<displayType>category</displayType>
+					<displayLabel>Interaction Diversity During Day</displayLabel>
+					<promptText>Interaction Diversity During Day</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_3</id>
+					<displayType>category</displayType>
+					<displayLabel>Interaction Diversity During Night</displayLabel>
+					<promptText>Interaction Diversity During Night</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_4</id>
+					<displayType>category</displayType>
+					<displayLabel>Interaction Diversity on Weekdays</displayLabel>
+					<promptText>Interaction Diversity on Weekdays</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_5</id>
+					<displayType>category</displayType>
+					<displayLabel>Interaction Diversity During Day on Weekdays</displayLabel>
+					<promptText>Interaction Diversity During Day on Weekdays</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_6</id>
+					<displayType>category</displayType>
+					<displayLabel>Interaction Diversity During Night on Weekdays</displayLabel>
+					<promptText>Interaction Diversity During Night on Weekdays</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_7</id>
+					<displayType>category</displayType>
+					<displayLabel>Interaction Diversity on Weekends</displayLabel>
+					<promptText>Interaction Diversity on Weekends</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_8</id>
+					<displayType>category</displayType>
+					<displayLabel>Interaction Diversity During Day on Weekends</displayLabel>
+					<promptText>Interaction Diversity During Day on Weekends</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_9</id>
+					<displayType>category</displayType>
+					<displayLabel>Interaction Diversity During Night on Weekends</displayLabel>
+					<promptText>Interaction Diversity During Night on Weekends</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_10</id>
+					<displayType>category</displayType>
+					<displayLabel>Mobility Radius</displayLabel>
+					<promptText>Mobility Radius</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_11</id>
+					<displayType>category</displayType>
+					<displayLabel>Mobility Radius during Day</displayLabel>
+					<promptText>Mobility Radius during Day</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_12</id>
+					<displayType>category</displayType>
+					<displayLabel>Mobility Radius during Night</displayLabel>
+					<promptText>Mobility Radius during Night</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_13</id>
+					<displayType>category</displayType>
+					<displayLabel>Mobility Radius on Weekdays</displayLabel>
+					<promptText>Mobility Radius on Weekdays</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_14</id>
+					<displayType>category</displayType>
+					<displayLabel>Mobility Radius during Day on Weekdays</displayLabel>
+					<promptText>Mobility Radius during Day on Weekdays</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_9999</id>
+					<displayType>category</displayType>
+					<displayLabel>Mobility Radius during Night on Weekdays</displayLabel>
+					<promptText>Mobility Radius during Night on Weekdays</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_16</id>
+					<displayType>category</displayType>
+					<displayLabel>Mobility Radius on Weekends</displayLabel>
+					<promptText>Mobility Radius on Weekends</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_17</id>
+					<displayType>category</displayType>
+					<displayLabel>Mobility Radius during Day on Weekends</displayLabel>
+					<promptText>Mobility Radius during Day on Weekends</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_18</id>
+					<displayType>category</displayType>
+					<displayLabel>Mobility Radius during Night on Weekends</displayLabel>
+					<promptText>Mobility Radius during Night on Weekends</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_19</id>
+					<displayType>category</displayType>
+					<displayLabel>Aggregate Communication</displayLabel>
+					<promptText>Aggregate Communication</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_20</id>
+					<displayType>category</displayType>
+					<displayLabel>Aggregate Communication during Day</displayLabel>
+					<promptText>Aggregate Communication during Day</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_21</id>
+					<displayType>category</displayType>
+					<displayLabel>Aggregate Communication during Night</displayLabel>
+					<promptText>Aggregate Communication during Night</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_22</id>
+					<displayType>category</displayType>
+					<displayLabel>Aggregate Communication on Weekdays</displayLabel>
+					<promptText>Aggregate Communication on Weekdays</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_23</id>
+					<displayType>category</displayType>
+					<displayLabel>Aggregate Communication during Day on Weekdays</displayLabel>
+					<promptText>Aggregate Communication during Day on Weekdays</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_24</id>
+					<displayType>category</displayType>
+					<displayLabel>Aggregate Communication during Night on Weekdays</displayLabel>
+					<promptText>Aggregate Communication during Night on Weekdays</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_25</id>
+					<displayType>category</displayType>
+					<displayLabel>Aggregate Communication on Weekends</displayLabel>
+					<promptText>Aggregate Communication on Weekends</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_26</id>
+					<displayType>category</displayType>
+					<displayLabel>Aggregate Communication during Day on Weekends</displayLabel>
+					<promptText>Aggregate Communication during Day on Weekends</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>gbi_27</id>
+					<displayType>category</displayType>
+					<displayLabel>Aggregate Communication during Night on Weekends</displayLabel>
+					<promptText>Aggregate Communication during Night on Weekends</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>9999</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+			</contentList>
+		</survey>
+		<survey>
+			<id>symptoms_cch</id>
+			<title>Symptoms</title>
+			<description>Please perform your daily assessment.</description>
+			<submitText>Thank you for finishing! This information will help you pay attention to important things in your recovery.</submitText>
+			<showSummary>false</showSummary>
+			<anytime>false</anytime>
+			<contentList>
+				<prompt>
+					<id>symptoms_cch_1</id>
+					<displayType>category</displayType>
+					<displayLabel>Bowel Movements</displayLabel>
+					<promptText>Bowel Movements</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>15</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>symptoms_cch_2</id>
+					<displayType>category</displayType>
+					<displayLabel>Hours of Sleep</displayLabel>
+					<promptText>Hours of Sleep</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>12</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>symptoms_cch_3</id>
+					<displayType>category</displayType>
+					<displayLabel>In the last 24 hours, I experienced...</displayLabel>
+					<promptText>In the last 24 hours, I experienced...</promptText>
+					<promptType>multi_choice</promptType>
+					<properties>
+						<property>
+							<key>1</key>
+							<label>Diarrhea</label>
+						</property>
+						<property>
+							<key>2</key>
+							<label>Bleeding in Stool</label>
+						</property>
+						<property>
+							<key>3</key>
+							<label>Soiling</label>
+						</property>
+						<property>
+							<key>4</key>
+							<label>Fever</label>
+						</property>
+						<property>
+							<key>5</key>
+							<label>Waking for Bowel Movement</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>symptoms_cch_4</id>
+					<displayType>category</displayType>
+					<displayLabel>Stomach Pain</displayLabel>
+					<promptText>Stomach Pain</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>12</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>symptoms_cch_5</id>
+					<displayType>category</displayType>
+					<displayLabel>Tiredness and Fatigue</displayLabel>
+					<promptText>Tiredness and Fatigue</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>12</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>symptoms_cch_6</id>
+					<displayType>category</displayType>
+					<displayLabel>Stress</displayLabel>
+					<promptText>Stress</promptText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>12</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+			</contentList>
+		</survey>
+	</surveys>
+</campaign>

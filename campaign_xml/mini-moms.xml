@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignUrn>urn:andwellness:moms:mini</campaignUrn>
+  <campaignName>Mini-Moms 0.o</campaignName>
+  <serverUrl>https://heart.andwellness.org</serverUrl>
+
+  <surveys>
+    <survey>
+      <id>Morning</id>
+      <title>Morning</title>
+      <description>This is the morning survey.</description>
+      <submitText>Please use the food button on your phone to to take pictures of your food.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+        <prompt>
+          <id>feltStress1</id>
+          <displayType>measurement</displayType>
+          <unit>how stressed</unit>
+          <displayLabel>Felt Stress</displayLabel>
+          <promptText>Have you felt stressed in the last two hours? </promptText>
+          <promptType>single_choice</promptType>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Slightly</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Moderately</label>
+              <value>3</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Very</label>
+              <value>4</value>
+            </property>
+           </properties>
+        </prompt>
+
+        <prompt>
+          <id>foodQuality1</id>
+          <displayType>category</displayType>
+          <displayLabel>NutritionalQuality</displayLabel>
+          <promptText>Rate the nutritional quality of this meal?</promptText>
+          <promptType>single_choice</promptType>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Low</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Medium</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>High</label>
+              <value>2</value>
+            </property>
+          </properties>
+        </prompt>
+
+        <prompt>
+          <id>foodHowMuch1</id>
+          <displayType>category</displayType>
+          <displayLabel>HowMuch</displayLabel>
+          <promptText>How much did you eat?</promptText>
+          <promptType>single_choice</promptType>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Too little / not enough</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Just right</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Too much</label>
+              <value>2</value>
+            </property>
+          </properties>
+        </prompt>
+
+      </contentList>
+    </survey>
+
+        <survey>
+    <id>MidDay</id>
+      <title>Mid Day</title>
+      <description>This is the mid day survey.</description>
+      <submitText>Please use the food button on your phone top to take pictures of your food.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      <contentList>
+        <prompt>
+          <id>feltStress2</id>
+          <displayType>measurement</displayType>
+                  <unit>how stressed</unit>
+          <displayLabel>Felt Stress</displayLabel>
+          <promptText>Have you felt stressed in the last two hours? </promptText>
+          <promptType>single_choice</promptType>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Slightly</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Moderately</label>
+              <value>3</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Very</label>
+              <value>4</value>
+            </property>
+           </properties>
+        </prompt>
+
+        <prompt>
+          <id>foodQuality2</id>
+          <displayType>category</displayType>
+          <displayLabel>NutritionalQuality</displayLabel>
+          <promptText>Rate the nutritional quality of this meal?</promptText>
+          <promptType>single_choice</promptType>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Low</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Medium</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>High</label>
+              <value>2</value>
+            </property>
+          </properties>
+        </prompt>
+
+        <prompt>
+          <id>foodHowMuch2</id>
+          <displayType>category</displayType>
+          <displayLabel>HowMuch</displayLabel>
+          <promptText>How much did you eat?</promptText>
+          <promptType>single_choice</promptType>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Too little / not enough</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Just right</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Too much</label>
+              <value>2</value>
+            </property>
+          </properties>
+        </prompt>
+
+      </contentList>
+    </survey>
+
+        <survey>
+    <id>LateAfternoon</id>
+      <title>Late Afternoon</title>
+      <description>This is the late afternoon survey.</description>
+      <submitText>Please use the food button on your phone top to take pictures of your food.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+      <contentList>
+        <prompt>
+          <id>feltStress3</id>
+          <displayType>measurement</displayType>
+                  <unit>how stressed</unit>
+          <displayLabel>Felt Stress</displayLabel>
+          <promptText>Have you felt stressed in the last two hours? </promptText>
+          <promptType>single_choice</promptType>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Not at all</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Slightly</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Moderately</label>
+              <value>3</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Very</label>
+              <value>4</value>
+            </property>
+           </properties>
+        </prompt>
+
+        <prompt>
+          <id>foodQuality3</id>
+          <displayType>category</displayType>
+          <displayLabel>NutritionalQuality</displayLabel>
+          <promptText>Rate the nutritional quality of this meal?</promptText>
+          <promptType>single_choice</promptType>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Low</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Medium</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>High</label>
+              <value>2</value>
+            </property>
+          </properties>
+        </prompt>
+
+        <prompt>
+          <id>foodHowMuch3</id>
+          <displayType>category</displayType>
+          <displayLabel>HowMuch</displayLabel>
+          <promptText>How much did you eat?</promptText>
+          <promptType>single_choice</promptType>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Too little / not enough</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Just right</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Too much</label>
+              <value>2</value>
+            </property>
+          </properties>
+        </prompt>
+      </contentList>
+    </survey>
+
+
+      <survey>
+      <id>Bedtime</id>
+      <title>Bedtime</title>
+      <description>This is the bedtime survey.</description>
+      <submitText>Please charge your phone tonight. </submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+
+        <prompt>
+          <id>didYouExercise</id>
+          <displayType>category</displayType>
+          <displayLabel>Have you exercised today</displayLabel>
+          <promptText>Have you exercised today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>No</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Yes</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>timeForYourself</id>
+          <displayType>category</displayType>
+          <displayLabel>Time to yourself today</displayLabel>
+          <promptText>How much time did you have to yourself today?</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>None</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>less than 30 minutes</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label> 30 minutes to 1 hour</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label> more than 1 hour </label>
+            </property>
+            <property>
+              <key>4</key>
+              <label> more than 2 hours </label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+      </contentList>
+    
+    </survey>
+
+    <survey>
+      <id>foodButton</id>
+      <title>Food</title>
+      <description>Not displayed</description>
+      <submitText>Not displayed</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+      
+        <prompt>
+          <id>foodPhoto</id>
+          <displayType>event</displayType>
+          <displayLabel>photo</displayLabel>
+          <promptText>Take a picture of your food</promptText>
+          <abbreviatedText>abbreviatedText must not be empty if showSummary on its parent survey is true.</abbreviatedText>
+          <promptType>photo</promptType>
+          <properties>
+            <property>
+              <key>res</key>
+              <label>720</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>foodTag</id>
+          <displayType>category</displayType>
+          <displayLabel>Type</displayLabel>
+          <promptText>Tag this image</promptText>
+          <promptType>multi_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Snack</label>
+              <value>0</value>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Meal</label>
+              <value>1</value>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Planned</label>
+              <value>2</value>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Unplanned</label>
+              <value>3</value>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Very hungry before eating.</label>
+              <value>4</value>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Uncomfortably full after eating.</label>
+              <value>5</value>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>skip</skipLabel>
+        </prompt>
+      </contentList>
+    </survey>
+
+    <survey>
+      <id>stressButton</id>
+      <title>Stress</title>
+      <description>Not displayed</description>
+      <submitText>Not displayed</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+      
+        <prompt>
+          <id>stress</id>
+          <displayType>metadata</displayType>
+          <displayLabel>Stress</displayLabel>
+                    
+          <promptText>Not displayed</promptText>
+          <promptType>text</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>1</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+          <default>*</default>
+        </prompt>
+        
+      </contentList>
+    
+    </survey>
+
+  </surveys>
+</campaign>

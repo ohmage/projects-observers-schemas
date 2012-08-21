@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignUrn>urn:campaign:ca:ucla:cens:josh_long_number_test</campaignUrn>
+  <campaignName>Josh&apos;s 2.8 Long Number Test</campaignName>
+  <serverUrl>https://dev1.andwellness.org/</serverUrl>
+  
+  <surveys>
+  
+    <survey>
+      <id>numberSurvey</id>
+      <title>Number Survey</title>
+      <description>This is a survey to test behavior of the number prompt type.</description>
+      <submitText>Done with the number survey</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Number Test</summaryText>
+      <anytime>true</anytime>
+    
+      <contentList>
+        <prompt>
+          <id>longlong</id>
+          <displayType>event</displayType>
+          <displayLabel>longlong</displayLabel>
+          <promptText>Pick a number.</promptText>
+          <abbreviatedText>Pick a number.</abbreviatedText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>15552000000</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>15552000001</label>
+            </property>
+          </properties>  
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+	</contentList>
+	
+   </survey>
+  </surveys>
+</campaign>
