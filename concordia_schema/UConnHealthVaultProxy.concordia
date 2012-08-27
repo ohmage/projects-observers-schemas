@@ -5,13 +5,13 @@
         {
             "name":"date_started",
             "type":"string",
-            "doc":"The date a medication was started."
+            "doc":"The date a medication was started.",
             "optional":true
         },
         {
             "name":"date_discontinued",
             "type":"string",
-            "doc":"The date a medication was discontinued."
+            "doc":"The date a medication was discontinued.",
             "optional":true
         },
         {
@@ -32,19 +32,19 @@
         {
             "name":"strength",
             "type":"string",
-            "doc":"The strength of the medication."
+            "doc":"The strength of the medication.",
             "optional":true
         },
         {
             "name":"note",
             "type":"string",
-            "doc":"A general note for this entry."
+            "doc":"A general note for this entry.",
             "optional":true
         },
         {
             "name":"prescribed",
             "type":"string",
-            "doc":"Information about the prescription."
+            "doc":"Information about the prescription.",
             "optional":true
         },
         {
