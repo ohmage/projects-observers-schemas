@@ -1,0 +1,16 @@
+{
+    "type":"object",
+    "doc":"Each point represents a PRN (as-needed) ingestion of a medication.",
+    "schema":[
+        {
+            "name":"prn",
+            "type":"boolean",
+            "doc":"An instance of a patient taking a medication."
+        },
+        {
+            "name":"instruction",
+            "type":"string",
+            "doc":"The prescription's instructions. (e.g., twice a day)"
+        }
+    ]
+}
