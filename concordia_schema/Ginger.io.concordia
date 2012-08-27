@@ -1,0 +1,33 @@
+{
+    "type":"object",
+    "doc":"Each point represents aggregate extracted mobile phone features for a 24 hour period.",
+    "schema":[
+        {
+            "name":"aggregate_communication",
+            "type":"object",
+            "doc":"Aggregate communication stats.",
+            "schema": [
+                {
+                    "name":"total_number_of_calls",
+                    "doc":"This may actually be able to be broken up into separate made and received entries.",
+                    "type":"number"
+                },
+                {
+                    "name":"total_number_of_sms_messages",
+                    "doc":"This may actually be able to be broken up into separate sent and received entries.",
+                    "type":"number"
+                }
+            ]
+        },
+        {
+            "name":"interaction_diversity",
+            "doc":"The total number of individuals with whom a participant interacted through phone calls or sms messages (an individual is only counted once whether he shows up in one of the categories or both) on a particular day (or other relevant time frame).",
+            "type":"number"
+        },
+        {
+            "name":"mobility_radius",
+            "doc":"The approximate radius of an imaginary circle encompassing the various locations that a user has traveled across on a particular day (or other relevant time frame). This needs a units value as well.",
+            "type":"number"
+        }
+    ]
+}
