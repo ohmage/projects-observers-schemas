@@ -6,10 +6,10 @@
   
   <surveys>
       <survey>
-      <id>alcohol</id>
-      <title>Alcohol</title>
-      <description>Please describe your substance use since your last report.</description>
-      <submitText>Thank you for completing this survey.</submitText>
+      <id>moodMap</id>
+      <title>Mood Map</title>
+      <description>Mood Map</description>
+      <submitText>None</submitText>
       <showSummary>false</showSummary>
       <anytime>true</anytime>
     
