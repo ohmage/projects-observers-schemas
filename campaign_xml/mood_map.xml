@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignUrn>urn:campaign:ohmage:mood_map</campaignUrn>
+  <campaignName>Mood Map</campaignName>
+  <serverUrl>https://showcase.omh.io</serverUrl>
+  
+  <surveys>
+      <survey>
+      <id>alcohol</id>
+      <title>Alcohol</title>
+      <description>Please describe your substance use since your last report.</description>
+      <submitText>Thank you for completing this survey.</submitText>
+      <showSummary>false</showSummary>
+      <anytime>true</anytime>
+    
+      <contentList>
+
+        <prompt>
+          <id>location</id>
+          <displayType>category</displayType>
+          <displayLabel>location</displayLabel>
+          <promptText>This is the prompt for the user's self-reported location using the buttons at the bottom of the Mood Map.</promptText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Work</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Home</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>On the Go</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Other</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+      
+        <prompt>
+          <id>energy</id>
+          <displayType>count</displayType>
+          <displayLabel>energy</displayLabel>
+          <promptText>The is the prompt for the floating point number represented by the user's tap location on the y-axis of the Mood Map.</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <!-- Zero representing low energy -->
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <!-- Five representing high energy -->
+              <label>5</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+
+        <prompt>
+          <id>mood</id>
+          <displayType>count</displayType>
+          <displayLabel>mood</displayLabel>
+          <promptText>The is the prompt for the floating point number represented by the user's tap location on the x-axis of the Mood Map.</promptText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <!-- Zero representing negative -->
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <!-- Five representing positive -->
+              <label>5</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+        </prompt>
+  
+      </contentList>
+      
+    </survey>
+  </surveys>
+</campaign>
