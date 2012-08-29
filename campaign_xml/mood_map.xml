@@ -55,13 +55,13 @@
           <properties>
             <property>
               <key>min</key>
-              <!-- Negative ten representing low energy -->
-              <label>-10</label>
+              <!-- Negative 100 representing low energy -->
+              <label>-100</label>
             </property>
             <property>
               <key>max</key>
-              <!-- Ten representing high energy -->
-              <label>10</label>
+              <!-- 100 representing high energy -->
+              <label>100</label>
             </property>
           </properties>
           <skippable>false</skippable>
@@ -76,13 +76,13 @@
           <properties>
             <property>
               <key>min</key>
-              <!-- Negative ten representing negative -->
-              <label>-10</label>
+              <!-- Negative 100 representing negative -->
+              <label>-100</label>
             </property>
             <property>
               <key>max</key>
-              <!-- Ten representing positive -->
-              <label>10</label>
+              <!-- 100 representing positive -->
+              <label>100</label>
             </property>
           </properties>
           <skippable>false</skippable>
