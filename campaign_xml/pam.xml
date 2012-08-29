@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+	<campaignUrn>urn:campaign:org:openmhealth:pam</campaignUrn>
+	<campaignName>PAM</campaignName>
+	<serverUrl>https://test.ohmage.org/</serverUrl>
+	<surveys>
+		<survey>
+			<id>pamSurvey</id>
+			<title>PAM Survey</title>
+			<description>PAM, the Photographic Affect Meter, is a digital self-report measure of affect designed by the Cornell University Interaction Design Lab.</description>
+			<submitText>Click submit to save your response</submitText>
+			<showSummary>false</showSummary>
+			<editSummary>false</editSummary>
+			<summaryText>PAM</summaryText>
+			<anytime>true</anytime>
+			<contentList>
+				<prompt>
+					<id>photo_id</id>
+					<displayType>event</displayType>
+					<displayLabel>PAM</displayLabel>
+					<promptText>Choose a picture</promptText>
+					<promptType>remote_activity</promptType>
+					<properties>
+						<property>
+							<key>package</key>
+							<label>org.openmhealth.pam</label>
+						</property>
+						<property>
+							<key>activity</key>
+							<label>org.openmhealth.pam.PAMActivity</label>
+						</property>
+						<property>
+							<key>action</key>
+							<label>org.openmhealth.pam.ACTION_CHOOSE_IMAGE</label>
+						</property>
+						<property>
+							<key>autolaunch</key>
+							<label>true</label>
+						</property>
+						<property>
+							<key>retries</key>
+							<label>100</label>
+						</property>
+						<property>
+							<key>min_runs</key>
+							<label>1</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+			</contentList>
+		</survey>
+	</surveys>
+</campaign>
