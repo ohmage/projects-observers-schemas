@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<observer>
+    <id>com.openmhealth.ohmage.va.ptsd_explorer</id>
+    <version>2012082700</version>
+
+    <name>PTSDExplorer</name>
+    <description>Captures probes from the PTSDExplorer application.</description>
+    <versionString>1.0</versionString>
+
+    <stream>
+        <id>appLaunched</id>
+        <version>1</version>
+
+        <name>AppLaunchedProbe</name>
+        <description>Submitted when the user starts the application</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"PTSDExplorer starting info.",
+                "schema":[
+                    {
+                        "name":"accessibilityFeaturesActive",
+                        "doc":"True if accessibility features are active.",
+                        "type":"boolean"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>totalTimeOnApp</id>
+        <version>1</version>
+
+        <name>TotalTimeOnAppProbe</name>
+        <description>The time spent in the app</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"The time spent in the app.",
+                "schema":[
+                    {
+                        "name":"time",
+                        "doc":"The time spent in the app.",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>timeElapsedBetweenSessions</id>
+        <version>1</version>
+
+        <name>TimeElapsedBetweenSessionsProbe</name>
+        <description>The time between sessions</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"The time between sessions.",
+                "schema":[
+                    {
+                        "name":"elapsed_time",
+                        "doc":"The time between sessions.",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>appExited</id>
+        <version>1</version>
+
+        <name>AppExitedProbe</name>
+        <description>Submitted when the user stops the application</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"PTSDExplorer stopping info.",
+                "schema":[
+                    {
+                        "name":"accessibilityFeaturesActive",
+                        "doc":"True if accessibility features are active.",
+                        "type":"boolean"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>contentScreenViewed</id>
+        <version>2</version>
+
+        <name>ContentScreenViewedProbe</name>
+        <description>Submitted when a content screen is viewed</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Viewed content screen info.",
+                "schema":[
+                    {
+                        "name":"start",
+                        "doc":"The time this content screen was shown.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"dismissal",
+                        "doc":"The time this content screen was dismissed.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"name",
+                        "doc":"The name of this content screen.",
+                        "optional":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"display_name",
+                        "doc":"The display name of this content screen.",
+                        "optional":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"type",
+                        "doc":"The type of this content screen.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"id",
+                        "doc":"The id of this content screen.",
+                        "optional":true,
+                        "type":"string"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>timePerScreen</id>
+        <version>2</version>
+
+        <name>TimePerScreenProbe</name>
+        <description>The time spent on a screen</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Screen info.",
+                "schema":[
+                    {
+                        "name":"id",
+                        "doc":"The id of this screen.",
+                        "optional":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"start",
+                        "doc":"The time this screen was shown.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"time",
+                        "doc":"The time spent on this screen.",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>postExerciseSuds</id>
+        <version>1</version>
+
+        <name>PostExerciseSudsProbe</name>
+        <description>The suds score after exercising</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"The suds score after exercising.",
+                "schema":[
+                    {
+                        "name":"initial_score",
+                        "doc":"The initial suds score.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"post_score",
+                        "doc":"The post exercise suds score.",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>pclAssessmentStarted</id>
+        <version>1</version>
+
+        <name>PclAssessmentStartedProbe</name>
+        <description>Submitted when the PclAssesment is started</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"The pcl assessment start info.",
+                "schema":[
+                    {
+                        "name":"time",
+                        "doc":"The time the pcl assessment is started.",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>buttonPressed</id>
+        <version>1</version>
+
+        <name>ButtonPressedProbe</name>
+        <description>Submitted on any button press</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"The pressed button.",
+                "schema":[
+                    {
+                        "name":"id",
+                        "doc":"The id of the button.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"title",
+                        "doc":"The title of the button.",
+                        "optional":true,
+                        "type":"string"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>pclQuestionAnswered</id>
+        <version>1</version>
+
+        <name>PclQuestionAnsweredProbe</name>
+        <description>Submitted when a pcl question is answered</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Pcl question info.",
+                "schema":[
+                    {
+                        "name":"answered_count",
+                        "doc":"The number of pcl questions that have been answered.",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>preExerciseSuds</id>
+        <version>1</version>
+
+        <name>PreExerciseSudsProbe</name>
+        <description>The suds score before exercising</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"The suds score before exercising.",
+                "schema":[
+                    {
+                        "name":"pre_score",
+                        "doc":"The suds score before exercise.",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>pclAssessmentCompleted</id>
+        <version>1</version>
+
+        <name>PclAssessmentCompletedProbe</name>
+        <description>Pcl assessment completed info</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Pcl assessment completed info.",
+                "schema":[
+                    {
+                        "name":"final_score",
+                        "doc":"The final pcl assessment score.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"completed",
+                        "doc":"True if the pcl assessment was actually completed.",
+                        "type":"boolean"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>pclReminderScheduled</id>
+        <version>1</version>
+
+        <name>PclReminderScheduledProbe</name>
+        <description>Submitted when a reminder is scheduled</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Pcl reminder info.",
+                "schema":[
+                    {
+                        "name":"time",
+                        "doc":"The time the reminder is set to go off.",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>timeElapsedBetweenPCLAssessments</id>
+        <version>1</version>
+
+        <name>TimeElapsedBetweenSessionsProbe</name>
+        <description>The time between sessions</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"The time between sessions.",
+                "schema":[
+                    {
+                        "name":"elapsed_time",
+                        "doc":"The time between sessions.",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>toolAborted</id>
+        <version>2</version>
+
+        <name>ToolAbortedProbe</name>
+        <description>Submitted when a tool is aborted</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Aborted tool info.",
+                "schema":[
+                    {
+                        "name":"id",
+                        "doc":"The tool id.",
+                        "type":"string"
+                    },
+                    {
+                        "name":"name",
+                        "doc":"The tool name.",
+                        "optional":true,
+                        "type":"string"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>contentObjectSelected</id>
+        <version>2</version>
+
+        <name>ContentObjectSelectedProbe</name>
+        <description>Submitted when a content object is selected</description>
+
+        <metadata>
+            <timestamp />
+            <location />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Selected content object info.",
+                "schema":[
+                    {
+                        "name":"name",
+                        "doc":"The name of the content object.",
+                        "optional":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"display_name",
+                        "doc":"The display name of the content object.",
+                        "optional":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"id",
+                        "doc":"The id of the content object.",
+                        "type":"string"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+</observer>
