@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<campaign>
+		<campaignUrn>urn:campaign:openmhealth:diabetes:food</campaignUrn>
+		<campaignName>Food Tracker</campaignName>
+		<serverUrl>https://showcase.omh.io/</serverUrl>
+		<surveys>
+			<survey>
+				<id>meal</id>
+				<title>Food Log</title>
+				<description>Describe your meal.</description>
+				<submitText>Submit</submitText>
+				<showSummary>false</showSummary>
+				<editSummary>false</editSummary>
+				<anytime>true</anytime>
+				<contentList>
+					<prompt>
+						<id>timestamp</id>
+						<displayType>event</displayType>
+						<displayLabel>mTimestamp</displayLabel>
+						<promptText>What time did you eat?</promptText>
+						<abbreviatedText>What time did you eat?</abbreviatedText>
+						<promptType>timestamp</promptType>
+						<skippable>false</skippable>
+					</prompt>
+					<prompt>
+						<id>carbCount</id>
+						<displayType>event</displayType>
+						<displayLabel>Carbohydrate Composition</displayLabel>
+						<promptText>How many grams of carbs were in the meal?</promptText>
+						<abbreviatedText>Grams of Carbs</abbreviatedText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>5000</label>
+							</property>
+						</properties>
+						<skippable>false</skippable>
+					</prompt>
+					<prompt>
+						<id>carbNote</id>
+						<displayType>event</displayType>
+						<displayLabel>Meal Items Containing Carbs</displayLabel>
+						<promptText>What components of your meal consisted of carbs?</promptText>
+						<abbreviatedText>Note:</abbreviatedText>
+						<promptType>text</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>1000</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>fatCount</id>
+						<displayType>event</displayType>
+						<displayLabel>Fat Composition</displayLabel>
+						<promptText>How many grams of fat were in the meal?</promptText>
+						<abbreviatedText>Grams of Fat</abbreviatedText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>5000</label>
+							</property>
+						</properties>
+						<skippable>false</skippable>
+					</prompt>
+					<prompt>
+						<id>fatNote</id>
+						<displayType>event</displayType>
+						<displayLabel>Meal Items Containing Fat</displayLabel>
+						<promptText>What components of your meal consisted of fat?</promptText>
+						<abbreviatedText>Note:</abbreviatedText>
+						<promptType>text</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>1000</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>					
+					<prompt>
+						<id>proteinCount</id>
+						<displayType>event</displayType>
+						<displayLabel>Protein Composition</displayLabel>
+						<promptText>How many grams of protein were in the meal?</promptText>
+						<abbreviatedText>Grams of Protein</abbreviatedText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>5000</label>
+							</property>
+						</properties>
+						<skippable>false</skippable>
+					</prompt>
+					<prompt>
+						<id>proteinNote</id>
+						<displayType>event</displayType>
+						<displayLabel>Meal Items Containing Protein</displayLabel>
+						<promptText>What components of your meal consisted of protein?</promptText>
+						<abbreviatedText>Note:</abbreviatedText>
+						<promptType>text</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>1000</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>										
+					<prompt>
+						<id>fullness</id>
+						<displayType>event</displayType>
+						<displayLabel>Fullness</displayLabel>
+						<promptText>How full were you after the meal?</promptText>
+						<abbreviatedText>Fullness</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Still Hungry</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>Just Right</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>Overfull</label>
+							</property>
+						</properties>
+						<skippable>false</skippable>
+					</prompt>
+					<prompt>
+						<id>homeMade</id>
+						<displayType>event</displayType>
+						<displayLabel>Home Made</displayLabel>
+						<promptText>Was the meal home made?</promptText>
+						<abbreviatedText>Home made meal</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>No</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>Yes</label>
+							</property>
+						</properties>
+						<skippable>false</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>nonHomeMadeMealContent</id>
+						<condition>homeMade == 0</condition>
+						<displayType>event</displayType>
+						<displayLabel>Non home made meal content</displayLabel>
+						<promptText>Where was the meal from?</promptText>
+						<abbreviatedText>Non home made meal content</abbreviatedText>
+						<promptType>text</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>1000</label>
+							</property>
+						</properties>
+						<skippable>false</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>mealPhoto</id>
+						<displayType>event</displayType>
+						<displayLabel>Photo</displayLabel>
+						<promptText>Take a picture of your meal.</promptText>
+						<abbreviatedText>Take a picture.</abbreviatedText>
+						<promptType>photo</promptType>
+						<properties>
+							<property>
+								<key>res</key>
+								<label>720</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+				</contentList>
+			</survey>
+		</surveys>
+	</campaign>
