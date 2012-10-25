@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<observer>
+    <id>edu.ucla.cens.contextsens</id>
+    <version>1</version>
+
+    <name>ContextSens</name>
+    <description>Probes from the sensors of the android phone.</description>
+    <versionString>1.0</versionString>
+
+    <stream>
+        <id>accelerometer</id>
+        <version>1</version>
+
+        <name>Accelerometer</name>
+        <description>Accelerometer probe</description>
+
+        <metadata>
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"accelerometer point.",
+                "schema":[
+                    {
+                        "name":"x",
+                        "doc":"Acceleration minus Gx on the x-axis",
+                        "type":"number"
+                    },
+                    {
+                        "name":"y",
+                        "doc":"Acceleration minus Gy on the y-axis",
+                        "type":"number"
+                    },
+                    {
+                        "name":"z",
+                        "doc":"Acceleration minus Gz on the z-axis",
+                        "type":"number"
+                    },
+                    {
+                        "name":"accuracy",
+                        "doc":"accuracy of this point",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>cell</id>
+        <version>1</version>
+
+        <name>Cell</name>
+        <description>Cell probe</description>
+
+        <metadata>
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"cell point.",
+                "schema":[
+                    {
+                        "name":"signal_strength",
+                        "doc":"strength of the cell signal",
+                        "type":"number"
+                    },
+                    {
+                        "name":"cell_id",
+                        "doc":"cell tower id",
+                        "type":"number"
+                    },
+                    {
+                        "name":"cell_location",
+                        "doc":"location of cell tower",
+                        "type":"number"
+                    },
+                    {
+                        "name":"gsm_bit_error_rate",
+                        "doc":"GSM bit error rate",
+                        "type":"number"
+                    },
+                    {
+                        "name":"accuracy",
+                        "doc":"accuracy of this point",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+    
+    <stream>
+        <id>gravity</id>
+        <version>1</version>
+
+        <name>Gravity</name>
+        <description>Gravity probe</description>
+
+        <metadata>
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"gravity point.",
+                "schema":[
+                    {
+                        "name":"x",
+                        "doc":"the direction and magnitude of gravity on the x-axis. Units are m/s^2",
+                        "type":"number"
+                    },
+                    {
+                        "name":"y",
+                        "doc":"the direction and magnitude of gravity on the y-axis. Units are m/s^2",
+                        "type":"number"
+                    },
+                    {
+                        "name":"z",
+                        "doc":"the direction and magnitude of gravity on the z-axis. Units are m/s^2",
+                        "type":"number"
+                    },
+                    {
+                        "name":"accuracy",
+                        "doc":"accuracy of this point",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+    
+    <stream>
+        <id>gyroscope</id>
+        <version>1</version>
+
+        <name>Gyroscope</name>
+        <description>Gyroscope probe</description>
+
+        <metadata>
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"gyroscope point.",
+                "schema":[
+                    {
+                        "name":"x",
+                        "doc":"Angular speed around the x-axis",
+                        "type":"number"
+                    },
+                    {
+                        "name":"y",
+                        "doc":"Angular speed around the y-axis",
+                        "type":"number"
+                    },
+                    {
+                        "name":"z",
+                        "doc":"Angular speed around the z-axis",
+                        "type":"number"
+                    },
+                    {
+                        "name":"accuracy",
+                        "doc":"accuracy of this point",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+    
+    <stream>
+        <id>light</id>
+        <version>1</version>
+
+        <name>Light</name>
+        <description>Light probe</description>
+
+        <metadata>
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"light point.",
+                "schema":[
+                    {
+                        "name":"lux",
+                        "doc":"Ambient light level in SI lux units",
+                        "type":"number"
+                    },
+                    {
+                        "name":"accuracy",
+                        "doc":"accuracy of this point",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+    
+    <stream>
+        <id>linear_acceleration</id>
+        <version>1</version>
+
+        <name>Linear Acceleration</name>
+        <description>Linear Acceleration probe</description>
+
+        <metadata>
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"linear acceleration point.",
+                "schema":[
+                    {
+                        "name":"x",
+                        "doc":"Acceleration along the x-axis, not including gravity. Units are m/s^2.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"y",
+                        "doc":"Acceleration along the y-axis, not including gravity. Units are m/s^2.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"z",
+                        "doc":"Acceleration along the z-axis, not including gravity. Units are m/s^2.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"accuracy",
+                        "doc":"accuracy of this point",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>magnetic_field</id>
+        <version>1</version>
+
+        <name>Magnetic Field</name>
+        <description>Magnetic Field probe</description>
+
+        <metadata>
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"magnetic field point.",
+                "schema":[
+                    {
+                        "name":"x",
+                        "doc":"The ambient magnetic field on the x-axis. Units are micro-Tesla (uT).",
+                        "type":"number"
+                    },
+                    {
+                        "name":"y",
+                        "doc":"The ambient magnetic field on the y-axis. Units are micro-Tesla (uT).",
+                        "type":"number"
+                    },
+                    {
+                        "name":"z",
+                        "doc":"The ambient magnetic field on the z-axis. Units are micro-Tesla (uT).",
+                        "type":"number"
+                    },
+                    {
+                        "name":"accuracy",
+                        "doc":"accuracy of this point",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>orientation</id>
+        <version>1</version>
+
+        <name>Orientation</name>
+        <description>Orientation probe</description>
+
+        <metadata>
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"orientation point.",
+                "schema":[
+                    {
+                        "name":"azimuth",
+                        "doc":"The angle between the magnetic north direction and the y-axis, around the z-axis (0 to 359). 0=North, 90=East, 180=South, 270=West.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"pitch",
+                        "doc":"The rotation around x-axis (-180 to 180), with positive values when the z-axis moves toward the y-axis.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"roll",
+                        "doc":"The rotation around y-axis (-90 to 90), with positive values when the x-axis moves toward the z-axis.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"accuracy",
+                        "doc":"accuracy of this point",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>pressure</id>
+        <version>1</version>
+
+        <name>Pressure</name>
+        <description>Pressure probe</description>
+
+        <metadata>
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"pressure point.",
+                "schema":[
+                    {
+                        "name":"pressure",
+                        "doc":"Atmospheric pressure in hPa (millibar).",
+                        "type":"number"
+                    },
+                    {
+                        "name":"accuracy",
+                        "doc":"accuracy of this point",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>proximity</id>
+        <version>1</version>
+
+        <name>Proximity</name>
+        <description>Proximity probe</description>
+
+        <metadata>
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"proximity point. Note: Some proximity sensors only support a binary near or far measurement. In this case, the sensor should report its maximum range value in the far state and a lesser value in the near state.",
+                "schema":[
+                    {
+                        "name":"proximity",
+                        "doc":"Proximity sensor distance measured in centimeters.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"accuracy",
+                        "doc":"accuracy of this point",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+    
+    <stream>
+        <id>rotation_vector</id>
+        <version>1</version>
+
+        <name>Rotation Vector</name>
+        <description>Rotation Vector probe</description>
+
+        <metadata>
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"rotation vector point.",
+                "schema":[
+                    {
+                        "name":"x",
+                        "doc":"x*sin(θ/2).",
+                        "type":"number"
+                    },
+                    {
+                        "name":"y",
+                        "doc":"y*sin(θ/2).",
+                        "type":"number"
+                    },
+                    {
+                        "name":"z",
+                        "doc":"z*sin(θ/2).",
+                        "type":"number"
+                    },
+                    {
+                        "name":"accuracy",
+                        "doc":"accuracy of this point",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+</observer>
