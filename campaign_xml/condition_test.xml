@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<campaign>
+		<campaignUrn>urn:campaign:ca:ucla:cens:condition_test</campaignUrn>
+		<campaignName>Condition Test</campaignName>
+		<serverUrl>https://test.ohmage.org</serverUrl>
+		<surveys>
+			<survey>
+				<id>stackoverflow</id>
+				<title>Stack Overflow</title>
+				<description>This survey will cause a stack overflow on some devices.</description>
+				<submitText>Thank you for completing today's survey.</submitText>
+				<showSummary>false</showSummary>
+				<anytime>true</anytime>
+				<contentList>
+					<prompt>
+						<id>original1</id>
+						<displayType>count</displayType>
+						<displayLabel>Number</displayLabel>
+						<promptText>Enter a number</promptText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>1</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>50</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>original2</id>
+						<displayType>count</displayType>
+						<displayLabel>Number</displayLabel>
+						<promptText>The next prompt will be shown if the first prompt was less than this one</promptText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>1</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>50</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>original3</id>
+						<condition>	
+		(original1 ==  1 and original2 &gt;  1) or (original1 ==  2 and original2 &gt;  2) or
+		(original1 ==  3 and original2 &gt;  3) or (original1 ==  4 and original2 &gt;  4) or
+		(original1 ==  5 and original2 &gt;  5) or (original1 ==  6 and original2 &gt;  6) or
+		(original1 ==  7 and original2 &gt;  7) or (original1 ==  8 and original2 &gt;  8) or
+		(original1 ==  9 and original2 &gt;  9) or (original1 == 10 and original2 &gt; 10) or
+		(original1 == 11 and original2 &gt; 11) or (original1 == 12 and original2 &gt; 12) or
+		(original1 == 13 and original2 &gt; 13) or (original1 == 14 and original2 &gt; 14) or
+		(original1 == 15 and original2 &gt; 15) or (original1 == 16 and original2 &gt; 16) or
+		(original1 == 17 and original2 &gt; 17) or (original1 == 18 and original2 &gt; 18) or
+		(original1 == 19 and original2 &gt; 19) or (original1 == 20 and original2 &gt; 20) or
+		(original1 == 21 and original2 &gt; 21) or (original1 == 22 and original2 &gt; 22) or
+		(original1 == 23 and original2 &gt; 23) or (original1 == 24 and original2 &gt; 24) or
+		(original1 == 25 and original2 &gt; 25) or (original1 == 26 and original2 &gt; 26) or
+		(original1 == 27 and original2 &gt; 27) or (original1 == 28 and original2 &gt; 28) or
+		(original1 == 29 and original2 &gt; 29) or (original1 == 30 and original2 &gt; 30) or
+		(original1 == 31 and original2 &gt; 31) or (original1 == 32 and original2 &gt; 32) or
+		(original1 == 33 and original2 &gt; 33) or (original1 == 34 and original2 &gt; 34) or
+		(original1 == 35 and original2 &gt; 35) or (original1 == 36 and original2 &gt; 36) or
+		(original1 == 37 and original2 &gt; 37) or (original1 == 38 and original2 &gt; 38) or
+		(original1 == 39 and original2 &gt; 39) or (original1 == 40 and original2 &gt; 40) or
+		(original1 == 41 and original2 &gt; 41) or (original1 == 42 and original2 &gt; 42) or
+		(original1 == 43 and original2 &gt; 43) or (original1 == 44 and original2 &gt; 44) or
+		(original1 == 45 and original2 &gt; 45) or (original1 == 46 and original2 &gt; 46) or
+		(original1 == 47 and original2 &gt; 47) or (original1 == 48 and original2 &gt; 48) or
+		(original1 == 49 and original2 &gt; 49) or (original1 == 50 and original2 &gt; 50) 
+  		</condition>
+						<displayType>count</displayType>
+						<displayLabel>Number</displayLabel>
+						<promptText>The number of the first prompt was less than the second prompt</promptText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>50</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>skip</skipLabel>
+					</prompt>
+				</contentList>
+			</survey>
+			<survey>
+				<id>binary</id>
+				<title>Binary Condition Tree</title>
+				<description>This is the survey with parenthesis to reduce the depth of the condition by making a binary tree.</description>
+				<submitText>Thank you for completing today's survey.</submitText>
+				<showSummary>false</showSummary>
+				<anytime>true</anytime>
+				<contentList>
+					<prompt>
+						<id>binary1</id>
+						<displayType>count</displayType>
+						<displayLabel>Number</displayLabel>
+						<promptText>Enter a number</promptText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>1</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>50</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>binary2</id>
+						<displayType>count</displayType>
+						<displayLabel>Number</displayLabel>
+						<promptText>The next prompt will be shown if the first prompt was less than this one</promptText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>1</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>50</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>binary3</id>
+						<condition>	
+		(((((binary1 ==  1 and binary2 &gt;  1) or 
+        (binary1 ==  2 and binary2 &gt;  2) or
+		(binary1 ==  3 and binary2 &gt;  3)) or 
+        ((binary1 ==  4 and binary2 &gt;  4) or
+		(binary1 ==  5 and binary2 &gt;  5) or 
+        (binary1 ==  6 and binary2 &gt;  6))) or
+		(((binary1 ==  7 and binary2 &gt;  7) or 
+        (binary1 ==  8 and binary2 &gt;  8) or
+		(binary1 ==  9 and binary2 &gt;  9)) or
+        ((binary1 == 10 and binary2 &gt; 10) or
+		(binary1 == 11 and binary2 &gt; 11) or 
+        (binary1 == 12 and binary2 &gt; 12)))) or
+		((((binary1 == 13 and binary2 &gt; 13) or 
+        (binary1 == 14 and binary2 &gt; 14) or
+		(binary1 == 15 and binary2 &gt; 15)) or
+        ((binary1 == 16 and binary2 &gt; 16) or
+		(binary1 == 17 and binary2 &gt; 17) or 
+        (binary1 == 18 and binary2 &gt; 18))) or
+		(((binary1 == 19 and binary2 &gt; 19) or 
+        (binary1 == 20 and binary2 &gt; 20) or
+		(binary1 == 21 and binary2 &gt; 21)) or 
+        ((binary1 == 22 and binary2 &gt; 22) or
+		(binary1 == 23 and binary2 &gt; 23) or 
+        (binary1 == 24 and binary2 &gt; 24) or
+		(binary1 == 25 and binary2 &gt; 25))))) or 
+        (((((binary1 == 26 and binary2 &gt; 26) or
+		(binary1 == 27 and binary2 &gt; 27) or 
+        (binary1 == 28 and binary2 &gt; 28)) or
+		((binary1 == 29 and binary2 &gt; 29) or 
+        (binary1 == 30 and binary2 &gt; 30) or
+		(binary1 == 31 and binary2 &gt; 31))) or 
+        (((binary1 == 32 and binary2 &gt; 32) or
+		(binary1 == 33 and binary2 &gt; 33) or 
+        (binary1 == 34 and binary2 &gt; 34)) or
+		((binary1 == 35 and binary2 &gt; 35) or 
+        (binary1 == 36 and binary2 &gt; 36) or
+		(binary1 == 37 and binary2 &gt; 37)))) or 
+        ((((binary1 == 38 and binary2 &gt; 38) or
+		(binary1 == 39 and binary2 &gt; 39) or 
+        (binary1 == 40 and binary2 &gt; 40)) or
+		((binary1 == 41 and binary2 &gt; 41) or 
+        (binary1 == 42 and binary2 &gt; 42) or
+		(binary1 == 43 and binary2 &gt; 43))) or
+        (((binary1 == 44 and binary2 &gt; 44) or
+		(binary1 == 45 and binary2 &gt; 45) or 
+        (binary1 == 46 and binary2 &gt; 46)) or
+		((binary1 == 47 and binary2 &gt; 47) or 
+        (binary1 == 48 and binary2 &gt; 48) or
+		(binary1 == 49 and binary2 &gt; 49) or 
+        (binary1 == 50 and binary2 &gt; 50)))))
+  		</condition>
+						<displayType>count</displayType>
+						<displayLabel>Number</displayLabel>
+						<promptText>The number of the first prompt was less than the second prompt</promptText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>50</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>skip</skipLabel>
+					</prompt>
+				</contentList>
+			</survey>
+			<survey>
+				<id>not_displayed_or_skipped</id>
+				<title>NOT_DISPLAYED / SKIPPED</title>
+				<description>This is a survey to test behavior of the timestamp prompt type.</description>
+				<submitText>Done with the timestamp survey.</submitText>
+				<showSummary>false</showSummary>
+				<editSummary>false</editSummary>
+				<summaryText>Timestamp Test</summaryText>
+				<anytime>true</anytime>
+				<contentList>
+					<prompt>
+						<id>prompt1</id>
+						<displayType>event</displayType>
+						<displayLabel>mTimestamp</displayLabel>
+						<promptText>Skip Me! (Or Not)</promptText>
+						<abbreviatedText>Skip Me! (Or Not)</abbreviatedText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>50</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>prompt2</id>
+                        <condition>prompt1 != SKIPPED</condition>
+						<displayType>event</displayType>
+						<displayLabel>mTimestamp</displayLabel>
+						<promptText>prompt1 != SKIPPED</promptText>
+						<abbreviatedText>prompt1 != SKIPPED</abbreviatedText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>50</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>prompt3</id>
+                        <condition>prompt2 != NOT_DISPLAYED</condition>
+						<displayType>event</displayType>
+						<displayLabel>mTimestamp</displayLabel>
+						<promptText>prompt2 != NOT_DISPLAYED</promptText>
+						<abbreviatedText>prompt2 != NOT_DISPLAYED</abbreviatedText>
+						<promptType>timestamp</promptType>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>prompt4</id>
+                        <condition>prompt1 == SKIPPED</condition>
+						<displayType>event</displayType>
+						<displayLabel>mTimestamp</displayLabel>
+						<promptText>prompt1 == SKIPPED</promptText>
+						<abbreviatedText>prompt1 == SKIPPED</abbreviatedText>
+						<promptType>timestamp</promptType>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>prompt5</id>
+                        <condition>prompt2 == NOT_DISPLAYED</condition>
+						<displayType>event</displayType>
+						<displayLabel>mTimestamp</displayLabel>
+						<promptText>prompt2 == NOT_DISPLAYED</promptText>
+						<abbreviatedText>prompt2 == NOT_DISPLAYED</abbreviatedText>
+						<promptType>timestamp</promptType>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>prompt6</id>
+                        <condition>prompt2 &gt; NOT_DISPLAYED</condition>
+						<displayType>event</displayType>
+						<displayLabel>mTimestamp</displayLabel>
+						<promptText>prompt2 &gt; NOT_DISPLAYED</promptText>
+						<abbreviatedText>prompt2 == NOT_DISPLAYED</abbreviatedText>
+						<promptType>timestamp</promptType>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+				</contentList>
+			</survey>
+		</surveys>
+	</campaign>
