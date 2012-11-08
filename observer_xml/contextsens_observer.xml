@@ -15,6 +15,7 @@
         <description>Accelerometer probe</description>
 
         <metadata>
+            <id />
             <timestamp />
         </metadata>
 
@@ -56,6 +57,7 @@
         <description>Cell probe</description>
 
         <metadata>
+            <id />
             <timestamp />
         </metadata>
 
@@ -102,6 +104,7 @@
         <description>Gravity probe</description>
 
         <metadata>
+            <id />
             <timestamp />
         </metadata>
 
@@ -143,6 +146,7 @@
         <description>Gyroscope probe</description>
 
         <metadata>
+            <id />
             <timestamp />
         </metadata>
 
@@ -184,6 +188,7 @@
         <description>Light probe</description>
 
         <metadata>
+            <id />
             <timestamp />
         </metadata>
 
@@ -215,6 +220,7 @@
         <description>Linear Acceleration probe</description>
 
         <metadata>
+            <id />
             <timestamp />
         </metadata>
 
@@ -256,6 +262,7 @@
         <description>Magnetic Field probe</description>
 
         <metadata>
+            <id />
             <timestamp />
         </metadata>
 
@@ -297,6 +304,7 @@
         <description>Orientation probe</description>
 
         <metadata>
+            <id />
             <timestamp />
         </metadata>
 
@@ -338,6 +346,7 @@
         <description>Pressure probe</description>
 
         <metadata>
+            <id />
             <timestamp />
         </metadata>
 
@@ -369,6 +378,7 @@
         <description>Proximity probe</description>
 
         <metadata>
+            <id />
             <timestamp />
         </metadata>
 
@@ -400,6 +410,7 @@
         <description>Rotation Vector probe</description>
 
         <metadata>
+            <id />
             <timestamp />
         </metadata>
 
