@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<observer>
+    <id>org.ohmage.LogProbe</id>
+    <version>1</version>
+
+    <name>LogProbe</name>
+    <description>Logs data and analytics.</description>
+    <versionString>1.0</versionString>
+
+    <stream>
+        <id>log</id>
+        <version>1</version>
+
+        <name>Log</name>
+        <description>Log message</description>
+
+        <metadata>
+            <id />
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"log message.",
+                "schema":[
+                    {
+                        "name":"level",
+                        "doc":"Log level. One of error, warning, info, debug, or verbose.",
+                        "type":"string"
+                    },
+                    {
+                        "name":"tag",
+                        "doc":"Used to identify the source of a log message. It usually identifies the class or activity where the log call occurs.",
+                        "type":"string"
+                    },
+                    {
+                        "name":"message",
+                        "doc":"The message you would like logged.",
+                        "type":"string"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>activity</id>
+        <version>1</version>
+
+        <name>Activity</name>
+        <description>Analytics for activity interaction</description>
+
+        <metadata>
+            <id />
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Activity interaction.",
+                "schema":[
+                    {
+                        "name":"activity",
+                        "doc":"The class name of the activity.",
+                        "type":"string"
+                    },
+                    {
+                        "name":"status",
+                        "doc":"Status information about the activity. Either ON or OFF.",
+                        "type":"string"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+    
+    <stream>
+        <id>widget</id>
+        <version>1</version>
+
+        <name>Widget</name>
+        <description>Analytics for widget interaction</description>
+
+        <metadata>
+            <id />
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Widget interaction.",
+                "schema":[
+                    {
+                        "name":"id",
+                        "doc":"The id of the view which produced this event.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"name",
+                        "doc":"The human readable name of the view which produced this event. Will read the getContentDescription() of the view.",
+                        "type":"string"
+                    },
+                    {
+                        "name":"extra",
+                        "doc":"Extra information supplied for this interaction.",
+                        "optional":true,
+                        "type":"string"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+    
+    <stream>
+        <id>service</id>
+        <version>1</version>
+
+        <name>Service</name>
+        <description>Analytics for service interaction</description>
+
+        <metadata>
+            <id />
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Service interaction.",
+                "schema":[
+                    {
+                        "name":"service",
+                        "doc":"The class name of the service.",
+                        "type":"string"
+                    },
+                    {
+                        "name":"status",
+                        "doc":"Status information about the service. Either ON or OFF.",
+                        "type":"string"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    
+    <stream>
+        <id>network</id>
+        <version>1</version>
+
+        <name>Network</name>
+        <description>Analytics for network</description>
+
+        <metadata>
+            <id />
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Network information.",
+                "schema":[
+                    {
+                        "name":"context",
+                        "doc":"Class name of the context which started the call to the network.",
+                        "type":"string"
+                    },
+                    {
+                        "name":"resource",
+                        "doc":"Name of the resource requested",
+                        "type":"string"
+                    },
+                    {
+                        "name":"network_state",
+                        "doc":"upload or download",
+                        "type":"string"
+                    },
+                    {
+                        "name":"length",
+                        "doc":"Number of bytes transmitted",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+</observer>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<observer>
+    <id>org.ohmage.Analytics</id>
+    <version>1</version>
+
+    <name>Ohmage Analytics</name>
+    <description>Logs analytics specific to ohmage.</description>
+    <versionString>1.0</versionString>
+
+    <stream>
+        <id>prompt</id>
+        <version>1</version>
+
+        <name>Prompt</name>
+        <description>Logs information about what prompts are shown.</description>
+
+        <metadata>
+            <id />
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Prompt interaction.",
+                "schema":[
+                    {
+                        "name":"id",
+                        "doc":"The promptId.",
+                        "type":"string"
+                    },
+                    {
+                        "name":"type",
+                        "doc":"The prompt type.",
+                        "type":"string"
+                    },
+                    {
+                        "name":"status",
+                        "doc":"Status information about the activity. Either ON or OFF.",
+                        "type":"string"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+    <stream>
+        <id>trigger</id>
+        <version>1</version>
+
+        <name>Trigger</name>
+        <description>Logs information about triggers in ohmage.</description>
+
+        <metadata>
+            <id />
+            <timestamp />
+        </metadata>
+
+        <schema>
+            {
+                "type":"object",
+                "doc":"Trigger interaction.",
+                "schema":[
+                    {
+                        "name":"action",
+                        "doc":"The action that was currently applied to the trigger. One of delete, add, trigger, update, or ignore.",
+                        "type":"string"
+                    },
+                    {
+                        "name":"type",
+                        "doc":"Trigger type.",
+                        "type":"string"
+                    },
+                    {
+                        "name":"count",
+                        "doc":"Current number of triggers for this campaign and trigger type set up in the system.",
+                        "type":"number"
+                    },
+                    {
+                        "name":"campaign",
+                        "doc":"The campaign urn to which this trigger belongs.",
+                        "type":"string"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+
+</observer>
