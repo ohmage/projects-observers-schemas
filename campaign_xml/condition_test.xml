@@ -249,7 +249,7 @@
 					</prompt>
 					<prompt>
 						<id>prompt2</id>
-                        <condition>prompt1 != SKIPPED</condition>
+						<condition>prompt1 != SKIPPED</condition>
 						<displayType>event</displayType>
 						<displayLabel>mTimestamp</displayLabel>
 						<promptText>prompt1 != SKIPPED</promptText>
@@ -270,7 +270,7 @@
 					</prompt>
 					<prompt>
 						<id>prompt3</id>
-                        <condition>prompt2 != NOT_DISPLAYED</condition>
+						<condition>prompt2 != NOT_DISPLAYED</condition>
 						<displayType>event</displayType>
 						<displayLabel>mTimestamp</displayLabel>
 						<promptText>prompt2 != NOT_DISPLAYED</promptText>
@@ -281,7 +281,7 @@
 					</prompt>
 					<prompt>
 						<id>prompt4</id>
-                        <condition>prompt1 == SKIPPED</condition>
+						<condition>prompt1 == SKIPPED</condition>
 						<displayType>event</displayType>
 						<displayLabel>mTimestamp</displayLabel>
 						<promptText>prompt1 == SKIPPED</promptText>
@@ -292,7 +292,7 @@
 					</prompt>
 					<prompt>
 						<id>prompt5</id>
-                        <condition>prompt2 == NOT_DISPLAYED</condition>
+						<condition>prompt2 == NOT_DISPLAYED</condition>
 						<displayType>event</displayType>
 						<displayLabel>mTimestamp</displayLabel>
 						<promptText>prompt2 == NOT_DISPLAYED</promptText>
@@ -303,7 +303,7 @@
 					</prompt>
 					<prompt>
 						<id>prompt6</id>
-                        <condition>prompt2 &gt; NOT_DISPLAYED</condition>
+						<condition>prompt2 &gt; NOT_DISPLAYED</condition>
 						<displayType>event</displayType>
 						<displayLabel>mTimestamp</displayLabel>
 						<promptText>prompt2 &gt; NOT_DISPLAYED</promptText>
@@ -312,6 +312,156 @@
 						<skippable>true</skippable>
 						<skipLabel>Skip</skipLabel>
 					</prompt>
+				</contentList>
+			</survey>
+      <survey>
+				<id>negative_condition</id>
+				<title>Negative Condition</title>
+				<description>This survey checks a negative number in a condition.</description>
+				<submitText>Thank you for completing today's survey.</submitText>
+				<showSummary>false</showSummary>
+				<anytime>true</anytime>
+				<contentList>
+					<prompt>
+						<id>negative1</id>
+						<displayType>count</displayType>
+						<displayLabel>Number</displayLabel>
+						<promptText>Enter a number. The next prompt will be shown on a -8.</promptText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>-10</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>10</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>skip</skipLabel>
+					</prompt>
+					<message>
+						<id>negative2</id>
+						<condition>negative1 == -8</condition>
+						<messageText>The number of the first prompt was -8</messageText>
+					</message>
+				</contentList>
+			</survey>
+			<survey>
+				<id>single_custom_choice_condition</id>
+				<title>Single Custom Choice Condition</title>
+				<description>This survey checks a condition on a single custom choice prompt.</description>
+				<submitText>Thank you for completing today's survey.</submitText>
+				<showSummary>false</showSummary>
+				<anytime>true</anytime>
+				<contentList>
+          <prompt>
+						<id>custom1</id>
+						<displayType>event</displayType>
+						<displayLabel>A message will be shown for different indexes.</displayLabel>
+						<promptText>The door is locked. Do you:</promptText>
+						<abbreviatedText>locked door</abbreviatedText>
+						<promptType>single_choice_custom</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>kick the door down</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>knock politely</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>hunt in your pockets for the key</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>Show next prompt</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<message>
+						<id>custom2</id>
+						<condition>custom1 == 3</condition>
+						<messageText>custom1 == 3</messageText>
+					</message>
+					<message>
+						<id>custom3</id>
+						<condition>custom1 &lt; 2</condition>
+						<messageText>custom1 &lt; 2</messageText>
+					</message>
+					<message>
+						<id>custom4</id>
+						<condition>custom1 &gt; 1</condition>
+						<messageText>custom1 &gt; 1</messageText>
+					</message>
+					<message>
+						<id>custom5</id>
+						<condition>custom1 &lt;= 2</condition>
+						<messageText>custom1 &lt;= 2</messageText>
+					</message>
+					<message>
+						<id>custom6</id>
+						<condition>custom1 &gt;= 2</condition>
+						<messageText>custom1 &gt;= 2</messageText>
+					</message>
+					<message>
+						<id>custom7</id>
+						<condition>custom1 != 2</condition>
+						<messageText>custom1 != 2</messageText>
+					</message>
+				</contentList>
+    	</survey>
+			<survey>
+    		<id>multi_custom_choice_condition</id>
+    		<title>Multi Custom Choice Condition</title>
+    		<description>This survey checks a condition on a multi custom choice prompt.</description>
+    		<submitText>Thank you for completing today's survey.</submitText>
+    		<showSummary>false</showSummary>
+    		<anytime>true</anytime>
+    		<contentList>
+          <prompt>
+						<id>multi_custom1</id>
+						<displayType>event</displayType>
+						<displayLabel>A message will be shown for different indexes.</displayLabel>
+						<promptText>The door is locked. Do you:</promptText>
+						<abbreviatedText>locked door</abbreviatedText>
+						<promptType>multi_choice_custom</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>kick the door down</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>knock politely</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>hunt in your pockets for the key</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>Show next prompt</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<message>
+						<id>multi_custom2</id>
+						<condition>multi_custom1 == 3</condition>
+						<messageText>multi_custom1 == 3</messageText>
+					</message>
+					<message>
+						<id>multi_custom3</id>
+						<condition>multi_custom1 != 2</condition>
+						<messageText>multi_custom1 != 2</messageText>
+					</message>
 				</contentList>
 			</survey>
 		</surveys>
