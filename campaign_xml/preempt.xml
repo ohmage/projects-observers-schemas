@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignUrn>urn:ohmage:campaign:preempt</campaignUrn>
+  <campaignName>PREEMPT</campaignName>
+  
+  <surveys>
+
+   <survey>
+      <id>promisThreeItemPainIntensityShortFOrm</id>
+      <title>Daily Pain</title>
+      <description>This survey allows you to track your daily pain intensity.</description>
+      <submitText>Submit</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Pain Intensity</summaryText>
+      <anytime>false</anytime>
+      <contentList>
+      
+      <!-- 
+         The key elements are 1-indexed as opposed to our usual 0-indexing. 
+         This is because the values are used to score the assessment. (To be confirmed.)
+      -->
+      
+        <prompt>
+          <id>worstPainIntensity</id>
+          <displayType>category</displayType>
+          <displayLabel>Worst Pain Intensity</displayLabel>
+          <promptText>Over the past 24 hours, how intense was your pain at its worst?</promptText>
+          <abbreviatedText>Worst Pain Intensity</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Had No Pain</label>
+            </property>
+            </properties>
+            <property>
+              <key>2</key>
+              <label>Mild</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Moderate</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Severe</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very Severe</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+        
+        <prompt>
+          <id>averagePainIntensity</id>
+          <displayType>category</displayType>
+          <displayLabel>Average Pain Intensity</displayLabel>
+          <promptText>Over the past 24 hours, how intense was your average pain?</promptText>
+          <abbreviatedText>Average Pain Intensity</abbreviatedText>
+          <promptType>single_choice</promptType>
+           <properties>
+            <property>
+              <key>1</key>
+              <label>Had No Pain</label>
+            </property>
+            </properties>
+            <property>
+              <key>2</key>
+              <label>Mild</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Moderate</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Severe</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very Severe</label>
+            </property>             
+          </properties>
+         <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>painRightNow</id>
+          <displayType>category</displayType>
+          <displayLabel>Current Pain Intensity</displayLabel>
+          <promptText>What is your level of pain right now?</promptText>
+          <abbreviatedText>Current Pain Intensity</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Had No Pain</label>
+            </property>
+            </properties>
+            <property>
+              <key>2</key>
+              <label>Mild</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Moderate</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Severe</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very Severe</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+      </contentList>
+    </survey>
+
+  </surveys>
+</campaign>
