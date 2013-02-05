@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignUrn>urn:ohmage:campaign:preempt</campaignUrn>
+  <campaignName>PREEMPT Outcomes Selection</campaignName>
+  
+  <surveys>
+
+   <survey>
+      
+      <!-- PROMIS 3-Item Pain Intensity Short Form 3A -->
+      
+      <id>promisThreeItemPainIntensityShortForm</id>
+      <title>Pain Intensity</title>
+      <description>This survey allows you to track your daily pain intensity.</description>
+      <submitText>Submit</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Pain Intensity</summaryText>
+      <anytime>false</anytime>
+      <contentList>
+      
+      <!-- 
+         The key elements are 1-indexed as opposed to our usual 0-indexing. 
+         This is because the values are used to score the assessment. (To be confirmed with Ida and Rich.)
+      -->
+      
+        <prompt>
+          <id>worstPainIntensity</id>
+          <displayType>category</displayType>
+          <displayLabel>Worst Pain Intensity</displayLabel>
+          <promptText>Over the past 24 hours, how intense was your pain at its worst?</promptText>
+          <abbreviatedText>Worst Pain Intensity</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Had No Pain</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Mild</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Moderate</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Severe</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very Severe</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+        
+        <prompt>
+          <id>averagePainIntensity</id>
+          <displayType>category</displayType>
+          <displayLabel>Average Pain Intensity</displayLabel>
+          <promptText>Over the past 24 hours, how intense was your average pain?</promptText>
+          <abbreviatedText>Average Pain Intensity</abbreviatedText>
+          <promptType>single_choice</promptType>
+           <properties>
+            <property>
+              <key>1</key>
+              <label>Had No Pain</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Mild</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Moderate</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Severe</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very Severe</label>
+            </property>             
+          </properties>
+         <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>painRightNow</id>
+          <displayType>category</displayType>
+          <displayLabel>Current Pain Intensity</displayLabel>
+          <promptText>What is your level of pain right now?</promptText>
+          <abbreviatedText>Current Pain Intensity</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Had no pain</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Mild</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Moderate</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Severe</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very severe</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+      </contentList>
+    </survey>
+
+    <survey>
+    
+      <!-- PROMIS 4-Item Pain Interference Short Form -->
+      
+      <id>promisFourItemPainInterferenceShortForm</id>
+      <title>Pain Interference</title>
+      <description>This survey allows you to track how your pain interferes with your daily life.</description>
+      <submitText>Submit</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Pain Interference</summaryText>
+      <anytime>false</anytime>
+      <contentList>
+      
+      <!-- 
+         The key elements are 1-indexed as opposed to our usual 0-indexing. 
+         This is because the values are used to score the assessment. (To be confirmed with Ida and Rich.)
+      -->
+      
+        <prompt>
+          <id>painInterferenceDayToDayActivities</id>
+          <displayType>category</displayType>
+          <displayLabel>Pain Interference with Daily Activities</displayLabel>
+          <promptText>Over the past 24 hours, how much did pain interfere with your day to day activities?</promptText>
+          <abbreviatedText>Pain Interference with Daily Activities</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>A little bit</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Somewhat</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Quite a bit</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very much</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+        
+        <prompt>
+          <id>painInterferenceWorkAroundTheHome</id>
+          <displayType>category</displayType>
+          <displayLabel>Pain Interference with Work Around the Home</displayLabel>
+          <promptText>Over the past 24 hours, how much did pain interfere with your work around the home?</promptText>
+          <abbreviatedText>Pain Interference with Work Around the Home</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>A little bit</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Somewhat</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Quite a bit</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very much</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>painInterferenceSocialActivities</id>
+          <displayType>category</displayType>
+          <displayLabel>Pain Interference with Social Activities</displayLabel>
+          <promptText>Over the past 24 hours, how much did pain interfere with your ability to participate in social activities?</promptText>
+          <abbreviatedText>Pain Interference with Social Activities</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>A little bit</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Somewhat</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Quite a bit</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very much</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+
+        <prompt>
+          <id>painInterferenceHouseholdChores</id>
+          <displayType>category</displayType>
+          <displayLabel>Pain Interference with Household Chores</displayLabel>
+          <promptText>Over the past 24 hours, how much did pain interfere with your household chores?</promptText>
+          <abbreviatedText>Pain Interference with Household Chores</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>A little bit</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Somewhat</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Quite a bit</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very much</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+
+      </contentList>
+    </survey>
+
+
+    <survey>
+    
+       <!-- 
+         Adapted from QOLIE-89 v1.0 
+         http://www.rand.org/content/dam/rand/www/external/health/surveys_tools/qolie/qolie89_survey.pdf
+       -->
+         
+      <id>dailyQualityOfLifeSurvey</id>
+      <title>Quality of Life</title>
+      <description>Quality of Life</description>
+      <submitText>Submit</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Quality of Life</summaryText>
+      <anytime>false</anytime>
+      <contentList>
+      
+        <prompt>
+          <id>dailyQualityOfLifePrompt</id>
+          <!--
+             Rich Kravitz prefers that we use a number prompt type here.  
+          -->
+          
+          <displayType>category</displayType>
+          <displayLabel>Quality of Life</displayLabel>
+          <promptText>Overall, how would you rate your quality of life over the past day, on a scale from 0 ("terrible quality of life") to 10 ("excellent quality of life")?</promptText>
+          <abbreviatedText>Quality of Life</abbreviatedText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>10</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+          
+        </prompt>
+
+      </contentList>
+    </survey>
+    
+    <survey>
+    
+       <!-- 
+         PROMIS Sleep Disturbance Single Item
+       -->
+         
+      <id>sleepDisturbanceSurvey</id>
+      <title>Sleep Disturbance</title>
+      <description>Sleep Disturbance</description>
+      <submitText>Submit</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Sleep Disturbance</summaryText>
+      <anytime>false</anytime>
+      <contentList>
+      
+        <prompt>
+          <id>sleepDisturbancePrompt</id>
+          <displayType>category</displayType>
+          <displayLabel>Sleep Disturbance</displayLabel>
+          <promptText>Last night my sleep quality was ...</promptText>
+          <abbreviatedText>Sleep Disturbance</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Very poor</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Poor</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Fair</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Good</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very good</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+      </contentList>
+    </survey>
+    
+    <survey>
+    
+       <!-- 
+         PROMIS Fatigue Single Item
+       -->
+         
+      <id>dailyFatigueSurvey</id>
+      <title>Daily Fatigue</title>
+      <description>Daily Fatigue</description>
+      <submitText>Submit</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Daily Fatigue</summaryText>
+      <anytime>false</anytime>
+      <contentList>
+      
+        <prompt>
+          <id>dailyFatiguePrompt</id>
+          <displayType>category</displayType>
+          <displayLabel>Daily Fatigue</displayLabel>
+          <promptText>Over the past 24 hours, I felt fatigued ...</promptText>
+          <abbreviatedText>Sleep Disturbance</abbreviatedText>
+          <promptType>single_choice</promptType>
+          
+          <!--
+            Confirm with Rich / Ida - these responses seem strange for the question
+          -->
+          
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>A little bit</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Somewhat</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Quite a bit</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very much</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+      </contentList>
+    </survey>
+
+    <survey>
+    
+       <!-- 
+         PROMIS Daily Sleepiness Single Item
+       -->
+         
+      <id>dailySleepinessSurvey</id>
+      <title>Daily Sleepiness</title>
+      <description>Daily Sleepiness</description>
+      <submitText>Submit</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Daily Sleepiness</summaryText>
+      <anytime>false</anytime>
+      <contentList>
+      
+        <prompt>
+          <id>dailySleepinessPrompt</id>
+          <displayType>category</displayType>
+          <displayLabel>Daily Sleepiness</displayLabel>
+          <promptText>How often today did you feel drowsy or sleepy during the day?</promptText>
+          <abbreviatedText>Daily Sleepiness</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>None of the time</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>A little of the time</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Some of the time</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>A good bit of the time</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Most of the time</label>
+            </property>             
+            <property>
+              <key>6</key>
+              <label>All of the time</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+      </contentList>
+    </survey>
+
+
+    <survey>
+    
+       <!-- 
+         FACIT Constipation Item
+       -->
+         
+      <id>dailyConstipationSurvey</id>
+      <title>Daily Constipation</title>
+      <description>Daily Constipation</description>
+      <submitText>Submit</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Daily Constipation</summaryText>
+      <anytime>false</anytime>
+      <contentList>
+      
+        <prompt>
+          <id>dailyConstipationPrompt</id>
+          <displayType>category</displayType>
+          <displayLabel>Daily Constipation</displayLabel>
+          <promptText>How often over the past 24 hours did you feel constipated?</promptText>
+          <abbreviatedText>Daily Constipation</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>A little bit</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Somewhat</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Quite a bit</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very much</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+      </contentList>
+    </survey>
+
+    <survey>
+    
+       <!-- 
+         FACIT Nausea Item
+       -->
+         
+      <id>dailyNauseaSurvey</id>
+      <title>Daily Nausea</title>
+      <description>Daily Nausea</description>
+      <submitText>Submit</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Daily Nausea</summaryText>
+      <anytime>false</anytime>
+      <contentList>
+      
+        <prompt>
+          <id>dailyNauseaPrompt</id>
+          <displayType>category</displayType>
+          <displayLabel>Daily Nausea</displayLabel>
+          <promptText>How often over the past 24 hours did you feel nauseated?</promptText>
+          <abbreviatedText>Daily Nausea</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Not at all</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>A little bit</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Somewhat</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Quite a bit</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Very much</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+      </contentList>
+    </survey>
+
+    <!-- 
+        Patient Optional Measures (Benefit or Harm)
+    -->
+
+    <survey>
+    
+       <!-- 
+         Weekly Neuropathic Pain
+         Truncated Neuropathic Pain Scale (sharp, hot, sensitive, unpleasant)
+       -->
+         
+      <id>weeklyNeuropathicPainSurvey</id>
+      <title>Weekly Neuropathic Pain</title>
+      <description>Weekly Neuropathic Pain</description>
+      <submitText>Submit</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Weekly Neuropathic Pain</summaryText>
+      <anytime>false</anytime>
+      <contentList>
+      
+        <prompt>
+          <id>painSharpness</id>
+          <displayType>category</displayType>
+          <displayLabel>Pain Sharpness</displayLabel>
+          <promptText>On a scale of 0 to 10, how sharp does your pain feel? (from 0 = not sharp to 10 = like a knife)</promptText>
+          <abbreviatedText>Pain Sharpness</abbreviatedText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>10</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>painHotness</id>
+          <displayType>category</displayType>
+          <displayLabel>Pain Hotness</displayLabel>
+          <promptText>On a scale of 0 to 10, how hot does your pain feel? (from 0 = not hot to 10 = on fire)</promptText>
+          <abbreviatedText>Pain Hotness</abbreviatedText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>10</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>painSensitivity</id>
+          <displayType>category</displayType>
+          <displayLabel>Pain Sensitivity</displayLabel>
+          <promptText>On a scale of 0 to 10, how sensitive does your pain feel? (from 0 = not sensitive to 10 = raw skin)</promptText>
+          <abbreviatedText>Pain Sensitivity</abbreviatedText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>10</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+        <prompt>
+          <id>painUnpleasantness</id>
+          <displayType>category</displayType>
+          <displayLabel>Pain Unpleasantness</displayLabel>
+          <promptText>On a scale of 0 to 10, how unpleasant does your pain feel? (from 0 = not unpleasant to 10 = intolerable)</promptText>
+          <abbreviatedText>Pain Sensitivity</abbreviatedText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>0</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>10</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+
+      </contentList>
+    </survey>
+
+    <survey>
+    
+       <!-- 
+         Weekly Loss of Libido
+       -->
+         
+      <id>weeklyLossOfLibidoSurvey</id>
+      <title>Weekly Loss of Libido</title>
+      <description>Weekly Loss of Libido</description>
+      <submitText>Submit</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Weekly Loss of Libido</summaryText>
+      <anytime>false</anytime>
+      <contentList>
+      
+        <prompt>
+          <id>weeklyLossOfLibidoPrompt</id>
+          <displayType>category</displayType>
+          <displayLabel>Weekly Loss of Libido</displayLabel>
+          <promptText>During the past 7 days, I have ...</promptText>
+          <abbreviatedText>Weekly Loss of Libido</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>1</key>
+              <label>Been much more interested in sex than is usual</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Been more interested in sex than is usual for me</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Not noticed any change in my interest in sex</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Been less interested in sex than is usual for me</label>
+            </property>
+            <property>
+              <key>5</key>
+              <label>Been much interested in sex than is usual for me</label>
+            </property>             
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+
+      </contentList>
+    </survey>
+
+  </surveys>
+</campaign>
