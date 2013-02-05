@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
-  <campaignUrn>urn:ohmage:campaign:preempt</campaignUrn>
-  <campaignName>PREEMPT Outcomes Selection</campaignName>
+  <campaignUrn>urn:ohmage:campaign:trialist</campaignUrn>
+  <campaignName>Trialist</campaignName>
   
   <surveys>
 
