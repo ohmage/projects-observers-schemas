@@ -13,9 +13,6 @@
       <title>Pain Intensity</title>
       <description>This survey allows you to track your daily pain intensity.</description>
       <submitText>Submit</submitText>
-      <showSummary>false</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>Pain Intensity</summaryText>
       <anytime>false</anytime>
       <contentList>
       
@@ -26,10 +23,8 @@
       
         <prompt>
           <id>worstPainIntensity</id>
-          <displayType>category</displayType>
-          <displayLabel>Worst Pain Intensity</displayLabel>
           <promptText>Over the past 24 hours, how intense was your pain at its worst?</promptText>
-          <abbreviatedText>Worst Pain Intensity</abbreviatedText>
+          <displayLabel>Worst Pain Intensity</displayLabel>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -59,10 +54,8 @@
         
         <prompt>
           <id>averagePainIntensity</id>
-          <displayType>category</displayType>
-          <displayLabel>Average Pain Intensity</displayLabel>
           <promptText>Over the past 24 hours, how intense was your average pain?</promptText>
-          <abbreviatedText>Average Pain Intensity</abbreviatedText>
+          <displayLabel>Average Pain Intensity</displayLabel>
           <promptType>single_choice</promptType>
            <properties>
             <property>
@@ -92,10 +85,8 @@
 
         <prompt>
           <id>painRightNow</id>
-          <displayType>category</displayType>
-          <displayLabel>Current Pain Intensity</displayLabel>
           <promptText>What is your level of pain right now?</promptText>
-          <abbreviatedText>Current Pain Intensity</abbreviatedText>
+          <displayLabel>Pain Right Now</displayLabel>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -134,9 +125,6 @@
       <title>Pain Interference</title>
       <description>This survey allows you to track how your pain interferes with your daily life.</description>
       <submitText>Submit</submitText>
-      <showSummary>false</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>Pain Interference</summaryText>
       <anytime>false</anytime>
       <contentList>
       
@@ -147,10 +135,8 @@
       
         <prompt>
           <id>painInterferenceDayToDayActivities</id>
-          <displayType>category</displayType>
-          <displayLabel>Pain Interference with Daily Activities</displayLabel>
           <promptText>Over the past 24 hours, how much did pain interfere with your day to day activities?</promptText>
-          <abbreviatedText>Pain Interference with Daily Activities</abbreviatedText>
+          <displayLabel>Pain Inteference in Daily Activities</displayLabel>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -180,10 +166,8 @@
         
         <prompt>
           <id>painInterferenceWorkAroundTheHome</id>
-          <displayType>category</displayType>
-          <displayLabel>Pain Interference with Work Around the Home</displayLabel>
           <promptText>Over the past 24 hours, how much did pain interfere with your work around the home?</promptText>
-          <abbreviatedText>Pain Interference with Work Around the Home</abbreviatedText>
+          <displayLabel>Pain Interference with Work Around Home</displayLabel>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -213,10 +197,8 @@
 
         <prompt>
           <id>painInterferenceSocialActivities</id>
-          <displayType>category</displayType>
-          <displayLabel>Pain Interference with Social Activities</displayLabel>
           <promptText>Over the past 24 hours, how much did pain interfere with your ability to participate in social activities?</promptText>
-          <abbreviatedText>Pain Interference with Social Activities</abbreviatedText>
+          <displayLabel>Pain Interference with Social Activities</displayLabel>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -247,10 +229,8 @@
 
         <prompt>
           <id>painInterferenceHouseholdChores</id>
-          <displayType>category</displayType>
-          <displayLabel>Pain Interference with Household Chores</displayLabel>
           <promptText>Over the past 24 hours, how much did pain interfere with your household chores?</promptText>
-          <abbreviatedText>Pain Interference with Household Chores</abbreviatedText>
+          <displayLabel>Pain Interference with Household Chores</displayLabel>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -290,13 +270,10 @@
          http://www.rand.org/content/dam/rand/www/external/health/surveys_tools/qolie/qolie89_survey.pdf
        -->
          
-      <id>dailyQualityOfLifeSurvey</id>
+      <id>qualityOfLifeSurvey</id>
       <title>Quality of Life</title>
       <description>Quality of Life</description>
       <submitText>Submit</submitText>
-      <showSummary>false</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>Quality of Life</summaryText>
       <anytime>false</anytime>
       <contentList>
       
@@ -305,11 +282,8 @@
           <!--
              Rich Kravitz prefers that we use a number prompt type here.  
           -->
-          
-          <displayType>category</displayType>
-          <displayLabel>Quality of Life</displayLabel>
           <promptText>Overall, how would you rate your quality of life over the past day, on a scale from 0 ("terrible quality of life") to 10 ("excellent quality of life")?</promptText>
-          <abbreviatedText>Quality of Life</abbreviatedText>
+          <displayLabel>Quality of Life</displayLabel>
           <promptType>number</promptType>
           <properties>
             <property>
@@ -323,7 +297,6 @@
           </properties>
           <skippable>false</skippable>
           <skipLabel>Skip</skipLabel>
-          
         </prompt>
 
       </contentList>
@@ -339,18 +312,13 @@
       <title>Sleep Disturbance</title>
       <description>Sleep Disturbance</description>
       <submitText>Submit</submitText>
-      <showSummary>false</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>Sleep Disturbance</summaryText>
       <anytime>false</anytime>
       <contentList>
       
         <prompt>
           <id>sleepDisturbancePrompt</id>
-          <displayType>category</displayType>
-          <displayLabel>Sleep Disturbance</displayLabel>
           <promptText>Last night my sleep quality was ...</promptText>
-          <abbreviatedText>Sleep Disturbance</abbreviatedText>
+          <displayLabel>Sleep Quality</displayLabel>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -387,22 +355,17 @@
          PROMIS Fatigue Single Item
        -->
          
-      <id>dailyFatigueSurvey</id>
-      <title>Daily Fatigue</title>
-      <description>Daily Fatigue</description>
+      <id>fatigueSurvey</id>
+      <title>Fatigue</title>
+      <description>Fatigue</description>
       <submitText>Submit</submitText>
-      <showSummary>false</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>Daily Fatigue</summaryText>
       <anytime>false</anytime>
       <contentList>
       
         <prompt>
-          <id>dailyFatiguePrompt</id>
-          <displayType>category</displayType>
-          <displayLabel>Daily Fatigue</displayLabel>
+          <id>fatiguePrompt</id>
           <promptText>Over the past 24 hours, I felt fatigued ...</promptText>
-          <abbreviatedText>Sleep Disturbance</abbreviatedText>
+          <displayLabel>Fatigued</displayLabel>
           <promptType>single_choice</promptType>
           
           <!--
@@ -441,25 +404,20 @@
     <survey>
     
        <!-- 
-         PROMIS Daily Sleepiness Single Item
+         PROMIS Sleepiness Single Item
        -->
          
-      <id>dailySleepinessSurvey</id>
-      <title>Daily Sleepiness</title>
-      <description>Daily Sleepiness</description>
+      <id>sleepinessSurvey</id>
+      <title>Sleepiness</title>
+      <description>Sleepiness</description>
       <submitText>Submit</submitText>
-      <showSummary>false</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>Daily Sleepiness</summaryText>
       <anytime>false</anytime>
       <contentList>
       
         <prompt>
-          <id>dailySleepinessPrompt</id>
-          <displayType>category</displayType>
-          <displayLabel>Daily Sleepiness</displayLabel>
+          <id>sleepinessPrompt</id>
           <promptText>How often today did you feel drowsy or sleepy during the day?</promptText>
-          <abbreviatedText>Daily Sleepiness</abbreviatedText>
+          <displayLabel>Sleepiness</displayLabel>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -501,22 +459,17 @@
          FACIT Constipation Item
        -->
          
-      <id>dailyConstipationSurvey</id>
-      <title>Daily Constipation</title>
-      <description>Daily Constipation</description>
+      <id>constipationSurvey</id>
+      <title>Constipation</title>
+      <description>Constipation</description>
       <submitText>Submit</submitText>
-      <showSummary>false</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>Daily Constipation</summaryText>
       <anytime>false</anytime>
       <contentList>
       
         <prompt>
-          <id>dailyConstipationPrompt</id>
-          <displayType>category</displayType>
-          <displayLabel>Daily Constipation</displayLabel>
+          <id>constipationPrompt</id>
           <promptText>How often over the past 24 hours did you feel constipated?</promptText>
-          <abbreviatedText>Daily Constipation</abbreviatedText>
+          <displayLabel>Constipated</displayLabel>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -553,22 +506,17 @@
          FACIT Nausea Item
        -->
          
-      <id>dailyNauseaSurvey</id>
-      <title>Daily Nausea</title>
-      <description>Daily Nausea</description>
+      <id>nauseaSurvey</id>
+      <title>Nausea</title>
+      <description>Nausea</description>
       <submitText>Submit</submitText>
-      <showSummary>false</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>Daily Nausea</summaryText>
       <anytime>false</anytime>
       <contentList>
       
         <prompt>
-          <id>dailyNauseaPrompt</id>
-          <displayType>category</displayType>
-          <displayLabel>Daily Nausea</displayLabel>
+          <id>nauseaPrompt</id>
           <promptText>How often over the past 24 hours did you feel nauseated?</promptText>
-          <abbreviatedText>Daily Nausea</abbreviatedText>
+          <displayLabel>Nauseated</displayLabel>
           <promptType>single_choice</promptType>
           <properties>
             <property>
@@ -606,26 +554,21 @@
     <survey>
     
        <!-- 
-         Weekly Neuropathic Pain
+         Neuropathic Pain
          Truncated Neuropathic Pain Scale (sharp, hot, sensitive, unpleasant)
        -->
          
-      <id>weeklyNeuropathicPainSurvey</id>
-      <title>Weekly Neuropathic Pain</title>
-      <description>Weekly Neuropathic Pain</description>
+      <id>neuropathicPainSurvey</id>
+      <title>Neuropathic Pain</title>
+      <description>Neuropathic Pain</description>
       <submitText>Submit</submitText>
-      <showSummary>false</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>Weekly Neuropathic Pain</summaryText>
       <anytime>false</anytime>
       <contentList>
       
         <prompt>
           <id>painSharpness</id>
-          <displayType>category</displayType>
           <displayLabel>Pain Sharpness</displayLabel>
           <promptText>On a scale of 0 to 10, how sharp does your pain feel? (from 0 = not sharp to 10 = like a knife)</promptText>
-          <abbreviatedText>Pain Sharpness</abbreviatedText>
           <promptType>number</promptType>
           <properties>
             <property>
@@ -643,10 +586,8 @@
 
         <prompt>
           <id>painHotness</id>
-          <displayType>category</displayType>
           <displayLabel>Pain Hotness</displayLabel>
           <promptText>On a scale of 0 to 10, how hot does your pain feel? (from 0 = not hot to 10 = on fire)</promptText>
-          <abbreviatedText>Pain Hotness</abbreviatedText>
           <promptType>number</promptType>
           <properties>
             <property>
@@ -664,10 +605,8 @@
 
         <prompt>
           <id>painSensitivity</id>
-          <displayType>category</displayType>
           <displayLabel>Pain Sensitivity</displayLabel>
           <promptText>On a scale of 0 to 10, how sensitive does your pain feel? (from 0 = not sensitive to 10 = raw skin)</promptText>
-          <abbreviatedText>Pain Sensitivity</abbreviatedText>
           <promptType>number</promptType>
           <properties>
             <property>
@@ -685,10 +624,8 @@
 
         <prompt>
           <id>painUnpleasantness</id>
-          <displayType>category</displayType>
           <displayLabel>Pain Unpleasantness</displayLabel>
           <promptText>On a scale of 0 to 10, how unpleasant does your pain feel? (from 0 = not unpleasant to 10 = intolerable)</promptText>
-          <abbreviatedText>Pain Sensitivity</abbreviatedText>
           <promptType>number</promptType>
           <properties>
             <property>
@@ -711,25 +648,20 @@
     <survey>
     
        <!-- 
-         Weekly Loss of Libido
+         Loss of Libido
        -->
          
-      <id>weeklyLossOfLibidoSurvey</id>
-      <title>Weekly Loss of Libido</title>
-      <description>Weekly Loss of Libido</description>
+      <id>lossOfLibidoSurvey</id>
+      <title>Loss of Libido</title>
+      <description>Loss of Libido</description>
       <submitText>Submit</submitText>
-      <showSummary>false</showSummary>
-      <editSummary>false</editSummary>
-      <summaryText>Weekly Loss of Libido</summaryText>
       <anytime>false</anytime>
       <contentList>
       
         <prompt>
-          <id>weeklyLossOfLibidoPrompt</id>
-          <displayType>category</displayType>
-          <displayLabel>Weekly Loss of Libido</displayLabel>
+          <id>lossOfLibidoPrompt</id>
           <promptText>During the past 7 days, I have ...</promptText>
-          <abbreviatedText>Weekly Loss of Libido</abbreviatedText>
+          <displayLabel>Libido</displayLabel>
           <promptType>single_choice</promptType>
           <properties>
             <property>
