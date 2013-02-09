@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<campaign>
+		<campaignUrn>urn:campaign:image:test</campaignUrn>
+		<campaignName>Image Test</campaignName>
+		<surveys>
+			<survey>
+				<id>image_survey</id>
+				<title>Image Size Test</title>
+				<description>This is the survey for the image prompt to make sure it resizes the captured image based on the res parameter.</description>
+				<submitText>Great test!</submitText>
+				<showSummary>false</showSummary>
+				<anytime>true</anytime>
+				<contentList>
+					<prompt>
+						<id>image_prompt1</id>
+						<displayType>category</displayType>
+						<displayLabel>Take an image</displayLabel>
+						<promptText>Take an image. It will be resized to ~400px on the long side.</promptText>
+						<promptType>photo</promptType>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+						<properties>
+							<property>
+								<key>maxDimension</key>
+								<label>400</label>
+							</property>
+						</properties>
+					</prompt>
+					<prompt>
+						<id>image_prompt2</id>
+						<displayType>category</displayType>
+						<displayLabel>Take an image</displayLabel>
+						<promptText>Take an image. It will be resized to ~800px on the long side.</promptText>
+						<promptType>photo</promptType>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+						<properties>
+							<property>
+								<key>maxDimension</key>
+								<label>800</label>
+							</property>
+						</properties>
+					</prompt>
+					<prompt>
+						<id>image_prompt3</id>
+						<displayType>category</displayType>
+						<displayLabel>Take an image</displayLabel>
+						<promptText>Take an image. It will be resized to ~1000000px on the long side.</promptText>
+						<promptType>photo</promptType>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+						<properties>
+							<property>
+								<key>maxDimension</key>
+								<label>1000000</label>
+							</property>
+						</properties>
+					</prompt>
+					<prompt>
+						<id>image_prompt4</id>
+						<displayType>category</displayType>
+						<displayLabel>Take an image</displayLabel>
+						<promptText>Take an image. It will not be resized.</promptText>
+						<promptType>photo</promptType>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+				</contentList>
+			</survey>
+		</surveys>
+	</campaign>
