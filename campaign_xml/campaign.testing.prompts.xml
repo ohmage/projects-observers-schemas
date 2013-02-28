@@ -1,0 +1,2474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+    <campaignUrn>urn:campaign:ohmage:testing:prompts:2_14:2013020401</campaignUrn>
+    <campaignName>Prompt Testing</campaignName>
+    
+    <surveys>
+        <!-- Conditions survey -->
+        <survey>
+            <id>conditionsSurvey</id>
+            <title>Conditions Survey</title>
+            <description>This is a survey to test behavior of conditions.</description>
+            <submitText>Done with the conditions survey.</submitText>
+            <showSummary>false</showSummary>
+            <summaryText>Message Test</summaryText>
+            <anytime>true</anytime>
+            
+            <contentList>
+                <!--
+                    Create the prompts that the user must skip and not skip to ensure that the subsequent prompts correctly test the system.
+                 -->
+                <prompt>
+                    <id>number</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Setting up the test</displayLabel>
+                    <promptText>Just hit next.</promptText>
+                    <promptType>number</promptType>
+                    <default>1</default>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>2</label>
+                        </property>
+                    </properties>
+                </prompt>
+                <prompt>
+                    <id>skip</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Setting up the test</displayLabel>
+                    <promptText>Skip this prompt.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>doNotSkip</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Setting up the test</displayLabel>
+                    <promptText>Do not skip this prompt.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                
+                <!--
+                    Test the == logic.
+                 -->
+                <prompt>
+                    <id>testEqualsPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Equals</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(number == 1)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testEqualsFail</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Equals</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>(number == 2)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <!--
+                    Test the != logic.
+                 -->
+                <prompt>
+                    <id>testNotEqualsPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Not Equals</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(number != 2)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testNotEqualsFail</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Not Equals</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>(number != 1)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <!--
+                    Test the < logic.
+                 -->
+                <prompt>
+                    <id>testLessThanPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Less Than</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(number &lt; 2)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testLessThanFailEquals</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Less Than</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>(number &lt; 1)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testLessThanFailNotEquals</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Less Than</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>(number &lt; 0)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <!--
+                    Test the <= logic.
+                 -->
+                <prompt>
+                    <id>testLessThanEqualsPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Less Than Equals</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(number &lt;= 2)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testLessThanEqualsPassEquals</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Less Than Equals</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(number &lt;= 1)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testLessThanEqualsFailNotEquals</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Less Than</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>(number &lt;= 0)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <!--
+                    Test the > logic.
+                 -->
+                <prompt>
+                    <id>testGreaterThanPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Greater Than</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(number &gt; 0)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testGreaterThanFailEquals</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Greater Than</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(number &gt; 1)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testGreaterThanFailNotEquals</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Greater Than</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>(number &gt; 2)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <!--
+                    Test the >= logic.
+                 -->
+                <prompt>
+                    <id>testGreaterThanEqualsPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Greater Than Equals</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(number &gt;= 0)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testGreaterThanEqualsPassEquals</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Greater Than Equals</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(number &gt;= 1)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testGreaterThanEqualsFailNotEquals</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Greater Than</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>(number &gt;= 2)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <!--
+                    Test the AND logic.
+                 -->
+                <prompt>
+                    <id>testAndTrueTrue</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing And</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>((number == 1) and (number == 1))</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testAndTrueFalse</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing And</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>((number == 1) and (number == 2))</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testAndFalseTrue</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing And</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>((number == 2) and (number == 1))</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testAndFalseFalse</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing And</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>((number == 2) and (number == 2))</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <!--
+                    Test the OR logic.
+                 -->
+                <prompt>
+                    <id>testOrTrueTrue</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Or</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>((number == 1) or (number == 1))</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testOrTrueFalse</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Or</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>((number == 1) or (number == 2))</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testOrFalseTrue</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Or</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>((number == 2) or (number == 1))</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>testOrFalseFalse</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Or</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>((number == 2) or (number == 2))</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <!--
+                    Test the SKIPPED logic.
+                 -->
+                <prompt>
+                    <id>testSkippedPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Skip</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(skip == SKIPPED)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>testNotSkippedPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Skip</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(doNotSkip != SKIPPED)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>testSkippedFail</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Skip</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>(skip != SKIPPED)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>testNotSkippedFail</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Testing Skip</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>(doNotSkip == SKIPPED)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                
+                <!--
+                    Test the NOT_DISPLAYED logic.
+                 -->
+                <prompt>
+                    <!--
+                        This prompt should be displayed because it is checking that another prompt (that wasn't displayed) is equal to NOT_DISPLAYED.
+                     -->
+                    <id>testNotDisplayedPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>mTimestamp</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(testSkippedFail == NOT_DISPLAYED)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <!--
+                        This prompt should be displayed because it is checking that another prompt (that was displayed) is not equal to NOT_DISPLAYED.
+                     -->
+                    <id>testNotNotDisplayedPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>mTimestamp</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <condition>(testSkippedPass != NOT_DISPLAYED)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <!--
+                        This prompt should not be displayed because it is checking that another prompt (that wasn't displayed) is not equal to NOT_DISPLAYED.
+                     -->
+                    <id>testNotDisplayedFail</id>
+                    <displayType>event</displayType>
+                    <displayLabel>mTimestamp</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>(testSkippedFail != NOT_DISPLAYED)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <!--
+                     This prompt should not be displayed because it is checking that another prompt (that was displayed) is equal to NOT_DISPLAYED.
+                     -->
+                    <id>testNotNotDisplayedFail</id>
+                    <displayType>event</displayType>
+                    <displayLabel>mTimestamp</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <condition>(testSkippedPass == NOT_DISPLAYED)</condition>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                
+                <!--
+                    Finally, this message should be displayed if all tests passed.
+                 -->
+                <message>
+                    <id>resultPass</id>
+                    <messageText>All tests appear to have passed.</messageText>
+                    <condition>((number != NOT_DISPLAYED) and (skip != NOT_DISPLAYED) and (doNotSkip != NOT_DISPLAYED) and (testEqualsPass != NOT_DISPLAYED) and (testEqualsFail == NOT_DISPLAYED) and (testNotEqualsPass != NOT_DISPLAYED) and (testNotEqualsFail == NOT_DISPLAYED) and (testLessThanPass != NOT_DISPLAYED) and (testLessThanFailEquals == NOT_DISPLAYED) and (testLessThanFailNotEquals == NOT_DISPLAYED) and (testLessThanEqualsPass != NOT_DISPLAYED) and (testLessThanEqualsPassEquals != NOT_DISPLAYED) and (testLessThanEqualsFailNotEquals == NOT_DISPLAYED) and (testGreaterThanPass != NOT_DISPLAYED) and (testGreaterThanFailEquals == NOT_DISPLAYED) and (testGreaterThanFailNotEquals == NOT_DISPLAYED) and (testGreaterThanEqualsPass != NOT_DISPLAYED) and (testGreaterThanEqualsPassEquals != NOT_DISPLAYED) and (testGreaterThanEqualsFailNotEquals == NOT_DISPLAYED) and (testAndTrueTrue != NOT_DISPLAYED) and (testAndTrueFalse == NOT_DISPLAYED) and (testAndFalseTrue == NOT_DISPLAYED) and (testAndFalseFalse == NOT_DISPLAYED) and (testOrTrueTrue != NOT_DISPLAYED) and (testOrTrueFalse != NOT_DISPLAYED) and (testOrFalseTrue != NOT_DISPLAYED) and (testOrFalseFalse == NOT_DISPLAYED) and (testSkippedPass != NOT_DISPLAYED) and (testSkippedFail == NOT_DISPLAYED) and (testNotSkippedPass != NOT_DISPLAYED) and (testNotSkippedFail == NOT_DISPLAYED) and (testNotDisplayedPass != NOT_DISPLAYED) and (testNotDisplayedFail == NOT_DISPLAYED) and (testNotNotDisplayedPass != NOT_DISPLAYED)and (testNotNotDisplayedFail == NOT_DISPLAYED))</condition>
+                </message>
+                
+                <message>
+                    <id>resultFail</id>
+                    <messageText>One or more tests failed.</messageText>
+                    <condition>(resultPass == NOT_DISPLAYED)</condition>
+                </message>
+            </contentList>
+        </survey>
+        
+        <!-- Hours before now survey -->
+        <survey>
+            <id>hoursBeforeNowSurvey</id>
+            <title>Hours Before Now Survey</title>
+            <description>This is a survey to test behavior of the hours_before_now prompt type.</description>
+            <submitText>Done with the hours_before_now survey</submitText>
+            <showSummary>false</showSummary>
+            <anytime>true</anytime>
+            
+            <contentList>
+                <prompt>
+                    <id>lookRightPortrait</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In portrait, does this look correct?</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>lookRightLandscape</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In landscape, does this look correct?</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testDefault</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Is the default 0?</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <default>0</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testDefaultPositive</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Is the default 2?</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>2</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testDefaultNegative</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Is the default -2?</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>-2</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>increaseValue</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Does the up arrow work?</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>decreaseValue</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Does the down arrow work?</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>typeInValue</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Enter a value rather than using the up and down arrows.</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>decreaseValueToNegative</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Use the down arrow to go to -5.</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>1</label>
+                        </property>
+                    </properties>
+                    <default>1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>typeInValueNegative</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Enter the value -4.</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>1</label>
+                        </property>
+                    </properties>
+                    <default>1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>typeInValueNegativeLimit</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Enter the value -5.</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>1</label>
+                        </property>
+                    </properties>
+                    <default>1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>increaseValueToPositive</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Use the up arrow to go to 5.</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>-1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>typeInValuePositive</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Enter the value 4.</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>-1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>typeInValuePositiveLimit</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Enter the value 5.</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>-1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>setCondition</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Change the value to 42.</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>40</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>43</label>
+                        </property>
+                    </properties>
+                    <default>41</default>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <prompt>
+                    <id>testConditionPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>This prompt should be displayed.</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <default>0</default>
+                    <skippable>false</skippable>
+                    <condition>(setCondition == 42)</condition>
+                </prompt>
+                
+                <prompt>
+                    <id>testConditionFail</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>This prompt should NOT be displayed.</promptText>
+                    <promptType>hours_before_now</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <default>0</default>
+                    <skippable>false</skippable>
+                    <condition>(setCondition == 43)</condition>
+                </prompt>
+                
+                <message>
+                    <id>resultPass</id>
+                    <messageText>All tests appear to have passed.</messageText>
+                    <condition>((lookRightPortrait != SKIPPED) and (lookRightLandscape != SKIPPED) and (testDefault != SKIPPED) and (testDefaultPositive != SKIPPED) and (testDefaultNegative != SKIPPED) and (increaseValue != SKIPPED) and (decreaseValue != SKIPPED) and (typeInValue != SKIPPED) and (decreaseValueToNegative != SKIPPED) and (typeInValueNegative != SKIPPED) and (typeInValueNegativeLimit != SKIPPED) and (increaseValueToPositive != SKIPPED) and (typeInValueNegative != SKIPPED) and (typeInValuePositiveLimit != SKIPPED) and (setCondition != NOT_DISPLAYED) and (testConditionPass != NOT_DISPLAYED) and (testConditionFail == NOT_DISPLAYED))</condition>
+                </message>
+                
+                <message>
+                    <id>resultFail</id>
+                    <messageText>One or more tests failed.</messageText>
+                    <condition>(resultPass == NOT_DISPLAYED)</condition>
+                </message>
+            </contentList>
+        </survey>
+        
+        <!-- Message survey -->
+        <survey>
+            <id>messageSurvey</id>
+            <title>Message Survey</title>
+            <description>This is a survey to test behavior of messages.</description>
+            <submitText>Done with the message survey.</submitText>
+            <showSummary>false</showSummary>
+            <summaryText>Message Test</summaryText>
+            <anytime>true</anytime>
+            
+            <contentList>
+                <message>
+                    <id>message</id>
+                    <messageText>This is the message text.</messageText>
+                </message>
+                
+                <message>
+                    <id>resultPass</id>
+                    <messageText>All tests appear to have passed.</messageText>
+                    <condition>(message != NOT_DISPLAYED)</condition>
+                </message>
+                
+                <message>
+                    <id>resultFail</id>
+                    <messageText>One or more tests failed.</messageText>
+                    <condition>(resultPass == NOT_DISPLAYED)</condition>
+                </message>
+            </contentList>
+        </survey>
+        
+        <!-- Number survey -->
+        <survey>
+            <id>numberSurvey</id>
+            <title>Number Survey</title>
+            <description>This is a survey to test behavior of the number prompt type.</description>
+            <submitText>Done with the number survey</submitText>
+            <showSummary>false</showSummary>
+            <anytime>true</anytime>
+            
+            <contentList>
+                <prompt>
+                    <id>lookRightPortrait</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In portrait, does this look correct?</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>lookRightLandscape</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In landscape, does this look correct?</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testDefault</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Is the default 0?</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <default>0</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testDefaultPositive</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Is the default 2?</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>2</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testDefaultNegative</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Is the default -2?</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>-2</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>increaseValue</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Does the up arrow work?</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>decreaseValue</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Does the down arrow work?</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>typeInValue</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Enter a value rather than using the up and down arrows.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>decreaseValueToNegative</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Use the down arrow to go to -5.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>1</label>
+                        </property>
+                    </properties>
+                    <default>1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>typeInValueNegative</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Enter the value -4.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>1</label>
+                        </property>
+                    </properties>
+                    <default>1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>typeInValueNegativeLimit</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Enter the value -5.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>1</label>
+                        </property>
+                    </properties>
+                    <default>1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>increaseValueToPositive</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Use the up arrow to go to 5.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>-1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>typeInValuePositive</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Enter the value 4.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>-1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>typeInValuePositiveLimit</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Enter the value 5.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>-1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>5</label>
+                        </property>
+                    </properties>
+                    <default>-1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>setCondition</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Change the value to 42.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>40</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>43</label>
+                        </property>
+                    </properties>
+                    <default>41</default>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <prompt>
+                    <id>testConditionPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>This prompt should be displayed.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <default>0</default>
+                    <skippable>false</skippable>
+                    <condition>(setCondition == 42)</condition>
+                </prompt>
+                
+                <prompt>
+                    <id>testConditionFail</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>This prompt should NOT be displayed.</promptText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <default>0</default>
+                    <skippable>false</skippable>
+                    <condition>(setCondition == 43)</condition>
+                </prompt>
+                
+                <message>
+                    <id>resultPass</id>
+                    <messageText>All tests appear to have passed.</messageText>
+                    <condition>((lookRightPortrait != SKIPPED) and (lookRightLandscape != SKIPPED) and (testDefault != SKIPPED) and (testDefaultPositive != SKIPPED) and (testDefaultNegative != SKIPPED) and (increaseValue != SKIPPED) and (decreaseValue != SKIPPED) and (typeInValue != SKIPPED) and (decreaseValueToNegative != SKIPPED) and (typeInValueNegative != SKIPPED) and (typeInValueNegativeLimit != SKIPPED) and (increaseValueToPositive != SKIPPED) and (typeInValueNegative != SKIPPED) and (typeInValuePositiveLimit != SKIPPED) and (setCondition != NOT_DISPLAYED) and (testConditionPass != NOT_DISPLAYED) and (testConditionFail == NOT_DISPLAYED))</condition>
+                </message>
+                
+                <message>
+                    <id>resultFail</id>
+                    <messageText>One or more tests failed.</messageText>
+                    <condition>(resultPass == NOT_DISPLAYED)</condition>
+                </message>
+            </contentList>
+        </survey>
+        
+        <!-- Photo survey -->
+        <survey>
+            <id>photoSurvey</id>
+            <title>Photo Survey</title>
+            <description>This is a survey to test behavior of the photo prompt type.</description>
+            <submitText>Done with the photo survey</submitText>
+            <showSummary>false</showSummary>
+            <anytime>true</anytime>
+            
+            <contentList>
+                <prompt>
+                    <id>lookRightPortrait</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In portrait, does this look correct before and after taking a photo?</promptText>
+                    <promptType>photo</promptType>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>lookRightLandscape</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In landscape, does this look correct before and after taking a photo?</promptText>
+                    <promptType>photo</promptType>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <message>
+                    <id>instructions</id>
+                    <messageText>The following tests cannot be verified until after the survey has been submitted. Therefore, do what each question asks and make a note of what you expect to see. Then, immediately after submitting the survey response, check the SD card to ensure that the images exist and conform to the test(s). Then, tell the phone to upload the survey. Finally, check that the images have been renamed/moved/stored correctly and that their content has not changed.</messageText>
+                </message>
+                
+                <prompt>
+                    <id>resAtThreeTwenty</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Take a photo and make sure its maximum resolution is 320 pixels.</promptText>
+                    <promptType>photo</promptType>
+                    <properties>
+                        <property>
+                            <key>maxDimension</key>
+                            <label>320</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>resAtSixForty</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Take a photo and make sure its maximum resolution is 640 pixels.</promptText>
+                    <promptType>photo</promptType>
+                    <properties>
+                        <property>
+                            <key>maxDimension</key>
+                            <label>640</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testPhoto</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Take a photo and make sure its resolution is whatever is stated in the camera properties when taking the photo.</promptText>
+                    <promptType>photo</promptType>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                
+                <message>
+                    <id>resultPass</id>
+                    <messageText>All tests appear to have passed.</messageText>
+                    <condition>((lookRightPortrait != SKIPPED) and (lookRightLandscape != SKIPPED))</condition>
+                </message>
+                
+                <message>
+                    <id>resultFail</id>
+                    <messageText>One or more tests failed.</messageText>
+                    <condition>(resultPass == NOT_DISPLAYED)</condition>
+                </message>
+            </contentList>
+        </survey>
+        
+        <!-- Single choice survey -->
+        <survey>
+            <id>singleChoiceSurvey</id>
+            <title>Single Choice Survey</title>
+            <description>This is a survey to test behavior of the single_choice prompt type.</description>
+            <submitText>Done with the single_choice survey</submitText>
+            <showSummary>false</showSummary>
+            <anytime>true</anytime>
+            
+            <contentList>
+                <prompt>
+                    <id>lookRightPortrait</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In portrait, does this look correct?</promptText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Only Choice</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>lookRightLandscape</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In landscape, does this look correct?</promptText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Only Choice</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>oneChoiceSelected</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Make sure that you much choose exactly one.</promptText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Choose this</label>
+                        </property>
+                        
+                        <property>
+                            <key>1</key>
+                            <label>Do not choose this</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>correctChoiceSelected</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Make sure you can choose the correct choice.</promptText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Choose this</label>
+                        </property>
+                        
+                        <property>
+                            <key>1</key>
+                            <label>Do not choose this</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testDefault</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Make sure the default is selected.</promptText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>This is not the default</label>
+                        </property>
+                        
+                        <property>
+                            <key>1</key>
+                            <label>This is the default.</label>
+                        </property>
+                    </properties>
+                    <default>1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testLongChoice</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Make sure all of the prompts look correct and that the really long prompt is scrollable rather than taking up too much screen real estate.</promptText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Short</label>
+                        </property>
+                        
+                        <property>
+                            <key>1</key>
+                            <label>Medium length</label>
+                        </property>
+                        
+                        <property>
+                            <key>2</key>
+                            <label>This one should be much longer</label>
+                        </property>
+                        
+                        <property>
+                            <key>3</key>
+                            <label>This one is designed to be really long but not the longest</label>
+                        </property>
+                        
+                        <property>
+                            <key>4</key>
+                            <label>This one should be crazy long. You should be able to scroll if it is greater than four lines long in the list, which it really should be unless, of course, you are on a phone with a really big screen or on a tablet or something. That's why I keep rambling on. Sure, I could have just grabbed the "Lorem ipsum..." text, which is what everyone noramlly does, but that seemed too easy. This is much more interesting, and much more descriptive.</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>setCondition</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Make the right choice.</promptText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Choose this</label>
+                        </property>
+                        
+                        <property>
+                            <key>1</key>
+                            <label>Do not choose this</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <prompt>
+                    <id>testConditionPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Visible!</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testConditionFail</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Not visible!</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <message>
+                    <id>resultPass</id>
+                    <messageText>All tests appear to have passed.</messageText>
+                    <condition>((lookRightPortrait != SKIPPED) and (lookRightLandscape != SKIPPED) and (oneChoiceSelected != SKIPPED) and (correctChoiceSelected != SKIPPED) and (testDefault != SKIPPED) and (testLongChoice != SKIPPED) and (setCondition != NOT_DISPLAYED) and (testConditionPass != NOT_DISPLAYED) and (testConditionFail == NOT_DISPLAYED))</condition>
+                </message>
+                
+                <message>
+                    <id>resultFail</id>
+                    <messageText>One or more tests failed.</messageText>
+                    <condition>(resultPass == NOT_DISPLAYED)</condition>
+                </message>
+            </contentList>
+        </survey>
+        
+        <!-- Text survey -->
+        <survey>
+            <id>textSurvey</id>
+            <title>Text Survey</title>
+            <description>This is a survey to test behavior of the text prompt type.</description>
+            <submitText>Done with the text survey</submitText>
+            <showSummary>false</showSummary>
+            <anytime>true</anytime>
+            
+            <contentList>
+                <prompt>
+                    <id>lookRightPortrait</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In portrait, does this look correct?</promptText>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>lookRightLandscape</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In landscape, does this look correct?</promptText>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testDefault</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Is the default text "Hello, world!"?</promptText>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>13</label>
+                        </property>
+                    </properties>
+                    <default>Hello, world!</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testMin</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Do you have to type in at least 1 character?</promptText>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>2</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testMax</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Can you not type in more than 2 characters?</promptText>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>2</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testNoText</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>The min and max are both 0, but some text is always required. So, the only allowed response should be to skip this prompt.</promptText>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Pass</skipLabel>
+                </prompt>
+                
+                <message>
+                    <id>resultPass</id>
+                    <messageText>All tests appear to have passed.</messageText>
+                    <condition>((lookRightPortrait != SKIPPED) and (lookRightLandscape != SKIPPED) and (testDefault != SKIPPED) and (testMin != SKIPPED) and (testMax != SKIPPED) and (testNoText == SKIPPED))</condition>
+                </message>
+                
+                <message>
+                    <id>resultFail</id>
+                    <messageText>One or more tests failed.</messageText>
+                    <condition>(resultPass == NOT_DISPLAYED)</condition>
+                </message>
+            </contentList>
+        </survey>
+        
+        <!-- Timestamp survey -->
+        <survey>
+            <id>timestampSurvey</id>
+            <title>Timestamp Survey</title>
+            <description>This is a survey to test behavior of the timestamp prompt type.</description>
+            <submitText>Done with the timestamp survey.</submitText>
+            <showSummary>false</showSummary>
+            <anytime>true</anytime>
+            
+            <contentList>
+                <prompt>
+                    <id>lookRightPortrait</id>
+                    <displayType>event</displayType>
+                    <displayLabel>mTimestamp</displayLabel>
+                    <promptText>Does it appear to look correct?</promptText>
+                    <promptType>timestamp</promptType>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>lookRightLandscape</id>
+                    <displayType>event</displayType>
+                    <displayLabel>mTimestamp</displayLabel>
+                    <promptText>Rotate the phone. Does it appear to look correct?</promptText>
+                    <promptType>timestamp</promptType>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>currentDateTime</id>
+                    <displayType>event</displayType>
+                    <displayLabel>mTimestamp</displayLabel>
+                    <promptText>Is the default the current date/time?</promptText>
+                    <promptType>timestamp</promptType>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <!-- This is where the default will go if we add it. -->
+                
+                <prompt>
+                    <id>testDateChange</id>
+                    <displayType>event</displayType>
+                    <displayLabel>mTimestamp</displayLabel>
+                    <promptText>Change the date.</promptText>
+                    <promptType>timestamp</promptType>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testTimeChange</id>
+                    <displayType>event</displayType>
+                    <displayLabel>mTimestamp</displayLabel>
+                    <promptText>Change the time.</promptText>
+                    <promptType>timestamp</promptType>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <message>
+                    <id>resultPass</id>
+                    <messageText>All tests appear to have passed.</messageText>
+                    <condition>((lookRightPortrait != SKIPPED) and (lookRightLandscape != SKIPPED) and (currentDateTime != SKIPPED) and (testDateChange != SKIPPED) and (testTimeChange != SKIPPED))</condition>
+                </message>
+                
+                <message>
+                    <id>resultFail</id>
+                    <messageText>One or more tests failed.</messageText>
+                    <condition>(resultPass == NOT_DISPLAYED)</condition>
+                </message>
+            </contentList>
+        </survey>
+        
+        <!-- Video survey -->
+        <survey>
+            <id>videoSurvey</id>
+            <title>Video Survey</title>
+            <description>This is a survey to test behavior of the video prompt type.</description>
+            <submitText>Done with the video survey</submitText>
+            <showSummary>false</showSummary>
+            <anytime>true</anytime>
+            
+            <contentList>
+                <prompt>
+                    <id>lookRightPortrait</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In portrait, does this look correct before and after taking a video?</promptText>
+                    <promptType>video</promptType>
+                    <properties>
+                        <property>
+                            <key>max_seconds</key>
+                            <label>1</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>lookRightLandscape</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In landscape, does this look correct before and after taking a video?</promptText>
+                    <promptType>video</promptType>
+                    <properties>
+                        <property>
+                            <key>max_seconds</key>
+                            <label>1</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <message>
+                    <id>instructions</id>
+                    <messageText>The following tests cannot be verified until after the survey has been submitted. Therefore, do what each question asks and make a note of what you expect to see. Then, immediately after submitting the survey response, check the SD card to ensure that the videos exist and conform to the test(s). Then, tell the phone to upload the survey. Finally, check that the videos have been renamed/moved/stored correctly and that their content has not changed.</messageText>
+                </message>
+                
+                <prompt>
+                    <id>testVideo</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Take a video and make sure its resolution is whatever is stated in the camera properties when taking the photo.</promptText>
+                    <promptType>video</promptType>
+                    <properties>
+                        <property>
+                            <key>max_seconds</key>
+                            <label>120</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                
+                <message>
+                    <id>resultPass</id>
+                    <messageText>All tests appear to have passed.</messageText>
+                    <condition>((lookRightPortrait != SKIPPED) and (lookRightLandscape != SKIPPED))</condition>
+                </message>
+                
+                <message>
+                    <id>resultFail</id>
+                    <messageText>One or more tests failed.</messageText>
+                    <condition>(resultPass == NOT_DISPLAYED)</condition>
+                </message>
+            </contentList>
+        </survey>
+        
+        <!-- 
+            Staging area. Be sure to move the test into alphabetical order when complete.
+         -->
+        
+        <!-- Single choice custom survey -->
+        <survey>
+            <id>singleChoiceCustomSurvey</id>
+            <title>Single Choice Custom Survey</title>
+            <description>This is a survey to test behavior of the single choice custom prompt type.</description>
+            <submitText>Done with the single choice custom survey</submitText>
+            <showSummary>false</showSummary>
+            <anytime>true</anytime>
+            
+            <contentList>
+                <prompt>
+                    <id>lookRightPortrait</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In portrait, does this look correct?</promptText>
+                    <promptType>single_choice_custom</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Only Choice</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>lookRightLandscape</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>In landscape, does this look correct?</promptText>
+                    <promptType>single_choice_custom</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Only Choice</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>oneChoiceSelected</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Make sure that you much choose exactly one.</promptText>
+                    <promptType>single_choice_custom</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Choose this</label>
+                        </property>
+                        
+                        <property>
+                            <key>1</key>
+                            <label>Do not choose this</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>correctChoiceSelected</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Make sure you can choose the correct choice.</promptText>
+                    <promptType>single_choice_custom</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Choose this</label>
+                        </property>
+                        
+                        <property>
+                            <key>1</key>
+                            <label>Do not choose this</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testDefault</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Make sure the default is selected.</promptText>
+                    <promptType>single_choice_custom</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>This is not the default</label>
+                        </property>
+                        
+                        <property>
+                            <key>1</key>
+                            <label>This is the default.</label>
+                        </property>
+                    </properties>
+                    <default>1</default>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>testLongChoice</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Make sure all of the prompts look correct and that the really long prompt is scrollable rather than taking up too much screen real estate.</promptText>
+                    <promptType>single_choice_custom</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Short</label>
+                        </property>
+                        
+                        <property>
+                            <key>1</key>
+                            <label>Medium length</label>
+                        </property>
+                        
+                        <property>
+                            <key>2</key>
+                            <label>This one should be much longer</label>
+                        </property>
+                        
+                        <property>
+                            <key>3</key>
+                            <label>This one is designed to be really long but not the longest</label>
+                        </property>
+                        
+                        <property>
+                            <key>4</key>
+                            <label>This one should be crazy long. You should be able to scroll if it is greater than four lines long in the list, which it really should be unless, of course, you are on a phone with a really big screen or on a tablet or something. That's why I keep rambling on. Sure, I could have just grabbed the "Lorem ipsum..." text, which is what everyone noramlly does, but that seemed too easy. This is much more interesting, and much more descriptive.</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <prompt>
+                    <id>setCondition</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>Make the right choice.</promptText>
+                    <promptType>single_choice_custom</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Choose this</label>
+                        </property>
+                        
+                        <property>
+                            <key>1</key>
+                            <label>Do not choose this</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <prompt>
+                    <id>testConditionPass</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>This prompt should be shown.</promptText>
+                    <promptType>single_choice_custom</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Visible!</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <!-- TODO: Test the "custom" choices. -->
+                
+                <prompt>
+                    <id>testConditionFail</id>
+                    <displayType>event</displayType>
+                    <displayLabel>test</displayLabel>
+                    <promptText>This prompt should NOT be shown.</promptText>
+                    <promptType>single_choice_custom</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Not visible!</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Fail</skipLabel>
+                </prompt>
+                
+                <message>
+                    <id>resultPass</id>
+                    <messageText>All tests appear to have passed.</messageText>
+                    <condition>((lookRightPortrait != SKIPPED) and (lookRightLandscape != SKIPPED) and (oneChoiceSelected != SKIPPED) and (correctChoiceSelected != SKIPPED) and (testDefault != SKIPPED) and (testLongChoice != SKIPPED) and (setCondition != NOT_DISPLAYED) and (testConditionPass != NOT_DISPLAYED) and (testConditionFail == NOT_DISPLAYED))</condition>
+                </message>
+                
+                <message>
+                    <id>resultFail</id>
+                    <messageText>One or more tests failed.</messageText>
+                    <condition>(resultPass == NOT_DISPLAYED)</condition>
+                </message>
+            </contentList>
+        </survey>
+        
+        <survey>
+            <id>multiChoiceSurvey</id>
+            <title>Multi Choice Survey</title>
+            <description>This is a survey to test behavior of the multi choice prompt type.</description>
+            <submitText>Done with the multi choice survey</submitText>
+            <showSummary>false</showSummary>
+            <editSummary>false</editSummary>
+            <summaryText>Multi Choice Test</summaryText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>multiChoice</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Multi Choice</displayLabel>
+                    <promptText>The Transverse Ranges are a group of mountain ranges of southern California, in the Pacific Coast Ranges physiographic region that runs along the Pacific coast from Alaska to Mexico in North America. The Transverse Ranges begin at the southern end of the California Coast Ranges and lie between Santa Barbara and San Diego counties. They derive the name Transverse Ranges due to their East-West orientation, making them transverse to the general North-South orientation of most of California's coastal mountains.</promptText>
+                    <abbreviatedText>transverse ranges</abbreviatedText>
+                    <promptType>multi_choice</promptType>
+                    <properties>
+                        
+                        <property>
+                            <key>0</key>
+                            <label>Santa Ynez Mountains</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>San Rafael Mountains</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Sierra Madre Mountains</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Topatopa Mountains</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Santa Susana Mountains</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Santa Monica Mountains</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>San Gabriel Mountains</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>San Bernadino Mountains</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>Little San Bernadino Mountains</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>Tehachapi Mountains</label>
+                        </property>
+                        
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+            </contentList>
+        </survey>
+        
+        
+        <survey>
+            <id>multiChoiceCustomSurvey</id>
+            <title>Multi Choice Custom Survey</title>
+            <description>This is a survey to test behavior of the multi choice custom prompt type.</description>
+            <submitText>Done with the multi choice custom survey</submitText>
+            <showSummary>false</showSummary>
+            <editSummary>false</editSummary>
+            <summaryText>Multi Choice Custom Test</summaryText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>multiChoiceCustom1</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Multi Choice Custom 1</displayLabel>
+                    <promptText>Add a choice:</promptText>
+                    <abbreviatedText>add a choice</abbreviatedText>
+                    <promptType>multi_choice_custom</promptType>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>multiChoiceCustom2</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Multi Choice Custom 2</displayLabel>
+                    <promptText>Geographical facets of southern California</promptText>
+                    <abbreviatedText>geo facets</abbreviatedText>
+                    <promptType>multi_choice_custom</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>The Beach</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>The Desert</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>The Mountains</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+            </contentList>
+        </survey>
+        
+        
+    </surveys>
+</campaign>
