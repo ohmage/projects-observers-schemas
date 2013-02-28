@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
-    <campaignUrn>urn:campaign:trialist:2013022800</campaignUrn>
+    <campaignUrn>urn:campaign:trialist:2013022801</campaignUrn>
     <campaignName>Trialist Configuration</campaignName>
     <surveys>
         <survey>
@@ -132,7 +132,7 @@
             <!-- PROMIS 3-Item Pain Intensity Short Form 3A -->
             <id>promisThreeItemPainIntensityShortForm</id>
             <title>Pain Intensity</title>
-            <description>A daily measure of pain.</description>
+            <description>Short daily questions about pain.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -236,7 +236,7 @@
             <!-- PROMIS 4-Item Pain Interference Short Form -->
             <id>promisFourItemPainInterferenceShortForm</id>
             <title>Pain Interference</title>
-            <description>A daily measure of how pain impacts your life.</description>
+            <description>Short daily questions on how pain impacts your life.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -373,7 +373,7 @@
             -->
             <id>qualityOfLifeSurvey</id>
             <title>Quality of Life</title>
-            <description>A daily measure of your overall health.</description>
+            <description>Daily question about your overall health.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -406,7 +406,7 @@
             -->
             <id>sleepDisturbanceSurvey</id>
             <title>Sleep Disturbance</title>
-            <description>A daily measure of the previous night's sleep.</description>
+            <description>Daily question about your previous night's sleep.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -448,7 +448,7 @@
             -->
             <id>fatigueSurvey</id>
             <title>Fatigue</title>
-            <description>A measure of how tired-out you feel during the day.</description>
+            <description>Daily question on how tired-out you feel during the day.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -493,7 +493,7 @@
             -->
             <id>sleepinessSurvey</id>
             <title>Sleepiness</title>
-            <description>A measure of how sleepy you feel during the day.</description>
+            <description>Daily question on how sleepy you feel during the day.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -539,7 +539,7 @@
             -->
             <id>constipationSurvey</id>
             <title>Constipation</title>
-            <description>A daily report on problems with moving your bowels.</description>
+            <description>Daily question on problems with moving your bowels.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -581,7 +581,7 @@
              -->
             <id>nauseaSurvey</id>
             <title>Nausea</title>
-            <description>A daily measure of nausea (feeling like you are going to throw up / vomit).</description>
+            <description>Daily question on nausea (feeling like you are going to throw up / vomit).</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -627,7 +627,7 @@
              -->
             <id>neuropathicPainSurvey</id>
             <title>Neuropathic Pain</title>
-            <description>A weekly measure for people who frequently experience burning, stabbing, or tingling "nerve-type" pain.</description>
+            <description>A weekly set of questions for people who frequently experience burning, stabbing, or tingling "nerve-type" pain.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -711,7 +711,7 @@
             -->
             <id>lossOfLibidoSurvey</id>
             <title>Loss of Libido</title>
-            <description>A quick, weekly assessment of interest in sex.</description>
+            <description>A weekly question on interest in sex.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
