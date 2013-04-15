@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <observer>
     <id>org.ohmage.LogProbe</id>
-    <version>1</version>
+    <version>2</version>
 
     <name>LogProbe</name>
     <description>Logs data and analytics.</description>
-    <versionString>1.0</versionString>
+    <versionString>1.1</versionString>
 
     <stream>
         <id>log</id>
-        <version>1</version>
+        <version>2</version>
 
         <name>Log</name>
         <description>Log message</description>
@@ -38,6 +38,12 @@
                         "name":"message",
                         "doc":"The message you would like logged.",
                         "type":"string"
+                    },
+                    {
+                        "name":"device_id",
+                        "doc":"A unique id to identify a device, usually the imei.",
+                        "type":"string",
+                        "optional": true
                     }
                 ]
             }
@@ -46,7 +52,7 @@
 
     <stream>
         <id>activity</id>
-        <version>1</version>
+        <version>2</version>
 
         <name>Activity</name>
         <description>Analytics for activity interaction</description>
@@ -70,6 +76,12 @@
                         "name":"status",
                         "doc":"Status information about the activity. Either ON or OFF.",
                         "type":"string"
+                    },
+                    {
+                        "name":"device_id",
+                        "doc":"A unique id to identify a device, usually the imei.",
+                        "type":"string",
+                        "optional": true
                     }
                 ]
             }
@@ -78,7 +90,7 @@
     
     <stream>
         <id>widget</id>
-        <version>1</version>
+        <version>2</version>
 
         <name>Widget</name>
         <description>Analytics for widget interaction</description>
@@ -108,6 +120,12 @@
                         "doc":"Extra information supplied for this interaction.",
                         "optional":true,
                         "type":"string"
+                    },
+                    {
+                        "name":"device_id",
+                        "doc":"A unique id to identify a device, usually the imei.",
+                        "type":"string",
+                        "optional": true
                     }
                 ]
             }
@@ -116,7 +134,7 @@
     
     <stream>
         <id>service</id>
-        <version>1</version>
+        <version>2</version>
 
         <name>Service</name>
         <description>Analytics for service interaction</description>
@@ -140,6 +158,12 @@
                         "name":"status",
                         "doc":"Status information about the service. Either ON or OFF.",
                         "type":"string"
+                    },
+                    {
+                        "name":"device_id",
+                        "doc":"A unique id to identify a device, usually the imei.",
+                        "type":"string",
+                        "optional": true
                     }
                 ]
             }
@@ -149,7 +173,7 @@
     
     <stream>
         <id>network</id>
-        <version>1</version>
+        <version>2</version>
 
         <name>Network</name>
         <description>Analytics for network</description>
@@ -183,6 +207,12 @@
                         "name":"length",
                         "doc":"Number of bytes transmitted",
                         "type":"number"
+                    },
+                    {
+                        "name":"device_id",
+                        "doc":"A unique id to identify a device, usually the imei.",
+                        "type":"string",
+                        "optional": true
                     }
                 ]
             }

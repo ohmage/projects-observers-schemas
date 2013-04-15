@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <observer>
     <id>org.ohmage.Analytics</id>
-    <version>1</version>
+    <version>2</version>
 
     <name>Ohmage Analytics</name>
     <description>Logs analytics specific to ohmage.</description>
-    <versionString>1.0</versionString>
+    <versionString>1.1</versionString>
 
     <stream>
         <id>prompt</id>
-        <version>1</version>
+        <version>2</version>
 
         <name>Prompt</name>
         <description>Logs information about what prompts are shown.</description>
@@ -38,6 +38,12 @@
                         "name":"status",
                         "doc":"Status information about the activity. Either ON or OFF.",
                         "type":"string"
+                    },
+                    {
+                        "name":"device_id",
+                        "doc":"A unique id to identify a device, usually the imei.",
+                        "type":"string",
+                        "optional": true
                     }
                 ]
             }
@@ -46,7 +52,7 @@
 
     <stream>
         <id>trigger</id>
-        <version>1</version>
+        <version>2</version>
 
         <name>Trigger</name>
         <description>Logs information about triggers in ohmage.</description>
@@ -80,6 +86,12 @@
                         "name":"campaign",
                         "doc":"The campaign urn to which this trigger belongs.",
                         "type":"string"
+                    },
+                    {
+                        "name":"device_id",
+                        "doc":"A unique id to identify a device, usually the imei.",
+                        "type":"string",
+                        "optional": true
                     }
                 ]
             }
