@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<survey>
+    <!-- This is a survey from JP at Cornell. It has been tested in various clinical scenarios -->
+    <id>stressSurvey</id>
+    <title>Stress Survey</title>
+    <description>Stress.</description>
+    <submitText>Submit.</submitText>
+    <showSummary>false</showSummary>
+    <editSummary>false</editSummary>
+    <summaryText>Stress</summaryText>
+    <anytime>true</anytime>
+    <contentList>
+        <prompt>
+            <id>stressPrompt</id>
+            <displayType>event</displayType>
+            <displayLabel>Stress</displayLabel>
+            <!-- Can also use: Right now, I am --> 
+            <promptText>Today, I've been:</promptText>
+            <promptType>single_choice</promptType>
+            <properties>
+                <property>
+                    <value>0</value>
+                    <label>Feeling great</label>
+                </property>
+                <property>
+                    <value>1</value>
+                    <label>Feeling good</label>
+                </property>
+                <property>
+                    <value>2</value>
+                    <label>A little stressed</label>
+                </property>
+                <property>
+                    <value>3</value>
+                    <label>Definitely stressed</label>
+                </property>
+                <property>
+                    <value>4</value>
+                    <label>Stressed out!</label>
+                </property>
+            </properties>
+            <skippable>false</skippable>
+            <skipLabel>Skip</skipLabel>
+        </prompt>
+    </contentList>
+</survey>

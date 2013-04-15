@@ -1,0 +1,1966 @@
+<campaign>
+    <campaignUrn>urn:campaign:va:ptsd_explorer:ios</campaignUrn>
+    <campaignName>PTSD Explorer iOS San Diego</campaignName>
+    <serverUrl>https://pilots.ohmage.org</serverUrl>
+    <surveys>
+        <!-- 
+      EMA Assessment
+    -->
+            <survey>
+                <id>dailyAssessment</id>
+                <title>Daily Assessment</title>
+                <description>Please perform your daily assessment.</description>
+                <submitText>Thank you for finishing! This information will help you pay attention to important things in your recovery.</submitText>
+                <showSummary>false</showSummary>
+                <anytime>true</anytime>
+                <contentList>
+                    <prompt>
+                        <id>overallMood</id>
+                        <displayType>category</displayType>
+                        <displayLabel>Overall Mood</displayLabel>
+                        <promptText>How would you rate your overall mood today?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>Very bad</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>Bad</label>
+                            </property>
+                            <property>
+                                <key>2</key>
+                                <label>Neither good nor bad</label>
+                            </property>
+                            <property>
+                                <key>3</key>
+                                <label>Good</label>
+                            </property>
+                            <property>
+                                <key>4</key>
+                                <label>Very good</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>sleepWell</id>
+                        <displayType>category</displayType>
+                        <displayLabel>Sleep Quality</displayLabel>
+                        <promptText>How well did you sleep last night?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>Very poorly</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>Poorly</label>
+                            </property>
+                            <property>
+                                <key>2</key>
+                                <label>Neither well nor poorly</label>
+                            </property>
+                            <property>
+                                <key>3</key>
+                                <label>Well</label>
+                            </property>
+                            <property>
+                                <key>4</key>
+                                <label>Very well</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>howMuchAnger</id>
+                        <displayType>category</displayType>
+                        <displayLabel>How Much Anger</displayLabel>
+                        <promptText>How much anger did you experience today?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>No anger</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>A little anger</label>
+                            </property>
+                            <property>
+                                <key>2</key>
+                                <label>Some anger</label>
+                            </property>
+                            <property>
+                                <key>3</key>
+                                <label>A lot of anger</label>
+                            </property>
+                            <property>
+                                <key>4</key>
+                                <label>Extreme amount of anger</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>conflictWithOthers</id>
+                        <displayType>category</displayType>
+                        <displayLabel>Conflict With Others</displayLabel>
+                        <promptText>How much conflict with others did you have today?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>No conflict</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>A little conflict</label>
+                            </property>
+                            <property>
+                                <key>2</key>
+                                <label>Some conflict</label>
+                            </property>
+                            <property>
+                                <key>3</key>
+                                <label>A lot of conflict</label>
+                            </property>
+                            <property>
+                                <key>4</key>
+                                <label>Extreme amount of conflict</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>needForCoping</id>
+                        <displayType>category</displayType>
+                        <displayLabel>Need for Coping</displayLabel>
+                        <promptText>Did you have any situations today that you needed to try to cope with?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>No</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>Yes</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>copingSituations</id>
+                        <condition>(needForCoping == 1)</condition>
+                        <displayType>category</displayType>
+                        <displayLabel>Coping Situations</displayLabel>
+                        <promptText>What situations happened today that you needed to try to cope with?</promptText>
+                        <promptType>text</promptType>
+                        <properties>
+                            <property>
+                                <key>min</key>
+                                <label>1</label>
+                            </property>
+                            <property>
+                                <key>max</key>
+                                <label>500</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>overallCoping</id>
+                        <displayType>category</displayType>
+                        <displayLabel>Overall Coping</displayLabel>
+                        <promptText>Overall, how well or poorly did you cope with things in the last 24 hours?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>Very poorly</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>Poorly</label>
+                            </property>
+                            <property>
+                                <key>2</key>
+                                <label>Neither well nor poorly</label>
+                            </property>
+                            <property>
+                                <key>3</key>
+                                <label>Well</label>
+                            </property>
+                            <property>
+                                <key>4</key>
+                                <label>Very well</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>qualityOfGettingThingsDone</id>
+                        <displayType>category</displayType>
+                        <displayLabel>Quality Of Getting Things Done</displayLabel>
+                        <promptText>How well did you get things today that you needed to do?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>Very poorly</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>Poorly</label>
+                            </property>
+                            <property>
+                                <key>2</key>
+                                <label>Neither well nor poorly</label>
+                            </property>
+                            <property>
+                                <key>3</key>
+                                <label>Well</label>
+                            </property>
+                            <property>
+                                <key>4</key>
+                                <label>Very well</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>copingToolsUsed</id>
+                        <displayType>category</displayType>
+                        <displayLabel>Coping Tools Used</displayLabel>
+                        <promptText>In the last 24 hours, which of the following coping tools did you use?</promptText>
+                        <promptType>multi_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>Practice a formal relaxation or meditation method?</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>Deliberately face a situation that you have been avoiding?</label>
+                            </property>
+                            <property>
+                                <key>2</key>
+                                <label>Consciously talk to yourself as a way of coping?</label>
+                            </property>
+                            <property>
+                                <key>3</key>
+                                <label>Do some kind of positive activity to try and improve your mood?</label>
+                            </property>
+                            <property>
+                                <key>4</key>
+                                <label>At least 15 minutes of physical exercise?</label>
+                            </property>
+                            <property>
+                                <key>5</key>
+                                <label>Spend time socializing with others?</label>
+                            </property>
+                            <property>
+                                <key>6</key>
+                                <label>Do a homework task assigned by your treatment provider?</label>
+                            </property>
+                            <property>
+                                <key>7</key>
+                                <label>Talk to somebody about a problem or seek support in some way?</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>copingSupport</id>
+                        <condition>(copingToolsUsed == 7)</condition>
+                        <displayType>category</displayType>
+                        <displayLabel>Coping Support</displayLabel>
+                        <promptText>How was the support you got from other(s)?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>Made me feel a lot worse</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>Made me feel somewhat worse</label>
+                            </property>
+                            <property>
+                                <key>2</key>
+                                <label>Had no effect on me</label>
+                            </property>
+                            <property>
+                                <key>3</key>
+                                <label>Helped me feel somewhat better</label>
+                            </property>
+                            <property>
+                                <key>4</key>
+                                <label>Helped me feel a lot better</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>takePrescribedMedications</id>
+                        <displayType>category</displayType>
+                        <displayLabel>Prescribed Medications</displayLabel>
+                        <promptText>Did you take your doctor-prescribed medication(s) today?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>No, my doctor has not prescribed any medications to me</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>No, I didn't take them</label>
+                            </property>
+                            <property>
+                                <key>2</key>
+                                <label>I took some medications, but not all</label>
+                            </property>
+                            <property>
+                                <key>3</key>
+                                <label>Yes, I took them</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>medicationSideEffects</id>
+                        <condition>(takePrescribedMedications == 2) or (takePrescribedMedications == 3)</condition>
+                        <displayType>category</displayType>
+                        <displayLabel>Medication Side Effects</displayLabel>
+                        <promptText>Did you experience any side effects?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>No</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>Yes</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>drinkAlcohol</id>
+                        <displayType>category</displayType>
+                        <displayLabel>Alcohol</displayLabel>
+                        <promptText>Did you drink alcohol in the last 24 hours?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>No</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>Yes</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>howMuchAlcohol</id>
+                        <condition>(drinkAlcohol == 0)</condition>
+                        <displayType>category</displayType>
+                        <displayLabel>How Much Alcohol</displayLabel>
+                        <promptText>How much did you drink? (One drink = 12oz of beer = one 6oz glass of wine = one 1.5oz shot of vodka or whiskey or gin)</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>1 drink</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>2 drinks</label>
+                            </property>
+                            <property>
+                                <key>2</key>
+                                <label>3 drinks</label>
+                            </property>
+                            <property>
+                                <key>3</key>
+                                <label>4 drinks</label>
+                            </property>
+                            <property>
+                                <key>4</key>
+                                <label>5-6 drinks</label>
+                            </property>
+                            <property>
+                                <key>5</key>
+                                <label>7-8 drinks</label>
+                            </property>
+                            <property>
+                                <key>6</key>
+                                <label>More than 8 drinks</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                    <prompt>
+                        <id>takeNonPrescribedDrug</id>
+                        <displayType>category</displayType>
+                        <displayLabel>Non-Prescribed Drug</displayLabel>
+                        <promptText>Did you take any non-prescribed drug in the last 24 hours?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>No</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>Yes</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                </contentList>
+            </survey>
+            <survey>
+                <id>functioningAssessment</id>
+                <title>Functioning Assessment</title>
+                <description>Please perform your functioning assessment.</description>
+                <submitText>Thank you for finishing! This information will help you pay attention to important things in your recovery.</submitText>
+                <showSummary>false</showSummary>
+                <anytime>true</anytime>
+                <contentList>
+                    <prompt>
+                        <id>howDifficult</id>
+                        <displayType>category</displayType>
+                        <displayLabel>Functioning</displayLabel>
+                        <promptText>How difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?</promptText>
+                        <promptType>single_choice</promptType>
+                        <properties>
+                            <property>
+                                <key>0</key>
+                                <label>Not at all</label>
+                            </property>
+                            <property>
+                                <key>1</key>
+                                <label>Somewhat difficult</label>
+                            </property>
+                            <property>
+                                <key>2</key>
+                                <label>Very difficult</label>
+                            </property>
+                            <property>
+                                <key>3</key>
+                                <label>Extremely difficult</label>
+                            </property>
+                        </properties>
+                        <skippable>true</skippable>
+                        <skipLabel>Skip</skipLabel>
+                    </prompt>
+                </contentList>
+            </survey>
+            <!-- 
+      PCL Assessment
+    -->
+                <survey>
+                    <id>pclAssessment</id>
+                    <title>PCL Assessment</title>
+                    <description>It is time to fill out your periodic assessment.</description>
+                    <submitText>Thank you for finishing! This information will help you pay attention to important things in your recovery.</submitText>
+                    <showSummary>false</showSummary>
+                    <anytime>true</anytime>
+                    <contentList>
+                        <prompt>
+                            <id>pcl1</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Repeated Disturbing Memories, Thoughts, or Images</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by repeated disturbing memories, thoughts, or images of the stressful experience?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl2</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Repeated Disturbing Dreams</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by repeated disturbing dreams of the stressful experience?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl3</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Repeated Disturbing Dreams</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by suddenly acting or feeling as if the stressful experience were happening again (i.e. as if you were re-living it)?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl4</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Feeling Very Upset When Reminded</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by feeling very upset when something reminded you of the stressful experience?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl5</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Physical Reactions When Reminded</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by having physical reactions (e.g. heart pounding, trouble breathing, sweating) when something reminded you of the stressful experience?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl6</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Avoiding Thinking or Talking about Experience</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by avoiding thinking or talking about the stressful experience, or avoiding having feelings related to it?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl7</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Bothered by Avoiding Activities or Situations</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by avoiding activities or situations because they reminded you of the stressful experience?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl8</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Bothered by Trouble Remembering</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by trouble remembering important parts of the stressful experience?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl9</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Bothered by Loss of Interest in Activities</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by loss of interest in activities that you used to enjoy?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl10</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Bothered by Feeling Distant</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by feeling distant or cut off from other people?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl11</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Bothered by Feeling Emotionally Numb</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by feeling emotionally numb or being unable to have loving feelings for those close to you?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl12</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Bothered by Feeling Future Will Be Cut Short</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by feeling as if your future somehow will be cut short?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl13</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Bothered by Trouble with Sleep</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by trouble falling or staying asleep?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl14</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Bothered by Feeling Irritable</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by feeling irritable or having angry outbursts?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl15</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Bothered by Difficulting Concentrating</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by having difficulty concentrating?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl16</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Bothered by Feeling Superalert</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by being "superalert" or watchful or on guard?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                        <prompt>
+                            <id>pcl17</id>
+                            <displayType>category</displayType>
+                            <displayLabel>Bothered by Feeling Jumpy</displayLabel>
+                            <promptText>In the past month, how much have you been bothered by feeling jumpy or easily startled?</promptText>
+                            <promptType>single_choice</promptType>
+                            <properties>
+                                <property>
+                                    <key>1</key>
+                                    <label>Not at all</label>
+                                </property>
+                                <property>
+                                    <key>2</key>
+                                    <label>A little bit</label>
+                                </property>
+                                <property>
+                                    <key>3</key>
+                                    <label>Moderately</label>
+                                </property>
+                                <property>
+                                    <key>4</key>
+                                    <label>Quite a bit</label>
+                                </property>
+                                <property>
+                                    <key>5</key>
+                                    <label>Extremely</label>
+                                </property>
+                            </properties>
+                            <skippable>true</skippable>
+                            <skipLabel>Skip</skipLabel>
+                        </prompt>
+                    </contentList>
+                </survey>
+                <!-- 
+       PHQ-9
+    -->
+                    <survey>
+                        <id>phq9Survey</id>
+                        <title>PHQ-9 Survey</title>
+                        <description>PHQ-9 Survey</description>
+                        <submitText>none</submitText>
+                        <showSummary>false</showSummary>
+                        <anytime>true</anytime>
+                        <contentList>
+                            <prompt>
+                                <id>phq91</id>
+                                <displayType>category</displayType>
+                                <displayLabel>Little Interest or Pleasure</displayLabel>
+                                <promptText>Over the last two weeks, how often have you been bothered by having little interest or pleasure in doing things?</promptText>
+                                <promptType>single_choice</promptType>
+                                <properties>
+                                    <property>
+                                        <key>0</key>
+                                        <label>Not at all</label>
+                                    </property>
+                                    <property>
+                                        <key>1</key>
+                                        <label>Several days</label>
+                                    </property>
+                                    <property>
+                                        <key>2</key>
+                                        <label>More than half of the days</label>
+                                    </property>
+                                    <property>
+                                        <key>3</key>
+                                        <label>Nearly every day</label>
+                                    </property>
+                                </properties>
+                                <skippable>true</skippable>
+                                <skipLabel>Skip</skipLabel>
+                            </prompt>
+                            <prompt>
+                                <id>phq92</id>
+                                <displayType>category</displayType>
+                                <displayLabel>Depressed or Hopeless</displayLabel>
+                                <promptText>Over the last two weeks, how often have you been bothered by feeling down, depressed or hopeless?</promptText>
+                                <promptType>single_choice</promptType>
+                                <properties>
+                                    <property>
+                                        <key>0</key>
+                                        <label>Not at all</label>
+                                    </property>
+                                    <property>
+                                        <key>1</key>
+                                        <label>Several days</label>
+                                    </property>
+                                    <property>
+                                        <key>2</key>
+                                        <label>More than half of the days</label>
+                                    </property>
+                                    <property>
+                                        <key>3</key>
+                                        <label>Nearly every day</label>
+                                    </property>
+                                </properties>
+                                <skippable>true</skippable>
+                                <skipLabel>Skip</skipLabel>
+                            </prompt>
+                            <prompt>
+                                <id>phq93</id>
+                                <displayType>category</displayType>
+                                <displayLabel>Trouble with Sleep</displayLabel>
+                                <promptText>Over the last two weeks, how often have you been bothered by trouble falling or staying asleep, or sleeping too much?</promptText>
+                                <promptType>single_choice</promptType>
+                                <properties>
+                                    <property>
+                                        <key>0</key>
+                                        <label>Not at all</label>
+                                    </property>
+                                    <property>
+                                        <key>1</key>
+                                        <label>Several days</label>
+                                    </property>
+                                    <property>
+                                        <key>2</key>
+                                        <label>More than half of the days</label>
+                                    </property>
+                                    <property>
+                                        <key>3</key>
+                                        <label>Nearly every day</label>
+                                    </property>
+                                </properties>
+                                <skippable>true</skippable>
+                                <skipLabel>Skip</skipLabel>
+                            </prompt>
+                            <prompt>
+                                <id>phq94</id>
+                                <displayType>category</displayType>
+                                <displayLabel>Feeling Tired</displayLabel>
+                                <promptText>Over the last two weeks, how often have you been bothered by feeling tired or having little energy?</promptText>
+                                <promptType>single_choice</promptType>
+                                <properties>
+                                    <property>
+                                        <key>0</key>
+                                        <label>Not at all</label>
+                                    </property>
+                                    <property>
+                                        <key>1</key>
+                                        <label>Several days</label>
+                                    </property>
+                                    <property>
+                                        <key>2</key>
+                                        <label>More than half of the days</label>
+                                    </property>
+                                    <property>
+                                        <key>3</key>
+                                        <label>Nearly every day</label>
+                                    </property>
+                                </properties>
+                                <skippable>true</skippable>
+                                <skipLabel>Skip</skipLabel>
+                            </prompt>
+                            <prompt>
+                                <id>phq95</id>
+                                <displayType>category</displayType>
+                                <displayLabel>Poor Apetite or Overeating</displayLabel>
+                                <promptText>Over the last two weeks, how often have you been bothered by poor appetite or overeating?</promptText>
+                                <promptType>single_choice</promptType>
+                                <properties>
+                                    <property>
+                                        <key>0</key>
+                                        <label>Not at all</label>
+                                    </property>
+                                    <property>
+                                        <key>1</key>
+                                        <label>Several days</label>
+                                    </property>
+                                    <property>
+                                        <key>2</key>
+                                        <label>More than half of the days</label>
+                                    </property>
+                                    <property>
+                                        <key>3</key>
+                                        <label>Nearly every day</label>
+                                    </property>
+                                </properties>
+                                <skippable>true</skippable>
+                                <skipLabel>Skip</skipLabel>
+                            </prompt>
+                            <prompt>
+                                <id>phq96</id>
+                                <displayType>category</displayType>
+                                <displayLabel>Feeling Bad about Yourself</displayLabel>
+                                <promptText>Over the last two weeks, how often have you been bothered by feeling bad about yourself - or that you are a failure or have let your family down?</promptText>
+                                <promptType>single_choice</promptType>
+                                <properties>
+                                    <property>
+                                        <key>0</key>
+                                        <label>Not at all</label>
+                                    </property>
+                                    <property>
+                                        <key>1</key>
+                                        <label>Several days</label>
+                                    </property>
+                                    <property>
+                                        <key>2</key>
+                                        <label>More than half of the days</label>
+                                    </property>
+                                    <property>
+                                        <key>3</key>
+                                        <label>Nearly every day</label>
+                                    </property>
+                                </properties>
+                                <skippable>true</skippable>
+                                <skipLabel>Skip</skipLabel>
+                            </prompt>
+                            <prompt>
+                                <id>phq97</id>
+                                <displayType>category</displayType>
+                                <displayLabel>Trouble Concentrating</displayLabel>
+                                <promptText>Over the last two weeks, how often have you been bothered by trouble concentrating on things, such as reading the newspaper or watching television?</promptText>
+                                <promptType>single_choice</promptType>
+                                <properties>
+                                    <property>
+                                        <key>0</key>
+                                        <label>Not at all</label>
+                                    </property>
+                                    <property>
+                                        <key>1</key>
+                                        <label>Several days</label>
+                                    </property>
+                                    <property>
+                                        <key>2</key>
+                                        <label>More than half of the days</label>
+                                    </property>
+                                    <property>
+                                        <key>3</key>
+                                        <label>Nearly every day</label>
+                                    </property>
+                                </properties>
+                                <skippable>true</skippable>
+                                <skipLabel>Skip</skipLabel>
+                            </prompt>
+                            <prompt>
+                                <id>phq98</id>
+                                <displayType>category</displayType>
+                                <displayLabel>Moving Slowly or Feeling Fidgety</displayLabel>
+                                <promptText>Over the last two weeks, how often have you been bothered by moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?</promptText>
+                                <promptType>single_choice</promptType>
+                                <properties>
+                                    <property>
+                                        <key>0</key>
+                                        <label>Not at all</label>
+                                    </property>
+                                    <property>
+                                        <key>1</key>
+                                        <label>Several days</label>
+                                    </property>
+                                    <property>
+                                        <key>2</key>
+                                        <label>More than half of the days</label>
+                                    </property>
+                                    <property>
+                                        <key>3</key>
+                                        <label>Nearly every day</label>
+                                    </property>
+                                </properties>
+                                <skippable>true</skippable>
+                                <skipLabel>Skip</skipLabel>
+                            </prompt>
+                            <prompt>
+                                <id>phq99</id>
+                                <displayType>category</displayType>
+                                <displayLabel>Suicidal Ideation</displayLabel>
+                                <promptText>Over the last two weeks, how often have you been bothered by thoughts that you would be better off dead, or of hurting yourself in some way?</promptText>
+                                <promptType>single_choice</promptType>
+                                <properties>
+                                    <property>
+                                        <key>0</key>
+                                        <label>Not at all</label>
+                                    </property>
+                                    <property>
+                                        <key>1</key>
+                                        <label>Several days</label>
+                                    </property>
+                                    <property>
+                                        <key>2</key>
+                                        <label>More than half of the days</label>
+                                    </property>
+                                    <property>
+                                        <key>3</key>
+                                        <label>Nearly every day</label>
+                                    </property>
+                                </properties>
+                                <skippable>true</skippable>
+                                <skipLabel>Skip</skipLabel>
+                            </prompt>
+                        </contentList>
+                    </survey>
+                    <!-- 
+       Probes
+    -->
+                        <survey>
+                            <id>pclAssessmentStartedProbe</id>
+                            <title>PCL Assessment Started</title>
+                            <description>PCL Assessment Started</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>pclAssessmentStarted</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>PCL Assessment Started Timestamp</displayLabel>
+                                    <promptText>PCL Assessment Started Timestamp</promptText>
+                                    <promptType>timestamp</promptType>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>pclQuestionAnsweredProbe</id>
+                            <title>PCL Question Answered</title>
+                            <description>PCL Question Answered</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>pclNumberOfQuestionsAnswered</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Number of PCL Questions Answered</displayLabel>
+                                    <promptText>Number of PCL Questions Answered</promptText>
+                                    <promptType>number</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>0</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>17</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>buttonPressedProbe</id>
+                            <title>Button Pressed</title>
+                            <description>Button Pressed</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>buttonPressedButtonId</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Button Id</displayLabel>
+                                    <promptText>Button Id</promptText>
+                                    <promptType>text</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>1</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>500</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>buttonPressedButtonTitle</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Button Title</displayLabel>
+                                    <promptText>Button Title</promptText>
+                                    <promptType>text</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>1</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>500</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>contentScreenViewedProbe</id>
+                            <title>Content Screen Viewed</title>
+                            <description>Context Screen Viewed</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>contentScreenTimestampStart</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Start Timestamp</displayLabel>
+                                    <promptText>Start Timestamp</promptText>
+                                    <promptType>timestamp</promptType>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>contentScreenTimestampDismissal</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Dismissal Timestamp</displayLabel>
+                                    <promptText>Dismissal Timestamp</promptText>
+                                    <promptType>timestamp</promptType>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>contentScreenName</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Screen Name</displayLabel>
+                                    <promptText>Screen Name</promptText>
+                                    <promptType>text</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>1</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>500</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>contentScreenDisplayName</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Screen Display Name</displayLabel>
+                                    <promptText>Screen Display Name</promptText>
+                                    <promptType>text</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>1</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>500</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>contentScreenType</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Screen Type</displayLabel>
+                                    <promptText>Screen Type</promptText>
+                                    <promptType>single_choice</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>0</key>
+                                            <label>tool</label>
+                                        </property>
+                                        <property>
+                                            <key>1</key>
+                                            <label>psycho-ed</label>
+                                        </property>
+                                        <property>
+                                            <key>2</key>
+                                            <label>other</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>contentScreenId</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Screen Id</displayLabel>
+                                    <promptText>Screen Id</promptText>
+                                    <promptType>text</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>1</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>500</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>contentObjectSelectedProbe</id>
+                            <title>Content Object Selected</title>
+                            <description>Content Object Selected</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>contentObjectName</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Object Name</displayLabel>
+                                    <promptText>Object Name</promptText>
+                                    <promptType>text</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>1</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>500</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>contentObjectDisplayName</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Object Display Name</displayLabel>
+                                    <promptText>Object Display Name</promptText>
+                                    <promptType>text</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>1</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>500</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>contentObjectId</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Object Id</displayLabel>
+                                    <promptText>Object Id</promptText>
+                                    <promptType>text</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>1</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>500</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>preExerciseSudsProbe</id>
+                            <title>Pre Exercise SUDs</title>
+                            <description>Pre Exercise SUDs Survey</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>preExerciseSudsScore</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Pre-Exercise SUDs Score</displayLabel>
+                                    <promptText>Pre-Exercise SUDs Score</promptText>
+                                    <promptType>number</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>0</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>10</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>postExerciseSudsProbe</id>
+                            <title>Post Exercise SUDs</title>
+                            <description>Post-Exercise SUDs</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>initialSudsScore</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Initial SUDs Score</displayLabel>
+                                    <promptText>Initial SUDs Score</promptText>
+                                    <promptType>number</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>0</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>10</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>postExerciseSudsScore</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Post-Exercise SUDs Score</displayLabel>
+                                    <promptText>Post-Exercise SUDs Score</promptText>
+                                    <promptType>number</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>0</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>10</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>appLaunchedProbe</id>
+                            <title>App Launched</title>
+                            <description>App Launched</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>accessibilityFeaturesActiveOnLaunch</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Accessibility Features Active On Launch</displayLabel>
+                                    <promptText>Accessibility Features Active On Launch</promptText>
+                                    <promptType>single_choice</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>0</key>
+                                            <label>false</label>
+                                        </property>
+                                        <property>
+                                            <key>1</key>
+                                            <label>true</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>appExitedProbe</id>
+                            <title>App Exited</title>
+                            <description>App Exited</description>
+                            <submitText>invisible</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>appExitedAccessibilityFeaturesActive</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Accessibility Features Active On Exit</displayLabel>
+                                    <promptText>Accessibility Features Active On Exit</promptText>
+                                    <promptType>single_choice</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>0</key>
+                                            <label>false</label>
+                                        </property>
+                                        <property>
+                                            <key>1</key>
+                                            <label>true</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>pclReminderScheduledProbe</id>
+                            <title>PCL Reminder Scheduled</title>
+                            <description>invisible</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>pclReminderScheduledTimestamp</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Scheduled At</displayLabel>
+                                    <promptText>Scheduled At</promptText>
+                                    <promptType>timestamp</promptType>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>pclAssessmentAbortedProbe</id>
+                            <title>PCL Assessment Aborted</title>
+                            <description>PCL Assessment Aborted</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>pclAssessmentAbortedTimestamp</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Aborted At</displayLabel>
+                                    <promptText>Aborted At</promptText>
+                                    <promptType>timestamp</promptType>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>pclAssessmentCompletedProbe</id>
+                            <title>PCL Assessment Completed</title>
+                            <description>PCL Assessment Completed</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>pclAssessmentCompletedFinalScore</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>PCL Final Score</displayLabel>
+                                    <promptText>PCL Final Score</promptText>
+                                    <promptType>number</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>0</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>85</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>pclAssessmentCompleted</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>PCL Assessment Completed</displayLabel>
+                                    <promptText>PCL Assessment Completed</promptText>
+                                    <promptType>single_choice</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>0</key>
+                                            <label>false</label>
+                                        </property>
+                                        <property>
+                                            <key>1</key>
+                                            <label>true</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>totalTimeOnAppProbe</id>
+                            <title>Total Time On App</title>
+                            <description>invisible</description>
+                            <submitText>invisible</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>totalTimeOnApp</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Time</displayLabel>
+                                    <promptText>Time</promptText>
+                                    <promptType>number</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>0</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>9223372036854775807</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>timePerScreenProbe</id>
+                            <title>Time Per Screen</title>
+                            <description>Time Per Screen</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>screenId</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Id</displayLabel>
+                                    <promptText>Id</promptText>
+                                    <promptType>text</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>1</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>500</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>screenStartTime</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Start Time</displayLabel>
+                                    <promptText>Start Time</promptText>
+                                    <promptType>timestamp</promptType>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                                <prompt>
+                                    <id>timeSpentOnScreen</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Time Spent</displayLabel>
+                                    <promptText>Time Spent</promptText>
+                                    <promptType>number</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>0</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>9223372036854775807</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>timeElapsedBetweenSessionsProbe</id>
+                            <title>Time Elapsed Between Sessions</title>
+                            <description>Time Elapsed Between Sessions</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>timeElapsedBetweenSessions</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Time</displayLabel>
+                                    <promptText>Time</promptText>
+                                    <promptType>number</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>0</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>9223372036854775807</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <id>timeElapsedBetweenPCLAssessmentsProbe</id>
+                            <title>Time Elapsed Between PCL Assessments</title>
+                            <description>Time Elapsed Between PCL Assessments</description>
+                            <submitText>none</submitText>
+                            <showSummary>false</showSummary>
+                            <anytime>true</anytime>
+                            <contentList>
+                                <prompt>
+                                    <id>timeElapsedBetweenPCLAssessments</id>
+                                    <displayType>category</displayType>
+                                    <displayLabel>Time</displayLabel>
+                                    <promptText>Time</promptText>
+                                    <promptType>number</promptType>
+                                    <properties>
+                                        <property>
+                                            <key>min</key>
+                                            <label>0</label>
+                                        </property>
+                                        <property>
+                                            <key>max</key>
+                                            <label>9223372036854775807</label>
+                                        </property>
+                                    </properties>
+                                    <skippable>true</skippable>
+                                    <skipLabel>Skip</skipLabel>
+                                </prompt>
+                            </contentList>
+                        </survey>
+                        <survey>
+                            <!-- This survey can be submitted for each tool aborted -->
+                                <id>toolAbortedProbe</id>
+                                <title>Tool Aborted</title>
+                                <description>Tool Aborted</description>
+                                <submitText>none</submitText>
+                                <showSummary>false</showSummary>
+                                <anytime>true</anytime>
+                                <contentList>
+                                    <prompt>
+                                        <id>toolId</id>
+                                        <displayType>category</displayType>
+                                        <displayLabel>Id</displayLabel>
+                                        <promptText>Id</promptText>
+                                        <promptType>text</promptType>
+                                        <properties>
+                                            <property>
+                                                <key>min</key>
+                                                <label>1</label>
+                                            </property>
+                                            <property>
+                                                <key>max</key>
+                                                <label>500</label>
+                                            </property>
+                                        </properties>
+                                        <skippable>true</skippable>
+                                        <skipLabel>Skip</skipLabel>
+                                    </prompt>
+                                    <prompt>
+                                        <id>toolName</id>
+                                        <displayType>category</displayType>
+                                        <displayLabel>Name</displayLabel>
+                                        <promptText>Name</promptText>
+                                        <promptType>text</promptType>
+                                        <properties>
+                                            <property>
+                                                <key>min</key>
+                                                <label>1</label>
+                                            </property>
+                                            <property>
+                                                <key>max</key>
+                                                <label>500</label>
+                                            </property>
+                                        </properties>
+                                        <skippable>true</skippable>
+                                        <skipLabel>Skip</skipLabel>
+                                    </prompt>
+                                </contentList>
+                            </survey>
+                        </surveys>
+                    </campaign>
