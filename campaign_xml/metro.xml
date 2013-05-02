@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+	<campaignUrn>urn:campaign:ohmage:Metro</campaignUrn>
+	<campaignName>Metro Usage</campaignName>
+	<surveys>
+		<survey>
+			<id>metrousage</id>
+			<title>Track Your Metro Usage</title>
+			<description>In order to see what kind of metro pass you should be buying, track your usage.</description>
+			<summaryText>Have a great ride!</summaryText>
+			<submitText>Submit</submitText>
+			<anytime>true</anytime>
+			<contentList>
+				<prompt>
+					<id>type</id>
+					<displayType>event</displayType>
+					<displayLabel>Subway or Bus?</displayLabel>
+					<promptText>Did you take the subway or a bus?</promptText>
+					<promptType>single_choice</promptType>
+					<properties>
+						<property>
+							<key>0</key>
+							<label>Subway</label>
+						</property>
+						<property>
+							<key>1</key>
+							<label>Bus</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+				<prompt>
+					<id>walkable</id>
+					<displayType>event</displayType>
+					<displayLabel>Walkable?</displayLabel>
+					<promptText>Could you have walked?</promptText>
+					<promptType>single_choice</promptType>
+					<properties>
+						<property>
+							<key>1</key>
+							<label>Yes</label>
+						</property>
+						<property>
+							<key>0</key>
+							<label>No</label>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+			</contentList>
+		</survey>
+	</surveys>
+</campaign>
