@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignUrn>urn:campaign:formatting</campaignUrn>
+  <campaignName>Formatting Campaign</campaignName>
+  
+  <surveys>
+    <survey>
+      <id>timestampSurvey</id>
+      <title>Timestamp Survey</title>
+      <description>This is a survey to test behavior of the timestamp prompt type.</description>
+      <submitText>Done with the timestamp survey.</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Timestamp Test</summaryText>
+      <anytime>true</anytime>
+    
+      <contentList>
+        <prompt>
+          <id>timestamp</id>
+          <displayType>event</displayType>
+          <displayLabel>mTimestamp</displayLabel>
+          <promptText>What time is it? ![Ohmage Logo](https://dev.ohmage.org/images/theme-ohmage/dashboard-header-logo.png)</promptText>
+          <abbreviatedText>What time is it?</abbreviatedText>
+          <promptType>timestamp</promptType>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+	</contentList>
+	
+   </survey>
+
+    <survey>
+      <id>hoursBeforeNowSurvey</id>
+      <title>Hours Before Now Survey</title>
+      <description>This is a survey to test behavior of the hours_before_now prompt type.</description>
+      <submitText>Done with the hours_before_now survey</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Hours Before Now Test</summaryText>
+      <anytime>true</anytime>
+    
+      <contentList>
+        <prompt>
+          <id>hoursBeforeNowNegTenToZero</id>
+          <displayType>event</displayType>
+          <displayLabel>hoursBeforeNowNegTenToZero</displayLabel>
+          <promptText>Pick a number. ![Google Logo](https://sites.google.com/site/studentchromebook/event-resources-and-calendar/event-planning-print-materials/google_logo_shaded.jpg) Yay a number.</promptText>
+          <abbreviatedText>Pick a number.</abbreviatedText>
+          <promptType>hours_before_now</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>-10</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>0</label>
+            </property>
+          </properties>
+          <default>-10</default>  
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+	    </contentList>
+   </survey>
+
+    <survey>
+      <id>numberSurvey</id>
+      <title>Number Survey</title>
+      <description>This is a survey to test behavior of the number prompt type.</description>
+      <submitText>Done with the number survey</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Number Test</summaryText>
+      <anytime>true</anytime>
+      
+      <contentList>
+        <prompt>
+          <id>numberNegTenToZero</id>
+          <displayType>event</displayType>
+          <displayLabel>numberNegTenToZero</displayLabel>
+          <promptText>![Facebook Logo](https://www.facebookbrand.com/img/assets/asset.facebook.logo.lg.png) Pick a number.</promptText>
+          <abbreviatedText>Pick a number.</abbreviatedText>
+          <promptType>number</promptType>
+          <properties>
+            <property>
+              <key>min</key>
+              <label>-10</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>0</label>
+            </property>
+          </properties>
+          <default>-10</default>  
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+	</contentList>
+   </survey>
+
+   <survey>
+      <id>singleChoiceSurvey</id>
+      <title>Single Choice Survey</title>
+      <description>This is a survey to test behavior of the single_choice prompt type.</description>
+      <submitText>Done with the single_choice survey</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Single Choice Test</summaryText>
+      <anytime>true</anytime>
+      <contentList>
+        <prompt>
+          <id>singleChoice</id>
+          <displayType>event</displayType>
+          <displayLabel>Rivers</displayLabel>
+          <promptText>Pick a Californian river from this list of main (non-tributary) rivers (listed from coastal North to South then inland North to South).</promptText>
+          <abbreviatedText>California River</abbreviatedText>
+          <promptType>single_choice</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>Smith River ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/6/62/DonauknieVisegrad.jpg/250px-DonauknieVisegrad.jpg)</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>Klamath River ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Melting_Toe_of_Athabasca_Glacier.jpg/220px-Melting_Toe_of_Athabasca_Glacier.jpg)</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Mad River ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Loboc_river.png/220px-Loboc_river.png)</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>Eel River ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/The_River_Cam_from_the_Green_Dragon_Bridge.jpg/800px-The_River_Cam_from_the_Green_Dragon_Bridge.jpg)</label>
+            </property>
+            <property>
+              <key>4</key>
+              <label>Bear River ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Braine-le-Ch%C3%A2teau_JPG02.jpg/220px-Braine-le-Ch%C3%A2teau_JPG02.jpg)</label>
+            </property>
+          </properties>
+          <skippable>false</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+      </contentList>
+    </survey>
+    
+       <survey>
+          <id>singleChoiceSurveyNewLine</id>
+          <title>Single Choice Survey with NewLine</title>
+          <description>This is a survey to test behavior of the single_choice prompt type.</description>
+          <submitText>Done with the single_choice survey</submitText>
+          <showSummary>false</showSummary>
+          <editSummary>false</editSummary>
+          <summaryText>Single Choice Test</summaryText>
+          <anytime>true</anytime>
+          <contentList>
+            <prompt>
+              <id>singleChoiceNewLine</id>
+              <displayType>event</displayType>
+              <displayLabel>Rivers</displayLabel>
+              <promptText>Pick a Californian river from this list of main (non-tributary) rivers (listed from coastal North to South then inland North to South).</promptText>
+              <abbreviatedText>California River</abbreviatedText>
+              <promptType>single_choice</promptType>
+              <properties>
+                <property>
+                  <key>0</key>
+                  <label>Smith River
+    ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/6/62/DonauknieVisegrad.jpg/250px-DonauknieVisegrad.jpg)</label>
+                </property>
+                <property>
+                  <key>1</key>
+                  <label>Klamath River
+    ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Melting_Toe_of_Athabasca_Glacier.jpg/220px-Melting_Toe_of_Athabasca_Glacier.jpg)</label>
+                </property>
+                <property>
+                  <key>2</key>
+                  <label>Mad River
+    ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Loboc_river.png/220px-Loboc_river.png)</label>
+                </property>
+                <property>
+                  <key>3</key>
+                  <label>Eel River  
+    ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/The_River_Cam_from_the_Green_Dragon_Bridge.jpg/800px-The_River_Cam_from_the_Green_Dragon_Bridge.jpg)</label>
+                </property>
+                <property>
+                  <key>4</key>
+                  <label>Bear River ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Braine-le-Ch%C3%A2teau_JPG02.jpg/220px-Braine-le-Ch%C3%A2teau_JPG02.jpg)</label>
+                </property>
+              </properties>
+              <skippable>false</skippable>
+              <skipLabel>Skip</skipLabel>
+            </prompt>
+          </contentList>
+        </survey>
+
+   <survey>
+      <id>singleChoiceCustomSurvey</id>
+      <title>Single Choice Custom Survey</title>
+      <description>This is a survey to test behavior of the single choice custom prompt type.</description>
+      <submitText>Done with the single choice custom survey</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Single Choice Custom Test</summaryText>
+      <anytime>true</anytime>
+      <contentList>
+        <prompt>
+          <id>singleChoiceCustom2</id>
+          <displayType>event</displayType>
+          <displayLabel>Single Choice Custom 2</displayLabel>
+          <promptText>The door is locked. Do you:</promptText>
+          <abbreviatedText>locked door</abbreviatedText>
+          <promptType>single_choice_custom</promptType>
+          <properties>
+            <property>
+              <key>0</key>
+              <label>kick the door down ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Florenca146.jpg/150px-Florenca146.jpg)</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>knock politely ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Doorknocker_Florence.jpg/180px-Doorknocker_Florence.jpg)</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>hunt in your pockets for the key ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Standard-lock-key.jpg/300px-Standard-lock-key.jpg)</label>
+            </property>
+            <property>
+              <key>3</key>
+              <label>turn around and walk away ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Sanfermines_Vaquillas_Pamplona_08.jpg/800px-Sanfermines_Vaquillas_Pamplona_08.jpg)</label>
+            </property>
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+	 </contentList>
+   </survey>
+
+   <survey>
+      <id>multiChoiceSurvey</id>
+      <title>Multi Choice Survey</title>
+      <description>This is a survey to test behavior of the multi choice prompt type.</description>
+      <submitText>Done with the multi choice survey</submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Multi Choice Test</summaryText>
+      <anytime>true</anytime>
+      <contentList>
+        <prompt>
+          <id>multiChoice</id>
+          <displayType>event</displayType>
+          <displayLabel>Multi Choice</displayLabel>
+          <promptText>The Transverse Ranges are a group of mountain ranges of southern California, in the Pacific Coast Ranges physiographic region that runs along the Pacific coast from Alaska to Mexico in North America. The Transverse Ranges begin at the southern end of the California Coast Ranges and lie between Santa Barbara and San Diego counties. They derive the name Transverse Ranges due to their East-West orientation, making them transverse to the general North-South orientation of most of California's coastal mountains.</promptText>
+          <abbreviatedText>transverse ranges</abbreviatedText>
+          <promptType>multi_choice</promptType>
+          <properties>
+          
+            <property>
+              <key>0</key>
+              <label>Santa Ynez Mountains ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Everest_kalapatthar_crop.jpg/220px-Everest_kalapatthar_crop.jpg)</label>
+            </property>
+            <property>
+              <key>1</key>
+              <label>San Rafael Mountains ![item](http://mountaindew.com/assets/3y6mwt_1x2.png)</label>
+            </property>
+            <property>
+              <key>2</key>
+              <label>Sierra Madre Mountains ![item](http://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Matterhorn_Riffelsee_2005-06-11.jpg/396px-Matterhorn_Riffelsee_2005-06-11.jpg)</label>
+            </property>
+          
+          </properties>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+	 </contentList>
+   </survey>
+			
+		   <survey>
+		     <id>emphasisSurvey</id>
+		     <title>Emphasis</title>
+		     <description>This is a survey to test behavior of the timestamp prompt type.</description>
+		     <submitText>Done with the timestamp survey.</submitText>
+		     <showSummary>false</showSummary>
+		     <editSummary>false</editSummary>
+		     <summaryText>Timestamp Test</summaryText>
+		     <anytime>true</anytime>
+
+	      <contentList>
+			        <prompt>
+			          <id>italics</id>
+			          <displayType>event</displayType>
+			          <displayLabel>mTimestamp</displayLabel>
+			          <promptText>*emphasis* or _emphasis_</promptText>
+			          <abbreviatedText>What time is it?</abbreviatedText>
+			          <promptType>timestamp</promptType>
+			          <skippable>true</skippable>
+			          <skipLabel>Skip</skipLabel>
+			        </prompt>
+
+ 			        <prompt>
+ 			          <id>bold</id>
+ 			          <displayType>event</displayType>
+ 			          <displayLabel>mTimestamp</displayLabel>
+ 			          <promptText>**strong emphasis** or __strong emphasis__</promptText>
+ 			          <abbreviatedText>What time is it?</abbreviatedText>
+ 			          <promptType>timestamp</promptType>
+ 			          <skippable>true</skippable>
+ 			          <skipLabel>Skip</skipLabel>
+ 			        </prompt>			
+				</contentList>
+
+			   </survey>
+  </surveys>
+</campaign>
