@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<observer>
+    <id>org.openmhealth.observer.mindwave</id>
+    <version>2013050800</version>
+    <name>MindWave Mobile Observer</name>
+    <description>The observer for the MindWave Mobile data streams.</description>
+    <versionString>1.1</versionString>
+    
+    <stream>
+        <id>attention</id>
+        <version>2013042600</version>
+        <name>Attention</name>
+        <description>The proprietary attention values.</description>
+        
+        <metadata>
+            <id>true</id>
+            <timestamp>true</timestamp>
+        </metadata>
+        
+        <schema>
+            {
+                "type":"object",
+                "schema":[
+                    {
+                        "name":"attention",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+    
+    <stream>
+        <id>meditation</id>
+        <version>2013042600</version>
+        <name>Meditation</name>
+        <description>The proprietary meditation values.</description>
+        
+        <metadata>
+            <id>true</id>
+            <timestamp>true</timestamp>
+        </metadata>
+        
+        <schema>
+            {
+                "type":"object",
+                "schema":[
+                    {
+                        "name":"meditation",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+    
+    <stream>
+        <id>blink</id>
+        <version>2013042600</version>
+        <name>Blink</name>
+        <description>When a user blinks.</description>
+        
+        <metadata>
+            <id>true</id>
+            <timestamp>true</timestamp>
+        </metadata>
+        
+        <schema>
+            {
+                "type":"object",
+                "schema":[
+                    {
+                        "name":"strength",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+    
+    <stream>
+        <id>eegPower</id>
+        <version>2013042600</version>
+        <name>EEG Power</name>
+        <description>The powers given from each of the EEG locations.</description>
+        
+        <metadata>
+            <id>true</id>
+            <timestamp>true</timestamp>
+        </metadata>
+        
+        <schema>
+            {
+                "type":"object",
+                "schema":[
+                    {
+                        "name":"highAlpha",
+                        "type":"number"
+                    },
+                    {
+                        "name":"lowAlpha",
+                        "type":"number"
+                    },
+                    {
+                        "name":"highBeta",
+                        "type":"number"
+                    },
+                    {
+                        "name":"lowBeta",
+                        "type":"number"
+                    },
+                    {
+                        "name":"highGamma",
+                        "type":"number"
+                    },
+                    {
+                        "name":"lowGamma",
+                        "type":"number"
+                    },
+                    {
+                        "name":"delta",
+                        "type":"number"
+                    },
+                    {
+                        "name":"theta",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+    
+    <stream>
+        <id>raw</id>
+        <version>2013050800</version>
+        <name>Raw Voltage</name>
+        <description>The raw voltage from the device.</description>
+        
+        <metadata>
+            <id>true</id>
+            <timestamp>true</timestamp>
+        </metadata>
+        
+        <schema>
+            {
+                "type":"object",
+                "schema":[
+                    {
+                        "name":"voltage",
+                        "type":"number"
+                    }
+                ]
+            }
+        </schema>
+    </stream>
+</observer>
