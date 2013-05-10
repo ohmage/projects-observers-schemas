@@ -176,9 +176,9 @@
                     </properties>
                 </prompt>
                 <prompt>
-                    <id>cognativeFunction</id>
-                    <promptText>What is the ID of the survey defining the cognative function for the user?</promptText>
-                    <displayLabel>Cognative Function</displayLabel>
+                    <id>cognitiveFunction</id>
+                    <promptText>What is the ID of the survey defining the cognitive function for the user?</promptText>
+                    <displayLabel>cognitive Function</displayLabel>
                     <promptType>text</promptType>
                     <skippable>false</skippable>
                     <properties>
@@ -214,7 +214,7 @@
         <survey>
             <id>peg</id>
             <title>PEG</title>
-            <description>PEG.</description>
+            <description>A daily questionnaire about pain intensity and interference.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -280,7 +280,7 @@
             -->
             <id>sleepDisturbanceSurvey</id>
             <title>Sleep Disturbance</title>
-            <description>Daily question about your previous night's sleep.</description>
+            <description>A daily question about your previous night's sleep.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -322,7 +322,7 @@
             -->
             <id>fatigueSurvey</id>
             <title>Fatigue</title>
-            <description>Daily question on how tired-out you feel during the day.</description>
+            <description>A daily question on how tired-out you feel during the day.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -364,7 +364,7 @@
         <survey>
             <id>drowsinessSurvey</id>
             <title>Drowsiness</title>
-            <description>Daily question on how drowsy you feel during the day.</description>
+            <description>A daily question on how drowsy you feel during the day.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -410,7 +410,7 @@
             -->
             <id>constipationSurvey</id>
             <title>Constipation</title>
-            <description>Daily question on problems with moving your bowels.</description>
+            <description>A daily question on problems with moving your bowels.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
@@ -447,14 +447,14 @@
             </contentList>
         </survey>
         <survey>
-            <id>cognativeFunctionSlowThinkingSurvey</id>
+            <id>cognitiveFunctionSlowThinkingSurvey</id>
             <title>Slow Thinking</title>
-            <description>Daily question about cognative function relating to having bouts of slow thinking.</description>
+            <description>A daily question about cognitive function relating to having bouts of slow thinking.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
                 <prompt>
-                    <id>cognativeFunctionSlowThinkingPrompt</id>
+                    <id>cognitiveFunctionSlowThinkingPrompt</id>
                     <promptText>My thinking has been slow during the past 24 hours.</promptText>
                     <displayLabel>Slow Thinking</displayLabel>
                     <promptType>single_choice</promptType>
@@ -486,14 +486,14 @@
             </contentList>
         </survey>
         <survey>
-            <id>cognativeFunctionFoggyThinkingSurvey</id>
+            <id>cognitiveFunctionFoggyThinkingSurvey</id>
             <title>Foggy Thinking</title>
-            <description>Daily question about cognative function relating to having bouts of foggy thinking.</description>
+            <description>A daily question about cognitive function relating to having bouts of foggy thinking.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
                 <prompt>
-                    <id>cognativeFunctionFoggyThinkingPrompt</id>
+                    <id>cognitiveFunctionFoggyThinkingPrompt</id>
                     <promptText>My thinking has been foggy during the past 24 hours.</promptText>
                     <displayLabel>Foggy Thinking</displayLabel>
                     <promptType>single_choice</promptType>
@@ -525,14 +525,14 @@
             </contentList>
         </survey>
         <survey>
-            <id>cognativeFunctionTroubleConcentratingSurvey</id>
+            <id>cognitiveFunctionTroubleConcentratingSurvey</id>
             <title>Trouble Concentrating</title>
-            <description>Daily question about cognative function relating to trouble concentrating.</description>
+            <description>A daily question about cognitive function relating to trouble concentrating.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
                 <prompt>
-                    <id>cognativeFunctionTroubleConcentratingPrompt</id>
+                    <id>cognitiveFunctionTroubleConcentratingPrompt</id>
                     <promptText>I have had trouble concentrating during the past 24 hours.</promptText>
                     <displayLabel>Trouble Concentrating</displayLabel>
                     <promptType>single_choice</promptType>
@@ -564,14 +564,14 @@
             </contentList>
         </survey>
         <survey>
-            <id>cognativeFunctionWorkingHarderSurvey</id>
+            <id>cognitiveFunctionWorkingHarderSurvey</id>
             <title>Working Harder</title>
-            <description>Daily question about cognative function relating to working harder to keep track of what you were doing.</description>
+            <description>A daily question about cognitive function relating to working harder to keep track of what you were doing.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
                 <prompt>
-                    <id>cognativeFunctionWorkingHarderPrompt</id>
+                    <id>cognitiveFunctionWorkingHarderPrompt</id>
                     <promptText>I have had to work harder than usual to keep track of what I was doing during the past 24 hours.</promptText>
                     <displayLabel>Working Harder</displayLabel>
                     <promptType>single_choice</promptType>
