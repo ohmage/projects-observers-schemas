@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<campaign>
+		<campaignUrn>urn:campaign:ADHD:Phase2:Version2</campaignUrn>
+		<campaignName>ADHD Study</campaignName>
+		<serverUrl>https://adhd.andwellness.org/</serverUrl>
+		<surveys>
+			<survey>
+				<id>SleepSurvey</id>
+				<title>Sleep Survey</title>
+				<description>A list of questions about sleep.</description>
+				<submitText>Thank you for taking the sleep survey.</submitText>
+				<showSummary>false</showSummary>
+				<editSummary>false</editSummary>
+				<summaryText>A list of questions about sleep.</summaryText>
+				<anytime>true</anytime>
+				<contentList>
+					<prompt>
+						<id>SleepFocusGame</id>
+						<displayType>event</displayType>
+						<displayLabel>Focus Game</displayLabel>
+						<promptText>Whack-a-mole! During this game, images of moles/gophers will appear on the screen. Respond as quickly but as accurately as you can. You can see your performance at the end for how many moles you whacked and how many flowers you saved.</promptText>
+						<abbreviatedText>Focus Game</abbreviatedText>
+						<promptType>remote_activity</promptType>
+						<properties>
+							<property>
+								<key>package</key>
+								<label>edu.ucla.cens.FocusGame</label>
+							</property>
+							<property>
+								<key>activity</key>
+								<label>edu.ucla.cens.FocusGame.Game</label>
+							</property>
+							<property>
+								<key>action</key>
+								<label>edu.ucla.cens.FocusGame.Game.LAUNCH</label>
+							</property>
+							<property>
+								<key>autolaunch</key>
+								<label>false</label>
+							</property>
+							<property>
+								<key>retries</key>
+								<label>10</label>
+							</property>
+							<property>
+								<key>input</key>
+								<label>image</label>
+							</property>
+							<property>
+								<key>min_runs</key>
+								<label>1</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>WakeupTime</id>
+						<displayType>event</displayType>
+						<displayLabel>Wakeup time</displayLabel>
+						<promptText>What time did you wake up this morning?</promptText>
+						<abbreviatedText>Wake up time</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Before 5:00 am</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>5:00-5:30 am</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>5:30-6:00 am</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>6:00-6:30 am</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>6:30-7:00 am</label>
+							</property>
+							<property>
+								<key>5</key>
+								<label>7:00-7:30 am</label>
+							</property>
+							<property>
+								<key>6</key>
+								<label>7:30-8:00 am</label>
+							</property>
+							<property>
+								<key>7</key>
+								<label>8:00-8:30 am</label>
+							</property>
+							<property>
+								<key>8</key>
+								<label>8:00-9:00 am</label>
+							</property>
+							<property>
+								<key>9</key>
+								<label>9:00-9:30 am</label>
+							</property>
+							<property>
+								<key>10</key>
+								<label>9:30-10:00 am</label>
+							</property>
+							<property>
+								<key>11</key>
+								<label>10:00-10:30 am</label>
+							</property>
+							<property>
+								<key>12</key>
+								<label>10:30-11:00 am</label>
+							</property>
+							<property>
+								<key>13</key>
+								<label>11:00-11:30 am</label>
+							</property>
+							<property>
+								<key>14</key>
+								<label>11:30 am-12:00 pm</label>
+							</property>
+							<property>
+								<key>15</key>
+								<label>After 12:00 pm</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>SleepTime</id>
+						<displayType>event</displayType>
+						<displayLabel>Sleep time</displayLabel>
+						<promptText>What time did you go to bed last night?</promptText>
+						<abbreviatedText>What time did you go to bed last night?</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Before 9 pm</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>9:00-9:30 pm</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>9:30-10:00 pm</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>10:00-10:30 pm</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>10:30-11:00 pm</label>
+							</property>
+							<property>
+								<key>5</key>
+								<label>11:00-11:30 pm</label>
+							</property>
+							<property>
+								<key>6</key>
+								<label>11:30 pm-12:00 am</label>
+							</property>
+							<property>
+								<key>7</key>
+								<label>12:00-12:30 am</label>
+							</property>
+							<property>
+								<key>8</key>
+								<label>12:30-1:00 am</label>
+							</property>
+							<property>
+								<key>9</key>
+								<label>1:00-1:30 am</label>
+							</property>
+							<property>
+								<key>10</key>
+								<label>1:30-2:00 am</label>
+							</property>
+							<property>
+								<key>11</key>
+								<label>After 2:00 am</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>TimeToFallAsleep</id>
+						<displayType>category</displayType>
+						<displayLabel>Time to Sleep</displayLabel>
+						<promptText>How long did it take you to fall asleep?</promptText>
+						<abbreviatedText>Time to fall asleep</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Less than 10 minutes</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>10-20 minutes</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>20-30 minutes</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>30-40 minutes</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>40-50 minutes</label>
+							</property>
+							<property>
+								<key>5</key>
+								<label>More than 50 minutes</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>HoursOfSleep</id>
+						<displayType>measurement</displayType>
+						<displayLabel>Number hours of sleep</displayLabel>
+						<promptText>How many hours of sleep did you get?</promptText>
+						<abbreviatedText>Number hours of sleep</abbreviatedText>
+						<promptType>number</promptType>
+						<properties>
+							<property>
+								<key>min</key>
+								<label>0</label>
+							</property>
+							<property>
+								<key>max</key>
+								<label>24</label>
+							</property>
+						</properties>
+						<default>8</default>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>TimesWakeup</id>
+						<displayType>category</displayType>
+						<displayLabel>Times wakeup</displayLabel>
+						<promptText>How many times did you wake up during the night?</promptText>
+						<abbreviatedText>Number of times wakeup during the night</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>0</label>
+								<value>0</value>
+							</property>
+							<property>
+								<key>1</key>
+								<label>1</label>
+								<value>1</value>
+							</property>
+							<property>
+								<key>2</key>
+								<label>2</label>
+								<value>2</value>
+							</property>
+							<property>
+								<key>3</key>
+								<label>3 or more</label>
+								<value>3</value>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>SleepQuality</id>
+						<displayType>category</displayType>
+						<displayLabel>Sleep quality</displayLabel>
+						<promptText>How would you rate your sleep quality?</promptText>
+						<abbreviatedText>Sleep quality</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Very bad</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>Bad</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>Ok</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>Good</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>Very good</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>ActivityBeforeSleep</id>
+						<displayType>category</displayType>
+						<displayLabel>Activity before Sleep</displayLabel>
+						<promptText>What were you doing during the hour before going to bed?</promptText>
+						<abbreviatedText>Activity before sleep</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Homework</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>Internet</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>Games</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>Watching TV</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>Socializing</label>
+							</property>
+							<property>
+								<key>5</key>
+								<label>Social-networking</label>
+							</property>
+							<property>
+								<key>6</key>
+								<label>Chores</label>
+							</property>
+							<property>
+								<key>7</key>
+								<label>Reading</label>
+							</property>
+							<property>
+								<key>8</key>
+								<label>Other</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+				</contentList>
+			</survey>
+			<survey>
+				<id>AttentionSurvey</id>
+				<title>Attention Survey</title>
+				<description>A list of questions based around attention.</description>
+				<submitText>Thank you for taking the attention survey.</submitText>
+				<showSummary>false</showSummary>
+				<editSummary>false</editSummary>
+				<summaryText>A list of questions based around attention.</summaryText>
+				<anytime>true</anytime>
+				<contentList>
+					<prompt>
+						<id>AttentionFocusGame</id>
+						<displayType>event</displayType>
+						<displayLabel>Focus Game</displayLabel>
+						<promptText>Whack-a-mole! During this game, images of moles/gophers will appear on the screen. Respond as quickly but as accurately as you can. You can see your performance at the end for how many moles you whacked and how many flowers you saved.</promptText>
+						<abbreviatedText>Focus Game</abbreviatedText>
+						<promptType>remote_activity</promptType>
+						<properties>
+							<property>
+								<key>package</key>
+								<label>edu.ucla.cens.FocusGame</label>
+							</property>
+							<property>
+								<key>activity</key>
+								<label>edu.ucla.cens.FocusGame.Game</label>
+							</property>
+							<property>
+								<key>action</key>
+								<label>edu.ucla.cens.FocusGame.Game.LAUNCH</label>
+							</property>
+							<property>
+								<key>autolaunch</key>
+								<label>false</label>
+							</property>
+							<property>
+								<key>retries</key>
+								<label>10</label>
+							</property>
+							<property>
+								<key>input</key>
+								<label>image</label>
+							</property>
+							<property>
+								<key>min_runs</key>
+								<label>1</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<message>
+						<id>QuestionHeader</id>
+						<messageText>Please answer the following questions about yourself over the last 3 hours compared to how you normally are.</messageText>
+					</message>
+					<prompt>
+						<id>CarelessMistakes</id>
+						<displayType>category</displayType>
+						<displayLabel>Number of Careless Mistakes</displayLabel>
+						<promptText>Over the last 3 hours, how would you compare your number of careless mistakes to normal?</promptText>
+						<abbreviatedText>Careless Mistakes</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Way less</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>A bit less</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>Typical</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>A bit more</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>Way more</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>StittingStill</id>
+						<displayType>category</displayType>
+						<displayLabel>Difficulty Sitting Still</displayLabel>
+						<promptText>Over the last 3 hours, how would you compare your difficulty sitting still to normal?</promptText>
+						<abbreviatedText>Difficulty Sitting Still</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Way less</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>A bit less</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>Typical</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>A bit more</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>Way more</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>HyperactiveMovement</id>
+						<displayType>category</displayType>
+						<displayLabel>Hyperactive Movement</displayLabel>
+						<promptText>Over the last 3 hours, how would you compare your number of hyperactive movements to normal?</promptText>
+						<abbreviatedText>Hyperactive Movements</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Way less</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>A bit less</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>Typical</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>A bit more</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>Way more</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>DifficultyPlanningOrOrganizing</id>
+						<displayType>category</displayType>
+						<displayLabel>Difficulty Planning or Organizing</displayLabel>
+						<promptText>Over the last 3 hours, how would you compare your difficulty planning or organizing to normal?</promptText>
+						<abbreviatedText>Difficulty Planning or Organizing</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Way less</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>A bit less</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>Typical</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>A bit more</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>Way more</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>AvoidingWorkThatRequiresConcentration</id>
+						<displayType>category</displayType>
+						<displayLabel>Avoiding Work that Requires Concentration</displayLabel>
+						<promptText>Over the last 3 hours, how often did you avoid work that required concentration compared to normal?</promptText>
+						<abbreviatedText>Avoiding Work that Requires Concentration</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Way less</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>A bit less</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>Typical</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>A bit more</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>Way more</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>BlurtingOutAnswers</id>
+						<displayType>category</displayType>
+						<displayLabel>Blurting Out Answers</displayLabel>
+						<promptText>Over the last 3 hours, how often did you find ourself blurting out answers before the question was finished compared to normal?</promptText>
+						<abbreviatedText>Blurting Out Answers</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Way less</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>A bit less</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>Typical</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>A bit more</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>Way more</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>EasilyDistracted</id>
+						<displayType>category</displayType>
+						<displayLabel>Easily Distracted</displayLabel>
+						<promptText>Over the last 3 hours, how often did you find yourself easily distracted compared to normal?</promptText>
+						<abbreviatedText>Awaiting Turn</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Way less</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>A bit less</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>Typical</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>A bit more</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>Way more</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+					<prompt>
+						<id>InterruptingPeople</id>
+						<displayType>category</displayType>
+						<displayLabel>Interrupting People</displayLabel>
+						<promptText>Over the last 3 hours, how frequently would you interrupt others compared to normal?</promptText>
+						<abbreviatedText>Interrupting People</abbreviatedText>
+						<promptType>single_choice</promptType>
+						<properties>
+							<property>
+								<key>0</key>
+								<label>Way less</label>
+							</property>
+							<property>
+								<key>1</key>
+								<label>A bit less</label>
+							</property>
+							<property>
+								<key>2</key>
+								<label>Typical</label>
+							</property>
+							<property>
+								<key>3</key>
+								<label>A bit more</label>
+							</property>
+							<property>
+								<key>4</key>
+								<label>Way more</label>
+							</property>
+						</properties>
+						<skippable>true</skippable>
+						<skipLabel>Skip</skipLabel>
+					</prompt>
+				</contentList>
+			</survey>
+		</surveys>
+	</campaign>
