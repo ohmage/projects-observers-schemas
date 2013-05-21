@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+    <campaignUrn>urn:campaign:test:decimal:2013052100</campaignUrn>
+    <campaignName>Decimal Testing</campaignName>
+    <surveys>
+      <survey>
+          <id>decimal</id>
+          <title>Decimal</title>
+          <description>Tests decimal numbers for a number prompt.</description>
+          <submitText>Submit</submitText>
+          <anytime>true</anytime>
+          <contentList>
+              <prompt>
+                  <id>preventDecimal</id>
+                  <promptText>This should not allow decimals.</promptText>
+                  <displayLabel>No Decimal</displayLabel>
+                  <promptType>number</promptType>
+                  <properties>
+                      <property>
+                          <key>min</key>
+                          <label>0</label>
+                      </property>
+                      <property>
+                          <key>max</key>
+                          <label>5</label>
+                      </property>
+                      <property>
+                          <key>wholeNumber</key>
+                          <label>true</label>
+                      </property>
+                  </properties>
+                  <skippable>false</skippable>
+                  <skipLabel>Skip</skipLabel>
+              </prompt>
+              <prompt>
+                  <id>allowDecimal</id>
+                  <promptText>This should allow decimals.</promptText>
+                  <displayLabel>Allow Decimal</displayLabel>
+                  <promptType>number</promptType>
+                  <properties>
+                      <property>
+                          <key>min</key>
+                          <label>0</label>
+                      </property>
+                      <property>
+                          <key>max</key>
+                          <label>5</label>
+                      </property>
+                      <property>
+                          <key>wholeNumber</key>
+                          <label>false</label>
+                      </property>
+                  </properties>
+                  <skippable>false</skippable>
+                  <skipLabel>Skip</skipLabel>
+              </prompt>
+              <prompt>
+                  <id>defaultAllowed</id>
+                  <promptText>This should use the default decimal policy for number prompts.</promptText>
+                  <displayLabel>Default Decimal</displayLabel>
+                  <promptType>number</promptType>
+                  <properties>
+                      <property>
+                          <key>min</key>
+                          <label>0</label>
+                      </property>
+                      <property>
+                          <key>max</key>
+                          <label>5</label>
+                      </property>
+                  </properties>
+                  <skippable>false</skippable>
+                  <skipLabel>Skip</skipLabel>
+              </prompt>
+              <prompt>
+                  <id>attemptDecimal</id>
+                  <promptText>Attempt to submit a decimal for the response.</promptText>
+                  <displayLabel>Attempt Decimal</displayLabel>
+                  <promptType>number</promptType>
+                  <properties>
+                      <property>
+                          <key>min</key>
+                          <label>0</label>
+                      </property>
+                      <property>
+                          <key>max</key>
+                          <label>5</label>
+                      </property>
+                  </properties>
+                  <skippable>false</skippable>
+                  <skipLabel>Skip</skipLabel>
+              </prompt>
+              <prompt>
+                  <id>complextDecimal</id>
+                  <promptText>Enter a very large number that also has many trailing decimal digits.</promptText>
+                  <displayLabel>Complex Decimal</displayLabel>
+                  <promptType>number</promptType>
+                  <properties>
+                      <property>
+                          <key>min</key>
+                          <label>0</label>
+                      </property>
+                      <property>
+                          <key>max</key>
+                          <label>2147483647</label>
+                      </property>
+                  </properties>
+                  <skippable>false</skippable>
+                  <skipLabel>Skip</skipLabel>
+              </prompt>
+              <prompt>
+                  <id>max3000000000</id>
+                  <promptText>Max value is 3000000000</promptText>
+                  <displayLabel>Complex Decimal</displayLabel>
+                  <promptType>number</promptType>
+                  <properties>
+                      <property>
+                          <key>min</key>
+                          <label>0</label>
+                      </property>
+                      <property>
+                          <key>max</key>
+                          <label>3000000000</label>
+                      </property>
+                  </properties>
+                  <skippable>false</skippable>
+                  <skipLabel>Skip</skipLabel>
+              </prompt>
+          </contentList>
+      </survey>
+    </surveys>
+</campaign>
