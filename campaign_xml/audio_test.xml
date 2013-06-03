@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+    <campaignUrn>urn:campaign:test:audio:2013052100</campaignUrn>
+    <campaignName>Audio Testing</campaignName>
+    <surveys>
+        <survey>
+            <id>audio</id>
+            <title>Audio</title>
+            <description>Tests the audio prompt.</description>
+            <submitText>Submit</submitText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>valid</id>
+                    <promptText>Attempt to create an audio response.</promptText>
+                    <displayLabel>Valid Response</displayLabel>
+                    <promptType>audio</promptType>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>limit</id>
+                    <promptText>The audio clip should have a limit of 4 minutes.</promptText>
+                    <displayLabel>4 Minute Limit</displayLabel>
+                    <promptType>audio</promptType>
+                    <properties>
+                        <property>
+                            <key>max_duration</key>
+                            <label>240000</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+            </contentList>
+        </survey>
+    </surveys>
+</campaign>
