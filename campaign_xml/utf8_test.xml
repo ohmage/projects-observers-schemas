@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <campaignUrn>urn:campaign:utf8_test</campaignUrn>
+  <campaignName>UTF-8 Test</campaignName>
+  <serverUrl>http://www.example.com</serverUrl>
+  
+  <surveys>
+    
+   <survey>
+      <id>textSurvey</id>
+      <title>Text Survey</title>
+      <description>German Characters: Ü ß ä, ö ü</description>
+      <submitText>Arabic Characters: ع ضض ض </submitText>
+      <showSummary>false</showSummary>
+      <editSummary>false</editSummary>
+      <summaryText>Number Test</summaryText>
+      <anytime>true</anytime>
+    
+      <contentList>
+        
+        <prompt>
+          <id>textOneToTen</id>
+          <displayType>event</displayType>
+          <displayLabel>textOneToTen</displayLabel>
+          <promptText>Thai Characters: ฒ ภ พ ฦ</promptText>
+          <abbreviatedText>Kanji Characters: 鸙 网 纜 紀</abbreviatedText>
+          <promptType>text</promptType>
+           <properties>
+            <property>
+              <key>min</key>
+              <label>1</label>
+            </property>
+            <property>
+              <key>max</key>
+              <label>10</label>
+            </property>
+            </properties>
+          <default>Hello.</default>
+          <skippable>true</skippable>
+          <skipLabel>Skip</skipLabel>
+        </prompt>
+        
+    </contentList>
+   </survey>
+
+
+  </surveys>
+</campaign>
