@@ -201,6 +201,23 @@
                         </property>
                     </properties>
                 </prompt>
+                <prompt>
+                    <id>userSelected</id>
+                    <promptText>What username was selected?</promptText>
+                    <displayLabel>Username Selected</displayLabel>
+                    <promptType>text</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>50</label>
+                        </property>
+                    </properties>
+                </prompt>
             </contentList>
         </survey>
         <survey>
