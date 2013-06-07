@@ -21,30 +21,34 @@
                     <properties>
                         <property>
                             <key>0</key>
-                            <label>Tylenol (acetaminophen)</label>
+                            <label>No specific treatment to be tested against Regimen B</label>
                         </property>
                         <property>
                             <key>1</key>
-                            <label>Any NSAID (e.g. ibuprofen, naproxen, sulindac)</label>
+                            <label>Tylenol (acetaminophen)</label>
                         </property>
                         <property>
                             <key>2</key>
-                            <label>Codeine combination product (e.g. Tylenol with codeine)</label>
+                            <label>Any NSAID (e.g. ibuprofen, naproxen, sulindac)</label>
                         </property>
                         <property>
                             <key>3</key>
-                            <label>Tramadol</label>
+                            <label>Codeine combination product (e.g. Tylenol with codeine)</label>
                         </property>
                         <property>
                             <key>4</key>
-                            <label>Hydrocodone combination product (e.g. Vicodin, Norco)</label>
+                            <label>Tramadol</label>
                         </property>
                         <property>
                             <key>5</key>
-                            <label>Oxycodone combination treatment (e.g. Percocet)</label>
+                            <label>Hydrocodone combination product (e.g. Vicodin, Norco)</label>
                         </property>
                         <property>
                             <key>6</key>
+                            <label>Oxycodone combination treatment (e.g. Percocet)</label>
+                        </property>
+                        <property>
+                            <key>7</key>
                             <label>Complementary treatment: including but not limited to physical activity (exercise, stretching, yoga), mindfulness (meditation, relaxation, music therapy)</label>
                         </property>
                     </properties>
@@ -58,30 +62,34 @@
                     <properties>
                         <property>
                             <key>0</key>
-                            <label>Tylenol (acetaminophen)</label>
+                            <label>No specific treatment to be tested against Regimen A</label>
                         </property>
                         <property>
                             <key>1</key>
-                            <label>Any NSAID (e.g. ibuprofen, naproxen, sulindac)</label>
+                            <label>Tylenol (acetaminophen)</label>
                         </property>
                         <property>
                             <key>2</key>
-                            <label>Codeine combination product (e.g. Tylenol with codeine)</label>
+                            <label>Any NSAID (e.g. ibuprofen, naproxen, sulindac)</label>
                         </property>
                         <property>
                             <key>3</key>
-                            <label>Tramadol</label>
+                            <label>Codeine combination product (e.g. Tylenol with codeine)</label>
                         </property>
                         <property>
                             <key>4</key>
-                            <label>Hydrocodone combination product (e.g. Vicodin, Norco)</label>
+                            <label>Tramadol</label>
                         </property>
                         <property>
                             <key>5</key>
-                            <label>Oxycodone combination treatment (e.g. Percocet)</label>
+                            <label>Hydrocodone combination product (e.g. Vicodin, Norco)</label>
                         </property>
                         <property>
                             <key>6</key>
+                            <label>Oxycodone combination treatment (e.g. Percocet)</label>
+                        </property>
+                        <property>
+                            <key>7</key>
                             <label>Complementary treatment: including but not limited to physical activity (exercise, stretching, yoga), mindfulness (meditation, relaxation, music therapy)</label>
                         </property>
                     </properties>
@@ -93,6 +101,9 @@
                     <promptType>timestamp</promptType>
                     <skippable>false</skippable>
                 </prompt>
+                <!-- If you change the duration or number of comparison cycles, 
+                     you will have to manually change the JavaScript.
+                -->
                 <prompt>
                     <id>regimenDuration</id>
                     <promptText>What is the time period for each regimen?</promptText>
