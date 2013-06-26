@@ -158,14 +158,31 @@
                     <properties>
                         <property>
                             <key>min</key>
-                            <label>0</label>
+                            <label>1</label>
                         </property>
                         <property>
                             <key>max</key>
-                            <label>15</label>
+                            <label>7</label>
                         </property>
                     </properties>
                 </prompt>
+                <prompt>
+                    <id>randomAsText</id>
+                    <promptText>random as text</promptText>
+                    <displayLabel>Random As Text</displayLabel>
+                    <promptType>text</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>4</label>
+                        </property>
+                    </properties>
+                </prompt>                
                 <prompt>
                     <id>cognitiveFunction</id>
                     <promptText>What is the ID of the survey defining the cognitive function for the user?</promptText>
