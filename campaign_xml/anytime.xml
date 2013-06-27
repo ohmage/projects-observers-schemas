@@ -1,0 +1,28 @@
+<campaign>
+	<campaignUrn>urn:campaign:anytime</campaignUrn>
+	<campaignName>Anytime Test</campaignName>
+	<surveys>
+		<survey>
+			<id>timestampSurvey</id>
+			<title>Timestamp Survey</title>
+			<description>This is a survey to test behavior of anytime.</description>
+			<submitText>Done with the timestamp survey.</submitText>
+			<showSummary>false</showSummary>
+			<editSummary>false</editSummary>
+			<summaryText>Timestamp Test</summaryText>
+			<anytime>false</anytime>
+			<contentList>
+				<prompt>
+					<id>timestamp</id>
+					<displayType>event</displayType>
+					<displayLabel>mTimestamp</displayLabel>
+					<promptText>What time is it?</promptText>
+					<abbreviatedText>What time is it?</abbreviatedText>
+					<promptType>timestamp</promptType>
+					<skippable>true</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+			</contentList>
+		</survey>
+	</surveys>
+</campaign>
