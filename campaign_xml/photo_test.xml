@@ -1,0 +1,89 @@
+<campaign>
+	<campaignUrn>urn:campaign:test:photo:2013052100</campaignUrn>
+	<campaignName>Photo Testing</campaignName>
+	<surveys>
+		<survey>
+			<id>photo</id>
+			<title>Photo</title>
+			<description>Tests the photo prompt.</description>
+			<submitText>Submit</submitText>
+			<anytime>true</anytime>
+			<contentList>
+				<prompt>
+					<id>photo1</id>
+					<displayType>event</displayType>
+					<displayLabel>Photo</displayLabel>
+					<promptText>Take a picture.</promptText>
+					<abbreviatedText>Take a picture.</abbreviatedText>
+					<promptType>photo</promptType>
+					<skippable>true</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>photo2</id>
+					<displayType>event</displayType>
+					<displayLabel>Photo</displayLabel>
+					<promptText>Take a picture with max size 720px.</promptText>
+					<abbreviatedText>Take a picture.</abbreviatedText>
+					<promptType>photo</promptType>
+					<properties>
+						<property>
+							<key>res</key>
+							<label>720</label>
+						</property>
+					</properties>
+					<skippable>true</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>photo3</id>
+					<displayType>event</displayType>
+					<displayLabel>Photo</displayLabel>
+					<promptText>Take a picture with max size 1024px.</promptText>
+					<abbreviatedText>Take a picture.</abbreviatedText>
+					<promptType>photo</promptType>
+					<properties>
+						<property>
+							<key>res</key>
+							<label>1024</label>
+						</property>
+					</properties>
+					<skippable>true</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>photo4</id>
+					<displayType>event</displayType>
+					<displayLabel>Photo</displayLabel>
+					<promptText>Take a picture with max size 2048px.</promptText>
+					<abbreviatedText>Take a picture.</abbreviatedText>
+					<promptType>photo</promptType>
+					<properties>
+						<property>
+							<key>res</key>
+							<label>2048</label>
+						</property>
+					</properties>
+					<skippable>true</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+				<prompt>
+					<id>photo5</id>
+					<displayType>event</displayType>
+					<displayLabel>Photo</displayLabel>
+					<promptText>Take a picture with max size 4096px.</promptText>
+					<abbreviatedText>Take a picture.</abbreviatedText>
+					<promptType>photo</promptType>
+					<properties>
+						<property>
+							<key>res</key>
+							<label>4096</label>
+						</property>
+					</properties>
+					<skippable>true</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+			</contentList>
+		</survey>
+	</surveys>
+</campaign>

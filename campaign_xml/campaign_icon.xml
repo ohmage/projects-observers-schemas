@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+	<campaignUrn>urn:campaign:test:campaign_icon</campaignUrn>
+	<campaignName>Campaign Icon Testing</campaignName>
+		<iconUrl>http://icons.iconarchive.com/icons/devcom/network/256/globe-Vista-icon.png</iconUrl>?
+	<surveys>
+		<survey>
+			<id>photo</id>
+			<title>Photo</title>
+			<description>Tests the photo prompt.</description>
+			<submitText>Submit</submitText>
+			<anytime>true</anytime>
+			<contentList>
+				<prompt>
+					<id>timestamp</id>
+					<displayType>event</displayType>
+					<displayLabel>mTimestamp</displayLabel>
+					<promptText>What time is it?</promptText>
+					<abbreviatedText>What time is it?</abbreviatedText>
+					<promptType>timestamp</promptType>
+					<skippable>true</skippable>
+					<skipLabel>Skip</skipLabel>
+				</prompt>
+			</contentList>
+		</survey>
+	</surveys>
+</campaign>

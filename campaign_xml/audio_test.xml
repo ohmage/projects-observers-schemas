@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
-    <campaignUrn>urn:campaign:test:audio:2013052100</campaignUrn>
+    <campaignUrn>urn:campaign:test:audio:2013061200</campaignUrn>
     <campaignName>Audio Testing</campaignName>
     <surveys>
         <survey>
@@ -25,7 +25,7 @@
                     <promptType>audio</promptType>
                     <properties>
                         <property>
-                            <key>max_duration</key>
+                            <key>max_milliseconds</key>
                             <label>240000</label>
                         </property>
                     </properties>
