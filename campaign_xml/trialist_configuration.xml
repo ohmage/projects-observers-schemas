@@ -29,23 +29,23 @@
                         </property>
                         <property>
                             <key>2</key>
-                            <label>Any NSAID (e.g. ibuprofen, naproxen, sulindac)</label>
+                            <label>Any NSAID (e.g., ibuprofen, naproxen, sulindac)</label>
                         </property>
                         <property>
                             <key>3</key>
-                            <label>Codeine combination product (e.g. Tylenol with codeine)</label>
+                            <label>Codeine combination product (e.g., Tylenol with codeine, Tylenol #3)</label>
                         </property>
                         <property>
                             <key>4</key>
-                            <label>Tramadol</label>
+                            <label>Tramadol (e.g., Ultram, Ryzolt, ConZip, Rybix)</label>
                         </property>
                         <property>
                             <key>5</key>
-                            <label>Hydrocodone combination product (e.g. Vicodin, Norco)</label>
+                            <label>Hydrocodone combination product (e.g., Vicodin, Norco)</label>
                         </property>
                         <property>
                             <key>6</key>
-                            <label>Oxycodone combination treatment (e.g. Percocet)</label>
+                            <label>Oxycodone combination treatment (e.g., Percocet)</label>
                         </property>
                         <property>
                             <key>7</key>
@@ -70,23 +70,23 @@
                         </property>
                         <property>
                             <key>2</key>
-                            <label>Any NSAID (e.g. ibuprofen, naproxen, sulindac)</label>
+                            <label>Any NSAID (e.g., ibuprofen, naproxen, sulindac)</label>
                         </property>
                         <property>
                             <key>3</key>
-                            <label>Codeine combination product (e.g. Tylenol with codeine)</label>
+                            <label>Codeine combination product (e.g., Tylenol with codeine, Tylenol #3)</label>
                         </property>
                         <property>
                             <key>4</key>
-                            <label>Tramadol</label>
+                            <label>Tramadol (e.g., Ultram, Ryzolt, ConZip, Rybix)</label>
                         </property>
                         <property>
                             <key>5</key>
-                            <label>Hydrocodone combination product (e.g. Vicodin, Norco)</label>
+                            <label>Hydrocodone combination product (e.g., Vicodin, Norco)</label>
                         </property>
                         <property>
                             <key>6</key>
-                            <label>Oxycodone combination treatment (e.g. Percocet)</label>
+                            <label>Oxycodone combination treatment (e.g., Percocet)</label>
                         </property>
                         <property>
                             <key>7</key>
@@ -247,14 +247,50 @@
                     <id>averagePainIntensity</id>
                     <promptText>What number best describes your pain on average during the past 24 hours? (from 0 = no pain to 10 = pain as bad as you can imagine)</promptText>
                     <displayLabel>Average Pain Intensity</displayLabel>
-                    <promptType>number</promptType>
+                    <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>min</key>
+                            <key>0</key>
                             <label>0</label>
                         </property>
                         <property>
-                            <key>max</key>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>10</key>
                             <label>10</label>
                         </property>
                     </properties>
@@ -265,14 +301,50 @@
                     <id>enjoymentOfLife</id>
                     <promptText>What number best describes how much pain has interfered with your enjoyment of life during the past 24 hours? (from 0 = does not interfere to 10 = completely interferes)</promptText>
                     <displayLabel>Enjoyment of Life</displayLabel>
-                    <promptType>number</promptType>
+                    <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>min</key>
+                            <key>0</key>
                             <label>0</label>
                         </property>
                         <property>
-                            <key>max</key>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>10</key>
                             <label>10</label>
                         </property>
                     </properties>
@@ -283,14 +355,50 @@
                     <id>generalActivity</id>
                     <promptText>What number best describes how much pain has interfered with your general activity during the past 24 hours? (from 0 = does not interfere to 10 = completely interferes)</promptText>
                     <displayLabel>General Activity</displayLabel>
-                    <promptType>number</promptType>
+                    <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>min</key>
+                            <key>0</key>
                             <label>0</label>
                         </property>
                         <property>
-                            <key>max</key>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>10</key>
                             <label>10</label>
                         </property>
                     </properties>
@@ -537,14 +645,50 @@
                     <id>painSharpness</id>
                     <displayLabel>Pain Sharpness</displayLabel>
                     <promptText>How sharp does your pain feel? (from 0 = not sharp to 10 = like a knife)</promptText>
-                    <promptType>number</promptType>
+                    <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>min</key>
+                            <key>0</key>
                             <label>0</label>
                         </property>
                         <property>
-                            <key>max</key>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>10</key>
                             <label>10</label>
                         </property>
                     </properties>
@@ -556,14 +700,50 @@
                     <id>painHotness</id>
                     <displayLabel>Pain Hotness</displayLabel>
                     <promptText>How hot does your pain feel? (from 0 = not hot to 10 = on fire)</promptText>
-                    <promptType>number</promptType>
+                    <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>min</key>
+                            <key>0</key>
                             <label>0</label>
                         </property>
                         <property>
-                            <key>max</key>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>10</key>
                             <label>10</label>
                         </property>
                     </properties>
@@ -575,14 +755,50 @@
                     <id>painSensitivity</id>
                     <displayLabel>Pain Sensitivity</displayLabel>
                     <promptText>How sensitive is your skin to light touch or clothing? (from 0 = not sensitive to 10 = raw skin)</promptText>
-                    <promptType>number</promptType>
+                    <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>min</key>
+                            <key>0</key>
                             <label>0</label>
                         </property>
                         <property>
-                            <key>max</key>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>10</key>
                             <label>10</label>
                         </property>
                     </properties>
