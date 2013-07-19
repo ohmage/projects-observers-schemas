@@ -218,6 +218,23 @@
                     </properties>
                 </prompt>
                 <prompt>
+                    <id>extraTreatment</id>
+                    <promptText>Is the clinician prescribing additional or continuing existing pain treatments?</promptText>
+                    <displayLabel>Neuropathic Pain Taken</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>No</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Yes</label>
+                        </property>
+                    </properties>
+                </prompt>
+                <prompt>
                     <id>userSelected</id>
                     <promptText>What username was selected?</promptText>
                     <displayLabel>Username Selected</displayLabel>
