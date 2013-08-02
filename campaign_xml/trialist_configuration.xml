@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <campaign>
     <campaignUrn>urn:campaign:trialist</campaignUrn>
-    <campaignName>Trialist Configuration</campaignName>
+    <campaignName>Trialist</campaignName>
     <surveys>
         <survey>
             <id>setup</id>
@@ -267,48 +267,48 @@
                     <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>0</key>
-                            <label>0</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
+                            <key>10</key>
+                            <label>10</label>
                         </property>
                         <property>
                             <key>9</key>
                             <label>9</label>
                         </property>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
                         </property>
                     </properties>
                     <skippable>false</skippable>
@@ -321,48 +321,48 @@
                     <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>0</key>
-                            <label>0</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
+                            <key>10</key>
+                            <label>10</label>
                         </property>
                         <property>
                             <key>9</key>
                             <label>9</label>
                         </property>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
                         </property>
                     </properties>
                     <skippable>false</skippable>
@@ -375,48 +375,48 @@
                     <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>0</key>
-                            <label>0</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
+                            <key>10</key>
+                            <label>10</label>
                         </property>
                         <property>
                             <key>9</key>
                             <label>9</label>
                         </property>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
                         </property>
                     </properties>
                     <skippable>false</skippable>
@@ -641,77 +641,58 @@
                 </prompt>
                 <!-- Patient Optional Measures (Benefit or Harm) -->
                 <prompt>
-                    <id>experiencePain</id>
-                    <displayLabel>Experience Pain</displayLabel>
-                    <promptText>Do you have pain accompanied by burning, pins and needles, itching, or a sensitive or unpleasant sensation on the skin?</promptText>
-                    <promptType>single_choice</promptType>
-                    <properties>
-                        <property>
-                            <key>0</key>
-                            <label>No</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>Yes</label>
-                        </property>
-                    </properties>
-                    <skippable>false</skippable>
-                    <skipLabel>Skip</skipLabel>
-                </prompt>
-                <prompt>
                     <id>painSharpness</id>
                     <displayLabel>Pain Sharpness</displayLabel>
                     <promptText>How sharp does your pain feel? (from 0 = not sharp to 10 = like a knife)</promptText>
                     <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>0</key>
-                            <label>0</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
+                            <key>10</key>
+                            <label>10</label>
                         </property>
                         <property>
                             <key>9</key>
                             <label>9</label>
                         </property>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
                         </property>
                     </properties>
                     <skippable>false</skippable>
                     <skipLabel>Skip</skipLabel>
-                    <condition>(experiencePain == 1)</condition>
                 </prompt>
                 <prompt>
                     <id>painHotness</id>
@@ -720,53 +701,52 @@
                     <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>0</key>
-                            <label>0</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
+                            <key>10</key>
+                            <label>10</label>
                         </property>
                         <property>
                             <key>9</key>
                             <label>9</label>
                         </property>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
                         </property>
                     </properties>
                     <skippable>false</skippable>
                     <skipLabel>Skip</skipLabel>
-                    <condition>(experiencePain == 1)</condition>
                 </prompt>
                 <prompt>
                     <id>painSensitivity</id>
@@ -775,53 +755,52 @@
                     <promptType>single_choice</promptType>
                     <properties>
                         <property>
-                            <key>0</key>
-                            <label>0</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
+                            <key>10</key>
+                            <label>10</label>
                         </property>
                         <property>
                             <key>9</key>
                             <label>9</label>
                         </property>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
                         </property>
                     </properties>
                     <skippable>false</skippable>
                     <skipLabel>Skip</skipLabel>
-                    <condition>(experiencePain == 1)</condition>
                 </prompt>
                 <!-- 
                     PROMIS Sleep Disturbance Single Item
@@ -908,8 +887,7 @@
                     </properties>
                     <skippable>false</skippable>
                     <skipLabel>Skip</skipLabel>
-                </prompt>
-            
+                </prompt>            
             </contentList>
          </survey>
     </surveys>
