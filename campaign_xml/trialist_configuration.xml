@@ -262,9 +262,11 @@
             <contentList>
                 <prompt>
                     <id>averagePainIntensity</id>
-                    <promptText>What number best describes your pain on average during the past 24 hours? (from 0 = no pain to 10 = pain as bad as you can imagine)</promptText>
+                    <promptText>What number best describes your pain on average during the past 24 hours?</promptText>
                     <displayLabel>Average Pain Intensity</displayLabel>
                     <promptType>single_choice</promptType>
+                    <rightSideText>Most intense pain sensation imaginable</rightSideText>
+                    <leftSideText>No pain</leftSideText>
                     <properties>
                         <property>
                             <key>10</key>
@@ -316,9 +318,11 @@
                 </prompt>
                 <prompt>
                     <id>enjoymentOfLife</id>
-                    <promptText>What number best describes how much pain has interfered with your enjoyment of life during the past 24 hours? (from 0 = does not interfere to 10 = completely interferes)</promptText>
+                    <promptText>What number best describes how much pain has interfered with your enjoyment of life during the past 24 hours?</promptText>
                     <displayLabel>Enjoyment of Life</displayLabel>
                     <promptType>single_choice</promptType>
+                    <rightSideText>Completely interferes</rightSideText>
+                    <leftSideText>Does not interfere</leftSideText>
                     <properties>
                         <property>
                             <key>10</key>
@@ -370,9 +374,11 @@
                 </prompt>
                 <prompt>
                     <id>generalActivity</id>
-                    <promptText>What number best describes how much pain has interfered with your general activity during the past 24 hours? (from 0 = does not interfere to 10 = completely interferes)</promptText>
+                    <promptText>What number best describes how much pain has interfered with your general activity during the past 24 hours?</promptText>
                     <displayLabel>General Activity</displayLabel>
                     <promptType>single_choice</promptType>
+                    <rightSideText>Completely interferes</rightSideText>
+                    <leftSideText>Does not interfere</leftSideText>
                     <properties>
                         <property>
                             <key>10</key>
@@ -643,8 +649,10 @@
                 <prompt>
                     <id>painSharpness</id>
                     <displayLabel>Pain Sharpness</displayLabel>
-                    <promptText>How sharp does your pain feel? (from 0 = not sharp to 10 = like a knife)</promptText>
+                    <promptText>How sharp does your pain feel?</promptText>
                     <promptType>single_choice</promptType>
+                    <rightSideText>Most sharp sensation imaginable (&quot;like a knife&quot;)</rightSideText>
+                    <leftSideText>Not sharp</leftSideText>
                     <properties>
                         <property>
                             <key>10</key>
@@ -697,8 +705,10 @@
                 <prompt>
                     <id>painHotness</id>
                     <displayLabel>Pain Hotness</displayLabel>
-                    <promptText>How hot does your pain feel? (from 0 = not hot to 10 = on fire)</promptText>
+                    <promptText>How hot does your pain feel?</promptText>
                     <promptType>single_choice</promptType>
+                    <rightSideText>Most hot sensation imaginable (&quot;on fire&quot;)</rightSideText>
+                    <leftSideText>Not hot</leftSideText>
                     <properties>
                         <property>
                             <key>10</key>
@@ -751,8 +761,10 @@
                 <prompt>
                     <id>painSensitivity</id>
                     <displayLabel>Pain Sensitivity</displayLabel>
-                    <promptText>How sensitive is your skin to light touch or clothing? (from 0 = not sensitive to 10 = raw skin)</promptText>
+                    <promptText>How sensitive is your skin to light touch or clothing?</promptText>
                     <promptType>single_choice</promptType>
+                    <rightSideText>Most sensitive skin imaginable (&quot;like raw or sunburned skin&quot;)</rightSideText>
+                    <leftSideText>Not sensitive</leftSideText>
                     <properties>
                         <property>
                             <key>10</key>
