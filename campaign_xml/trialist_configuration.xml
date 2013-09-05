@@ -265,7 +265,7 @@
                     <promptText>What number best describes your pain on average during the past 24 hours?</promptText>
                     <displayLabel>Average Pain Intensity</displayLabel>
                     <promptType>single_choice</promptType>
-                    <rightSideText>Most intense pain sensation imaginable</rightSideText>
+                    <rightSideText>Pain as bad as you can imagine</rightSideText>
                     <leftSideText>No pain</leftSideText>
                     <properties>
                         <property>
