@@ -899,7 +899,26 @@
                     </properties>
                     <skippable>false</skippable>
                     <skipLabel>Skip</skipLabel>
-                </prompt>            
+                </prompt>
+                 <prompt>
+                    <id>adherenceFollowupTextPrompt</id>
+                    <condition>adherencePrompt != 1</condition>
+                    <promptText>Was there any particular reason that you did not follow the trial treatments as directed?</promptText>
+                    <displayLabel>Treatment Adherence Follow-up</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>500</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>                        
             </contentList>
          </survey>
     </surveys>
