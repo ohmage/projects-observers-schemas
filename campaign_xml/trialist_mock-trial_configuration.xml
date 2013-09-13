@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+    <campaignUrn>urn:campaign:trialist</campaignUrn>
+    <campaignName>Trialist Mock Trial</campaignName>
+    <surveys>
+        <survey>
+            <id>setup</id>
+            <title>Setup</title>
+            <description>This is a one-time setup for the Trialist participant.</description>
+            <submitText>Your participant is now reading to begin their trial.</submitText>
+            <showSummary>false</showSummary>
+            <anytime>true</anytime>
+            <contentList>
+                <!-- When combined, regimenA and regimenB form a comparison -->
+                <prompt>
+                    <id>regimenA</id>
+                    <promptText>Choose from one of the following regimens.</promptText>
+                    <displayLabel>Regimen A</displayLabel>
+                    <promptType>multi_choice</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Classical</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Country</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Easy Listening</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Folk</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Hip hop / Rap</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Jazz</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>Pop</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>Rock</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>Other</label>
+                        </property>
+                    </properties>
+                </prompt>
+                <prompt>
+                    <id>regimenB</id>
+                    <promptText>Choose from one of the following regimens.</promptText>
+                    <displayLabel>Regimen B</displayLabel>
+                    <promptType>multi_choice</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Classical</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Country</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Easy Listening</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Folk</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Hip hop / Rap</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Jazz</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>Pop</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>Rock</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>Other</label>
+                        </property>
+                    </properties>
+                </prompt>
+                <prompt>
+                    <id>startDate</id>
+                    <promptText>When should the user begin the trial?</promptText>
+                    <displayLabel>Start Date</displayLabel>
+                    <promptType>timestamp</promptType>
+                    <skippable>false</skippable>
+                </prompt>
+                <!-- If you change the duration or number of comparison cycles, 
+                     you will have to manually change the JavaScript.
+                -->
+                <prompt>
+                    <id>regimenDuration</id>
+                    <promptText>What is the time period for each regimen?</promptText>
+                    <displayLabel>Time Period</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>2 Days</label>
+                            <value>2</value>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1 Week</label>
+                            <value>7</value>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2 Weeks</label>
+                            <value>14</value>
+                        </property>
+                    </properties>
+                </prompt>
+                <prompt>
+                    <id>numberComparisonCycles</id>
+                    <promptText>How many comparison cycles?</promptText>
+                    <displayLabel>Number of Comparison Cycles</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>4</label>
+                        </property>
+                    </properties>
+                </prompt>
+                <prompt>
+                    <id>random</id>
+                    <promptText>random</promptText>
+                    <displayLabel>Random</displayLabel>
+                    <promptType>number</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>7</label>
+                        </property>
+                    </properties>
+                </prompt>
+                <prompt>
+                    <id>randomAsText</id>
+                    <promptText>random as text</promptText>
+                    <displayLabel>Random As Text</displayLabel>
+                    <promptType>text</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>12</label>
+                        </property>
+                    </properties>
+                </prompt>                
+                <prompt>
+                    <id>cognitiveFunction</id>
+                    <promptText>What is the ID of the survey defining the cognitive function for the user?</promptText>
+                    <displayLabel>cognitive Function</displayLabel>
+                    <promptType>text</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>99999999</label>
+                        </property>
+                    </properties>
+                </prompt>
+                <prompt>
+                    <id>neuropathicPainTaken</id>
+                    <promptText>Is the user subscribed to the neuropathic pain survey?</promptText>
+                    <displayLabel>Neuropathic Pain Taken</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>No</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Yes</label>
+                        </property>
+                    </properties>
+                </prompt>
+                <prompt>
+                    <id>extraTreatment</id>
+                    <promptText>Is the clinician prescribing additional or continuing existing pain treatments?</promptText>
+                    <displayLabel>Neuropathic Pain Taken</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>No</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Yes</label>
+                        </property>
+                    </properties>
+                </prompt>
+                <prompt>
+                    <id>userSelected</id>
+                    <promptText>What username was selected?</promptText>
+                    <displayLabel>Username Selected</displayLabel>
+                    <promptType>text</promptType>
+                    <skippable>false</skippable>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>50</label>
+                        </property>
+                    </properties>
+                </prompt>
+            </contentList>
+        </survey>
+        <survey>
+            <id>main</id>
+            <title>Main</title>
+            <description>A daily questionnaire about your well-being.</description>
+            <submitText>Submit</submitText>
+            <anytime>false</anytime>
+            <contentList>
+                <prompt>
+                    <id>averagePainIntensity</id>
+                    <promptText>What number best describes your pain on average during the past 24 hours?</promptText>
+                    <displayLabel>Average Pain Intensity</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <rightSideText>Pain as bad as you can imagine</rightSideText>
+                    <leftSideText>No pain</leftSideText>
+                    <properties>
+                        <property>
+                            <key>10</key>
+                            <label>10</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>enjoymentOfLife</id>
+                    <promptText>What number best describes how much pain has interfered with your enjoyment of life during the past 24 hours?</promptText>
+                    <displayLabel>Enjoyment of Life</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <rightSideText>Completely interferes</rightSideText>
+                    <leftSideText>Does not interfere</leftSideText>
+                    <properties>
+                        <property>
+                            <key>10</key>
+                            <label>10</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>generalActivity</id>
+                    <promptText>What number best describes how much pain has interfered with your general activity during the past 24 hours?</promptText>
+                    <displayLabel>General Activity</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <rightSideText>Completely interferes</rightSideText>
+                    <leftSideText>Does not interfere</leftSideText>
+                    <properties>
+                        <property>
+                            <key>10</key>
+                            <label>10</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <!-- 
+                    PROMIS Fatigue Single Item
+                -->
+                <prompt>
+                    <id>fatiguePrompt</id>
+                    <promptText>I felt fatigued during the past 24 hours ...</promptText>
+                    <displayLabel>Fatigued</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>A little bit</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Somewhat</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Quite a bit</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Very much</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>drowsinessPrompt</id>
+                    <promptText>How often did you feel drowsy or sleepy today?</promptText>
+                    <displayLabel>Drowsiness</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>None of the time</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>A little of the time</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Some of the time</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>A good bit of the time</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Most of the time</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>All of the time</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>constipationPrompt</id>
+                    <promptText>How often over the past 24 hours did you feel constipated?</promptText>
+                    <displayLabel>Constipated</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>A little bit</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Somewhat</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Quite a bit</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Very much</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>cognitiveFunctionSlowThinkingPrompt</id>
+                    <promptText>My thinking has been slow ... </promptText>
+                    <displayLabel>Slow Thinking</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>A little bit</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Somewhat</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Quite a bit</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Very much</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>cognitiveFunctionFoggyThinkingPrompt</id>
+                    <promptText>My thinking has been foggy ...</promptText>
+                    <displayLabel>Foggy Thinking</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>A little bit</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Somewhat</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Quite a bit</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Very much</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>cognitiveFunctionTroubleConcentratingPrompt</id>
+                    <promptText>I have had trouble concentrating ... </promptText>
+                    <displayLabel>Trouble Concentrating</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>A little bit</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Somewhat</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Quite a bit</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Very much</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>cognitiveFunctionWorkingHarderPrompt</id>
+                    <promptText>I have had to work harder than usual to keep track of what I was doing ...</promptText>
+                    <displayLabel>Working Harder</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>A little bit</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Somewhat</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Quite a bit</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Very much</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <!-- Patient Optional Measures (Benefit or Harm) -->
+                <prompt>
+                    <id>painSharpness</id>
+                    <displayLabel>Pain Sharpness</displayLabel>
+                    <promptText>How sharp does your pain feel?</promptText>
+                    <promptType>single_choice</promptType>
+                    <rightSideText>Most sharp sensation imaginable (&quot;like a knife&quot;)</rightSideText>
+                    <leftSideText>Not sharp</leftSideText>
+                    <properties>
+                        <property>
+                            <key>10</key>
+                            <label>10</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>painHotness</id>
+                    <displayLabel>Pain Hotness</displayLabel>
+                    <promptText>How hot does your pain feel?</promptText>
+                    <promptType>single_choice</promptType>
+                    <rightSideText>Most hot sensation imaginable (&quot;on fire&quot;)</rightSideText>
+                    <leftSideText>Not hot</leftSideText>
+                    <properties>
+                        <property>
+                            <key>10</key>
+                            <label>10</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>painSensitivity</id>
+                    <displayLabel>Pain Sensitivity</displayLabel>
+                    <promptText>How sensitive is your skin to light touch or clothing?</promptText>
+                    <promptType>single_choice</promptType>
+                    <rightSideText>Most sensitive skin imaginable (&quot;like raw or sunburned skin&quot;)</rightSideText>
+                    <leftSideText>Not sensitive</leftSideText>
+                    <properties>
+                        <property>
+                            <key>10</key>
+                            <label>10</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>9</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>8</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>7</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>6</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>0</key>
+                            <label>0</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <!-- 
+                    PROMIS Sleep Disturbance Single Item
+                -->
+                <prompt>
+                    <id>sleepDisturbancePrompt</id>
+                    <promptText>My sleep quality last night was ...</promptText>
+                    <displayLabel>Sleep Quality</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>Very poor</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Poor</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Fair</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Good</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Very good</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                <prompt>
+                    <id>notesAboutToday</id>
+                    <promptText>Please enter any notes you'd like to capture about today.</promptText>
+                    <displayLabel>Notes About Today</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>500</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+            </contentList>
+        </survey>
+          <survey>
+            <id>adherence</id>
+            <title>Treatment Adherence</title>
+            <description>A weekly survey about your treatment adherence.</description>
+            <submitText>Submit</submitText>
+            <anytime>false</anytime>
+            <contentList>
+                <prompt>
+                    <id>adherencePrompt</id>
+                    <promptText>During the past seven days, how often did you follow your n-of-1 trial treatment(s) as directed?</promptText>
+                    <displayLabel>Treatment Adherence</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>I always followed the directed treatment(s).</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>I usually followed the directed treatment(s)</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>I sometimes followed the directed treatment(s)</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>I never followed the directed treatment(s)</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+                 <prompt>
+                    <id>adherenceFollowupTextPrompt</id>
+                    <condition>adherencePrompt != 1</condition>
+                    <promptText>Was there any particular reason that you did not follow the trial treatments as directed?</promptText>
+                    <displayLabel>Treatment Adherence Follow-up</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>500</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>                        
+            </contentList>
+         </survey>
+    </surveys>
+</campaign>
