@@ -1,0 +1,488 @@
+<campaign>
+		<campaignUrn>urn:campaign:cornell:ibd_crohns:v1</campaignUrn>
+		<campaignName>IBD, Crohns v1</campaignName>
+		<surveys>
+			<!-- ===================== SLEEP SURVEY ================================ -->
+				<survey>
+					<id>Sleep</id>
+					<title>Sleep Survey</title>
+					<description>This survey contains questions about participant sleep experience</description>
+					<submitText>Thank you for your participation!</submitText>
+					<anytime>true</anytime>
+					<contentList>
+						<prompt>
+							<id>bathroomTrips</id>
+							<displayLabel>bathroomTrips</displayLabel>
+							<promptText>How many times did you go to bathroom last night?</promptText>
+							<abbreviatedText>How many bathroom trips last night?</abbreviatedText>
+							<promptType>number</promptType>
+							<properties>
+								<property>
+									<key>min</key>
+									<label>0</label>
+								</property>
+								<property>
+									<key>max</key>
+									<label>20</label>
+								</property>
+							</properties>
+							<default>0</default>
+							<skippable>true</skippable>
+							<skipLabel>Skip</skipLabel>
+						</prompt>
+					</contentList>
+				</survey>
+				<!-- ===================== STRESS AFFECT SURVEY ============================== -->
+					<survey>
+						<id>StressAffect</id>
+						<title>Stress and Affect Survey</title>
+						<description>This survey is a daily stress check-in for participants</description>
+						<submitText>Thank you for your participation!</submitText>
+						<anytime>true</anytime>
+						<contentList>
+							<prompt>
+								<id>PAM</id>
+								<displayType>event</displayType>
+								<displayLabel>PAM</displayLabel>
+								<promptText>Choose a picture</promptText>
+								<promptType>remote_activity</promptType>
+								<properties>
+									<property>
+										<key>package</key>
+										<label>org.openmhealth.pam</label>
+									</property>
+									<property>
+										<key>activity</key>
+										<label>org.openmhealth.pam.PAMActivity</label>
+									</property>
+									<property>
+										<key>action</key>
+										<label>org.openmhealth.pam.ACTION_CHOOSE_IMAGE</label>
+									</property>
+									<property>
+										<key>autolaunch</key>
+										<label>true</label>
+									</property>
+									<property>
+										<key>retries</key>
+										<label>100</label>
+									</property>
+									<property>
+										<key>min_runs</key>
+										<label>1</label>
+									</property>
+								</properties>
+								<skippable>false</skippable>
+								<skipLabel>Skip</skipLabel>
+							</prompt>
+							<prompt>
+								<id>stressPrompt</id>
+								<displayType>event</displayType>
+								<displayLabel>Stress</displayLabel>
+								<!-- Can also use: Right now, I am -->
+									<promptText>Today, I've been:</promptText>
+									<promptType>single_choice</promptType>
+									<properties>
+										<property>
+											<key>0</key>
+											<value>0</value>
+											<label>Feeling great</label>
+										</property>
+										<property>
+											<key>1</key>
+											<value>1</value>
+											<label>Feeling good</label>
+										</property>
+										<property>
+											<key>2</key>
+											<value>2</value>
+											<label>A little stressed</label>
+										</property>
+										<property>
+											<key>3</key>
+											<value>3</value>
+											<label>Definitely stressed</label>
+										</property>
+										<property>
+											<key>4</key>
+											<value>4</value>
+											<label>Stressed out!</label>
+										</property>
+									</properties>
+									<skippable>false</skippable>
+									<skipLabel>Skip</skipLabel>
+								</prompt>
+							</contentList>
+						</survey>
+						<!-- ===================== Abdominal Pain Survey ============================== -->
+							<survey>
+								<id>abdnominalPainSurvey</id>
+								<title>Abdominal Pain Survey</title>
+								<description>This survey is daily check-in for participants' abdominal pain</description>
+								<submitText>Thank you for your participation!</submitText>
+								<anytime>true</anytime>
+								<contentList>
+									<!-- QUESTION 1 -->
+										<prompt>
+											<id>abdominalPain</id>
+											<displayType>event</displayType>
+											<displayLabel>abdominalPain</displayLabel>
+											<promptText>Please select the amount of abdominal pain you experience in the previous day.</promptText>
+											<promptType>single_choice</promptType>
+											<properties>
+												<property>
+													<key>0</key>
+													<value>0</value>
+													<label>none</label>
+												</property>
+												<property>
+													<key>1</key>
+													<value>1</value>
+													<label>mild</label>
+												</property>
+												<property>
+													<key>2</key>
+													<value>2</value>
+													<label>moderate</label>
+												</property>
+												<property>
+													<key>3</key>
+													<value>3</value>
+													<label>severe</label>
+												</property>
+											</properties>
+											<skippable>false</skippable>
+											<skipLabel>Skip</skipLabel>
+										</prompt>
+										<!-- QUESTION 2 -->
+											<prompt>
+												<id>numberStool</id>
+												<displayLabel>numberStool</displayLabel>
+												<promptText>Please select the number of liquid stools in the previous day.</promptText>
+												<abbreviatedText>Number of liquid stools in the previous day?</abbreviatedText>
+												<promptType>number</promptType>
+												<properties>
+													<property>
+														<key>min</key>
+														<label>0</label>
+													</property>
+													<property>
+														<key>max</key>
+														<label>20</label>
+													</property>
+												</properties>
+												<default>0</default>
+												<skippable>false</skippable>
+												<skipLabel>Skip</skipLabel>
+											</prompt>
+										</contentList>
+									</survey>
+									<!-- ===================== Food Exceptions Survey ============================== -->
+										<survey>
+											<id>foodExceptions</id>
+											<title>Food Exceptions Survey</title>
+											<description>This survey is check-in for participants' eating habits</description>
+											<submitText>Thank you for your participation!</submitText>
+											<anytime>true</anytime>
+											<contentList>
+												<!-- GLUTEN -->
+													<prompt>
+														<id>eatGluten</id>
+														<displayType>event</displayType>
+														<displayLabel>eatGluten</displayLabel>
+														<promptText>Did you eat GLUTEN today?</promptText>
+														<promptType>single_choice</promptType>
+														<properties>
+															<property>
+																<key>0</key>
+																<value>0</value>
+																<label>none</label>
+															</property>
+															<property>
+																<key>1</key>
+																<value>1</value>
+																<label>a little</label>
+															</property>
+															<property>
+																<key>2</key>
+																<value>2</value>
+																<label>a lot</label>
+															</property>
+														</properties>
+														<skippable>false</skippable>
+														<skipLabel>Skip</skipLabel>
+													</prompt>
+													<!-- DAIRY -->
+														<prompt>
+															<id>eatDairy</id>
+															<displayType>event</displayType>
+															<displayLabel>eatDairy</displayLabel>
+															<promptText>Did you eat DAIRY today?</promptText>
+															<promptType>single_choice</promptType>
+															<properties>
+																<property>
+																	<key>0</key>
+																	<value>0</value>
+																	<label>none</label>
+																</property>
+																<property>
+																	<key>1</key>
+																	<value>1</value>
+																	<label>a little</label>
+																</property>
+																<property>
+																	<key>2</key>
+																	<value>2</value>
+																	<label>a lot</label>
+																</property>
+															</properties>
+															<skippable>false</skippable>
+															<skipLabel>Skip</skipLabel>
+														</prompt>
+														<!-- SUGAR -->
+															<prompt>
+																<id>eatSugar</id>
+																<displayType>event</displayType>
+																<displayLabel>eatSugar</displayLabel>
+																<promptText>Did you eat SUGAR today?</promptText>
+																<promptType>single_choice</promptType>
+																<properties>
+																	<property>
+																		<key>0</key>
+																		<value>0</value>
+																		<label>none</label>
+																	</property>
+																	<property>
+																		<key>1</key>
+																		<value>1</value>
+																		<label>a little</label>
+																	</property>
+																	<property>
+																		<key>2</key>
+																		<value>2</value>
+																		<label>a lot</label>
+																	</property>
+																</properties>
+																<skippable>false</skippable>
+																<skipLabel>Skip</skipLabel>
+															</prompt>
+															<!-- REF SWEETENER -->
+																<prompt>
+																	<id>eatRefined</id>
+																	<displayType>event</displayType>
+																	<displayLabel>eatRefined</displayLabel>
+																	<promptText>Did you eat OTHER REFINED SWEETENER today?</promptText>
+																	<promptType>single_choice</promptType>
+																	<properties>
+																		<property>
+																			<key>0</key>
+																			<value>0</value>
+																			<label>none</label>
+																		</property>
+																		<property>
+																			<key>1</key>
+																			<value>1</value>
+																			<label>a little</label>
+																		</property>
+																		<property>
+																			<key>2</key>
+																			<value>2</value>
+																			<label>a lot</label>
+																		</property>
+																	</properties>
+																	<skippable>false</skippable>
+																	<skipLabel>Skip</skipLabel>
+																</prompt>
+																<!-- ARTI SWEETENER -->
+																	<prompt>
+																		<id>eatArtificalSweet</id>
+																		<displayType>event</displayType>
+																		<displayLabel>eatArtificialSweet</displayLabel>
+																		<promptText>Did you eat ARTIFICIAL SWEETENER today?</promptText>
+																		<promptType>single_choice</promptType>
+																		<properties>
+																			<property>
+																				<key>0</key>
+																				<value>0</value>
+																				<label>none</label>
+																			</property>
+																			<property>
+																				<key>1</key>
+																				<value>1</value>
+																				<label>a little</label>
+																			</property>
+																			<property>
+																				<key>2</key>
+																				<value>2</value>
+																				<label>a lot</label>
+																			</property>
+																		</properties>
+																		<skippable>false</skippable>
+																		<skipLabel>Skip</skipLabel>
+																	</prompt>
+																	<!-- ARTI COLOR -->
+																		<prompt>
+																			<id>eatArtificialColor</id>
+																			<displayType>event</displayType>
+																			<displayLabel>eatArtificialColor</displayLabel>
+																			<promptText>Did you eat ARTIFICIAL COLOR OR FLAVOR today?</promptText>
+																			<promptType>single_choice</promptType>
+																			<properties>
+																				<property>
+																					<key>0</key>
+																					<value>0</value>
+																					<label>none</label>
+																				</property>
+																				<property>
+																					<key>1</key>
+																					<value>1</value>
+																					<label>a little</label>
+																				</property>
+																				<property>
+																					<key>2</key>
+																					<value>2</value>
+																					<label>a lot</label>
+																				</property>
+																			</properties>
+																			<skippable>false</skippable>
+																			<skipLabel>Skip</skipLabel>
+																		</prompt>
+																		<!-- CORN -->
+																			<prompt>
+																				<id>eatCorn</id>
+																				<displayType>event</displayType>
+																				<displayLabel>eatCorn</displayLabel>
+																				<promptText>Did you eat CORN OR CORN PRODUCT today?</promptText>
+																				<promptType>single_choice</promptType>
+																				<properties>
+																					<property>
+																						<key>0</key>
+																						<value>0</value>
+																						<label>none</label>
+																					</property>
+																					<property>
+																						<key>1</key>
+																						<value>1</value>
+																						<label>a little</label>
+																					</property>
+																					<property>
+																						<key>2</key>
+																						<value>2</value>
+																						<label>a lot</label>
+																					</property>
+																				</properties>
+																				<skippable>false</skippable>
+																				<skipLabel>Skip</skipLabel>
+																			</prompt>
+																			<!-- ALCOHOL -->
+																				<prompt>
+																					<id>eatAlcohol</id>
+																					<displayType>event</displayType>
+																					<displayLabel>eatAlcohol</displayLabel>
+																					<promptText>Did you drink ALCOHOL today?</promptText>
+																					<promptType>single_choice</promptType>
+																					<properties>
+																						<property>
+																							<key>0</key>
+																							<value>0</value>
+																							<label>none</label>
+																						</property>
+																						<property>
+																							<key>1</key>
+																							<value>1</value>
+																							<label>a little</label>
+																						</property>
+																						<property>
+																							<key>2</key>
+																							<value>2</value>
+																							<label>a lot</label>
+																						</property>
+																					</properties>
+																					<skippable>false</skippable>
+																					<skipLabel>Skip</skipLabel>
+																				</prompt>
+																				<!-- YEAST -->
+																					<prompt>
+																						<id>eatYeast</id>
+																						<displayType>event</displayType>
+																						<displayLabel>eatYeast</displayLabel>
+																						<promptText>Did you eat YEAST today?</promptText>
+																						<promptType>single_choice</promptType>
+																						<properties>
+																							<property>
+																								<key>0</key>
+																								<value>0</value>
+																								<label>none</label>
+																							</property>
+																							<property>
+																								<key>1</key>
+																								<value>1</value>
+																								<label>a little</label>
+																							</property>
+																							<property>
+																								<key>2</key>
+																								<value>2</value>
+																								<label>a lot</label>
+																							</property>
+																						</properties>
+																						<skippable>false</skippable>
+																						<skipLabel>Skip</skipLabel>
+																					</prompt>
+																					<!-- REDMEAT -->
+																						<prompt>
+																							<id>eatRedMeat</id>
+																							<displayType>event</displayType>
+																							<displayLabel>eatRedMeat</displayLabel>
+																							<promptText>Did you eat RED MEAT today?</promptText>
+																							<promptType>single_choice</promptType>
+																							<properties>
+																								<property>
+																									<key>0</key>
+																									<value>0</value>
+																									<label>none</label>
+																								</property>
+																								<property>
+																									<key>1</key>
+																									<value>1</value>
+																									<label>a little</label>
+																								</property>
+																								<property>
+																									<key>2</key>
+																									<value>2</value>
+																									<label>a lot</label>
+																								</property>
+																							</properties>
+																							<skippable>false</skippable>
+																							<skipLabel>Skip</skipLabel>
+																						</prompt>
+																						<!-- CARRAGEENAN -->
+																							<prompt>
+																								<id>eatCarrageenan</id>
+																								<displayType>event</displayType>
+																								<displayLabel>eatCarrageenan</displayLabel>
+																								<promptText>Did you eat CARRAGEENAN today?</promptText>
+																								<promptType>single_choice</promptType>
+																								<properties>
+																									<property>
+																										<key>0</key>
+																										<value>0</value>
+																										<label>none</label>
+																									</property>
+																									<property>
+																										<key>1</key>
+																										<value>1</value>
+																										<label>a little</label>
+																									</property>
+																									<property>
+																										<key>2</key>
+																										<value>2</value>
+																										<label>a lot</label>
+																									</property>
+																								</properties>
+																								<skippable>false</skippable>
+																								<skipLabel>Skip</skipLabel>
+																							</prompt>
+																						</contentList>
+																					</survey>
+																				</surveys>
+																			</campaign>
