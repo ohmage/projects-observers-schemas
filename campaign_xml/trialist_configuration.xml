@@ -255,7 +255,7 @@
         </survey>
         <survey>
             <id>main</id>
-            <title>Main</title>
+            <title>Daily</title>
             <description>A daily questionnaire about your well-being.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
@@ -264,55 +264,20 @@
                     <id>averagePainIntensity</id>
                     <promptText>What number best describes your pain on average during the past 24 hours?</promptText>
                     <displayLabel>Average Pain Intensity</displayLabel>
-                    <promptType>single_choice</promptType>
+                    <promptType>number</promptType>
                     <rightSideText>Pain as bad as you can imagine</rightSideText>
                     <leftSideText>No pain</leftSideText>
                     <properties>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
-                        </property>
-                        <property>
-                            <key>9</key>
-                            <label>9</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>0</key>
+                            <key>min</key>
                             <label>0</label>
                         </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
                     </properties>
+                    <default>5</default>
                     <skippable>false</skippable>
                     <skipLabel>Skip</skipLabel>
                 </prompt>
@@ -320,55 +285,20 @@
                     <id>enjoymentOfLife</id>
                     <promptText>What number best describes how much pain has interfered with your enjoyment of life during the past 24 hours?</promptText>
                     <displayLabel>Enjoyment of Life</displayLabel>
-                    <promptType>single_choice</promptType>
+                    <promptType>number</promptType>
                     <rightSideText>Completely interferes</rightSideText>
                     <leftSideText>Does not interfere</leftSideText>
                     <properties>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
-                        </property>
-                        <property>
-                            <key>9</key>
-                            <label>9</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>0</key>
+                            <key>min</key>
                             <label>0</label>
                         </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
                     </properties>
+                    <default>5</default>
                     <skippable>false</skippable>
                     <skipLabel>Skip</skipLabel>
                 </prompt>
@@ -376,55 +306,20 @@
                     <id>generalActivity</id>
                     <promptText>What number best describes how much pain has interfered with your general activity during the past 24 hours?</promptText>
                     <displayLabel>General Activity</displayLabel>
-                    <promptType>single_choice</promptType>
+                    <promptType>number</promptType>
                     <rightSideText>Completely interferes</rightSideText>
                     <leftSideText>Does not interfere</leftSideText>
                     <properties>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
-                        </property>
-                        <property>
-                            <key>9</key>
-                            <label>9</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>0</key>
+                            <key>min</key>
                             <label>0</label>
                         </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
                     </properties>
+                    <default>5</default>
                     <skippable>false</skippable>
                     <skipLabel>Skip</skipLabel>
                 </prompt>
@@ -650,55 +545,20 @@
                     <id>painSharpness</id>
                     <displayLabel>Pain Sharpness</displayLabel>
                     <promptText>How sharp does your pain feel?</promptText>
-                    <promptType>single_choice</promptType>
-                    <rightSideText>Most sharp sensation imaginable (&quot;like a knife&quot;)</rightSideText>
+                    <promptType>number</promptType>
+                    <rightSideText>&quot;Like a Knife&quot;</rightSideText>
                     <leftSideText>Not sharp</leftSideText>
                     <properties>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
-                        </property>
-                        <property>
-                            <key>9</key>
-                            <label>9</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>0</key>
+                            <key>min</key>
                             <label>0</label>
                         </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
                     </properties>
+                    <default>5</default>
                     <skippable>false</skippable>
                     <skipLabel>Skip</skipLabel>
                 </prompt>
@@ -706,55 +566,20 @@
                     <id>painHotness</id>
                     <displayLabel>Pain Hotness</displayLabel>
                     <promptText>How hot does your pain feel?</promptText>
-                    <promptType>single_choice</promptType>
-                    <rightSideText>Most hot sensation imaginable (&quot;on fire&quot;)</rightSideText>
+                    <promptType>number</promptType>
+                    <rightSideText>&quot;On Fire&quot;</rightSideText>
                     <leftSideText>Not hot</leftSideText>
                     <properties>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
-                        </property>
-                        <property>
-                            <key>9</key>
-                            <label>9</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>0</key>
+                            <key>min</key>
                             <label>0</label>
                         </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
                     </properties>
+                    <default>5</default>
                     <skippable>false</skippable>
                     <skipLabel>Skip</skipLabel>
                 </prompt>
@@ -762,55 +587,20 @@
                     <id>painSensitivity</id>
                     <displayLabel>Pain Sensitivity</displayLabel>
                     <promptText>How sensitive is your skin to light touch or clothing?</promptText>
-                    <promptType>single_choice</promptType>
-                    <rightSideText>Most sensitive skin imaginable (&quot;like raw or sunburned skin&quot;)</rightSideText>
+                    <promptType>number</promptType>
+                    <rightSideText>&quot;Like Raw or Sunburned Skin&quot;</rightSideText>
                     <leftSideText>Not sensitive</leftSideText>
                     <properties>
                         <property>
-                            <key>10</key>
-                            <label>10</label>
-                        </property>
-                        <property>
-                            <key>9</key>
-                            <label>9</label>
-                        </property>
-                        <property>
-                            <key>8</key>
-                            <label>8</label>
-                        </property>
-                        <property>
-                            <key>7</key>
-                            <label>7</label>
-                        </property>
-                        <property>
-                            <key>6</key>
-                            <label>6</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>5</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>4</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>3</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>2</label>
-                        </property>
-                        <property>
-                            <key>1</key>
-                            <label>1</label>
-                        </property>
-                        <property>
-                            <key>0</key>
+                            <key>min</key>
                             <label>0</label>
                         </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
                     </properties>
+                    <default>5</default>
                     <skippable>false</skippable>
                     <skipLabel>Skip</skipLabel>
                 </prompt>
@@ -849,7 +639,7 @@
                 </prompt>
                 <prompt>
                     <id>notesAboutToday</id>
-                    <promptText>Please enter any notes you'd like to capture about today.</promptText>
+                    <promptText>Please enter any notes you&apos;d like to capture about today.</promptText>
                     <displayLabel>Notes About Today</displayLabel>
                     <promptType>text</promptType>
                     <properties>
@@ -867,9 +657,9 @@
                 </prompt>
             </contentList>
         </survey>
-          <survey>
+        <survey>
             <id>adherence</id>
-            <title>Treatment Adherence</title>
+            <title>Weekly</title>
             <description>A weekly survey about your treatment adherence.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
@@ -919,6 +709,23 @@
                     <skippable>true</skippable>
                     <skipLabel>Skip</skipLabel>
                 </prompt>                        
+            </contentList>
+         </survey>
+        <survey>
+            <id>start</id>
+            <title>start</title>
+            <description>start</description>
+            <submitText>Submit</submitText>
+            <anytime>false</anytime>
+            <contentList>
+                <prompt>
+                    <id>startPrompt</id>
+                    <promptText>When was the start button tapped?</promptText>
+                    <displayLabel>Start Timestamp</displayLabel>
+                    <promptType>timestamp</promptType>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
             </contentList>
          </survey>
     </surveys>
