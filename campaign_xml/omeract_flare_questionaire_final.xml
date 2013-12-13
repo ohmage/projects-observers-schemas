@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+	<campaignUrn>urn:campaign:Omeract_Flare_New_5</campaignUrn>
+	<campaignName>RA Weekly Survey</campaignName>
+	<surveys>
+		<survey>
+			<id>RAQuestions</id>
+			<title>RA-RNA weekly questionnaire</title>
+			<description>A list of questions about rheumatoid arthritis (RA).
+			</description>
+			<submitText>Thank you! You are finished with this week's questionnaire. Please do your finger stick as soon as possible.
+			</submitText>
+			<showSummary>false</showSummary>
+			<editSummary>false</editSummary>
+			<summaryText>A list of exploratory questions about rheumatoid arthritis.
+			</summaryText>
+			<anytime>true</anytime>
+			<contentList>
+				<prompt>
+					<id>RAActivityIntensity</id>
+					<displayType>event</displayType>
+					<displayLabel>RA activity level</displayLabel>
+					<promptText>Considering all the ways your arthritis affects you, how do you feel your arthritis is today? (0 - Very Well, 10 - Very Poor)
+					</promptText>
+					<abbreviatedText>How active has your disease been in the last week?
+					</abbreviatedText>
+					<promptType>number</promptType>
+					<properties>
+						<property>
+							<key>min</key>
+							<label>0</label>
+						</property>
+						<property>
+							<key>max</key>
+							<label>10</label>
+						</property>
+					</properties>
+					<default>0</default>
+					<skippable>false</skippable>
+				</prompt>
+				<prompt>
+					<id>RALevel</id>
+					<displayType>event</displayType>
+					<displayLabel>RA progress level</displayLabel>
+					<promptText>Compared to usual, your RA is:</promptText>
+					<abbreviatedText>How active has your disease been in the last week?
+					</abbreviatedText>
+					<promptType>single_choice</promptType>
+					<properties>
+						<property>
+							<key>1</key>
+							<label>Much Worse</label>
+							<value>-3</value>
+						</property>
+						<property>
+							<key>2</key>
+							<label>Worse</label>
+							<value>-2</value>
+						</property>
+						<property>
+							<key>3</key>
+							<label>Slightly Worse</label>
+							<value>-1</value>
+						</property>
+						<property>
+							<key>4</key>
+							<label>The same</label>
+							<value>0</value>
+						</property>
+						<property>
+							<key>5</key>
+							<label>Slightly Better</label>
+							<value>1</value>
+						</property>
+						<property>
+							<key>6</key>
+							<label>Better</label>
+							<value>2</value>
+						</property>
+						<property>
+							<key>7</key>
+							<label>Much Better</label>
+							<value>3</value>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+				<prompt>
+					<id>RAMedication</id>
+					<displayType>event</displayType>
+					<displayLabel>RA Extra Medication</displayLabel>
+					<promptText>Did you take any extra medications in the last week to help arthritis symptoms?</promptText>
+					<abbreviatedText>Did you take any extra medications in the last week?
+					</abbreviatedText>
+					<promptType>multi_choice_custom</promptType>
+					<properties>
+						<property>
+							<key>0</key>
+							<label>No extra medications</label>
+							<value>0</value>
+						</property>
+						<property>
+							<key>1</key>
+							<label>Steroids such as Medrol or Prednisone</label>
+							<value>1</value>
+						</property>
+						<property>
+							<key>2</key>
+							<label>NSAIDS such as Advil/Ibuprofen, Celebrex, Mobic, Alleve/Naprosyn</label>
+							<value>2</value>
+						</property>
+						<property>
+							<key>3</key>
+							<label>Tylenol</label>
+							<value>3</value>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+				<prompt>
+					<id>RAMissedMedication</id>
+					<displayType>event</displayType>
+					<displayLabel>RA Missed Medication</displayLabel>
+					<promptText>Did you miss any doses of your usual medications in the last week?</promptText>
+					<abbreviatedText>Did you miss any doses of medications in the last
+						week?
+					</abbreviatedText>
+					<promptType>single_choice_custom</promptType>
+					<properties>
+						<property>
+							<key>0</key>
+							<label>No</label>
+							<value>0</value>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+				<prompt>
+					<id>RAFeeling</id>
+					<displayType>event</displayType>
+					<displayLabel>RA feeling</displayLabel>
+					<promptText>Have you felt generally unwell (feverish, chills, achey) in the last week?</promptText>
+					<abbreviatedText>Have you felt generally unwell in the last week?
+					</abbreviatedText>
+					<promptType>single_choice</promptType>
+					<properties>
+						<property>
+							<key>1</key>
+							<label>Not at all</label>
+							<value>1</value>
+						</property>
+						<property>
+							<key>2</key>
+							<label>A little bit</label>
+							<value>2</value>
+						</property>
+						<property>
+							<key>3</key>
+							<label>Somewhat</label>
+							<value>3</value>
+						</property>
+						<property>
+							<key>4</key>
+							<label>Quite a bit</label>
+							<value>4</value>
+						</property>
+						<property>
+							<key>5</key>
+							<label>Very much</label>
+							<value>5</value>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+				<prompt>
+					<id>RAWorry</id>
+					<displayType>event</displayType>
+					<displayLabel>RA worry</displayLabel>
+					<promptText>In the past 7 days, I felt worried:</promptText>
+					<abbreviatedText>In the past 7 days, I felt worried:
+					</abbreviatedText>
+					<promptType>single_choice</promptType>
+					<properties>
+						<property>
+							<key>1</key>
+							<label>Never</label>
+							<value>1</value>
+						</property>
+						<property>
+							<key>2</key>
+							<label>Rarely</label>
+							<value>2</value>
+						</property>
+						<property>
+							<key>3</key>
+							<label>Sometimes</label>
+							<value>3</value>
+						</property>
+						<property>
+							<key>4</key>
+							<label>Often</label>
+							<value>4</value>
+						</property>
+						<property>
+							<key>5</key>
+							<label>Always</label>
+							<value>5</value>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+				<prompt>
+					<id>RAFocus</id>
+					<displayType>event</displayType>
+					<displayLabel>RA focus</displayLabel>
+					<promptText>In the past 7 days, I found it hard to focus on things such as reading the newspaper or watching television:</promptText>
+					<abbreviatedText>Have you found it hard to focus on things in the
+						last week?</abbreviatedText>
+					<promptType>single_choice</promptType>
+					<properties>
+						<property>
+							<key>1</key>
+							<label>Never</label>
+							<value>1</value>
+						</property>
+						<property>
+							<key>2</key>
+							<label>Rarely</label>
+							<value>2</value>
+						</property>
+						<property>
+							<key>3</key>
+							<label>Sometimes</label>
+							<value>3</value>
+						</property>
+						<property>
+							<key>4</key>
+							<label>Often</label>
+							<value>4</value>
+						</property>
+						<property>
+							<key>5</key>
+							<label>Always</label>
+							<value>5</value>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+				<prompt>
+					<id>RASleep</id>
+					<displayType>event</displayType>
+					<displayLabel>RA sleep</displayLabel>
+					<promptText>In the past 7 days, my sleep was refreshing:
+					</promptText>
+					<abbreviatedText>In the past 7 days, my sleep was refreshing:
+					</abbreviatedText>
+					<promptType>single_choice</promptType>
+					<properties>
+						<property>
+							<key>1</key>
+							<label>Not at all</label>
+							<value>1</value>
+						</property>
+						<property>
+							<key>2</key>
+							<label>A little bit</label>
+							<value>2</value>
+						</property>
+						<property>
+							<key>3</key>
+							<label>Somewhat</label>
+							<value>3</value>
+						</property>
+						<property>
+							<key>4</key>
+							<label>Quite a bit</label>
+							<value>4</value>
+						</property>
+						<property>
+							<key>5</key>
+							<label>Very much</label>
+							<value>5</value>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+				<prompt>
+					<id>RAExhaustion</id>
+					<displayType>event</displayType>
+					<displayLabel>RA exhaustion</displayLabel>
+					<promptText>In the past 7 days, how run-­down did you feel on average?</promptText>
+					<abbreviatedText>In the past 7 days, how run-­down did you feel?
+					</abbreviatedText>
+					<promptType>single_choice</promptType>
+					<properties>
+						<property>
+							<key>1</key>
+							<label>Not at all</label>
+							<value>1</value>
+						</property>
+						<property>
+							<key>2</key>
+							<label>A little bit</label>
+							<value>2</value>
+						</property>
+						<property>
+							<key>3</key>
+							<label>Somewhat</label>
+							<value>3</value>
+						</property>
+						<property>
+							<key>4</key>
+							<label>Quite a bit</label>
+							<value>4</value>
+						</property>
+						<property>
+							<key>5</key>
+							<label>Very much</label>
+							<value>5</value>
+						</property>
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+			</contentList>
+		</survey>
+	</surveys>
+</campaign>

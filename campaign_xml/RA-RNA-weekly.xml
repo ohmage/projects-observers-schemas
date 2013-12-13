@@ -1,0 +1,452 @@
+<campaign>
+    <campaignUrn>urn:campaign:Omeract_Flare</campaignUrn>
+    <campaignName>RA-RNA weekly</campaignName>
+    <surveys>
+        <survey>
+            <id>RAQuestions</id>
+            <title>RA-RNA weekly questionnaire</title>
+            <description>A list of questions about rheumatoid arthritis (RA).</description>
+            <submitText>Thank you for taking the Omeract RA-RNA weekly survey.</submitText>
+            <showSummary>false</showSummary>
+            <editSummary>false</editSummary>
+            <summaryText>A list of exploratory questions about rheumatoid arthritis.</summaryText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>RALevel</id>
+                    <displayType>event</displayType>
+                    <displayLabel>RA progress level</displayLabel>
+                    <promptText>Compared to last week, is your rheumatoid arthritis (RA):</promptText>
+                    <abbreviatedText>RA Level</abbreviatedText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>Much Worse</label>
+                            <value>-3</value>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Worse</label>
+                            <value>-2</value>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Slightly Worse</label>
+                            <value>-3</value>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>The same</label>
+                            <value>0</value>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Slightly Better</label>
+                            <value>1</value>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>Better</label>
+                            <value>2</value>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>Much Better</label>
+                            <value>3</value>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>FlareExistence</id>
+                    <displayType>event</displayType>
+                    <displayLabel>RA Flare</displayLabel>
+                    <promptText>Are you having a flare of rheumatoid arthritis at this time?</promptText>
+                    <abbreviatedText>RA Level</abbreviatedText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>No</label>
+                            <value>0</value>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Yes</label>
+                            <value>1</value>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <condition>FlareExistence == 1</condition>
+                    <id>FlareLevel</id>
+                    <displayType>event</displayType>
+                    <displayLabel>RA Flare Level</displayLabel>
+                    <promptText>What was the severity of your flare during the last week (0- no flare, 10- extremely bad)</promptText>
+                    <abbreviatedText>RA Flare severity</abbreviatedText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <condition>FlareExistence == 1</condition>
+                    <id>FlareLength</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Flare Length</displayLabel>
+                    <promptText>How long has this flare of your RA been going on?</promptText>
+                    <abbreviatedText>Length of current RA flare</abbreviatedText>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>1-3 days</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>4-7 days</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>8-14 days</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>more than 14 days</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <condition>FlareExistence == 1</condition>
+                    <id>FlareResponse</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Flare Response</displayLabel>
+                    <promptText>As a result of the flare, what did you do?</promptText>
+                    <abbreviatedText>As a result of the flare, what did you do?</abbreviatedText>
+                    <promptType>multi_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>I didn't do anything different</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>I reduced the amount of activities I did and/or I rested more</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>I avoided doing activities I had planned to do</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>I tried to manage my flare myself, without medication (e.g massage, warm/cold packs, wxercise, had an extra visit to my physiotherapist, etc)</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>I took more pain killers (analgesics) such as paracetamol, acetaminophen, codeine, tramadol, hydrocodone, oxycodone, etc or extra anti-inflamatory medications (NSAIDS) such as ibuprofen, ketoprofen, naproxen, celecoxib, meloxicam etc</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>I took more steroid tablets such as prednisone, methylprednisolone</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>I asked for help from my Rheumatology Nurse or my Rheumatologist</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>SleepingAmount</id>
+                    <displayType>measurement</displayType>
+                    <displayLabel>Amount of Sleep</displayLabel>
+                    <promptText>During the last week, have you been sleeping as much as normal (0- much less, 10- much more)</promptText>
+                    <abbreviatedText>Amount of sleep compared to normal</abbreviatedText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>NutritionQuality</id>
+                    <displayType>measurement</displayType>
+                    <displayLabel>Quality of Nutrition</displayLabel>
+                    <promptText>During the last week, have you been eating nutritiously (0- not at all, 10- very much)</promptText>
+                    <abbreviatedText>Amount of sleep compared to normal</abbreviatedText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>Symptoms</id>
+                    <displayType>measurement</displayType>
+                    <displayLabel>Symptoms</displayLabel>
+                    <promptText>During the last week, have you felt feverish or achey all over (0- not at all, 10- very much)</promptText>
+                    <abbreviatedText>strength of symptoms</abbreviatedText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>PainLevel</id>
+                    <displayType>event</displayType>
+                    <displayLabel>RA Pain Level</displayLabel>
+                    <promptText>What number best describes the pain you felt due to your rheumatoid arthritis during the last week (0- no pain, 10- extreme pain)</promptText>
+                    <abbreviatedText>What level of pain did you feel this week</abbreviatedText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>FunctionLevel</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Functional Level</displayLabel>
+                    <promptText>What number best describes the difficulty you had in doing physical activities (such as using your hands, walking or running, dressing, preparing meals, etc) due to your rheumatoid arthritis during the last week (0- no difficulty, 10- extreme difficulty)</promptText>
+                    <abbreviatedText>What was your level of function this week</abbreviatedText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>FatigueLevel</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Fatigue Level</displayLabel>
+                    <promptText>What number best describes how much fatigue you felt due to your rheumatoid arthritis during the last week (0- no fatigue, 10- extremely exhausted)</promptText>
+                    <abbreviatedText>What level of fatigue did you experience this week</abbreviatedText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>StiffnessLevel</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Stifness Level</displayLabel>
+                    <promptText>What number best describes the stiffness (all over or in your joints) you felt due to your rheumatoid arthritis during the last week (0- no stiffness, 10- extreme stiffness)</promptText>
+                    <abbreviatedText>What level of stiffness did you experience this week</abbreviatedText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>ParticipationLevel</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Participation Level</displayLabel>
+                    <promptText>Considering how active your rheumatoid arthritis has been, what number best describes how much difficulty you have had during the last week, doing activities such as work, family life, social events that are typical for you (0- no difficulty, 10- extreme difficulty)</promptText>
+                    <abbreviatedText>What level of activeness did you experience this week</abbreviatedText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>LifeManagmentLevel</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Coping / Managing your life</displayLabel>
+                    <promptText>Considering your rheumatoid arthritis overall, how well have you coped (managed, dealt with, made do) with your disease during the last week (0- very well, 10- very poorly)</promptText>
+                    <abbreviatedText>How did you manage with your disease this week</abbreviatedText>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>10</label>
+                        </property>
+                    </properties>
+                    <default>5</default>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>TenderJoints</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Tender joints</displayLabel>
+                    <!-- <unit>Time</unit> -->
+                    <promptText>List all the joints that are tender today</promptText>
+                    <abbreviatedText>tender joints today</abbreviatedText>
+                    <promptType>multi_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Shoulder Joint</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Elbow Joint</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Wrist</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Finger Joints</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Knee Joint</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Ankle Joint</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>Toe Joints</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>Bottom Toe Joints</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>SwollenJoints</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Swollen joints</displayLabel>
+                    <!-- <unit>Time</unit> -->
+                    <promptText>List all the joints that are swollen today</promptText>
+                    <abbreviatedText>swollen joints today</abbreviatedText>
+                    <promptType>multi_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>Shoulder Joint</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Elbow Joint</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Wrist</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Finger Joints</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Knee Joint</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Ankle Joint</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>Toe Joints</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>Bottom Toe Joints</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>BloodTestResults</id>
+                    <displayType>event</displayType>
+                    <displayLabel>Blood Test Results</displayLabel>
+                    <promptText>Take a picture of you blood sample</promptText>
+                    <abbreviatedText>blood sample picture</abbreviatedText>
+                    <promptType>photo</promptType>
+                    <skippable>true</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
+            </contentList>
+        </survey>
+    </surveys>
+</campaign>
