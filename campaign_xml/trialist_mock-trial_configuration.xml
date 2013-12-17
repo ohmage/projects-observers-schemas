@@ -268,6 +268,24 @@
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
+               <prompt>
+                    <id>currentRegimen</id>
+                    <promptText>What is the patient's current regimen?</promptText>
+                    <displayLabel>Current Regimen</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>A</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>B</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                    <skipLabel>Skip</skipLabel>
+                </prompt>
                 <prompt>
                     <id>averagePainIntensity</id>
                     <promptText>What number best describes your pain on average during the past 24 hours?</promptText>
