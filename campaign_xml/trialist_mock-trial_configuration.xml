@@ -447,69 +447,9 @@
                     <skipLabel>Skip</skipLabel>
                 </prompt>
                 <prompt>
-                    <id>cognitiveFunctionSlowThinkingPrompt</id>
-                    <promptText>My thinking has been slow ... </promptText>
-                    <displayLabel>Slow Thinking</displayLabel>
-                    <promptType>single_choice</promptType>
-                    <properties>
-                        <property>
-                            <key>1</key>
-                            <label>Not at all</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>A little bit</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>Somewhat</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>Quite a bit</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>Very much</label>
-                        </property>
-                    </properties>
-                    <skippable>false</skippable>
-                    <skipLabel>Skip</skipLabel>
-                </prompt>
-                <prompt>
                     <id>cognitiveFunctionFoggyThinkingPrompt</id>
                     <promptText>My thinking has been foggy ...</promptText>
                     <displayLabel>Foggy Thinking</displayLabel>
-                    <promptType>single_choice</promptType>
-                    <properties>
-                        <property>
-                            <key>1</key>
-                            <label>Not at all</label>
-                        </property>
-                        <property>
-                            <key>2</key>
-                            <label>A little bit</label>
-                        </property>
-                        <property>
-                            <key>3</key>
-                            <label>Somewhat</label>
-                        </property>
-                        <property>
-                            <key>4</key>
-                            <label>Quite a bit</label>
-                        </property>
-                        <property>
-                            <key>5</key>
-                            <label>Very much</label>
-                        </property>
-                    </properties>
-                    <skippable>false</skippable>
-                    <skipLabel>Skip</skipLabel>
-                </prompt>
-                <prompt>
-                    <id>cognitiveFunctionTroubleConcentratingPrompt</id>
-                    <promptText>I have had trouble concentrating ... </promptText>
-                    <displayLabel>Trouble Concentrating</displayLabel>
                     <promptType>single_choice</promptType>
                     <properties>
                         <property>
