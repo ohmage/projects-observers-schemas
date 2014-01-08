@@ -112,11 +112,6 @@
                     <skippable>false</skippable>
                     <properties>
                         <property>
-                            <key>0</key>
-                            <label>2 Days</label>
-                            <value>2</value>
-                        </property>
-                        <property>
                             <key>1</key>
                             <label>1 Week</label>
                             <value>7</value>
