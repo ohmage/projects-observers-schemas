@@ -112,6 +112,11 @@
                     <skippable>false</skippable>
                     <properties>
                         <property>
+                            <key>0</key>
+                            <label>2 Days</label>
+                            <value>2</value>
+                        </property>                    
+                        <property>
                             <key>1</key>
                             <label>1 Week</label>
                             <value>7</value>
@@ -613,7 +618,7 @@
         <survey>
             <id>adherence</id>
             <title>Weekly</title>
-            <description>A weekly survey about your treatment adherence.</description>
+            <description>A weekly question about your N-of-1 trial.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
