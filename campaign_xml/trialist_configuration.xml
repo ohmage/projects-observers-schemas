@@ -678,7 +678,11 @@
             <contentList>
                 <prompt>
                     <id>startPrompt</id>
-                    <promptText>When was the start button tapped?</promptText>
+                    <!-- 
+                        The Trialist phone app sets this value based on the current local time. If it is before 8:00pm, the trial
+                        will start on the current day. If it is after 8pm, the trial will start the next day.
+                    -->
+                    <promptText>What is the patients start date?</promptText>
                     <displayLabel>Start Timestamp</displayLabel>
                     <promptType>timestamp</promptType>
                     <skippable>false</skippable>
