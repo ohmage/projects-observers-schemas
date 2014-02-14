@@ -597,7 +597,7 @@
                 </prompt>
                 <prompt>
                     <id>notesAboutToday</id>
-                    <promptText>Please enter any notes you&apos;d like to capture about today.</promptText>
+                    <promptText>Please enter any notes you&apos;d like to capture about today. If you do not have a note today, press skip to continue.</promptText>
                     <displayLabel>Notes About Today</displayLabel>
                     <promptType>text</promptType>
                     <properties>

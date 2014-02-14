@@ -605,7 +605,7 @@
                 </prompt>
                 <prompt>
                     <id>notesAboutToday</id>
-                    <promptText>Please enter any notes you&apos;d like to capture about today.</promptText>
+                    <promptText>Please enter any notes you&apos;d like to capture about today. If you do not have a note today, press skip to continue.</promptText>
                     <displayLabel>Notes About Today</displayLabel>
                     <promptType>text</promptType>
                     <properties>
@@ -626,7 +626,7 @@
           <survey>
             <id>adherence</id>
             <title>Weekly</title>
-            <description>A weekly survey about your treatment adherence.</description>
+            <description>A weekly question about your N-of-1 trial.</description>
             <submitText>Submit</submitText>
             <anytime>false</anytime>
             <contentList>
