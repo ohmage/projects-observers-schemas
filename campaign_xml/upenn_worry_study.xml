@@ -1,0 +1,2382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+	<campaignUrn>urn:campaign:upenn:metus</campaignUrn>
+	<campaignName>UPenn Metus Study</campaignName>
+	<surveys>
+		<survey>
+			<id>worryBranchingAssessment</id>
+			<title>Most Recent Worry</title>
+			<description>Most Recent Worry</description>
+			<submitText>Submit</submitText>
+			<anytime>true</anytime>
+			<contentList>
+				<prompt>
+					<id>worryBranchingAssessmentQ1</id>
+					<promptText>At the MOST RECENT signal, how much were you worrying?</promptText>
+					<displayLabel>howMuchWorry</displayLabel>
+					<promptType>single_choice</promptType>
+					<properties>
+						<property>
+							<key>1</key>
+							<label>1 - Not at all</label>
+						</property>
+						<property>
+							<key>2</key>
+							<label>2</label>
+						</property>
+						<property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+						<property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>						
+					</properties>
+					<skippable>false</skippable>
+				</prompt>
+			</contentList>
+		</survey>
+	    <survey>
+            <id>worryFirstAssessment</id>
+            <title>Worry at Most Recent Signal</title>
+            <description>Worry at Most Recent Signal</description>
+            <submitText>Submit</submitText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>worryFirstAssessmentQ1</id>
+                    <promptText>At the MOST RECENT signal, how hard was it to control your worry?</promptText>
+                    <displayLabel>worryFirstAssessmentQ1</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryFirstAssessmentQ2</id>
+                    <promptText>How many minutes ago did this worry episode begin?</promptText>
+                    <displayLabel>worryFirstAssessmentQ2</displayLabel>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>360</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryFirstAssessmentQ3</id>
+                    <promptText>What is the worry about? Check all that apply.</promptText>
+                    <displayLabel>worryFirstAssessmentQ3</displayLabel>
+                    <promptType>multi_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>School/work</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Family</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Friends</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Other social/interpersonal</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Finances</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>Housing</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>Health/illness</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>Leisure activities (e.g., extra-curricular activities)</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>Future plans (e.g., post-graduation plans)</label>
+                        </property>
+                        <property>
+                            <key>10</key>
+                            <label>Community/world affairs</label>
+                        </property>
+                        <property>
+                            <key>11</key>
+                            <label>Minor matters (e.g., punctuality, minor repairs)</label>
+                        </property>
+                        <property>
+                            <key>12</key>
+                            <label>Other</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryFirstAssessmentQ4</id>
+                    <promptText>In one sentence, please write out your worried thought WHEN YOU WERE SIGNALED.</promptText>
+                    <displayLabel>worryFirstAssessmentQ4</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>250</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryFirstAssessmentQ5</id>
+                    <promptText>If the outcome you are worried about were to happen, how negative would it be for you?</promptText>
+                    <displayLabel>worryFirstAssessmentQ5</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                
+            </contentList>
+        </survey>
+        <survey>
+            <id>worryContinuationAssessment</id>
+            <title>Worry Continuation</title>
+            <description>Worry Continuation</description>
+            <submitText>Submit</submitText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>worryContinuationAssessmentQ1</id>
+                    <promptText>At the MOST RECENT signal, how hard was it to control your worry?</promptText>
+                    <displayLabel>worryContinuationQ1</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryContinuationAssessmentQ2</id>
+                    <promptText>Are you thinking about the same topic as when you were last signaled?</promptText>
+                    <displayLabel>worryContinuationAssessmentQ2</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>No</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Yes</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryContinuationAssessmentQ3</id>
+                    <condition>worryContinuationAssessmentQ2 == 0</condition>
+                    <promptText>What is the worry about? Check all that apply.</promptText>
+                    <displayLabel>worryContinuationAssessmentQ3</displayLabel>
+                    <promptType>multi_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>School/work</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Family</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Friends</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Other social/interpersonal</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Finance</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>Health/illness</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>Leisure activities (e.g., extra-curricular activities)</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>Future plans (e.g., post-graduation plans)</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>Community/world affairs</label>
+                        </property>
+                        <property>
+                            <key>10</key>
+                            <label>Minor matters (e.g., punctuality, minor repairs)</label>
+                        </property>
+                        <property>
+                            <key>11</key>
+                            <label>Other</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryContinuationAssessmentQ4</id>
+                    <promptText>In one sentence, please write out your worried thought WHEN YOU WERE SIGNALED.</promptText>
+                    <displayLabel>worryContinuationAssessmentQ4</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>250</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+            </contentList>
+        </survey>                
+        <survey>
+            <id>worryRecurrenceAssessment</id>
+            <title>Worry Recurrence</title>
+            <description>Worry Recurrence</description>
+            <submitText>Submit</submitText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ1</id>
+                    <promptText>At the MOST RECENT signal, how hard was it to control your worry?</promptText>
+                    <displayLabel>worryRecurrenceQ1</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ2</id>
+                    <promptText>Are you thinking about the same topic as when you were last signaled?</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ2</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>No</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Yes</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ3</id>
+                    <condition>worryRecurrenceAssessmentQ2 == 0</condition>
+                    <promptText>What is the worry about? Check all that apply.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ3</displayLabel>
+                    <promptType>multi_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>School/work</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Family</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Friends</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Other social/interpersonal</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Finance</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>Health/illness</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>Leisure activities (e.g., extra-curricular activities)</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>Future plans (e.g., post-graduation plans)</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>Community/world affairs</label>
+                        </property>
+                        <property>
+                            <key>10</key>
+                            <label>Minor matters (e.g., punctuality, minor repairs)</label>
+                        </property>
+                        <property>
+                            <key>11</key>
+                            <label>Other</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ4</id>
+                    <promptText>In one sentence, please write out your worried thought WHEN YOU WERE SIGNALED.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ4</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>250</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>   
+                
+                <!-- UPenn team to provide replacement questions for the "What is contributing to the return of worry?" questions  
+                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ5</id>
+                    <promptText>I keep trying to think of other or better ways to achieve a desired outcome.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ5</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ6</id>
+                    <promptText>I keep trying to think of other or better ways to prevent a negative outcome.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ6</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ7</id>
+                    <promptText>I am trying to stop worrying, but I can't seem to stop.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ7</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ8</id>
+                    <promptText>I am doing things that remind me of the worry.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ8</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ9</id>
+                    <promptText>My negative mood keeps me thinking about the worry.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ9</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ10</id>
+                    <promptText>I am thinking about all the ways the situation could turn out badly.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ10</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ11</id>
+                    <promptText>I am remembering situations in the past that have turned out badly.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ11</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ12</id>
+                    <promptText>I believe a negative outcome is likely.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ12</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ13</id>
+                    <promptText>I believe a negative outcome would have a large, long‐term impact on my life.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ13</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ14</id>
+                    <promptText>I believe that worrying now will benefit me in the future.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ14</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ15</id>
+                    <promptText>I am worried that so much worry could be bad for me.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ15</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ16</id>
+                    <promptText>I am unsure if I can handle this situation successfully.</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ16</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ17</id>
+                    <promptText>Something else is contributing to the return of worry (please specify):</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ17</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>500</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>
+                
+                -->
+                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ18</id>
+                    <promptText>How would you rate the intensity of this worry episode?</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ18</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Low</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - High</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryRecurrenceAssessmentQ19</id>
+                    <promptText>To what extent has the worry interfered with other things you’d rather focus on?</promptText>
+                    <displayLabel>worryRecurrenceAssessmentQ19</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+            </contentList>
+        </survey>
+        <survey>
+            <id>worryPersistenceAssessment</id>
+            <title>Worry Persistence</title>
+            <description>Worry Persistence</description>
+            <submitText>Submit</submitText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>worryPersistenceAssessmentQ1</id>
+                    <promptText>At the MOST RECENT signal, how hard was it to control your worry?</promptText>
+                    <displayLabel>worryPersistenceQ1</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryPersistenceAssessmentQ2</id>
+                    <promptText>Are you thinking about the same topic as when you were last signaled?</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ2</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>No</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Yes</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryPersistenceAssessmentQ3</id>
+                    <condition>worryPersistenceAssessmentQ2 == 0</condition>
+                    <promptText>What is the worry about? Check all that apply.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ3</displayLabel>
+                    <promptType>multi_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>School/work</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Family</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Friends</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Other social/interpersonal</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Finance</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>Health/illness</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>Leisure activities (e.g., extra-curricular activities)</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>Future plans (e.g., post-graduation plans)</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>Community/world affairs</label>
+                        </property>
+                        <property>
+                            <key>10</key>
+                            <label>Minor matters (e.g., punctuality, minor repairs)</label>
+                        </property>
+                        <property>
+                            <key>11</key>
+                            <label>Other</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryPersistenceAssessmentQ4</id>
+                    <promptText>In one sentence, please write out your worried thought WHEN YOU WERE SIGNALED.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ4</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>250</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>   
+                
+                
+                <!-- UPenn team to provide replacement questions for the "What is contributing to the persistence of worry?" questions.
+                
+                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ5</id>
+                    <promptText>I keep trying to think of other or better ways to achieve a desired outcome.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ5</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ6</id>
+                    <promptText>I keep trying to think of other or better ways to prevent a negative outcome.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ6</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ7</id>
+                    <promptText>I am trying to stop worrying, but I can't seem to stop.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ7</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ8</id>
+                    <promptText>I am doing things that remind me of the worry.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ8</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ9</id>
+                    <promptText>My negative mood keeps me thinking about the worry.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ9</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ10</id>
+                    <promptText>I am thinking about all the ways the situation could turn out badly.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ10</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ11</id>
+                    <promptText>I am remembering situations in the past that have turned out badly.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ11</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ12</id>
+                    <promptText>I believe a negative outcome is likely.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ12</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ13</id>
+                    <promptText>I believe a negative outcome would have a large, long‐term impact on my life.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ13</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ14</id>
+                    <promptText>I believe that worrying now will benefit me in the future.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ14</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ15</id>
+                    <promptText>I am worried that so much worry could be bad for me.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ15</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ16</id>
+                    <promptText>I am unsure if I can handle this situation successfully.</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ16</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ17</id>
+                    <promptText>Something else is contributing to the return of worry (please specify):</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ17</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>500</label>
+                        </property>
+                    </properties>
+                    <skippable>true</skippable>
+                </prompt>
+                
+                -->
+                
+                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ18</id>
+                    <promptText>How would you rate the intensity of this worry episode?</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ18</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Low</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - High</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryPersistenceAssessmentQ19</id>
+                    <promptText>To what extent has the worry interfered with other things you’d rather focus on?</promptText>
+                    <displayLabel>worryPersistenceAssessmentQ19</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+            </contentList>
+        </survey>  
+        <survey>
+            <id>worryTerminationAssessment</id>
+            <title>Worry Termination</title>
+            <description>Worry Termination</description>
+            <submitText>Submit</submitText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>worryTerminationAssessmentQ1</id>
+                    <promptText>When did you worried thoughts end?</promptText>
+                    <displayLabel>worryTerminationQ1</displayLabel>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>360</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                <!-- UPenn team to provide replacement questions for the "What contributed to ending the worry?" questions.   
+                
+                <prompt>
+                    <id>worryTerminationAssessmentQ2</id>
+                    <promptText>Did arriving at a solution contribute to ending the worry?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ2</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryTerminationAssessmentQ3</id>
+                    <promptText>Did making a mental plan to improve the situation contribute to ending the worry?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ3</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                
+                <prompt>
+                    <id>worryTerminationAssessmentQ4</id>
+                    <promptText>Did taking action to improve the situation contribute to ending the worry?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ4</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryTerminationAssessmentQ5</id>
+                    <promptText>Did talking to someone about your worry contribute to ending the worry?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ5</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryTerminationAssessmentQ6</id>
+                    <promptText>Did distracting yourself by thinking about something else contribute to ending the worry?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ6</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryTerminationAssessmentQ7</id>
+                    <promptText>Did distracting yourself with projects, chores or work contribute to ending the worry?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ7</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryTerminationAssessmentQ8</id>
+                    <promptText>Did distracting yourself with an enjoyable activity contribute to ending the worry?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ8</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryTerminationAssessmentQ9</id>
+                    <promptText>Did seeking out other people to take your mind off of your worry contribute to ending the worry?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ9</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryTerminationAssessmentQ10</id>
+                    <promptText>Did realizing that there was nothing more you could do to improve the situation contribute to ending the worry?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ10</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                 <prompt>
+                    <id>worryTerminationAssessmentQ11</id>
+                    <promptText>Did the situation resolving itself contribute to ending the worry?</promptText>
+                    <displayLabel>worryTerminationAssessment11</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryTerminationAssessmentQ12</id>
+                    <promptText>Did something else contribute to ending the worry?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ12</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                -->
+                
+                <prompt>
+                    <id>worryTerminationAssessmentQ13</id>
+                    <promptText>After you stopped worrying, to what extent did additional worried thoughts intrude into your mind?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ13</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Occasionally</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Frequently</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryTerminationAssessmentQ14</id>
+                    <promptText>Thinking back, how would you rate the intensity of this worry episode?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ14</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Low</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderate</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - High</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>worryTerminationAssessmentQ15</id>
+                    <promptText>To what extent did the worry interfere with other things you’d rather focus on?</promptText>
+                    <displayLabel>worryTerminationAssessmentQ15</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Low</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderate</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - High</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+            </contentList>
+        </survey>        
+        <survey>
+            <id>neutralFirstAssessment</id>
+            <title>Most Recent Signal</title>
+            <description>Neutral First Assessment</description>
+            <submitText>Submit</submitText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>neutralFirstAssessmentQ1</id>
+                    <promptText>At the MOST RECENT signal, how hard was it to control your thoughts?</promptText>
+                    <displayLabel>neutralFirstAssessmentQ1</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>neutralFirstAssessmentQ2</id>
+                    <promptText>When did thoughts about the current topic begin?</promptText>
+                    <displayLabel>neutralFirstAssessmentQ2</displayLabel>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>0</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>360</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>neutralFirstAssessmentQ3</id>
+                    <promptText>What is the thought about? Check all that apply.</promptText>
+                    <displayLabel>neutralFirstAssessmentQ3</displayLabel>
+                    <promptType>multi_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>School/work</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>Family</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>Friends</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>Other social/interpersonal</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>Finances</label>
+                        </property>
+                        <property>
+                            <key>6</key>
+                            <label>Housing</label>
+                        </property>
+                        <property>
+                            <key>7</key>
+                            <label>Health/illness</label>
+                        </property>
+                        <property>
+                            <key>8</key>
+                            <label>Leisure activities (e.g., extra-curricular activities)</label>
+                        </property>
+                        <property>
+                            <key>9</key>
+                            <label>Future plans (e.g., post-graduation plans)</label>
+                        </property>
+                        <property>
+                            <key>10</key>
+                            <label>Community/world affairs</label>
+                        </property>
+                        <property>
+                            <key>11</key>
+                            <label>Minor matters (e.g., punctuality, minor repairs)</label>
+                        </property>
+                        <property>
+                            <key>12</key>
+                            <label>Other</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>neutralFirstAssessmentQ4</id>
+                    <promptText>In one sentence, please write out your thought WHEN YOU WERE SIGNALED.</promptText>
+                    <displayLabel>eutralFirstAssessmentQ4</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>250</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>neutralFirstAssessmentQ5</id>
+                    <promptText>How positive or negative is this thought?</promptText>
+                    <displayLabel>neutralFirstAssessmentQ5</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Very negative</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Neutral</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very positive</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                
+            </contentList>
+        </survey>        
+        <survey>
+            <id>neutralBranchingAssessment</id>
+            <title>Thought Control</title>
+            <description>Neutral Branching Assessment</description>
+            <submitText>Submit</submitText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>neutralBranchingAssessmentQ1</id>
+                    <promptText>At the MOST RECENT signal, how hard was it to control your thoughts?</promptText>
+                    <displayLabel>neutralBranchingAssessmentQ1</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>neutralBranchingAssessmentQ2</id>
+                    <promptText>Are you thinking about the same topic as when you were last signaled?</promptText>
+                    <displayLabel>neutralBranchingAssessmentQ2</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>0</key>
+                            <label>No</label>
+                        </property>
+                        <property>
+                            <key>1</key>
+                            <label>Yes</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                
+            </contentList>
+        </survey>
+        <survey>
+            <id>neutralContinuationAssessment</id>
+            <title>Current Thought</title>
+            <description>Neutral Branching Assessment</description>
+            <submitText>Submit</submitText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>neutralContinuationAssessmentQ1</id>
+                    <promptText>In one sentence, please write out your thought WHEN YOU WERE SIGNALED.</promptText>
+                    <displayLabel>neutralContinuationAssessmentQ1</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>250</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>neutralContinuationAssessmentQ2</id>
+                    <promptText>How negative or positive is this thought?</promptText>
+                    <displayLabel>neutralContinuationAssessmentQ2</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Very negative</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Neutral</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very positive</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                
+            </contentList>
+        </survey>
+        <survey>
+            <id>neutralPersistenceAssessment</id>
+            <title>Current Thought</title>
+            <description>Neutral Persistence Assessment</description>
+            <submitText>Submit</submitText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>neutralPersistenceAssessmentQ1</id>
+                    <promptText>In one sentence, please write out your thought WHEN YOU WERE SIGNALED.</promptText>
+                    <displayLabel>neutralPersistenceAssessmentQ1</displayLabel>
+                    <promptType>text</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>5</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>250</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                <prompt>
+                    <id>neutralPersistenceAssessmentQ2</id>
+                    <promptText>How negative or positive is this thought?</promptText>
+                    <displayLabel>neutralPersistenceAssessmentQ2</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Very negative</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Neutral</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very positive</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>  
+                
+                <!-- UPenn Team to provide replacement questions for the "What is contributing to the persistence of thoughts about this topic?" questions --> 
+                                              
+                <prompt>
+                    <id>neutralPersistenceAssessmentQ3</id>
+                    <promptText>How would you rate the intensity of this thought episode?</promptText>
+                    <displayLabel>neutralPersistenceAssessmentQ3</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Low</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderate</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 -High</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                                
+                <prompt>
+                    <id>neutralPersistenceAssessmentQ4</id>
+                    <promptText>To what extent have these thoughts interfered with other things you’d rather focus on?</promptText>
+                    <displayLabel>neutralPersistenceAssessmentQ4</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 -Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                                
+            </contentList>
+        </survey>
+        <survey>
+            <id>neutralTerminationAssessment</id>
+            <title>Current Thought</title>
+            <description>Neutral Termination Assessment</description>
+            <submitText>Submit</submitText>
+            <anytime>true</anytime>
+            <contentList>
+                <prompt>
+                    <id>neutralTerminationAssessmentQ1</id>
+                    <promptText>When did your thoughts about that topic end?</promptText>
+                    <displayLabel>neutralTerminationAssessmentQ1</displayLabel>
+                    <promptType>number</promptType>
+                    <properties>
+                        <property>
+                            <key>min</key>
+                            <label>1</label>
+                        </property>
+                        <property>
+                            <key>max</key>
+                            <label>360</label>
+                        </property>
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>
+                
+                
+                <!-- UPenn Team to provide replacement questions for the "What contributed to ending this thought episode?" questions -->
+                
+                                
+                <prompt>
+                    <id>neutralTerminationAssessmentQ2</id>
+                    <promptText>After you stopped thinking about this topic, to what extent did additional thoughts about this topic intrude into your mind?</promptText>
+                    <displayLabel>neutralTerminationAssessmentQ2</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Occasionally</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Frequently</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                                
+                <prompt>
+                    <id>neutralTerminationAssessmentQ3</id>
+                    <promptText>Thinking back, how would you rate the intensity of this thought episode?</promptText>
+                    <displayLabel>neutralTerminationAssessmentQ3</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Low</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderate</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - High</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                                
+                <prompt>
+                    <id>neutralTerminationAssessmentQ4</id>
+                    <promptText>To what extent did these thoughts interfere with other things you’d rather focus on?</promptText>
+                    <displayLabel>neutralTerminationAssessmentQ4</displayLabel>
+                    <promptType>single_choice</promptType>
+                    <properties>
+                        <property>
+                            <key>1</key>
+                            <label>1 - Not at all</label>
+                        </property>
+                        <property>
+                            <key>2</key>
+                            <label>2</label>
+                        </property>
+                        <property>
+                            <key>3</key>
+                            <label>3- Moderately</label>
+                        </property>
+                        <property>
+                            <key>4</key>
+                            <label>4</label>
+                        </property>
+                        <property>
+                            <key>5</key>
+                            <label>5 - Very much</label>
+                        </property>                     
+                    </properties>
+                    <skippable>false</skippable>
+                </prompt>                                
+            </contentList>
+        </survey>
+	</surveys>
+</campaign>
