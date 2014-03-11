@@ -4740,10 +4740,10 @@
                     <skippable>false</skippable>
                 </prompt>
                 <prompt>
-                    <id>emaFlow7NeutralBranchingQ1</id>
+                    <id>emaFlow7emaFlow7NeutralBranchingQ1</id>
                     <condition>(emaFlow7WorryBranch == 1)</condition>
                     <promptText>At the MOST RECENT signal, how hard was it to control your thoughts?</promptText>
-                    <displayLabel>emaFlow7NeutralBranchingQ1</displayLabel>
+                    <displayLabel>emaFlow7emaFlow7NeutralBranchingQ1</displayLabel>
                     <promptType>single_choice</promptType>
                     <properties>
                         <property>
@@ -4770,10 +4770,10 @@
                     <skippable>false</skippable>
                 </prompt>
                 <prompt>
-                    <id>neutralBranch</id>
+                    <id>emaFlow7NeutralBranch</id>
                     <condition>(emaFlow7WorryBranch == 1)</condition>
                     <promptText>Are you thinking about the same topic as when you were last signaled?</promptText>
-                    <displayLabel>neutralBranch</displayLabel>
+                    <displayLabel>emaFlow7NeutralBranch</displayLabel>
                     <promptType>single_choice</promptType>
                     <properties>
                         <property>
@@ -4789,7 +4789,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ1</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>In one sentence, please write out your thought WHEN YOU WERE SIGNALED.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ1</displayLabel>
                     <promptType>text</promptType>
@@ -4807,7 +4807,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ2</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>How negative or positive is this thought?</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ2</displayLabel>
                     <promptType>single_choice</promptType>
@@ -4837,7 +4837,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ3</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>What is contributing to the persistence of thoughts about this topic? - I keep trying to think of other or better ways to achieve a desired outcome.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ3</displayLabel>
                     <promptType>single_choice</promptType>
@@ -4867,7 +4867,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ4</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>I keep trying to think of other or better ways to prevent a negative outcome.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ4</displayLabel>
                     <promptType>single_choice</promptType>
@@ -4897,7 +4897,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ5</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>I am trying to stop thinking about this topic, but I can’t seem to stop.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ5</displayLabel>
                     <promptType>single_choice</promptType>
@@ -4927,7 +4927,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ6</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>I am doing things that remind me of this topic.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ6</displayLabel>
                     <promptType>single_choice</promptType>
@@ -4957,7 +4957,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ7</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>My current mood keeps me thinking about this topic.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ7</displayLabel>
                     <promptType>single_choice</promptType>
@@ -4987,7 +4987,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ8</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>I am thinking about all the ways the situation could turn out.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ8</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5017,7 +5017,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ9</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>I am remembering how similar situations in the past have turned out.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ9</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5047,7 +5047,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ10</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>I believe a particular outcome is likely.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ10</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5077,7 +5077,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ11</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>I believe a particular outcome would have a large, long‐term impact on my life.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ11</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5107,7 +5107,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ12</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>I believe that thinking about this topic now will benefit me in the future.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ12</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5137,7 +5137,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ13</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>I am anticipating an event in the future.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ13</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5167,7 +5167,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ14</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>I am unsure if I can handle this situation successfully.</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ14</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5197,7 +5197,7 @@
                 </prompt>                
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ15</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>Something else is contributing to the persistence of these thoughts (please specify):</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ15</displayLabel>
                     <promptType>text</promptType>
@@ -5215,7 +5215,7 @@
                 </prompt>  
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ16</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>How would you rate the intensity of this thought episode?</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ16</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5245,7 +5245,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralPersistenceQ17</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 1)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 1)</condition>
                     <promptText>To what extent have these thoughts interfered with other things you’d rather focus on?</promptText>
                     <displayLabel>emaFlow7NeutralPersistenceQ17</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5275,7 +5275,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ1</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>When did your thoughts about that topic end?</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ1</displayLabel>
                     <promptType>number</promptType>
@@ -5293,7 +5293,7 @@
                 </prompt>
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ2</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>What contributed to ending this thought episode? - I exhausted all possible thoughts about the topic.</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ2</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5323,7 +5323,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ3</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>I made a mental plan.</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ3</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5353,7 +5353,7 @@
                 </prompt>                                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ4</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>I took action toward a goal.</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ4</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5383,7 +5383,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ5</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>I talked to someone about the topic.</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ5</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5413,7 +5413,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ6</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>I distracted myself by thinking about something else.</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ6</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5443,7 +5443,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ7</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>I distracted myself with projects, chores, or work.</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ7</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5473,7 +5473,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ8</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>I distracted myself with an enjoyable activity.</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ8</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5503,7 +5503,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ9</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>I sought out other people to take my mind off my thoughts.</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ9</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5533,7 +5533,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ10</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>There was nothing more I could do about this matter.</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ10</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5563,7 +5563,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ11</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>The matter resolved itself.</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ11</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5593,7 +5593,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ12</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>Something else contributed to ending these thoughts (please specify):</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ12</displayLabel>
                     <promptType>text</promptType>
@@ -5611,7 +5611,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ13</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>After you stopped thinking about this topic, to what extent did additional thoughts about this topic intrude into your mind?</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ13</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5641,7 +5641,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ14</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>Thinking back, how would you rate the intensity of this thought episode?</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ14</displayLabel>
                     <promptType>single_choice</promptType>
@@ -5671,7 +5671,7 @@
                 </prompt>                                
                 <prompt>
                     <id>emaFlow7NeutralTerminationQ15</id>
-                    <condition>(emaFlow7WorryBranch == 1) and (neutralBranch == 0)</condition>
+                    <condition>(emaFlow7WorryBranch == 1) and (emaFlow7NeutralBranch == 0)</condition>
                     <promptText>To what extent did these thoughts interfere with other things you’d rather focus on?</promptText>
                     <displayLabel>emaFlow7NeutralTerminationQ15</displayLabel>
                     <promptType>single_choice</promptType>
