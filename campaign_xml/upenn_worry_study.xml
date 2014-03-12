@@ -4740,10 +4740,10 @@
                     <skippable>false</skippable>
                 </prompt>
                 <prompt>
-                    <id>emaFlow7emaFlow7NeutralBranchingQ1</id>
+                    <id>emaFlow7NeutralBranchingQ1</id>
                     <condition>(emaFlow7WorryBranch == 1)</condition>
                     <promptText>At the MOST RECENT signal, how hard was it to control your thoughts?</promptText>
-                    <displayLabel>emaFlow7emaFlow7NeutralBranchingQ1</displayLabel>
+                    <displayLabel>emaFlow7NeutralBranchingQ1</displayLabel>
                     <promptType>single_choice</promptType>
                     <properties>
                         <property>
