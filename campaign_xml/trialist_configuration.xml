@@ -25,7 +25,7 @@
                         </property>
                         <property>
                             <key>1</key>
-                            <label>Tylenol (acetaminophen)</label>
+                            <label>Acetaminophen (Tylenol)</label>
                         </property>
                         <property>
                             <key>2</key>
@@ -45,7 +45,7 @@
                         </property>
                         <property>
                             <key>6</key>
-                            <label>Oxycodone combination treatment (e.g., Percocet)</label>
+                            <label>Oxycodone combination product (e.g., Percocet)</label>
                         </property>
                         <property>
                             <key>7</key>
@@ -66,7 +66,7 @@
                         </property>
                         <property>
                             <key>1</key>
-                            <label>Tylenol (acetaminophen)</label>
+                            <label>Acetaminophen (Tylenol)</label>
                         </property>
                         <property>
                             <key>2</key>
@@ -86,7 +86,7 @@
                         </property>
                         <property>
                             <key>6</key>
-                            <label>Oxycodone combination treatment (e.g., Percocet)</label>
+                            <label>Oxycodone combination product (e.g., Percocet)</label>
                         </property>
                         <property>
                             <key>7</key>
